@@ -1,0 +1,10 @@
+sudo: required
+
+language: java
+
+services:
+  - docker
+
+after_success:
+  - docker build -t group-h-sem .
+  - docker run group-h-sem
