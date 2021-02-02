@@ -9,3 +9,10 @@ Please make sure to update tests as appropriate.
 
 ## License
 [Apache](http://www.apache.org/licenses/LICENSE-2.0)
+
+## Developed by
+
+Tom McEachan \
+Liam Dickson \
+Greig Dunbar \
+Jack Burton \
