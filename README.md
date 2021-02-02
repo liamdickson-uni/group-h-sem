@@ -12,11 +12,12 @@ Please make sure to update tests as appropriate.
 
 ## Travis
 
-Master Build [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=master)](https://travis-ci.com/liamdickson-uni/group-h-sem)
+Master Build [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=master)](https://travis-ci.com/liamdickson-uni/group-h-sem) \
+Develop Build [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=develop)](https://travis-ci.com/liamdickson-uni/group-h-sem)
 
 ## Developed by
 
 Tom McEachan \
 Liam Dickson \
 Greig Dunbar \
-Jack Burton \
+Jack Burton 
