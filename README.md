@@ -10,6 +10,10 @@ Please make sure to update tests as appropriate.
 ## License
 [Apache](http://www.apache.org/licenses/LICENSE-2.0)
 
+## Travis
+
+Master Build [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=master)](https://travis-ci.com/liamdickson-uni/group-h-sem)
+
 ## Developed by
 
 Tom McEachan \
