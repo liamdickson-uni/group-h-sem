@@ -5,12 +5,11 @@ import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
-public class app {
-
-    //Docker Test Code
-    public static void main(String[] args) {
-
-        // Connect to MongoDB on local system - we're using port 27000
+public class app
+{
+    public static void main(String[] args)
+    {
+        // Connect to MongoDB
         MongoClient mongoClient = new MongoClient("mongo-dbserver");
         // Get a database - will create when we use it
         MongoDatabase database = mongoClient.getDatabase("mydb");

@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>com.group.sem</groupId>
     <artifactId>group-h-sem</artifactId>
     <version>0.1.0.2</version>
 
@@ -24,11 +24,13 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.napier.sem.App</mainClass>
+                            <mainClass>com.group.sem.app</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -47,6 +49,4 @@
             </plugin>
         </plugins>
     </build>
-
-
 </project>
