@@ -23,6 +23,7 @@ public class app {
         // Check document in collection
         Document myDoc = collection.find().first();
         System.out.println(myDoc.toJson());
+        
     }
 }
 
