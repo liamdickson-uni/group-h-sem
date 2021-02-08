@@ -4,6 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver</artifactId>
+            <version>3.6.4</version>
+        </dependency>
+    </dependencies>
+
     <groupId>org.example</groupId>
     <artifactId>group-h-sem</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -14,3 +22,4 @@
     </properties>
 
 </project>
+
