@@ -12,9 +12,11 @@ Please make sure to update tests as appropriate.
 
 ## Travis
 
-Master Build [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=master)](https://travis-ci.com/liamdickson-uni/group-h-sem) \
-Develop Build [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=develop)](https://travis-ci.com/liamdickson-uni/group-h-sem) \
-Release Build [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=release)](https://travis-ci.com/liamdickson-uni/group-h-sem)
+Master Build Status [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=master)](https://travis-ci.com/liamdickson-uni/group-h-sem) \
+Develop Build Status [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=develop)](https://travis-ci.com/liamdickson-uni/group-h-sem) \
+License ![LICENSE](https://img.shields.io/github/license/liamdickson-uni/group-h-sem) \
+Release [![Releases](https://img.shields.io/github/release/liamdickson-uni/group-h-sem/all.svg?style=flat-square)](https://github.com/liamdickson-uni/group-h-sem/releases)
+
 
 ## Developed by
 
