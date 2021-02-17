@@ -14,7 +14,7 @@ public class app {
         a.connect();
 
         //Gets country
-        country cnt = a.getCountry(1);
+        country cnt = a.getCountry("ABW");
 
         //Displays country
         a.displayCountry(cnt);
@@ -74,7 +74,7 @@ public class app {
         }
     }
 
-    public country getCountry(int ID) {
+    public country getCountry(String ID) {
         try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
@@ -88,7 +88,7 @@ public class app {
             // Check one is returned
             if (rset.next()) {
                 country cnt = new country();
-                cnt.ID = rset.getInt("Code");
+                cnt.Code = rset.getString("Code");
                 return cnt;
             } else
                 return null;
@@ -102,7 +102,7 @@ public class app {
     public void displayCountry(country cnt) {
         if (cnt != null) {
             System.out.println(
-                    cnt.ID + " " + cnt.countryName);
+                    cnt.Code + " " + cnt.countryName);
         }
     }
 }

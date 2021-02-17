@@ -11,7 +11,7 @@ public class country {
     /**
      * Represents Country ID
      */
-    public int ID;
+    public String Code;
 
     /**
      * Represents Country Name
