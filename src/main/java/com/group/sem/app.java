@@ -89,6 +89,8 @@ public class app {
             if (rset.next()) {
                 country cnt = new country();
                 cnt.Code = rset.getString("Code");
+                cnt.Name = rset.getString("Name");
+                cnt.Continent = rset.getString("Continent");
                 return cnt;
             } else
                 return null;
