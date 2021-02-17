@@ -80,11 +80,11 @@ public class app {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT Code, Name"
+                    "SELECT *"
                             + "FROM country ";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new employee if valid.
+            // Return new country if valid.
             // Check one is returned
             if (rset.next()) {
                 country cnt = new country();
