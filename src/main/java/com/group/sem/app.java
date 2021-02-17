@@ -7,7 +7,7 @@ public class app{
     public static void main(String[] args)
     {
         // Create new Application
-        App a = new App();
+        app a = new app();
 
         // Connect to database
         a.connect();
