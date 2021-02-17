@@ -9,28 +9,73 @@ import com.group.sem.app;
 public class country {
 
     /**
-     * Represents Country ID
+     * Represents Country Code
      */
     public String Code;
 
     /**
      * Represents Country Name
      */
-    public String countryName;
+    public String Name;
+
 
     /**
-     * Represents Country Code
+     * Represents Country Continent
      */
-    public String countryCode;
+    public String Continent;
 
     /**
-     * Represents District
+     * Represents Country Region
      */
-    public String countryDistrict;
+    public String Region;
 
-    /** Represents Population
-     *
+    /**
+     * Represents Country Surface Area
      */
-    public int countryPopulation;
+    public double SurfaceArea;
 
+    /**
+     * Represents Population
+     */
+    public int Population;
+
+    /**
+     * Represents Life Expectancy
+     */
+    public int LifeExpectancy;
+
+    /**
+     * Represents Gross National Product
+     */
+    public double GNP;
+
+    /**
+     * Represents Gross National Product(Old)
+     */
+    public double GNPOld;
+
+    /**
+     * Represents Local Name
+     */
+    public String LocalName;
+
+    /**
+     * Represents Government Form
+     */
+    public String GovernmentForm;
+
+    /**
+     * Represents Head of State
+     */
+    public String HeadOfState;
+
+    /**
+     * Represents Capital
+     */
+    public int Capital;
+
+    /**
+     * Represents Code2
+     */
+    public String code2;
 }

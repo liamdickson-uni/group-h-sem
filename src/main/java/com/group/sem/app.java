@@ -102,7 +102,7 @@ public class app {
     public void displayCountry(country cnt) {
         if (cnt != null) {
             System.out.println(
-                    cnt.Code + " " + cnt.countryName);
+                    cnt.Code + " " + cnt.Name + " " + cnt.Continent);
         }
     }
 }
