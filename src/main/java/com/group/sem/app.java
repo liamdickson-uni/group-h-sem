@@ -63,7 +63,7 @@ public class app{
     }
 
     /**
-     * Disconnect from the MySQL database.
+     * Disconnects from the MySQL database.
      */
     public void disconnect()
     {
