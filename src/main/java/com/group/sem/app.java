@@ -88,13 +88,13 @@ public class app {
             // Check one is returned
             if (rset.next()) {
                 country cnt = new country();
-                cnt.ID = rset.getInt("emp_no");
+                cnt.ID = rset.getInt("Code");
                 return cnt;
             } else
                 return null;
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get employee details");
+            System.out.println("Failed to get country");
             return null;
         }
     }
