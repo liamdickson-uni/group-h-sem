@@ -1,6 +1,6 @@
 ### Code of Conduct Creation  
 * I will attend all meetings unless there is legitimate reason
-* I will attend all meetings ontime unless there is a legitimate reason
+* I will attend all meetings on time unless there is a legitimate reason
 * I will ask for help when I need it
 * I will provide help when asked
 * I will participate in all meetings
