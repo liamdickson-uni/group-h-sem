@@ -109,9 +109,9 @@ public class app {
     public void displayCountry(ArrayList<country> countries) {
         if (countries != null) {
 
-
-            System.out.println(
-                    countries);
+            for (com.group.sem.country country : countries) {
+                System.out.println(country.Name);
+            }
         }
     }
 }
