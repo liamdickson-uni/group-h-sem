@@ -2,6 +2,7 @@ package com.group.sem;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import com.group.sem.country;
 
@@ -14,13 +15,21 @@ public class app {
         // Connect to database
         a.connect();
 
+        Scanner mainObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Please Select an Option:\n 1 Get all Counties by Population");
 
-        //Gets country
-        ArrayList<country> countries = a.getCountryByPopDesc();
+        String userInput = mainObj.nextLine();
 
-        //Displays country
-        a.displayCountry(countries);
+        if (userInput == "1") {
+            //Gets country
+            ArrayList<country> countries = a.getCountryByPopDesc();
 
+            //Displays country
+            a.displayCountry(countries);
+
+        } else {
+            
+        }
         // Disconnect from database
         a.disconnect();
 
