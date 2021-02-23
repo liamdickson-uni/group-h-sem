@@ -1,6 +1,7 @@
 package com.group.sem;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import com.group.sem.country;
 
@@ -13,11 +14,12 @@ public class app {
         // Connect to database
         a.connect();
 
+
         //Gets country
-        country cnt = a.getCountry("ABW");
+        ArrayList<country> countries = a.getCountryByPopDesc();
 
         //Displays country
-        a.displayCountry(cnt);
+        a.displayCountry(countries);
 
         // Disconnect from database
         a.disconnect();
@@ -74,26 +76,29 @@ public class app {
         }
     }
 
-    public country getCountry(String ID) {
+    public ArrayList<country> getCountryByPopDesc() {
         try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT *"
-                            + "FROM country ";
+                    " SELECT c.Name" +
+                            " FROM country c" +
+                            " ORDER BY population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new country if valid.
+            // Return new country while valid.
+
+            ArrayList<country> countries = new ArrayList<country>();
+
             // Check one is returned
-            if (rset.next()) {
+            while (rset.next()) {
                 country cnt = new country();
-                cnt.Code = rset.getString("Code");
                 cnt.Name = rset.getString("Name");
-                cnt.Continent = rset.getString("Continent");
-                return cnt;
-            } else
-                return null;
+                countries.add(cnt);
+            }
+            return countries;
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get country");
@@ -101,10 +106,12 @@ public class app {
         }
     }
 
-    public void displayCountry(country cnt) {
-        if (cnt != null) {
+    public void displayCountry(ArrayList<country> countries) {
+        if (countries != null) {
+
+
             System.out.println(
-                    cnt.Code + " " + cnt.Name + " " + cnt.Continent);
+                    countries);
         }
     }
 }
