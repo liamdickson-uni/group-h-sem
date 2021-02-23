@@ -18,20 +18,17 @@ public class app {
         Scanner mainObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Please Select an Option:\n 1 Get all Counties by Population");
 
-        String userInput = mainObj.nextLine();
+        String userInput = "1";
 
-        System.out.println("1");
-
-        if (userInput == "1") {
+        if (userInput.equals("1")) {
             //Gets country
             ArrayList<country> countries = a.getCountryByPopDesc();
 
             //Displays country
             a.displayCountry(countries);
 
-        } else {
-
         }
+
         // Disconnect from database
         a.disconnect();
 
