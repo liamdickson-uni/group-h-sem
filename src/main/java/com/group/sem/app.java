@@ -14,7 +14,7 @@ public class app {
         a.connect();
 
         //Gets country
-        country cnt = a.getCountry("ABW");
+        country cnt = a.getCountryByPopDesc();
 
         //Displays country
         a.displayCountry(cnt);
@@ -74,23 +74,22 @@ public class app {
         }
     }
 
-    public country getCountry(String ID) {
+    public country getCountryByPopDesc() {
         try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT *"
-                            + "FROM country ";
+                    " SELECT c.Name" +
+                            " FROM country c" +
+                            " ORDER BY population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new country if valid.
             // Check one is returned
             if (rset.next()) {
                 country cnt = new country();
-                cnt.Code = rset.getString("Code");
                 cnt.Name = rset.getString("Name");
-                cnt.Continent = rset.getString("Continent");
                 return cnt;
             } else
                 return null;
@@ -104,7 +103,7 @@ public class app {
     public void displayCountry(country cnt) {
         if (cnt != null) {
             System.out.println(
-                    cnt.Code + " " + cnt.Name + " " + cnt.Continent);
+                     cnt.Name);
         }
     }
 }
