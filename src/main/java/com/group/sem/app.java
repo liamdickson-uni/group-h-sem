@@ -19,7 +19,8 @@ public class app {
         System.out.println("Please Select an Option:\n 1 Get all Counties by Population");
 
         String userInput = mainObj.nextLine();
-        userInput = "1";
+
+        System.out.println("1");
 
         if (userInput == "1") {
             //Gets country
