@@ -26,8 +26,17 @@ public class app {
 
             //Displays country
             a.displayCountry(countries);
-
         }
+
+        userInput = "3";
+        if (userInput.equals("3")) {
+
+            //Gets country
+            ArrayList<country> countries = a.getCountryInContinentByPop();
+
+            a.displayCountry(countries);
+        }
+
 
         // Disconnect from database
         a.disconnect();
@@ -95,8 +104,8 @@ public class app {
                             " ORDER BY population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new country while valid.
 
+            // Return new country while valid.
             ArrayList<country> countries = new ArrayList<country>();
 
             // Check one is returned
@@ -122,4 +131,40 @@ public class app {
             }
         }
     }
+
+
+    public ArrayList<country> getCountryInContinentByPop(){
+
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    " SELECT c.Name" +
+                            " FROM country c" +
+                            "WHERE c.continent = Africa" +
+                            "ORDER BY population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new country while valid.
+
+            ArrayList<country> countries = new ArrayList<country>();
+
+            // Check one is returned
+            while (rset.next()) {
+                country cnt = new country();
+                cnt.Name = rset.getString("Name");
+                countries.add(cnt);
+            }
+            return countries;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country");
+            return null;
+        }
+    }
+
 }
+
+
