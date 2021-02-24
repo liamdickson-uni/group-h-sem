@@ -22,7 +22,7 @@ public class country {
     /**
      * Represents Country Continent
      */
-    public String Continent;
+    public Enum Continent;
 
     /**
      * Represents Country Region

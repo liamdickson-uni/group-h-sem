@@ -19,7 +19,7 @@ public class app {
         System.out.println("Please Select an Option:\n 1 Get all Counties by Population \n " +
                 "3: Get all countries in a specific continent");
 
-        String userInput = "1";
+        String userInput = "3";
 
         if (userInput.equals("1")) {
             //Gets country
@@ -27,10 +27,7 @@ public class app {
 
             //Displays country
             a.displayCountry(countries);
-        }
-
-        userInput = "3";
-        if (userInput.equals("3")) {
+        } else if (userInput.equals("3")) {
 
             //Gets country
             ArrayList<country> countries = a.getCountryInContinentByPop();
@@ -68,7 +65,7 @@ public class app {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "password");
+                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             } catch (SQLException sqle) {
@@ -102,7 +99,7 @@ public class app {
             String strSelect =
                     " SELECT c.Name" +
                             " FROM country c" +
-                            " ORDER BY population DESC";
+                            " ORDER BY c.Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
 
@@ -143,8 +140,8 @@ public class app {
             String strSelect =
                     " SELECT c.Name" +
                             " FROM country c" +
-                            " WHERE continent = Africa" +
-                            " ORDER BY population DESC";
+                            " WHERE c.Continent IN ('Africa')" +
+                            " ORDER BY c.Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new country while valid.
