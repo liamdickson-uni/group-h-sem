@@ -16,7 +16,8 @@ public class app {
         a.connect();
 
         Scanner mainObj = new Scanner(System.in);  // Create a Scanner object
-        System.out.println("Please Select an Option:\n 1 Get all Counties by Population");
+        System.out.println("Please Select an Option:\n 1 Get all Counties by Population \n " +
+                "3: Get all countries in a specific continent");
 
         String userInput = "1";
 
@@ -142,7 +143,7 @@ public class app {
             String strSelect =
                     " SELECT c.Name" +
                             " FROM country c" +
-                            " WHERE c.continent = Africa" +
+                            " WHERE continent = Africa" +
                             " ORDER BY population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
