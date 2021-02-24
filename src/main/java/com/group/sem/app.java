@@ -142,8 +142,8 @@ public class app {
             String strSelect =
                     " SELECT c.Name" +
                             " FROM country c" +
-                            "WHERE c.continent = Africa" +
-                            "ORDER BY population DESC";
+                            " WHERE c.continent = Africa" +
+                            " ORDER BY population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new country while valid.
