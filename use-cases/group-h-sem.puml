@@ -1,19 +1,38 @@
 @startuml
 'https://plantuml.com/use-case-diagram
 
+
 actor Marketing as "Marketing Manager"
+actor Logistics as "Global Logistics Manager"
+actor Finance as "Regional Finance Manager"
 
 rectangle Database
 
-rectangle "World Database" {
+
+package "World Data System" {
+
+    usecase UCa as "Print Queried Data"
 
     usecase UC1 as "Get countries from continent,
     sorted by largest
     pop to smallest"
 
-    usecase UCa as "Print Queried Data"
+    usecase UC2 as "Produce a report of all
+    countries in the world"
+
+    usecase UC3 as "Produce a report of all
+    countries in a region"
+
+    top to bottom direction
     Marketing - UC1
     UC1 ..> UCa : include
     UC1 - Database
+    Logistics - UC2
+    UC2 ..> UCa : include
+    UC2 - Database
+    Finance - UC3
+    UC3 ..> UCa : include
+    UC3 - Database
+
 }
 @enduml
