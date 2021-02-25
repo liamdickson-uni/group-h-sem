@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a *Regional Finance Manager* I would like to see a list of all the countries in a region organised by largest population to smallest so that I can identify the most to least populous countries in that region. This would allow me to decide which nations we are likely to get the most profit from and which the least.
+As a *Global Finance Manager* I would like to see a list of all the countries in a region organised by largest population to smallest so that I can identify the most to least populous countries in that region. This would allow me to decide which nations we are likely to get the most profit from and which the least.
 
 ### Scope
 
@@ -20,7 +20,7 @@ We know the role.  Connected to world.sql which holds information about countrie
 
 ### Success End Condition
 
-A report is available for the Regional Financial Division to use.
+A report is available for the Global Financial Division to use.
 
 ### Failed End Condition
 
@@ -28,7 +28,7 @@ No report is produced.
 
 ### Primary Actor
 
-Regional Finance Manager.
+Global Finance Manager.
 
 ### Trigger
 
