@@ -1,4 +1,4 @@
-# USE CASE: 2 Produce a Report of All Cities in a District
+# USE CASE: 2 Produce a Report of All Cities in a Country
 
 ## CHARACTERISTIC INFORMATION
 
