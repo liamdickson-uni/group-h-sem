@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a *Continental Finance Manager* I would like to see a list of all the countries in a continent organised by largest population to smallest so that I can identify the most to least populous countries in that region. This would allow me to decide which nations we are likely to get the most profit from and which the least.
+As a *Continental Finance Manager* I would like to see a list of all the countries in a region organised by top most populous 'N' countries in the world. 'N' will be provided by the user. This will help me see where the majority of our business will be, on a global scale.
 
 ### Scope
 
