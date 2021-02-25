@@ -133,7 +133,7 @@ public class app {
     }
 
 
-    public ArrayList<country> getCountryInContinentByPop(){
+    public ArrayList<country> getCountryInContinentByPop() {
 
         try {
             // Create an SQL statement
@@ -164,6 +164,50 @@ public class app {
             return null;
         }
     }
+
+    public void displayCity(ArrayList<city> cities) {
+        if (cities != null) {
+
+            for (com.group.sem.city city : cities) {
+                System.out.println(city.cityName);
+            }
+        }
+    }
+
+
+    public ArrayList<city> getCitiesInCountryByPop() {
+
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    " SELECT c.Name" +
+                            " FROM country c" +
+                            " WHERE c.Continent IN ('Africa')" +
+                            " ORDER BY c.Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new country while valid.
+
+            ArrayList<country> countries = new ArrayList<country>();
+
+            // Check one is returned
+            while (rset.next()) {
+                city cty = new city();
+                cty.cityName = rset.getString("Name");
+                cities.add(cty);
+            }
+            return cities;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities");
+            return null;
+
+        }
+    }
+
 
 }
 
