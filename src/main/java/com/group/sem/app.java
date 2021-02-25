@@ -165,6 +165,12 @@ public class app {
         }
     }
 
+
+    /**
+     *
+     * These methods are used to get city data and to display city data.
+     */
+
     public void displayCity(ArrayList<city> cities) {
         if (cities != null) {
 
@@ -190,7 +196,7 @@ public class app {
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new country while valid.
 
-            ArrayList<country> countries = new ArrayList<country>();
+            ArrayList<city> cities = new ArrayList<city>();
 
             // Check one is returned
             while (rset.next()) {
