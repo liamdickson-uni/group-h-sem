@@ -1,4 +1,4 @@
-# USE CASE: 1 Produce a Report of All Countries in a Specified Continent
+# USE CASE: 2 Produce a Report of All Countries in the world
 
 ## CHARACTERISTIC INFORMATION
 
