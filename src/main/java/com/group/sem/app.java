@@ -1,5 +1,6 @@
 package com.group.sem;
 
+import java.io.PrintStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -21,7 +22,7 @@ public class app {
                 "2 - Get all countries in a specific continent \n" +
                 "3 - Get all cities in a specific country \n");
 
-        String userInput = "3";
+        String userInput = "2";
 
         if (userInput.equals("1")) {
             //Gets country
@@ -34,14 +35,14 @@ public class app {
             //Gets country
             ArrayList<country> countries = a.getCountryInContinentByPop();
 
-            a.displayCountry(countries);
+            a.displayCountryInContinentByPop(countries);
+
         } else if (userInput.equals("3")) {
 
             //Gets city
             ArrayList<city> cities = a.getCitiesInCountryByPop();
             a.displayCity(cities);
         }
-
 
 
         // Disconnect from database
@@ -139,17 +140,16 @@ public class app {
     }
 
 
-    public ArrayList<country> getCountryInContinentByPop() {
+    public ArrayList<country> getCountryInContinentByPop(){
 
         try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    " SELECT c.Name" +
+                    " SELECT c.Continent, c.Name" +
                             " FROM country c" +
-                            " WHERE c.Continent IN ('Africa')" +
-                            " ORDER BY c.Population DESC";
+                            " ORDER BY c.Continent, c.Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new country while valid.
@@ -160,17 +160,35 @@ public class app {
             while (rset.next()) {
                 country cnt = new country();
                 cnt.Name = rset.getString("Name");
+                cnt.Continent = rset.getString("Continent");
                 countries.add(cnt);
             }
             return countries;
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get country");
+            System.out.println("Failed to get data");
             return null;
         }
     }
 
+
+    public void displayCountryInContinentByPop(ArrayList<country> countries) {
+
+
+        System.out.printf("%-20s %-15s", "Continent", "Country");
+
+        if (countries != null) {
+
+            for (com.group.sem.country country : countries) {
+                String cnt_string =
+                        String.format("%-20s %-15s",
+                                country.Continent, country.Name);
+                System.out.println(cnt_string);
+
+            }
+        }
+    }
 
     /**
      *
@@ -220,8 +238,7 @@ public class app {
 
         }
     }
-
-
 }
+
 
 
