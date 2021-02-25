@@ -29,13 +29,19 @@ public class app {
 
             //Displays country
             a.displayCountry(countries);
-        } else if (userInput.equals("3")) {
+        } else if (userInput.equals("2")) {
 
             //Gets country
             ArrayList<country> countries = a.getCountryInContinentByPop();
 
             a.displayCountry(countries);
+        } else if (userInput.equals("3")) {
+
+            //Gets city
+            ArrayList<city> cities = a.getCitiesInCountryByPop();
+            a.displayCity(cities);
         }
+
 
 
         // Disconnect from database
@@ -189,8 +195,8 @@ public class app {
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Name" +
-                            " FROM country c" +
-                            " WHERE c.Continent IN ('Africa')" +
+                            " FROM city c" +
+                            " WHERE c.Country IN ('France')" +
                             " ORDER BY c.Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
