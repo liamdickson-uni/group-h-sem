@@ -18,7 +18,8 @@ public class app {
         Scanner mainObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Please Select an Option:\n " +
                 "1 - Get all Counties by Population \n " +
-                "2 - Get all countries in a specific continent \n");
+                "2 - Get all countries in a specific continent \n" +
+                "3 - Get all cities in a specific country \n");
 
         String userInput = "3";
 
