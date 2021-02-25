@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/use-case-diagram
+
+actor Marketing as "Marketing Manager"
+
+rectangle Database
+
+rectangle "World Database" {
+
+    usecase UC1 as "Get countries from continent,
+    sorted by largest
+    pop to smallest"
+
+    usecase UCa as "Print Queried Data"
+    Marketing - UC1
+    UC1 ..> UCa : include
+    UC1 - Database
+}
+@enduml
