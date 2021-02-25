@@ -194,10 +194,11 @@ public class app {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    " SELECT c.Name" +
-                            " FROM city c" +
-                            " WHERE c.Country IN ('France')" +
-                            " ORDER BY c.Population DESC";
+                    " SELECT cty.Name" +
+                            " FROM city cty" +
+                            " JOIN country cnt ON (cnt.Code = cty.CountryCode) " +
+                            "WHERE cnt.Name IN ('France')" +
+                            "ORDER BY cty.Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new country while valid.
