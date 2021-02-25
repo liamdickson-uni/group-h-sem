@@ -1,10 +1,10 @@
-# USE CASE: 4 Produce a Report on the Salary of Employees of a Given Role
+# USE CASE: 1 Produce a Report of All Countries in a Specified Continent
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As an *HR advisor* I want *to produce a report on the salary of employees of a given role* so that *I can support financial reporting of the organisation.*
+As a *Global Marketing Manager* I would like to see a list of all the countries in a continent organised by largest population to smallest so that I can identify the most to least populous countries in a continent. This would allow me to decide which nations it would be most advantageous to launch our products in first in each continental region.
 
 ### Scope
 
@@ -16,11 +16,11 @@ Primary task.
 
 ### Preconditions
 
-We know the role.  Database contains current employee salary data.
+We know the role.  Connected to world.sql which holds information about countries.
 
 ### Success End Condition
 
-A report is available for HR to provide to finance.
+A report is available for the Global Marketing Division to use.
 
 ### Failed End Condition
 
@@ -28,23 +28,21 @@ No report is produced.
 
 ### Primary Actor
 
-HR Advisor.
+Global Marketing Manager. 
 
 ### Trigger
 
-A request for finance information is sent to HR.
+This information is requested as part of our preparations for a new product launch.
 
 ## MAIN SUCCESS SCENARIO
 
-1. Finance request salary information for a given role.
-2. HR advisor captures name of the role to get salary information for.
-3. HR advisor extracts current salary information of all employees of the given role.
-4. HR advisor provides report to finance.
+1. Company Directors request this information to aid in product launch discussions.
+2. Marketing manager queries this information.
+3. Marketing manager uses this information to form part of report to company directors.
+4. Company Directors get this information from the report and can make a decision as needed.
 
 ## EXTENSIONS
-
-3. **Role does not exist**:
-    1. HR advisor informs finance no role exists.
+None.
 
 ## SUB-VARIATIONS
 
