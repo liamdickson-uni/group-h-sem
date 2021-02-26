@@ -18,11 +18,11 @@ public class app {
 
         Scanner mainObj = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Please Select an Option:\n " +
-                "1 - Get all Counties by Population \n " +
-                "2 - Get all countries in a specific continent \n" +
-                "3 - Get all cities in a specific country \n");
+                "1 - Get all Counties by Population\n " +
+                "2 - Get all countries in a specific continent\n" +
+                "3 - Get all cities in a specific country\n");
 
-        String userInput = "2";
+        String userInput = "1";
 
         if (userInput.equals("1")) {
             //Gets country
@@ -100,18 +100,21 @@ public class app {
         }
     }
 
+
+    /**
+     * These methods are used to get country data and to display country data.
+     */
     public ArrayList<country> getCountryByPopDesc() {
         try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    " SELECT c.Name" +
+                    " SELECT c.Name, c.Continent, c.Population" +
                             " FROM country c" +
                             " ORDER BY c.Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-
             // Return new country while valid.
             ArrayList<country> countries = new ArrayList<country>();
 
@@ -119,6 +122,7 @@ public class app {
             while (rset.next()) {
                 country cnt = new country();
                 cnt.Name = rset.getString("Name");
+                cnt.Population = rset.getInt("Population");
                 countries.add(cnt);
             }
             return countries;
@@ -133,11 +137,19 @@ public class app {
     public void displayCountry(ArrayList<country> countries) {
         if (countries != null) {
 
+            //Prints Column Header
+           System.out.printf("%-45s %-15s", "Country", "Population\n\n");
+
+           //Loops over all the countries in the database
             for (com.group.sem.country country : countries) {
-                System.out.println(country.Name);
+                String output = String.format("%-45s %-15s",
+                                    country.Name, country.Population);
+                System.out.println(output);
             }
         }
     }
+
+
 
 
     public ArrayList<country> getCountryInContinentByPop(){
@@ -189,6 +201,8 @@ public class app {
             }
         }
     }
+
+
 
     /**
      *
