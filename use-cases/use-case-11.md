@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a *National Finance Manager* I want to have access to a list of all the cities in a continent organised by largest population to smallest so that I can have a greater understanding of all cities contained within the country in an organised way. This will allow me to determine where the bulk of our profit in the country will be.
+As a *National Finance Manager* I want to have access to a list of all the cities in a country organised by largest population to smallest so that I can have a greater understanding of all cities contained within the country in an organised way. This will allow me to determine where the bulk of our profit in the country will be.
 
 ### Scope
 
@@ -20,7 +20,7 @@ We know the role.  Connected to world.sql which holds information about countrie
 
 ### Success End Condition
 
-A report is available for the Regional Finance Division to use.
+A report is available for the National Finance Division to use.
 
 ### Failed End Condition
 
