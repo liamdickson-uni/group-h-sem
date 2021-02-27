@@ -37,8 +37,8 @@ This information is requested as part of our preparations for a new product laun
 ## MAIN SUCCESS SCENARIO
 
 1. Company Directors request this information to aid in product launch discussions.
-2. Finance manager queries this information.
-3. Finance manager uses this information to form part of report to company directors.
+2. Global Finance manager queries this information.
+3. Global Finance manager uses this information to form part of report to company directors.
 4. Company Directors get this information from the report and can make a decision as needed.
 
 ## EXTENSIONS

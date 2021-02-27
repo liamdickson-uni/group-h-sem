@@ -1,10 +1,10 @@
-# USE CASE: 1 Produce a Report of All Countries in a Specified Continent
+# USE CASE: 12 Produce a Report of The top `N` populated cities in the world where `N` is provided by the user.
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As a *Global Marketing Manager* I would like to see a list of all the countries in a continent organised by largest population to smallest so that I can identify the most to least populous countries in a continent. This would allow me to decide which nations it would be most advantageous to launch our products in first in each continental region.
+As *global marketing manager* I want to see the top N populated cities in the world where N is provided by the user in order to understand where physical marketing would get the most people looking at it.
 
 ### Scope
 
@@ -28,7 +28,7 @@ No report is produced.
 
 ### Primary Actor
 
-Global Marketing Manager. 
+Global Marketing Manager.
 
 ### Trigger
 

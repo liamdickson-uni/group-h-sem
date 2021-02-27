@@ -1,10 +1,10 @@
-# USE CASE: 2 Produce a Report of All Cities in a Country
+# USE CASE: 7 Produce a Report of All Cities in a District
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As a *Logistics Manager* I want to have access to a list of all the cities in a district organised by largest population to smallest so that I can have a greater understanding of all cities contained within a district in an organised way. This will allow me to allocate resources as is required.
+As a *District Level Logistics Manager* I want to have access to a list of all the cities in a district organised by largest population to smallest so that I can have a greater understanding of all cities contained within a district in an organised way. This will allow me to allocate resources as is required.
 
 ### Scope
 
@@ -28,7 +28,7 @@ No report is produced.
 
 ### Primary Actor
 
-Logistics Manager.
+District Level Logistics Manager.
 
 ### Trigger
 
@@ -37,8 +37,8 @@ This information is requested as part of our preparations for a new product laun
 ## MAIN SUCCESS SCENARIO
 
 1. Company Directors request this information to aid in product launch discussions.
-2. Logistics manager queries this information.
-3. Logistics manager uses this information to form part of report to company directors.
+2. District Level Logistics manager queries this information.
+3. District Level Logistics manager uses this information to form part of report to company directors.
 4. Company Directors get this information from the report and can make a decision as needed.
 
 ## EXTENSIONS
