@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a *Regional Finance Manager* I want to have access to a list of all the cities in a region organised by largest population to smallest so that I can have a greater understanding of all cities contained within the continent in an organised way. This will allow me to determine where the bulk of our profit in the region will be.
+As a *Regional logistics manager* I want to see the top N populated cities in a region where N is provided by the user in order to aid in the regional placement of distribution centres.
 
 ### Scope
 
