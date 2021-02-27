@@ -4,7 +4,7 @@
 
 ### Goal in Context
 
-As a *Regional logistics manager* I want to see the top N populated cities in a region where N is provided by the user in order to aid in the regional placement of distribution centres.
+As a *regional finance manager* I want to have access to a list of all the cities in a region organised by largest populations to smallest so that I can appropriately calculate the average transaction value per person within cities of specific regions.
 
 ### Scope
 
@@ -20,7 +20,7 @@ We know the role.  Connected to world.sql which holds information about countrie
 
 ### Success End Condition
 
-A report is available for the Regional Finance Division to use.
+A report is available for the Regional finance Division to use.
 
 ### Failed End Condition
 
@@ -28,7 +28,7 @@ No report is produced.
 
 ### Primary Actor
 
-Regional Finance Manager.
+Regional finance Manager.
 
 ### Trigger
 
@@ -37,8 +37,8 @@ This information is requested as part of our preparations for a new product laun
 ## MAIN SUCCESS SCENARIO
 
 1. Company Directors request this information to aid in product launch discussions.
-2. Regional Finance manager queries this information.
-3. Regional Finance manager uses this information to form part of report to company directors.
+2. Regional finance manager queries this information.
+3. Regional finance manager uses this information to form part of report to company directors.
 4. Company Directors get this information from the report and can make a decision as needed.
 
 ## EXTENSIONS
