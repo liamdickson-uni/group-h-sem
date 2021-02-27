@@ -1,10 +1,6 @@
 package com.group.sem;
 
-import java.sql.*;
-
-import com.group.sem.app;
-
-public class language {
+public class Language {
 
 
     /**
