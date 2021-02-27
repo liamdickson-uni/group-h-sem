@@ -1,4 +1,4 @@
-# USE CASE: 2 Produce a Report of All Cities in a specified continent organised from largest to smallest
+# USE CASE: 9 Produce a Report of All Cities in a specified continent organised from largest to smallest
 
 ## CHARACTERISTIC INFORMATION
 
