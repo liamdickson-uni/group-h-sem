@@ -1,10 +1,10 @@
 ## Introduction
 
 #### Purpose
-The purpose of this application is to enable reporting on population data for the organisation. With the given information it is unclear who the primary user of the system is. So we will assume that everyone will use the system. An existing SQL Database exists with all the data that is required.
+The purpose of this application is to enable reporting on population data for Wildcat to enable them to target more customers with new products and marketing campaigns. The primary users of the system will be the marketing, logistics and finance team. Other departments will also be using the applications in specific scenarios  An existing SQL Database exists with all the data that is required.
 
 #### Solution Overview
-The application will allow a user to access a set list of reports and data. This will allow a more efficient summary of population data in order to complete tasks more effectively.
+The application will allow a user to access a set list of reports and data. This will allow a more efficient summary of population data in order to complete tasks such as a go to market plan within certain areas of the world.
 
 ## User Description
 We can assume that the application users will have limited technical knowledge. Users require pre-defined reports and data to be easily generated. 

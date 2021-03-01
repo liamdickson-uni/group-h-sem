@@ -6,7 +6,7 @@
 
     <groupId>com.group.sem</groupId>
     <artifactId>group-h-sem</artifactId>
-    <version>0.1.0.3</version>
+    <version>0.1.0.4</version>
 
     <dependencies>
         <dependency>
@@ -35,7 +35,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.group.sem.app</mainClass>
+                            <mainClass>com.group.sem.App</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
