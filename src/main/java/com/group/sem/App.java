@@ -19,7 +19,8 @@ public class App {
                 "2 - Get all countries in a specific continent\n" +
                 "3 - Get all countries in a specific region\n" +
                 "4 - Get all cities in a specific country\n" +
-                "5 - Get all cities ordered by population\n");
+                "5 - Get all cities ordered by population\n" +
+                "6 - Get all cities in a specific District ordered by population\n");
 
         String userInput = "3";
 
@@ -53,6 +54,13 @@ public class App {
         } else if (userInput.equals("5")) {
             //Gets all cities ordered by population largest to smallest
             ArrayList<City> cities = cc.getCitiesByPop();
+
+            //Displays list of selected query
+            a.displayCity(cities, userInput);
+
+        } else if (userInput.equals("6")) {
+            //Gets all cities in a specified district ordered by population largest to smallest
+            ArrayList<City> cities = cc.getCitiesInDistrictByPop();
 
             //Displays list of selected query
             a.displayCity(cities, userInput);
