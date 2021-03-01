@@ -104,4 +104,19 @@
             UC8 <- Database
 
 
+
+     'This represents use-case 9'
+             newpage
+             actor Logistics as "Continental Logistics Manager"
+             rectangle Database
+             usecase UCa as "Print Queried Data"
+             usecase UC9 as "Produce a report of all cities in
+                             a specified continent from
+                             largest to smallest"
+             top to bottom direction
+             Logistics -> UC9
+             UC9 ..> UCa : include
+             UC9<- Database
+
+
 @enduml
