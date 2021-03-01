@@ -5,6 +5,36 @@ import com.mysql.fabric.jdbc.FabricMySQLConnectionProxy;
 import java.sql.*;
 import java.util.ArrayList;
 
+
+/**
+ * <h1>Wildcat Bikes -- Global Market Information</h1>
+ * <h2>Group H -- SET08103</h2>
+ * <h3>By Tom McEachan (40356376), Liam Dickson (40456372), Greig Dunbar (40430731), Jack Burton (40456783) </h3>
+ *
+ * <h1>City.java</h1>
+ * City.java contains all of the variables and methods associated with the city table in the world.sql database.
+ * Variables in this class include:
+ * <ul>
+ *     <li>cityID</li>
+ *     <li>cityName</li>
+ *     <li>countryCode</li>
+ *     <li>cityDistrict</li>
+ *     <li>cityPopulation</li>
+ * </ul>
+ *
+ * Methods in this in this class include:
+ * <ul>
+ *     <li>getCitiesInCountryByPop()</li>
+ *     <li>getCitiesByPop()</li>
+ *     <li>getCitiesInCont()</li>
+ *     <li>getCitiesInDistrictByPop()</li>
+ *     <li>getCitiesInRegion()</li>
+ * </ul>
+ *
+ */
+
+
+
 /*
  * This class represents a city
  */

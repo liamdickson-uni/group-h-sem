@@ -3,6 +3,28 @@ package com.group.sem;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * <h1>Wildcat Bikes -- Global Market Information</h1>
+ * <h2>Group H -- SET08103</h2>
+ * <h3>By Tom McEachan (40356376), Liam Dickson (40456372), Greig Dunbar (40430731), Jack Burton (40456783) </h3>
+ *
+ *
+ * <h1>App.java</h1>
+ *
+ * App.java is the main class of this program and contains the main() method. This also contains all of the methods
+ * to display data for the end-user. It does this by querying the world.sql database, puts the data in a specified
+ * ArrayList which is printed to the console for the user to see. Methods in this class include:
+ *
+ * <ul>
+ *     <li>main()</li>
+ *     <li>connect() -- This connects to the database created by the world.sql file in Docker</li>
+ *     <li>disconnect() -- Stops the connection to the database</li>
+ *     <li>displayCountry() -- This is used to display all lists created by the methods in the Country.java class</li>
+ *     <li>displayCity() -- This is used to display all lists created by the methods in the City.java class</li>
+ * </ul>
+ *
+ */
+
 public class App {
 
     public static void main(String[] args) {
