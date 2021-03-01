@@ -160,7 +160,7 @@ public class City {
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    " SELECT cty.Name, cty.District" +
+                    " SELECT cty.District, cty.Name" +
                             " FROM city cty" +
                             "WHERE cty.District = 'Mendoza'" +
                             "ORDER BY cty.Population DESC";
@@ -173,6 +173,7 @@ public class City {
             // Check one is returned
             while (rset.next()) {
                 City cty = new City();
+                cty.cityDistrict = rset.getString("District");
                 cty.cityName = rset.getString("Name");
                 cities.add(cty);
             }

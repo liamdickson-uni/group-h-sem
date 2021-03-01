@@ -20,11 +20,10 @@ public class App {
                 "3 - Get all countries in a specific region\n" +
                 "4 - Get all cities in a specific country\n" +
                 "5 - Get all cities ordered by population\n" +
-                "6 - Get all cities in a specific District\n"+
+                "6 - Get all cities in a specific District\n" +
                 "7 - Get all cities in a specific continent\n" +
                 "8 - Get all cities in a region"
         );
-
 
 
         String userInput = "3";
@@ -35,6 +34,7 @@ public class App {
 
             //Displays list of selected query
             a.displayCountry(countries, userInput);
+
         } else if (userInput.equals("2")) {
             //Gets all countries by a selected continent ordered by population largest to smallest
             ArrayList<Country> countries = c.getCountryInContinentByPop();
@@ -63,9 +63,21 @@ public class App {
             //Displays list of selected query
             a.displayCity(cities, userInput);
 
-        } else if (userInput.equals("6")){
+        } else if (userInput.equals("6")) {
             //Gets all cities in a district ordered by population largest to smallest
             ArrayList<City> cities = cc.getCitiesInDistrictByPop();
+
+            //Displays list of selected query
+            a.displayCity(cities, userInput);
+        } else if (userInput.equals("7")) {
+
+            ArrayList<City> cities = cc.getCitiesInCont();
+
+            a.displayCity(cities, userInput);
+
+        } else if (userInput.equals("8")) {
+            //Get all cities in a region ordered by population largest to smallest
+            ArrayList<City> cities = cc.getCitiesInRegion();
 
             //Displays list of selected query
             a.displayCity(cities, userInput);
@@ -129,6 +141,7 @@ public class App {
 
     public void displayCountry(ArrayList<Country> countries, String userInput) {
 
+        //Displays countries by population
         if (userInput.equals("1")) {
             if (countries != null) {
 
@@ -141,7 +154,9 @@ public class App {
                     System.out.println(output);
                 }
             }
-        } else if (userInput.equals("2")) {
+        }
+        //Displays countries in a continent
+        else if (userInput.equals("2")) {
 
             //Prints Column Header
             System.out.printf("%-20s %-15s", "Continent", "Country\n");
@@ -153,7 +168,9 @@ public class App {
 
                 }
             }
-        } else if (userInput.equals("3")) {
+        }
+        //Displays countries in region
+        else if (userInput.equals("3")) {
 
             //Prints Column Header
             System.out.printf("%-20s %-15s %-15s", "Region", "Country", "Population\n");
@@ -172,10 +189,11 @@ public class App {
 
     public void displayCity(ArrayList<City> cities, String userInput) {
 
-        if (userInput.equals("3")) {
+        //Displays cities in a country by population
+        if (userInput.equals("4")) {
 
             //Prints Column Header
-            System.out.printf("%-20s", "City\n");
+            System.out.println("City\n");
 
             if (cities != null) {
 
@@ -184,7 +202,9 @@ public class App {
                 }
             }
 
-        } else if (userInput.equals("4")) {
+        }
+        //Displays all cities by population
+        else if (userInput.equals("5")) {
 
             //Prints Column Header
             System.out.printf("%-20s %-15s", "City", "Population\n");
@@ -198,11 +218,44 @@ public class App {
             }
 
         }
+        //Displays cities in a district
+        else if (userInput.equals("6")) {
 
+            //Prints Column Header
+            System.out.printf("%-20s %-15s", "District", "City\n");
 
+            if (cities != null) {
+
+                for (City city : cities) {
+                    String output = String.format("%-45s %-15s", city.cityDistrict, city.cityName);
+                    System.out.println(output);
+                }
+            }
+        }
+        //Displays cities in a specified continent
+        else if (userInput.equals("7")) {
+
+            System.out.println("City\n");
+
+            if (cities != null) {
+
+                for (City city : cities) {
+                    System.out.println(city.cityName);
+                }
+
+            }
+        }
+        //Gets cities in a specified region
+        else if (userInput.equals("8")) {
+
+            System.out.println("City\n");
+
+            if (cities != null) {
+
+                for (City city : cities) {
+                    System.out.println(city.cityName);
+                }
+            }
+        }
     }
-
 }
-
-
-
