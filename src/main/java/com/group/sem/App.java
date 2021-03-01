@@ -14,13 +14,14 @@ public class App {
         // Connect to database
         a.connect();
 
-        System.out.println("Please Select an Option:\n " +
+        System.out.println(
+                "Please Select an Option:\n " +
                 "1 - Get all counties by population\n " +
                 "2 - Get all countries in a specific continent\n" +
                 "3 - Get all countries in a specific region\n" +
                 "4 - Get all cities in a specific country\n" +
                 "5 - Get all cities ordered by population\n" +
-                "7 - Get all cities in a specific continent\n");+
+                "7 - Get all cities in a specific continent\n" +
                 "8 - Get all cities in a region"
         );
 
