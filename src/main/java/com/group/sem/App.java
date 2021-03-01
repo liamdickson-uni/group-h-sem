@@ -19,9 +19,10 @@ public class App {
                 "2 - Get all countries in a specific continent\n" +
                 "3 - Get all countries in a specific region\n" +
                 "4 - Get all cities in a specific country\n" +
-                "5 - Get all cities ordered by population\n");
+                "5 - Get all cities ordered by population\n" +
+                "7 - Get all cities in a specific continent\n");
 
-        String userInput = "3";
+        String userInput = "7";
 
         if (userInput.equals("1")) {
             //Gets all countries ordered by population largest to smallest
@@ -55,6 +56,12 @@ public class App {
             ArrayList<City> cities = cc.getCitiesByPop();
 
             //Displays list of selected query
+            a.displayCity(cities, userInput);
+
+        } else if (userInput.equals("7")){
+
+            ArrayList<City> cities = cc.getCitiesInCont();
+
             a.displayCity(cities, userInput);
 
         }
@@ -185,6 +192,16 @@ public class App {
                 }
             }
 
+        } else if (userInput.equals("7")){
+
+            System.out.printf("City\n");
+
+            if (cities != null) {
+
+                for (City city : cities) {
+                    System.out.println(city.cityName);
+                }
+            }
         }
 
 
