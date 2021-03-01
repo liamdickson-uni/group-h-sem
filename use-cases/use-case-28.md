@@ -1,10 +1,10 @@
-# USE CASE: 27 Produce a Report of the number of people who speak Chinese and the percentage of the total population that speaks Chinese
+# USE CASE: 28 Produce a Report of the number of people who speak English and the percentage of the total population that speaks English
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As a *marketing manager* I want to see the number of people who speak Chinese and the percentage of the total population that speaks Chinese so that I can prioritise marketing literature in certain languages.
+As a *marketing manager* I want to see the number of people who speak English and the percentage of the total population that speaks English so that I can prioritise marketing literature in certain languages.
 
 ### Scope
 
