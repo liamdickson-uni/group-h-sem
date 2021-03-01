@@ -149,6 +149,43 @@ public class City {
 
         }
     }
+
+
+
+    public ArrayList<City> getCitiesInDistrictByPop() {
+
+        try {
+            // Create an SQL statement
+            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    " SELECT cty.Name, cty.District" +
+                            " FROM city cty" +
+                            "WHERE cty.District = 'Mendoza'" +
+                            "ORDER BY cty.Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new country while valid.
+
+            ArrayList<City> cities = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityName = rset.getString("Name");
+                cities.add(cty);
+            }
+            return cities;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities in selected country");
+            return null;
+
+        }
+    }
+
     public ArrayList<City> getCitiesInRegion() {
 
         System.out.println("Which Region would you like to see cities in");
@@ -187,36 +224,4 @@ public class City {
 
         }
     }
-
-    public ArrayList<City> getCitiesInDistrictByPop() {
-
-        try {
-            // Create an SQL statement
-            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-            Statement stmt = con.createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    " SELECT cty.Name, cty.District" +
-                            " FROM city cty" +
-                            "WHERE cty.District = 'Mendoza'"
-                            "ORDER BY cty.Population DESC";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new country while valid.
-
-            ArrayList<City> cities = new ArrayList<>();
-
-            // Check one is returned
-            while (rset.next()) {
-                City cty = new City();
-                cty.cityName = rset.getString("Name");
-                cities.add(cty);
-            }
-            return cities;
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get cities in selected District");
-            return null;
-        }
-    }
+}

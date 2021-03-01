@@ -20,9 +20,11 @@ public class App {
                 "3 - Get all countries in a specific region\n" +
                 "4 - Get all cities in a specific country\n" +
                 "5 - Get all cities ordered by population\n" +
+                "6 - Get all cities in a specific District\n"+
                 "7 - Get all cities in a specific continent\n" +
                 "8 - Get all cities in a region"
         );
+
 
 
         String userInput = "3";
@@ -61,6 +63,12 @@ public class App {
             //Displays list of selected query
             a.displayCity(cities, userInput);
 
+        } else if (userInput.equals("6")){
+            //Gets all cities in a district ordered by population largest to smallest
+            ArrayList<City> cities = cc.getCitiesInDistrictByPop();
+
+            //Displays list of selected query
+            a.displayCity(cities, userInput);
         }
 
         // Disconnect from database
