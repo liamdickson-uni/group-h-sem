@@ -35,7 +35,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.group.sem.app</mainClass>
+                            <mainClass>com.group.sem.App</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
