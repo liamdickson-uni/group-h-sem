@@ -1,38 +1,68 @@
 @startuml
 'https://plantuml.com/use-case-diagram
 
-
-actor Marketing as "Marketing Manager"
-actor Logistics as "Global Logistics Manager"
-actor Finance as "Regional Finance Manager"
-
-rectangle Database
-
-
-package "World Data System" {
-
+    'This represents use-case 1'
+    actor Marketing as "Marketing Manager"
+    rectangle Database
     usecase UCa as "Print Queried Data"
-
     usecase UC1 as "Get countries from continent,
-    sorted by largest
-    pop to smallest"
-
-    usecase UC2 as "Produce a report of all
-    countries in the world"
-
-    usecase UC3 as "Produce a report of all
-    countries in a region"
-
+                    sorted by largest
+                    pop to smallest"
     top to bottom direction
-    Marketing - UC1
+    Marketing -> UC1
     UC1 ..> UCa : include
-    UC1 - Database
-    Logistics - UC2
-    UC2 ..> UCa : include
-    UC2 - Database
-    Finance - UC3
-    UC3 ..> UCa : include
-    UC3 - Database
+    UC1 <- Database
 
-}
+
+    'This represents use-case 2'
+    newpage
+    actor Logistics as "Global Logistics Manager"
+    rectangle Database
+    usecase UCa as "Print Queried Data"
+    usecase UC2 as "Produce a report of all
+                    countries in the world"
+     top to bottom direction
+     Logistics -> UC2
+     UC2 ..> UCa : include
+     UC2 <- Database
+
+
+    'This represents use-case 3'
+    newpage
+    actor Finance as    "Regional Finance Manager"
+    rectangle Database
+    usecase UCa as "Print Queried Data"
+    usecase UC3 as "Produce a report of all
+                    countries in a region"
+    top to bottom direction
+    Finance -> UC3
+    UC3 ..> UCa :include
+    UC3 <- Database
+
+
+    'This represents use-case 4'
+    newpage
+    actor Finance as "Global Finance Manager"
+    rectangle Database
+    usecase UCa as "Print Queried Data"
+    usecase UC4 as "Produce report of the top N
+                    populated countries in the world"
+    top to bottom direction
+    Finance -> UC4
+    UC4 ..> UCa : include
+    UC4 <- Database
+
+
+    'This represents use-case 5'
+    newpage
+    actor Finance as "Continental Finance Manager"
+    rectangle Database
+    usecase UCa as "Print Queried Data"
+    usecase UC5 as "Produce a report of the top N
+                 populated countries in a continent"
+    top to bottom direction
+    Finance -> UC5
+    UC5 ..> UCa : include
+    UC5 <- Database
+
 @enduml
