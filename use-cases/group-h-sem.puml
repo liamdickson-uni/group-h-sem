@@ -64,5 +64,5 @@
     Finance -> UC5
     UC5 ..> UCa : include
     UC5 <- Database
-    
+
 @enduml
