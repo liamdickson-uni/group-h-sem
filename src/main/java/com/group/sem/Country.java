@@ -5,37 +5,38 @@ import java.util.ArrayList;
 
 
 /**
- * <h1>Wildcat Bikes -- Global Market Information</h1>
- * <h2>Group H -- SET08103</h2>
- * <h3>By Tom McEachan (40356376), Liam Dickson (40456372), Greig Dunbar (40430731), Jack Burton (40456783) </h3>
+ * Wildcat Bikes -- Global Market Information
+ * Group H -- SET08103
+ * By Tom McEachan (40356376), Liam Dickson (40456372), Greig Dunbar (40430731), Jack Burton (40456783)
  *
- * <h1>Country.java</h1>
+ * Country.java
  * Country.java contains all of the variables and methods associated with the country table in the world.sql database.
  * Variables in this class include:
- * <ul>
- *     <li>code</li>
- *     <li>name</li>
- *     <li>continent</li>
- *     <li>region</li>
- *     <li>surfaceArea</li>
- *     <li>population</li>
- *     <li>lifeExpectancy0</li>
- *     <li>GNP</li>
- *     <li>GNPOld</li>
- *     <li>localName</li>
- *     <li>governmentForm</li>
- *     <li>headOfState</li>
- *     <li>capital</li>
- *     <li>code2</li>
- * </ul>
+ *
+ *     code
+ *     name
+ *     continent
+ *     region
+ *     surfaceArea
+ *     population
+ *     lifeExpectancy
+ *     GNP
+ *     GNPOld
+ *     localName
+ *     governmentForm
+ *     headOfState
+ *     capital
+ *     code2
+ *
  *
  * Methods in this in this class include:
- * <ul>
- *     <li>getCountriesByPopDesc()</li>
- *     <li>getCountryInContinentByPop()</li>
- *     <li>getCountryInRegionByPop()</li>
- * </ul>
+ *
+ *     getCountriesByPopDesc()
+ *     getCountryInContinentByPop()
+ *     getCountryInRegionByPop()
+ *
  */
+
 
 
 /*
@@ -107,15 +108,20 @@ public class Country {
     /*
      * Represents Capital
      */
-    public int Capital;
+    public String Capital;
 
     /*
      * Represents Code2
      */
     public String code2;
 
+
+
+
+
+
     /*
-     * These methods are used to get city data and to display city data.
+     * These methods are used to get country data and to display country data.
      */
     private Connection con = null;
 

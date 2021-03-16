@@ -2,6 +2,7 @@ package com.group.sem;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.EmptyStackException;
 
 /**
  * Wildcat Bikes -- Global Market Information
@@ -172,7 +173,6 @@ public class App {
     public void displayCountry(ArrayList<Country> countries, String userInput) {
 
         try {
-
             //Displays countries by population
             if (userInput.equals("1")) {
                 if (countries != null) {
@@ -220,12 +220,13 @@ public class App {
 
         catch (Exception e)
         {
-            if (countries == null && userInput == null) {
+            if (userInput == null && countries == null) {
                 System.out.println("No Countries");
             }
         }
-
     }
+
+
 
     /**
      *
