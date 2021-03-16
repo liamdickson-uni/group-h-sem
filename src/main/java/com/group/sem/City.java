@@ -139,6 +139,8 @@ public class City {
 
         }
     }
+
+
     public ArrayList<City> getCitiesInCont() {
 
         System.out.println("Which continent would you like to see cities in");

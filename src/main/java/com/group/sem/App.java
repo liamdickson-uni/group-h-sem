@@ -35,7 +35,7 @@ public class App {
         City cc = new City();
 
         // Connect to database
-        a.connect();
+        a.connect("localhost: 33060");
 
         System.out.println("Please Select an Option:\n " +
                 "1 - Get all counties by population\n " +
@@ -120,10 +120,11 @@ public class App {
     /**
      * Connect to the MySQL database.
      */
-    public void connect() {
+    public void connect(String location) {
+
         try {
             // Load Database driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.out.println("Could not load SQL driver");
             System.exit(-1);
@@ -136,7 +137,7 @@ public class App {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             } catch (SQLException sqle) {
@@ -166,9 +167,9 @@ public class App {
 
 
     /**
-     *
-     * @param countries
-     * @param userInput
+     * Prints a queried list of countries
+     * @param countries The list of countries
+     * @param userInput The user input
      */
     public void displayCountry(ArrayList<Country> countries, String userInput) {
 
