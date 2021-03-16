@@ -35,7 +35,7 @@ public class App {
         City cc = new City();
 
         // Connect to database
-        a.connect("localhost: 33060");
+        a.connect("localhost: 3306");
 
         System.out.println("Please Select an Option:\n " +
                 "1 - Get all counties by population\n " +
