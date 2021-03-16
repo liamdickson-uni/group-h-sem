@@ -171,46 +171,57 @@ public class App {
      */
     public void displayCountry(ArrayList<Country> countries, String userInput) {
 
-        //Displays countries by population
-        if (userInput.equals("1")) {
-            if (countries != null) {
+        try {
+
+            //Displays countries by population
+            if (userInput.equals("1")) {
+                if (countries != null) {
+
+                    //Prints Column Header
+                    System.out.printf("%-45s %-15s", "Country", "Population\n");
+
+                    //Loops over all the countries in the database
+                    for (Country country : countries) {
+                        String output = String.format("%-45s %-15s", country.Name, country.Population);
+                        System.out.println(output);
+                    }
+                }
+            }
+            //Displays countries in a continent
+            else if (userInput.equals("2")) {
 
                 //Prints Column Header
-                System.out.printf("%-45s %-15s", "Country", "Population\n");
+                System.out.printf("%-20s %-15s", "Continent", "Country\n");
 
-                //Loops over all the countries in the database
-                for (Country country : countries) {
-                    String output = String.format("%-45s %-15s", country.Name, country.Population);
-                    System.out.println(output);
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s %-15s", country.Continent, country.Name);
+                        System.out.println(output);
+
+                    }
                 }
             }
-        }
-        //Displays countries in a continent
-        else if (userInput.equals("2")) {
+            //Displays countries in region
+            else if (userInput.equals("3")) {
 
-            //Prints Column Header
-            System.out.printf("%-20s %-15s", "Continent", "Country\n");
+                //Prints Column Header
+                System.out.printf("%-20s %-15s %-15s", "Region", "Country", "Population\n");
 
-            if (countries != null) {
-                for (Country country : countries) {
-                    String output = String.format("%-20s %-15s", country.Continent, country.Name);
-                    System.out.println(output);
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s %-15s %-15s", country.Region, country.Name, country.Population);
+                        System.out.println(output);
 
+                    }
                 }
             }
+
         }
-        //Displays countries in region
-        else if (userInput.equals("3")) {
 
-            //Prints Column Header
-            System.out.printf("%-20s %-15s %-15s", "Region", "Country", "Population\n");
-
-            if (countries != null) {
-                for (Country country : countries) {
-                    String output = String.format("%-20s %-15s %-15s", country.Region, country.Name, country.Population);
-                    System.out.println(output);
-
-                }
+        catch (Exception e)
+        {
+            if (countries == null && userInput == null) {
+                System.out.println("No Countries");
             }
         }
 
