@@ -1,7 +1,5 @@
 package com.group.sem;
 
-import com.mysql.fabric.jdbc.FabricMySQLConnectionProxy;
-
 import java.sql.*;
 import java.util.ArrayList;
 
