@@ -16,12 +16,20 @@ public class AppTests
         app = new App();
     }
 
+
+    /**
+     * Tests what happens when displayCountry() Is Null
+     */
     @Test
     void displayCountryTestNull()
     {
         app.displayCountry(null, null);
     }
 
+
+    /**
+     * Tests what happens when displayCountry is empty
+     */
     @Test
     void displayCountryTestEmpty()
     {
@@ -29,7 +37,9 @@ public class AppTests
         app.displayCountry(countries, "0");
     }
 
-
+    /**
+     * Tests what happens when displayCountry() contains a null
+     */
     @Test
     void displayCountryTestContainsNull()
     {

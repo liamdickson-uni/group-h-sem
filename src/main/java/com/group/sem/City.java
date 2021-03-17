@@ -5,29 +5,27 @@ import java.util.ArrayList;
 
 
 /**
- * <h1>Wildcat Bikes -- Global Market Information</h1>
- * <h2>Group H -- SET08103</h2>
- * <h3>By Tom McEachan (40356376), Liam Dickson (40456372), Greig Dunbar (40430731), Jack Burton (40456783) </h3>
+ * Wildcat Bikes -- Global Market Information
+ * Group H -- SET08103
+ * By Tom McEachan (40356376), Liam Dickson (40456372), Greig Dunbar (40430731), Jack Burton (40456783)
  *
- * <h1>City.java</h1>
+ * City.java
  * City.java contains all of the variables and methods associated with the city table in the world.sql database.
  * Variables in this class include:
- * <ul>
- *     <li>cityID</li>
- *     <li>cityName</li>
- *     <li>countryCode</li>
- *     <li>cityDistrict</li>
- *     <li>cityPopulation</li>
- * </ul>
+ *
+ *     cityID
+ *     cityName
+ *     countryCode
+ *     cityDistrict
+ *     cityPopulation
  *
  * Methods in this in this class include:
- * <ul>
- *     <li>getCitiesInCountryByPop()</li>
- *     <li>getCitiesByPop()</li>
- *     <li>getCitiesInCont()</li>
- *     <li>getCitiesInDistrictByPop()</li>
- *     <li>getCitiesInRegion()</li>
- * </ul>
+ * <
+ *     getCitiesInCountryByPop()
+ *     getCitiesByPop()
+ *     getCitiesInCont()
+ *     getCitiesInDistrictByPop()
+ *     getCitiesInRegion()
  *
  */
 
@@ -36,14 +34,12 @@ import java.util.ArrayList;
 /*
  * This class represents a city
  */
-
 public class City {
-
-
     /*
      * Represents a City
      */
     public String cityID;
+
 
     /*
      * Represents a City Name
@@ -71,14 +67,15 @@ public class City {
     /*
      * These methods are used to get city data and to display city data.
      */
-    private Connection con = null;
+
+
+    App app = new App();
 
     public ArrayList<City> getCitiesInCountryByPop() {
 
         try {
             // Create an SQL statement
-            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-            Statement stmt = con.createStatement();
+            Statement stmt = app.connect().createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.Name" +
@@ -112,8 +109,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-            Statement stmt = con.createStatement();
+            Statement stmt = app.connect().createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Name, c.Population FROM city c ORDER BY c.Population DESC";
@@ -149,8 +145,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-            Statement stmt = con.createStatement();
+            Statement stmt = app.connect().createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.Name" +
@@ -186,8 +181,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-            Statement stmt = con.createStatement();
+            Statement stmt = app.connect().createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.District, cty.Name" +
@@ -225,8 +219,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-            Statement stmt = con.createStatement();
+            Statement stmt = app.connect().createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.Name" +
@@ -234,6 +227,7 @@ public class City {
                             " JOIN country cnt ON (cnt.Code = cty.CountryCode) " +
                             " WHERE cnt.Region IN ('" + regInput + "')" +
                             " ORDER BY cty.Population DESC";
+
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new country while valid.

@@ -118,18 +118,17 @@ public class Country {
 
 
 
-
+    App app = new App();
 
     /*
      * These methods are used to get country data and to display country data.
      */
-    private Connection con = null;
+
 
     public ArrayList<Country> getCountryByPopDesc() {
         try {
             // Create an SQL statement
-            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-            Statement stmt = con.createStatement();
+            Statement stmt = app.connect().createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Name, c.Continent, c.Population" +
@@ -160,8 +159,7 @@ public class Country {
 
         try {
             // Create an SQL statement
-            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-            Statement stmt = con.createStatement();
+            Statement stmt = app.connect().createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Continent, c.Name" +
@@ -193,8 +191,7 @@ public class Country {
 
         try {
             // Create an SQL statement
-            con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
-            Statement stmt = con.createStatement();
+            Statement stmt = app.connect().createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Region, c.Name, c.Population" +
