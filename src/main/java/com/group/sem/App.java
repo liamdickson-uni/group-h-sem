@@ -33,12 +33,19 @@ public class App {
     public static void main(String[] args) {
         // Create new Application
         App a = new App();
+
+        //Create new country
         Country c = new Country();
+
+        //Create new City
         City cc = new City();
 
-        // Connect to database
-        a.connect();
-
+        // Connect to the database
+        if (args.length < 1) {
+            a.connect("localhost:33060");
+        } else {
+            a.connect(args[0]);
+        }
 
 
         System.out.println("Please select of the options:\n\n " +
@@ -128,7 +135,7 @@ public class App {
     /**
      * Connect to the MySQL database.
      */
-    public Connection connect() {
+    public Connection connect(String location) {
 
         if(con == null) {
         try {
@@ -146,7 +153,7 @@ public class App {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             } catch (SQLException sqle) {
