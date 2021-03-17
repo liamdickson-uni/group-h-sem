@@ -1,8 +1,10 @@
 package com.group.sem;
 
+import java.io.InputStreamReader;
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.EmptyStackException;
+import java.util.Scanner;
+
 
 /**
  * Wildcat Bikes -- Global Market Information
@@ -31,13 +33,19 @@ public class App {
     public static void main(String[] args) {
         // Create new Application
         App a = new App();
+
+        //Create new country
         Country c = new Country();
+
+        //Create new City
         City cc = new City();
 
-        // Connect to database
+        // Connect to the database
         a.connect();
 
-        System.out.println("Please Select an Option:\n " +
+
+
+        System.out.println("Please select of the options:\n\n " +
                 "1 - Get all counties by population\n " +
                 "2 - Get all countries in a specific continent\n" +
                 "3 - Get all countries in a specific region\n" +
@@ -45,12 +53,16 @@ public class App {
                 "5 - Get all cities ordered by population\n" +
                 "6 - Get all cities in a specific District\n" +
                 "7 - Get all cities in a specific continent\n" +
-                "8 - Get all cities in a region"
+                "8 - Get all cities in a region\n\n"
         );
 
 
-        String userInput = "3";
 
+
+        Scanner in = new Scanner(System.in);
+        System.out.println("Select your option:\n");
+        String userInput = in.nextLine();
+        System.out.println("You have selected " + userInput + "  as your option.\n\n Your results are:\n\n");
 
         if (userInput.equals("1")) {
             //Gets all countries ordered by population largest to smallest
@@ -120,10 +132,12 @@ public class App {
     /**
      * Connect to the MySQL database.
      */
-    public void connect() {
+    public Connection connect() {
+
+        if(con == null) {
         try {
             // Load Database driver
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.out.println("Could not load SQL driver");
             System.exit(-1);
@@ -136,7 +150,7 @@ public class App {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             } catch (SQLException sqle) {
@@ -144,8 +158,10 @@ public class App {
                 System.out.println(sqle.getMessage());
             } catch (InterruptedException ie) {
                 System.out.println("Thread interrupted? Should not happen.");
+                }
             }
         }
+        return con;
     }
 
     /**
@@ -166,9 +182,9 @@ public class App {
 
 
     /**
-     *
-     * @param countries
-     * @param userInput
+     * Prints a queried list of countries
+     * @param countries The list of countries
+     * @param userInput The user input
      */
     public void displayCountry(ArrayList<Country> countries, String userInput) {
 
