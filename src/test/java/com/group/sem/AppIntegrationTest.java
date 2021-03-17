@@ -15,8 +15,6 @@ public class AppIntegrationTest {
     {
         app = new App();
         app.connect();
-
-
     }
 
     @Test
