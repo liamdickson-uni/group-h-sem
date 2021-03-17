@@ -1,20 +1,21 @@
-sudo: false
 language: java
+
+sudo: false
 
 addons:
   hosts:
-    -db
+    - db
 
 services:
   - docker
 
 install:
-  -docker build -t database db/.
-  -docker run --rm -d -e MYSQL_ROOT_PASSWORD=example -p 33060:3306
-  -mvn install -DskipTests=true - Dmaven.javadoc.skip=true -B -V
+  - docker build -t database db/.
+  - docker run --rm -d -e MYSQL_ROOT_PASSWORD=example -p 33060:3306 database
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 before_script:
-    -mvn clean
+  - mvn clean
 
 script:
-    -mvn test -Dtest=com.group.sem.AppTest
+  - mvn test -Dtest=com.napier.sem.AppTests
