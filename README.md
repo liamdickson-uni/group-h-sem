@@ -16,6 +16,7 @@ Master Build Status [![Build Status](https://travis-ci.com/liamdickson-uni/group
 Develop Build Status [![Build Status](https://travis-ci.com/liamdickson-uni/group-h-sem.svg?token=xQzyCZ8D4F9YGcAHWLNA&branch=develop)](https://travis-ci.com/liamdickson-uni/group-h-sem) \
 License ![LICENSE](https://img.shields.io/github/license/liamdickson-uni/group-h-sem) \
 Release [![Releases](https://img.shields.io/github/release/liamdickson-uni/group-h-sem/all.svg?style=flat-square)](https://github.com/liamdickson-uni/group-h-sem/releases)
+[![codecov](https://codecov.io/gh/liamdickson-uni/group-h-sem/branch/master/graph/badge.svg?token=ALE7Q144IH)](https://codecov.io/gh/liamdickson-uni/group-h-sem)
 
 
 ## Developed by
