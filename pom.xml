@@ -37,7 +37,7 @@
                     <finalName>groupHSemMethods</finalName>
                     <archive>
                         <manifest>
-                            <mainClass>com.napier.sem.App</mainClass>
+                            <mainClass>com.group.sem.App</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
