@@ -41,11 +41,8 @@ public class App {
         City cc = new City();
 
         // Connect to the database
-        if (args.length < 1) {
-            a.connect("localhost:33060");
-        } else {
-            a.connect(args[0]);
-        }
+        a.connect("localhost:33060");
+
 
 
         System.out.println("Please select of the options:\n\n " +
