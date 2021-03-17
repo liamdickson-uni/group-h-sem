@@ -26,7 +26,7 @@ jobs:
       script: mvn test -Dtest=com.group.sem.AppTests
     - stage: integreation tests
       jdk: oraclejdk11
-      script: echo "Integration Tests"
+      script: mvn test -Dtest=com.group.sem.AppIntegrationTest
     - stage: deploy
       install: skip
       jdk: oraclejdk11
