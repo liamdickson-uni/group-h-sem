@@ -41,7 +41,7 @@ public class App {
         City cc = new City();
 
         // Connect to the database
-        a.connect("localhost:33060");
+        a.connect();
 
 
 
@@ -132,7 +132,7 @@ public class App {
     /**
      * Connect to the MySQL database.
      */
-    public Connection connect(String location) {
+    public Connection connect() {
 
         if(con == null) {
         try {
@@ -150,7 +150,7 @@ public class App {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
             } catch (SQLException sqle) {
