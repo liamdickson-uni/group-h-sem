@@ -12,5 +12,5 @@ public class LanguageTests {
     {
        language = new Language();
     }
-    
+
 }
