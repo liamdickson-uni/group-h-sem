@@ -15,8 +15,4 @@ public class CityTests {
         city = new City();
     }
 
-    @Test
-    void getCitiesInCountry(){
-        city.getCitiesInCountryByPop();
-    }
 }
