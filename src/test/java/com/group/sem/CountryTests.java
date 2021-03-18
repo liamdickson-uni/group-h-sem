@@ -4,10 +4,10 @@ package com.group.sem;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.rmi.server.ExportException;
+
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 
 public class CountryTests {
@@ -39,6 +39,10 @@ public class CountryTests {
     @Test
     void getCountryInContinentByPopThrowsException()
     {
-
+            ArrayList<Country> countries = country.getCountryInContinentByPop();
+            countries.clear();
+            assertNull(countries);
     }
+
+
 }
