@@ -3,12 +3,6 @@ package com.group.sem;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.sql.ResultSet;
-import java.sql.Statement;
-import java.util.ArrayList;
-
-
-
 public class CityTests {
 
     static City city;
@@ -18,13 +12,27 @@ public class CityTests {
         city = new City();
     }
 
+    /**
+     * Tests that getCitiesByPop() runs with out errors
+     */
     @Test
-    void getCitiesInCountry() {
+    void getCitiesByPopTest() {
+        city.getCitiesByPop();
+    }
+
+    /**
+     * Tests that getCitiesInCountryByPop() runs with out errors
+     */
+    @Test
+    void getCitiesInCountryByPopTest() {
         city.getCitiesInCountryByPop();
     }
 
+    /**
+     * Tests that getCitiesInDistrictByPop() runs with out errors
+     */
     @Test
-    void getCitiesInDistrict() {
+    void getCitiesInDistrictByPopTest() {
         city.getCitiesInDistrictByPop();
     }
 }

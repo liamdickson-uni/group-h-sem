@@ -82,7 +82,7 @@ public class App {
             //Displays list of selected query
             a.displayCountry(countries, userInput);
 
-        } else if (userInput.equals("4")) {
+        } else if (userInput.equals("5")) {
             //Gets all cities in a selected country ordered by population largest to smallest
             ArrayList<City> cities = cc.getCitiesInCountryByPop();
 

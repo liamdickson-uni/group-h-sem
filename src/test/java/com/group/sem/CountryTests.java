@@ -12,18 +12,28 @@ public class CountryTests {
         country = new Country();
     }
 
+    /**
+     * Tests that getCountryByPopDesc() runs with out errors
+     */
     @Test
     void getCountryPopByDescTest() {
-      
+        country.getCountryByPopDesc();
     }
 
-    void className()
-    {
-
-    }
-
+    /**
+     * Tests that getCountryInContinentByPop() runs with out errors
+     */
     @Test
-    void getCountryInRegionByPopNullTest() {
+    void getCountryInContinentByPopTest()
+    {
+        country.getCountryInContinentByPop();
+    }
+
+    /**
+     * Tests that getCountryInRegionByPop() runs with out errors
+     */
+    @Test
+    void getCountryInRegionByPopTest() {
         country.getCountryInRegionByPop();
     }
 }
