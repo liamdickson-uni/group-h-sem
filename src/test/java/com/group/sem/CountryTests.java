@@ -2,6 +2,7 @@ package com.group.sem;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
 public class CountryTests {
 
     static Country country;
@@ -12,8 +13,13 @@ public class CountryTests {
     }
 
     @Test
-    void getCountryPopByDescTest()
-    {
+    void getCountryPopByDescTest() {
 
+
+    }
+
+    @Test
+    void getCountryInRegionByPopNullTest() {
+        country.getCountryInRegionByPop();
     }
 }

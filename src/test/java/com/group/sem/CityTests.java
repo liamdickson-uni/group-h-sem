@@ -14,11 +14,17 @@ public class CityTests {
     static City city;
 
     @BeforeAll
-    static void init()
-    {
+    static void init() {
         city = new City();
     }
 
-    void getCitiesInCountry(){
+    @Test
+    void getCitiesInCountry() {
         city.getCitiesInCountryByPop();
-    }}
+    }
+
+    @Test
+    void getCitiesInDistrict() {
+        city.getCitiesInDistrictByPop();
+    }
+}
