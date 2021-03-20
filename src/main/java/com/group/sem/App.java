@@ -52,14 +52,15 @@ public class App {
                 "5 - Get all cities ordered by population\n" +
                 "6 - Get all cities in a specific District\n" +
                 "7 - Get all cities in a specific continent\n" +
-                "8 - Get all cities in a region\n"
+                "8 - Get all cities in a region\n" +
+                "9 - Get the population in a district\n"
         );
 
 
         Scanner in = new Scanner(System.in);
         System.out.println("Select your option:");
         String userInput = in.nextLine();
-        System.out.println("You have selected " + userInput + "  as your option.\n Your results are:\n\n");
+        System.out.println("You have selected " + userInput + " as your option.\n Your results are:\n");
 
         if (userInput.equals("1")) {
             //Gets all countries ordered by population largest to smallest
@@ -114,7 +115,14 @@ public class App {
 
             //Displays list of selected query
             a.displayCity(cities, userInput);
+        }else if (userInput.equals("9")) {
+            //Get all cities in a region ordered by population largest to smallest
+            ArrayList<City> cities = cc.getDistrictByPop();
+
+            //Displays list of selected query
+            a.displayCity(cities, userInput);
         }
+
 
         // App Disconnects from database
         a.disconnect();
@@ -320,6 +328,19 @@ public class App {
 
                     for (City city : cities) {
                         System.out.println(city.cityName);
+                    }
+                }
+            }
+            //Gets popualtion in a specified district
+            else if (userInput.equals("9")) {
+
+                System.out.printf("%-20s %-15s", "District", "Population\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        String output = String.format("%-45s %-15s", city.cityDistrict, city.cityPopulation);
+                        System.out.println(output);
                     }
                 }
             }

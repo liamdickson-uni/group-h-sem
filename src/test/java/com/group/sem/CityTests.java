@@ -35,5 +35,13 @@ public class CityTests {
     void getCitiesInDistrictByPopTest() {
         city.getCitiesInDistrictByPop();
     }
+
+    /**
+     * Tests that getDistrictByPop() runs with out errors
+     */
+    @Test
+    void getDistrictByPopTest() {
+        city.getDistrictByPop();
+    }
 }
 
