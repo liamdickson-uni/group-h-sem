@@ -13,9 +13,7 @@
     UC1 ..> UCa : include
     UC1 <- Database
 
-
     'This represents use-case 2'
-    newpage
     actor Logistics as "Global Logistics Manager"
     rectangle Database
     usecase UCa as "Print Queried Data"
@@ -28,7 +26,6 @@
 
 
     'This represents use-case 3'
-    newpage
     actor Finance as    "Regional Finance Manager"
     rectangle Database
     usecase UCa as "Print Queried Data"
@@ -41,7 +38,7 @@
 
 
     'This represents use-case 4'
-    newpage
+
     actor Finance as "Global Finance Manager"
     rectangle Database
     usecase UCa as "Print Queried Data"
@@ -54,7 +51,6 @@
 
 
     'This represents use-case 5'
-    newpage
     actor Finance as "Continental Finance Manager"
     rectangle Database
     usecase UCa as "Print Queried Data"
@@ -66,7 +62,6 @@
     UC5 <- Database
 
     'This represents use-case 6'
-        newpage
         actor Logistics as "Regional Logistics Manager"
         rectangle Database
         usecase UCa as "Print Queried Data"
@@ -79,44 +74,42 @@
 
 
     'This represents use-case 7'
-            newpage
-            actor Logistics as "District Level Logistics Manager"
-            rectangle Database
-            usecase UCa as "Print Queried Data"
-            usecase UC7 as "Produce a report of all the
-                            cities in a district"
-            top to bottom direction
-            Logistics -> UC7
-            UC7 ..> UCa : include
-            UC7 <- Database
 
+        actor Logistics as "District Level Logistics Manager"
+        rectangle Database
+        usecase UCa as "Print Queried Data"
+        usecase UC7 as "Produce a report of all the
+                        cities in a district"
+        top to bottom direction
+        Logistics -> UC7
+        UC7 ..> UCa : include
+        UC7 <- Database
 
     'This represents use-case 8'
-            newpage
-            actor Logistics as "Global Level Logistics Manager"
-            rectangle Database
-            usecase UCa as "Print Queried Data"
-            usecase UC8 as "Produce a report of all the
-                            cities in the world"
-            top to bottom direction
-            Logistics -> UC8
-            UC8 ..> UCa : include
-            UC8 <- Database
+
+       actor Logistics as "Global Level Logistics Manager"
+       rectangle Database
+       usecase UCa as "Print Queried Data"
+       usecase UC8 as "Produce a report of all the
+                       cities in the world"
+       top to bottom direction
+       Logistics -> UC8
+       UC8 ..> UCa : include
+       UC8 <- Database
 
 
 
      'This represents use-case 9'
-             newpage
-             actor Logistics as "Continental Logistics Manager"
-             rectangle Database
-             usecase UCa as "Print Queried Data"
-             usecase UC9 as "Produce a report of all cities in
-                             a specified continent from
-                             largest to smallest"
-             top to bottom direction
-             Logistics -> UC9
-             UC9 ..> UCa : include
-             UC9<- Database
+      actor Logistics as "Continental Logistics Manager"
+      rectangle Database
+      usecase UCa as "Print Queried Data"
+      usecase UC9 as "Produce a report of all cities in
+                      a specified continent from
+                      largest to smallest"
+      top to bottom direction
+      Logistics -> UC9
+      UC9 ..> UCa : include
+      UC9<- Database
 
 
 @enduml

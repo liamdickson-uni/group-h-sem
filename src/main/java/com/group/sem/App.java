@@ -9,6 +9,7 @@ import java.util.Scanner;
 /**
  * Wildcat Bikes -- Global Market Information
  * Group H -- SET08103
+ *
  * @author Tom McEachan (40356376), Liam Dickson (40456372), Greig Dunbar (40430731), Jack Burton (40456783)
  *
  * App.java is the main class of this program and contains the main() method. This also contains all of the methods
@@ -20,7 +21,6 @@ import java.util.Scanner;
  * disconnect() -- Stops the connection to the database
  * displayCountry() -- This is used to display all lists created by the methods in the Country.java class
  * displayCity() -- This is used to display all lists created by the methods in the City.java class
- *
  */
 
 public class App {
@@ -41,8 +41,7 @@ public class App {
         City cc = new City();
 
         // Connect to the database
-        a.connect();
-
+        a.connect(false);
 
 
         System.out.println("Please select of the options:\n\n " +
@@ -53,16 +52,14 @@ public class App {
                 "5 - Get all cities ordered by population\n" +
                 "6 - Get all cities in a specific District\n" +
                 "7 - Get all cities in a specific continent\n" +
-                "8 - Get all cities in a region\n\n"
+                "8 - Get all cities in a region\n"
         );
 
 
-
-
         Scanner in = new Scanner(System.in);
-        System.out.println("Select your option:\n");
+        System.out.println("Select your option:");
         String userInput = in.nextLine();
-        System.out.println("You have selected " + userInput + "  as your option.\n\n Your results are:\n\n");
+        System.out.println("You have selected " + userInput + "  as your option.\n Your results are:\n\n");
 
         if (userInput.equals("1")) {
             //Gets all countries ordered by population largest to smallest
@@ -132,32 +129,47 @@ public class App {
     /**
      * Connect to the MySQL database.
      */
-    public Connection connect() {
+    public Connection connect(boolean isConnected) {
 
-        if(con == null) {
-        try {
-            // Load Database driver
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Could not load SQL driver");
-            System.exit(-1);
-        }
 
-        int retries = 10;
-        for (int i = 0; i < retries; ++i) {
-            System.out.println("Connecting to database...");
+        if (con == null) {
+
             try {
-                // Wait a bit for db to start
-                Thread.sleep(30000);
-                // Connect to database
-                con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
-                System.out.println("Successfully connected");
-                break;
-            } catch (SQLException sqle) {
-                System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                System.out.println(sqle.getMessage());
-            } catch (InterruptedException ie) {
-                System.out.println("Thread interrupted? Should not happen.");
+                // Load Database driver
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            } catch (ClassNotFoundException e) {
+                System.out.println("Could not load SQL driver");
+                System.exit(-1);
+            }
+
+            int retries = 10;
+
+            for (int i = 0; i < retries; ++i) {
+                if (!isConnected ) {
+                    System.out.println("Connecting to database...");
+                }
+
+                try {
+
+                    System.out.println("Loading...");
+                    // Wait a bit for db to start
+                    Thread.sleep(30000);
+                    // Connect to database
+                    con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+
+                    if (!isConnected) {
+                        System.out.println("Successfully connected");
+                    }
+
+
+
+
+                    break;
+                } catch (SQLException sqle) {
+                    System.out.println("Failed to connect to database attempt " + Integer.toString(i));
+                    System.out.println(sqle.getMessage());
+                } catch (InterruptedException ie) {
+                    System.out.println("Thread interrupted? Should not happen.");
                 }
             }
         }
@@ -179,10 +191,9 @@ public class App {
     }
 
 
-
-
     /**
      * Prints a queried list of countries
+     *
      * @param countries The list of countries
      * @param userInput The user input
      */
@@ -232,10 +243,7 @@ public class App {
                 }
             }
 
-        }
-
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             if (userInput == null && countries == null) {
                 System.out.println("No Countries");
             }
@@ -243,9 +251,7 @@ public class App {
     }
 
 
-
     /**
-     *
      * @param cities
      * @param userInput
      */

@@ -75,7 +75,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect().createStatement();
+            Statement stmt = app.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.Name" +
@@ -109,7 +109,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect().createStatement();
+            Statement stmt = app.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Name, c.Population FROM city c ORDER BY c.Population DESC";
@@ -145,7 +145,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect().createStatement();
+            Statement stmt = app.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.Name" +
@@ -181,7 +181,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect().createStatement();
+            Statement stmt = app.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.District, cty.Name" +
@@ -219,7 +219,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect().createStatement();
+            Statement stmt = app.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.Name" +
