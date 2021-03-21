@@ -5,9 +5,10 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
+
 import java.util.ArrayList;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 
 public class CountryTests {
@@ -21,6 +22,10 @@ public class CountryTests {
         app = new App();
     }
 
+
+    /**
+     * Method GetCountryInContinentByPop()
+     */
     @Test
     void getCountryInContinentByPopCanConnect()
     {
@@ -36,13 +41,30 @@ public class CountryTests {
     }
 
 
+    /**
+     * Method Get CountryByPopDesc()
+     */
+
     @Test
-    void getCountryInContinentByPopThrowsException()
+    void getCountryByPopDescCanConnect()
     {
-            ArrayList<Country> countries = country.getCountryInContinentByPop();
-            countries.clear();
-            assertNull(countries);
+        ArrayList<Country> countries = country.getCountryByPopDesc();
     }
 
 
-}
+    @Test
+    void getCountryByPopDescIsNotNull()
+    {
+        ArrayList<Country> countries = country.getCountryByPopDesc();
+        for (Country country: countries) {
+            assertNotNull(countries);}
+        }
+    }
+
+
+
+
+
+
+
+
