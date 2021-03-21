@@ -1,7 +1,5 @@
 language: java
 
-sudo: false
-
 addons:
   hosts:
     - db
@@ -50,7 +48,7 @@ jobs:
         api-key: $GITHUB_OATH_TOKEN
         #Copy built JAR file to release. JAR built in $TRAVIS_BUILD_DIR/target
         file: $TRAVIS_BUILD_DIR/target/groupHSemMethods.jar
-        skip_cleanup: true
+        cleanup: false
 
 stages:
   - unit tests
