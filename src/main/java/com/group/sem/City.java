@@ -175,8 +175,6 @@ public class City {
         }
     }
 
-
-
     public ArrayList<City> getCitiesInDistrictByPop() {
 
         try {
@@ -205,7 +203,7 @@ public class City {
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get cities in selected country");
+            System.out.println("Failed to get cities in selected district");
             return null;
 
         }
@@ -245,6 +243,40 @@ public class City {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get cities in selected region");
+            return null;
+
+        }
+    }
+
+    public ArrayList<City> getDistrictByPop() {
+
+        try {
+            // Create an SQL statement
+            Statement stmt = app.connect(true).createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    " SELECT cty.District, cty.Population" +
+                            " FROM city cty" +
+                            " WHERE cty.District IN ('Mendoza')" +
+                            " ORDER BY cty.Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new country while valid.
+
+            ArrayList<City> cities = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityDistrict = rset.getString("District");
+                cty.cityPopulation = rset.getInt("Population");
+                cities.add(cty);
+            }
+            return cities;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get population for in selected district");
             return null;
 
         }

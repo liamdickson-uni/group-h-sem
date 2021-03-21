@@ -11,11 +11,11 @@ import java.util.Scanner;
  * Group H -- SET08103
  *
  * @author Tom McEachan (40356376), Liam Dickson (40456372), Greig Dunbar (40430731), Jack Burton (40456783)
- *
+ * <p>
  * App.java is the main class of this program and contains the main() method. This also contains all of the methods
  * to display data for the end-user. It does this by querying the world.sql database, puts the data in a specified
  * ArrayList which is printed to the console for the user to see. Methods in this class include:
- *
+ * <p>
  * main()
  * connect() -- This connects to the database created by the world.sql file in Docker
  * disconnect() -- Stops the connection to the database
@@ -52,14 +52,15 @@ public class App {
                 "5 - Get all cities ordered by population\n" +
                 "6 - Get all cities in a specific District\n" +
                 "7 - Get all cities in a specific continent\n" +
-                "8 - Get all cities in a region\n"
+                "8 - Get all cities in a region\n" +
+                "9 - Get the population in a district\n"
         );
 
 
         Scanner in = new Scanner(System.in);
         System.out.println("Select your option:");
         String userInput = in.nextLine();
-        System.out.println("You have selected " + userInput + "  as your option.\n Your results are:\n\n");
+        System.out.println("You have selected " + userInput + " as your option.\n Your results are:\n");
 
         if (userInput.equals("1")) {
             //Gets all countries ordered by population largest to smallest
@@ -82,7 +83,7 @@ public class App {
             //Displays list of selected query
             a.displayCountry(countries, userInput);
 
-        } else if (userInput.equals("4")) {
+        } else if (userInput.equals("5")) {
             //Gets all cities in a selected country ordered by population largest to smallest
             ArrayList<City> cities = cc.getCitiesInCountryByPop();
 
@@ -114,7 +115,14 @@ public class App {
 
             //Displays list of selected query
             a.displayCity(cities, userInput);
+        }else if (userInput.equals("9")) {
+            //Get all cities in a region ordered by population largest to smallest
+            ArrayList<City> cities = cc.getDistrictByPop();
+
+            //Displays list of selected query
+            a.displayCity(cities, userInput);
         }
+
 
         // App Disconnects from database
         a.disconnect();
@@ -145,7 +153,7 @@ public class App {
             int retries = 10;
 
             for (int i = 0; i < retries; ++i) {
-                if (!isConnected ) {
+                if (!isConnected) {
                     System.out.println("Connecting to database...");
                 }
 
@@ -160,8 +168,6 @@ public class App {
                     if (!isConnected) {
                         System.out.println("Successfully connected");
                     }
-
-
 
 
                     break;
@@ -256,73 +262,91 @@ public class App {
      * @param userInput
      */
     public void displayCity(ArrayList<City> cities, String userInput) {
+        try {
+            //Displays cities in a country by population
+            if (userInput.equals("4")) {
 
-        //Displays cities in a country by population
-        if (userInput.equals("4")) {
+                //Prints Column Header
+                System.out.println("City\n");
 
-            //Prints Column Header
-            System.out.println("City\n");
+                if (cities != null) {
 
-            if (cities != null) {
-
-                for (City city : cities) {
-                    System.out.println(city.cityName);
-                }
-            }
-
-        }
-        //Displays all cities by population
-        else if (userInput.equals("5")) {
-
-            //Prints Column Header
-            System.out.printf("%-20s %-15s", "City", "Population\n");
-
-            if (cities != null) {
-
-                for (City city : cities) {
-                    String output = String.format("%-45s %-15s", city.cityName, city.cityPopulation);
-                    System.out.println(output);
-                }
-            }
-
-        }
-        //Displays cities in a district
-        else if (userInput.equals("6")) {
-
-            //Prints Column Header
-            System.out.printf("%-20s %-15s", "District", "City\n");
-
-            if (cities != null) {
-
-                for (City city : cities) {
-                    String output = String.format("%-45s %-15s", city.cityDistrict, city.cityName);
-                    System.out.println(output);
-                }
-            }
-        }
-        //Displays cities in a specified continent
-        else if (userInput.equals("7")) {
-
-            System.out.println("City\n");
-
-            if (cities != null) {
-
-                for (City city : cities) {
-                    System.out.println(city.cityName);
+                    for (City city : cities) {
+                        System.out.println(city.cityName);
+                    }
                 }
 
             }
-        }
-        //Gets cities in a specified region
-        else if (userInput.equals("8")) {
+            //Displays all cities by population
+            else if (userInput.equals("5")) {
 
-            System.out.println("City\n");
+                //Prints Column Header
+                System.out.printf("%-20s %-15s", "City", "Population\n");
 
-            if (cities != null) {
+                if (cities != null) {
 
-                for (City city : cities) {
-                    System.out.println(city.cityName);
+                    for (City city : cities) {
+                        String output = String.format("%-45s %-15s", city.cityName, city.cityPopulation);
+                        System.out.println(output);
+                    }
                 }
+
+            }
+            //Displays cities in a district
+            else if (userInput.equals("6")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s %-15s", "District", "City\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        String output = String.format("%-45s %-15s", city.cityDistrict, city.cityName);
+                        System.out.println(output);
+                    }
+                }
+            }
+            //Displays cities in a specified continent
+            else if (userInput.equals("7")) {
+
+                System.out.println("City\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        System.out.println(city.cityName);
+                    }
+
+                }
+            }
+            //Gets cities in a specified region
+            else if (userInput.equals("8")) {
+
+                System.out.println("City\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        System.out.println(city.cityName);
+                    }
+                }
+            }
+            //Gets popualtion in a specified district
+            else if (userInput.equals("9")) {
+
+                System.out.printf("%-20s %-15s", "District", "Population\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        String output = String.format("%-45s %-15s", city.cityDistrict, city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            if (userInput == null && cities == null) {
+                System.out.println("No Cities");
             }
         }
     }

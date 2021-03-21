@@ -26,9 +26,17 @@ public class AppTests
         app.displayCountry(null, null);
     }
 
+    /**
+     * Tests what happens when displayCity() Is Null
+     */
+    @Test
+    void displayCityTestNull()
+    {
+        app.displayCity(null, null);
+    }
 
     /**
-     * Tests what happens when displayCountry is empty
+     * Tests what happens when displayCountry() is empty
      */
     @Test
     void displayCountryTestEmpty()
@@ -38,10 +46,31 @@ public class AppTests
     }
 
     /**
+     * Tests what happens when displayCity() is empty
+     */
+    @Test
+    void displayCityTestEmpty()
+    {
+        ArrayList<City> cities = new ArrayList<City>();
+        app.displayCity(cities, "0");
+    }
+
+    /**
      * Tests what happens when displayCountry() contains a null
      */
     @Test
     void displayCountryTestContainsNull()
+    {
+        ArrayList<Country> countries = new ArrayList<Country>();
+        countries.add(null);
+        app.displayCountry(countries,"0");
+    }
+
+    /**
+     * Tests what happens when displayCity() contains a null
+     */
+    @Test
+    void displayCityTestContainsNull()
     {
         ArrayList<Country> countries = new ArrayList<Country>();
         countries.add(null);
@@ -72,6 +101,22 @@ public class AppTests
 
         app.displayCountry(country, "1");
     }
+
+    @Test
+    void displayCities()
+    {
+        ArrayList<City> city = new ArrayList<City>();
+        City cnt = new City();
+
+        cnt.cityID = "1";
+        cnt.cityName = "Scotland";
+        cnt.countryCode = "AFG";
+        cnt.cityDistrict = "Kabol";
+        cnt.cityPopulation = 1780000;
+
+        app.displayCity(city, "1");
+    }
+
 
 
 
