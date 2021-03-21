@@ -112,4 +112,258 @@
       UC9<- Database
 
 
-@enduml
+      'This represents use-case 10'
+            actor Finance as "National finance Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC10 as "Produce a Report of All Cities in a specified region organised from largest to smallest"
+            top to bottom direction
+            Finance -> UC10
+            UC10 ..> UCa : include
+            UC10<- Database
+
+
+      'This represents use-case 11'
+            actor Marketing as "National Marketing Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC11 as "Produce a Report of All Cities in a specified country organised from largest to smallest"
+            top to bottom direction
+            Marketing -> UC11
+            UC11 ..> UCa : include
+            UC11<- Database
+
+
+
+
+      'This represents use-case 12'
+            actor Finance as "Global Finance Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC12 as "Produce a Report of The top `N` populated cities in the world where `N` is provided by the user."
+            top to bottom direction
+            Finance -> UC12
+            UC12 ..> UCa : include
+            UC12<- Database
+
+
+
+
+      'This represents use-case 13'
+            actor Logistics as "the Director"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC13 as "Produce a Report of The top `N` populated cities in a continent where `N` is provided by the user."
+            top to bottom direction
+            Logistics -> UC13
+            UC13 ..> UCa : include
+            UC13<- Database
+
+
+
+
+      'This represents use-case 14'
+            actor Logistics as "Regional Logistics Manager""
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC14 as "Produce a Report of The top `N` populated cities in a region where `N` is provided by the user."
+            top to bottom direction
+            Logistics -> UC14
+            UC14 ..> UCa : include
+            UC14<- Database
+
+
+
+
+      'This represents use-case 15'
+            actor Logistics as "National logistics Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC15 as "Produce a Report of The top `N` populated cities in a country where `N` is provided by the user."
+            top to bottom direction
+            Logistics -> UC15
+            UC15 ..> UCa : include
+            UC15<- Database
+
+
+
+
+      'This represents use-case 16'
+            actor Marketing as "district level marketing Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC16 as "Produce a Report of The top `N` populated cities in a district where `N` is provided by the user."
+            top to bottom direction
+            Marketing -> UC16
+            UC16 ..> UCa : include
+            UC16<- Database
+
+
+
+
+      'This represents use-case 17'
+            actor Finance as "Global Finance Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC17 as "Produce a Report of All Capital Cities in the world organised from largest to smallest"
+            top to bottom direction
+            Finance -> UC17
+            UC17 ..> UCa : include
+            UC17<- Database
+
+
+
+
+      'This represents use-case 18'
+            actor Logistics as "Continental Logistics Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC18 as "Produce a Report of All Capital Cities in a continent organised from largest to smallest"
+            top to bottom direction
+            Logistics -> UC18
+            UC18 ..> UCa : include
+            UC18<- Database
+
+
+
+
+      'This represents use-case 19'
+            actor Sales as "Regional Sales Director"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC19 as "Produce a Report of All Capital Cities in a region organised from largest to smallest"
+            top to bottom direction
+            Sales -> UC19
+            UC19 ..> UCa : include
+            UC19<- Database
+
+
+
+
+      'This represents use-case 20'
+            actor Finance as "Global Finance Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC20 as "Produce a Report of The top `N` populated capital cities in the world where `N` is provided by the user."
+            top to bottom direction
+            Finance -> UC20
+            UC20 ..> UCa : include
+            UC20<- Database
+
+
+
+
+      'This represents use-case 21'
+            actor Sales as "Regional Sales Director"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC21 as "Produce a Report of The top `N` populated capital cities in a region where `N` is provided by the user."
+            top to bottom direction
+            Sales -> UC21
+            UC21 ..> UCa : include
+            UC21<- Database
+
+
+
+
+      'This represents use-case 22'
+            actor Marketing as "Continental Marketing Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC22 as "Produce a Report of The population of people, people living in cities, and people not living in cities in each continent."
+            top to bottom direction
+            Marketing -> UC22
+            UC22 ..> UCa : include
+            UC22<- Database
+
+
+
+
+      'This represents use-case 23'
+            actor Finance as "Regional Finance Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC23 as "Produce a Report of The population of people, people living in cities, and people not living in cities in each region."
+            top to bottom direction
+            Finance -> UC23
+            UC23 ..> UCa : include
+            UC23<- Database
+
+
+
+
+      'This represents use-case 24'
+            actor Marketing as "National Marketing Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC24 as "Produce a Report of The population of people, people living in cities, and people not living in cities in each country."
+            top to bottom direction
+            Marketing -> UC24
+            UC24 ..> UCa : include
+            UC24<- Database
+
+
+
+
+      'This represents use-case 25'
+            actor Marketing as "Marketing Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC25 as "Produce a Report of the number of people who speak Arabic and the percentage of the total population that speaks Arabic."
+            top to bottom direction
+            Marketing -> UC25
+            UC25 ..> UCa : include
+            UC25<- Database
+
+
+
+
+      'This represents use-case 26'
+            actor Marketing as "Marketing Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC26 as "Produce a Report of the number of people who speak Hindi and the percentage of the total population that speaks Hindi"
+            top to bottom direction
+            Marketing -> UC26
+            UC26 ..> UCa : include
+            UC26<- Database
+
+
+
+
+      'This represents use-case 27'
+            actor Marketing as "Marketing Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC27 as "Produce a Report of the number of people who speak Chinese and the percentage of the total population that speaks Chinese"
+            top to bottom direction
+            Marketing -> UC27
+            UC27 ..> UCa : include
+            UC27<- Database
+
+
+
+
+      'This represents use-case 28'
+            actor Marketing as "Marketing Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC28 as "Produce a Report of the number of people who speak English and the percentage of the total population that speaks English"
+            top to bottom direction
+            Marketing -> UC28
+            UC28 ..> UCa : include
+            UC28<- Database
+
+
+
+
+      'This represents use-case 29'
+            actor Marketing as "Marketing Manager"
+            rectangle Database
+            usecase UCa as "Print Queried Data"
+            usecase UC29 as "Produce a Report of the number of people who speak Spanish and the percentage of the total population that speaks Spanish"
+            top to bottom direction
+            Marketing -> UC29
+            UC29 ..> UCa : include
+            UC29<- Database
+            @enduml
