@@ -3,12 +3,8 @@ package com.group.sem;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-
-
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
-
 
 
 public class CountryTests {
@@ -24,15 +20,6 @@ public class CountryTests {
 
 
     /**
-     * Method GetCountryInContinentByPop()
-     */
-    @Test
-    void getCountryInContinentByPopCanConnect()
-    {
-        ArrayList<Country> countries = country.getCountryInContinentByPop();
-    }
-
-    /**
      * Tests that getCountryByPopDesc() runs with out errors
      */
     @Test
@@ -40,29 +27,41 @@ public class CountryTests {
         country.getCountryByPopDesc();
     }
 
+    @Test
+    void getCountryByPopDescCanConnect()
+    {
+        ArrayList<Country> countries = country.getCountryByPopDesc();
+    }
+
+    @Test
+    void getCountryByPopDescIsNotNull()
+    {
+        ArrayList<Country> countries = country.getCountryByPopDesc();
+        for (Country country: countries) {
+            assertNotNull(countries);}
+    }
+
     /**
      * Tests that getCountryInContinentByPop() runs with out errors
      */
+
     @Test
     void getCountryInContinentByPopTest()
-    void getCountryInContinentByPopIsNotNull()
     {
         ArrayList<Country> countries = country.getCountryInContinentByPop();
         for (Country country: countries){
         assertNotNull(countries);}
     }
 
-
-    /**
-     * Method Get CountryByPopDesc()
-     */
+    @Test
+    void getCountryInContinentCanConnect()
+    {
+        ArrayList<Country> countries = country.getCountryByPopDesc();
+    }
 
     @Test
-    void getCountryByPopDescCanConnect()
-    {
+    void getCountryInContinentByDescTest() {
         country.getCountryInContinentByPop();
-    }
-        ArrayList<Country> countries = country.getCountryByPopDesc();
     }
 
 
@@ -73,15 +72,25 @@ public class CountryTests {
     void getCountryInRegionByPopTest() {
         country.getCountryInRegionByPop();
     }
-}
+
     @Test
-    void getCountryByPopDescIsNotNull()
+    void getCountryInRegionByPopTestIsNotNull()
+    {
+        ArrayList<Country> countries = country.getCountryInRegionByPop();
+        for (Country country: countries){
+            assertNotNull(countries);}
+    }
+
+    @Test
+    void getCountryInRegionCanConnect()
     {
         ArrayList<Country> countries = country.getCountryByPopDesc();
-        for (Country country: countries) {
-            assertNotNull(countries);}
-        }
     }
+
+
+
+
+}
 
 
 
