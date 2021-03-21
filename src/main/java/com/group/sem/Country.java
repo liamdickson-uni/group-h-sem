@@ -160,15 +160,17 @@ public class Country {
         try {
             // Create an SQL statement
             Statement stmt = app.connect(true).createStatement();
+
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Continent, c.Name" +
                             " FROM country c" +
                             " ORDER BY c.Continent, c.Population DESC";
+
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new country while valid.
 
+            // Return new country while valid.
             ArrayList<Country> countries = new ArrayList<>();
 
             // Check one is returned
