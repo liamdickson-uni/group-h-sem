@@ -339,7 +339,7 @@ public class App {
                 if (cities != null) {
 
                     for (City city : cities) {
-                        String output = String.format("%-45s %-15s", city.cityDistrict, city.cityPopulation);
+                        String output = String.format("%-25s %-15s", city.cityDistrict, city.cityPopulation);
                         System.out.println(output);
                     }
                 }

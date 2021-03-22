@@ -255,7 +255,7 @@ public class City {
             Statement stmt = app.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
-                    " SELECT cty.District, cty.Population" +
+                    " SELECT cty.District, sum(cty.Population) as pop" +
                             " FROM city cty" +
                             " WHERE cty.District IN ('Mendoza')" +
                             " ORDER BY cty.Population DESC";
@@ -269,7 +269,7 @@ public class City {
             while (rset.next()) {
                 City cty = new City();
                 cty.cityDistrict = rset.getString("District");
-                cty.cityPopulation = rset.getInt("Population");
+                cty.cityPopulation = rset.getInt("pop");
                 cities.add(cty);
             }
             return cities;
