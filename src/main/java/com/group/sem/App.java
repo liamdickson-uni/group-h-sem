@@ -53,7 +53,8 @@ public class App {
                 "6 - Get all cities in a specific District\n" +
                 "7 - Get all cities in a specific continent\n" +
                 "8 - Get all cities in a region\n" +
-                "9 - Get the population in a district\n"
+                "9 - Get the population in a district\n" +
+                "10 - Get the capital cities in a specified continent"
         );
 
 
@@ -118,6 +119,12 @@ public class App {
         }else if (userInput.equals("9")) {
             //Get all cities in a region ordered by population largest to smallest
             ArrayList<City> cities = cc.getDistrictByPop();
+
+            //Displays list of selected query
+            a.displayCity(cities, userInput);
+        } else if (userInput.equals("10")){
+            //Get all capital cities in a continent ordered by largest population to smallest
+            ArrayList<City> cities = cc.getCapitalCitiesInContinentByPoP();
 
             //Displays list of selected query
             a.displayCity(cities, userInput);
@@ -343,7 +350,21 @@ public class App {
                         System.out.println(output);
                     }
                 }
+            } //Gets capital cities in a specified continent
+            else if (userInput.equals("10")) {
+
+                System.out.printf("%-20s %-15s", "City Name", "Population\n");
+
+                if (cities != null){
+
+                    for (City city : cities) {
+                        String output = String.format("%-25s %-15s", city.cityName, city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
             }
+
+
         } catch (Exception e) {
             if (userInput == null && cities == null) {
                 System.out.println("No Cities");
