@@ -54,7 +54,8 @@ public class App {
                 "7 - Get all cities in a specific continent\n" +
                 "8 - Get all cities in a region\n" +
                 "9 - Get the population in a district\n" +
-                "10 - Get the capital cities in a specified continent"
+                "10 - Get the capital cities in a specified continent\n" +
+                "11 - Get the capital cities in a specified region\n"
         );
 
 
@@ -128,6 +129,12 @@ public class App {
 
             //Displays list of selected query
             a.displayCity(cities, userInput);
+        } else if (userInput.equals("11")) {
+            //Get all capital cities in a region ordered by largest population to smallest
+            ArrayList<City> cities = cc.getCapitalCitiesInRegionByPoP();
+
+            //Displays list of selected query
+            a.displayCity(cities, "11");
         }
 
 
@@ -284,6 +291,7 @@ public class App {
                 }
 
             }
+
             //Displays all cities by population
             else if (userInput.equals("5")) {
 
@@ -299,6 +307,7 @@ public class App {
                 }
 
             }
+
             //Displays cities in a district
             else if (userInput.equals("6")) {
 
@@ -313,6 +322,7 @@ public class App {
                     }
                 }
             }
+
             //Displays cities in a specified continent
             else if (userInput.equals("7")) {
 
@@ -326,6 +336,7 @@ public class App {
 
                 }
             }
+
             //Gets cities in a specified region
             else if (userInput.equals("8")) {
 
@@ -338,6 +349,7 @@ public class App {
                     }
                 }
             }
+
             //Gets popualtion in a specified district
             else if (userInput.equals("9")) {
 
@@ -350,7 +362,9 @@ public class App {
                         System.out.println(output);
                     }
                 }
-            } //Gets capital cities in a specified continent
+            }
+
+            //Gets capital cities in a specified continent
             else if (userInput.equals("10")) {
 
                 System.out.printf("%-20s %-15s", "City Name", "Population\n");
@@ -358,6 +372,21 @@ public class App {
                 if (cities != null){
 
                     for (City city : cities) {
+                        String output = String.format("%-25s %-15s", city.cityName, city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+
+            //Gets capital cities in a specified region
+            else if (userInput.equals("11")) {
+
+                System.out.printf("%-20s %-15s", "City Name", "Population\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+
                         String output = String.format("%-25s %-15s", city.cityName, city.cityPopulation);
                         System.out.println(output);
                     }
