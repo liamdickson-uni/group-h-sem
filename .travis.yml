@@ -18,11 +18,11 @@ before_script:
 
 jobs:
   include:
-    - stage: unit tests
+    - stage: Unit Tests
       install: skip
       jdk: oraclejdk11
       script: mvn test -Dtest=com.group.sem.AppTests
-    - stage: integreation tests
+    - stage: Integration Tests
       jdk: oraclejdk11
       script: mvn test -Dtest=com.group.sem.AppIntegrationTest
     - stage: GitHub Release
