@@ -313,7 +313,45 @@ public class City {
              return cities;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to capital city populations.");
+            System.out.println("Failed to get capital cities and their populations.");
+            return null;
+        }
+
+    }
+
+
+    public ArrayList<City> getCapitalCitiesInRegionByPoP() {
+
+        try {
+            //Create a SQL Statement
+            Statement stmt = app.connect(true).createStatement();
+
+            //Create String fro SQL Statement
+
+            String strSelect =
+                    "SELECT cty.Name, cty.Population" +
+                            " FROM city cty" +
+                            " JOIN country cnt ON (cnt.Capital = cty.ID) " +
+                            " WHERE cnt.Region = 'Middle East'" +
+                            " ORDER BY cty.Population DESC";
+
+            //Execute SQL Statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+
+            //Create a list to store the data
+            ArrayList<City> cities = new ArrayList<>();
+
+            //Check a result is returned
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityName = rset.getString("Name");
+                cty.cityPopulation = rset.getInt("Population");
+                cities.add(cty);
+            }
+            return cities;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get capital cities and their populations.");
             return null;
         }
 

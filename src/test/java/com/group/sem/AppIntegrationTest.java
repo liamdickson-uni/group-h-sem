@@ -110,4 +110,13 @@ public class AppIntegrationTest {
         System.out.println(output);
     }
 
+    @Test
+    void testInput11(){
+        City cty = new City();
+        ArrayList<City> cities = cty.getCapitalCitiesInRegionByPoP();
+        app.displayCity(cities, "11");
+        String output = "\n\n\n";
+        System.out.println(output);
+    }
+
 }
