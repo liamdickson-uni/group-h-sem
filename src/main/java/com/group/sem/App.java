@@ -184,6 +184,7 @@ public class App {
                     if (!isConnected) {
                         System.out.println("Successfully connected");
                     }
+                    break;
 
                 } catch (SQLException sqle) {
                     System.out.println("Failed to connect to database attempt " + Integer.toString(i));
