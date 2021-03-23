@@ -39,7 +39,7 @@ jobs:
         - git config --local user.name "Tom McEachan"
         - git config --local user.email "tom.a.mceachan@outlook.com"
         #Create temporary tag from date and Git log.
-        -  export TRAVIS_TAG=${TRAVIS_TAG:-(date +'%Y-%m-%d')-$(git log --format=%h -1)}
+        -  export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y-%m-%d')-$(git log --format=%h -1)}
         #Set tag
         - git tag $Travis_TAG
       deploy:
