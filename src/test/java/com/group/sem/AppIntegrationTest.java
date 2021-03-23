@@ -17,6 +17,9 @@ public class AppIntegrationTest {
         app.connect(false);
     }
 
+    /**
+     * Tests the integration of getCountryByPopDesc()
+     */
     @Test
     void testInput1()
     {
