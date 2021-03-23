@@ -184,7 +184,7 @@ public class City {
             String strSelect =
                     " SELECT cty.District, cty.Name" +
                             " FROM city cty" +
-                            "WHERE cty.District = 'Mendoza'" +
+                            " WHERE cty.District = 'Mendoza'" +
                             "ORDER BY cty.Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);

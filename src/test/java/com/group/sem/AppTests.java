@@ -70,7 +70,7 @@ public class AppTests
      * Tests what happens when displayCity() contains a null
      */
     @Test
-    void displayCityTestContainsNull()
+    void displayTestContainsNull()
     {
         ArrayList<Country> countries = new ArrayList<Country>();
         countries.add(null);
