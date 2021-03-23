@@ -116,8 +116,7 @@ public class Country {
     public String code2;
 
 
-
-
+    //Creates a new instance of App
     App app = new App();
 
     /*
@@ -125,6 +124,11 @@ public class Country {
      */
 
 
+    /**
+     * This method gets a list of countries organised by population
+     *
+     * @return an ArrayList of Countries
+     */
     public ArrayList<Country> getCountryByPopDesc() {
         try {
             // Create an SQL statement
@@ -155,6 +159,10 @@ public class Country {
         }
     }
 
+    /**
+     * This method gets a list of countries
+     * @return an ArrayList of countries
+     */
     public ArrayList<Country> getCountryInContinentByPop() {
 
         try {
@@ -189,6 +197,10 @@ public class Country {
         }
     }
 
+    /**
+     * This method gets a list of countries in a specified region
+     * @return an ArrayList of countries
+     */
     public ArrayList<Country> getCountryInRegionByPop() {
 
         try {

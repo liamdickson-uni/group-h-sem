@@ -1,6 +1,5 @@
 package com.group.sem;
 
-import java.io.InputStreamReader;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -29,7 +28,6 @@ public class App {
     /**
      * @param args
      */
-
     public static void main(String[] args) {
         // Create new Application
         App a = new App();
@@ -63,6 +61,8 @@ public class App {
         System.out.println("Select your option:");
         String userInput = in.nextLine();
         System.out.println("You have selected " + userInput + " as your option.\n Your results are:\n");
+
+
 
         if (userInput.equals("1")) {
             //Gets all countries ordered by population largest to smallest
@@ -150,6 +150,8 @@ public class App {
 
     /**
      * Connect to the MySQL database.
+     *
+     * @param isConnected -- Displays different text depending on connection status
      */
     public Connection connect(boolean isConnected) {
 
@@ -183,8 +185,6 @@ public class App {
                         System.out.println("Successfully connected");
                     }
 
-
-                    break;
                 } catch (SQLException sqle) {
                     System.out.println("Failed to connect to database attempt " + Integer.toString(i));
                     System.out.println(sqle.getMessage());

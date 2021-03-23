@@ -11,6 +11,7 @@ import java.util.ArrayList;
  *
  * City.java
  * City.java contains all of the variables and methods associated with the city table in the world.sql database.
+ *
  * Variables in this class include:
  *
  *     cityID
@@ -20,12 +21,15 @@ import java.util.ArrayList;
  *     cityPopulation
  *
  * Methods in this in this class include:
- * <
+ *
  *     getCitiesInCountryByPop()
  *     getCitiesByPop()
  *     getCitiesInCont()
  *     getCitiesInDistrictByPop()
  *     getCitiesInRegion()
+ *     getDistrictByPop()
+ *     getCapitalCitiesInContinentByPoP()
+ *     getCapitalCitiesInRegionByPop()
  *
  */
 
@@ -71,6 +75,12 @@ public class City {
 
     App app = new App();
 
+    /**
+     * This method gets the cities in a country ordered by population
+     *
+     * @return ArrayList of Cities
+     *
+     */
     public ArrayList<City> getCitiesInCountryByPop() {
 
         try {
@@ -105,6 +115,12 @@ public class City {
         }
     }
 
+
+    /**
+     * This methods get a list of cities ordered by population
+     *
+     * @return ArrayList of Cities
+     */
     public ArrayList<City> getCitiesByPop() {
 
         try {
@@ -137,6 +153,11 @@ public class City {
     }
 
 
+    /**
+     * This method gets a list of cities in a specified continent
+     *
+     * @return an ArrayList of Cities
+     */
     public ArrayList<City> getCitiesInCont() {
 
         System.out.println("Which continent would you like to see cities in");
@@ -175,6 +196,11 @@ public class City {
         }
     }
 
+    /**
+     * This method gets a list of cities in a district ordered by population
+     *
+     * @return an ArrayList of Cities
+     */
     public ArrayList<City> getCitiesInDistrictByPop() {
 
         try {
@@ -209,6 +235,11 @@ public class City {
         }
     }
 
+    /**
+     * This method gets a list of cities in a specified region, ordered by population
+     *
+     * @return an ArrayList of cities
+     */
     public ArrayList<City> getCitiesInRegion() {
 
         System.out.println("Which Region would you like to see cities in");
@@ -248,6 +279,12 @@ public class City {
         }
     }
 
+    /**
+     * This method gets a list cities in a district ordered by population
+     *
+     * @return an ArrayList of Cities
+     */
+
     public ArrayList<City> getDistrictByPop() {
 
         try {
@@ -282,6 +319,11 @@ public class City {
         }
     }
 
+    /**
+     * This method gets a list of capital cities in a continent, organised by population
+     *
+     * @return an ArrayList of cities
+     */
     public ArrayList<City> getCapitalCitiesInContinentByPoP() {
 
         try {
@@ -320,6 +362,11 @@ public class City {
     }
 
 
+    /**
+     * This method gets a list of capital cities in a specified region, ordered by population
+     *
+     * @return an ArrayList of Cities
+     */
     public ArrayList<City> getCapitalCitiesInRegionByPoP() {
 
         try {
