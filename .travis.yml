@@ -41,7 +41,7 @@ jobs:
         #Create temporary tag from date and Git log.
         -  export TRAVIS_TAG=${TRAVIS_TAG:-(date +'%Y-%m-%d')-$(git log --format=%h -1)}
         #Set tag
-        - git tage $Travis_TAG
+        - git tag $Travis_TAG
       deploy:
         provider: releases
         #This is the token we set before
