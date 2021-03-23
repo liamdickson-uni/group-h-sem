@@ -165,5 +165,26 @@ public class CityTests {
     }
 
 
+    /*
+     * Tests that getCitiesInRegion() runs without errors
+     */
+    @Test
+    void getCapitalCitiesInRegionTest(){
+        city.getCapitalCitiesInRegionByPoP();
+    }
+
+    @Test
+    void getCapitalCitiesInRegionNotNullTest(){
+        ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP();
+        for (City city: cities){
+            assertNotNull(cities);}
+    }
+
+    @Test
+    void getCapitalCitiesInRegionCanConnect(){
+        ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP();
+    }
+
+
 }
 
