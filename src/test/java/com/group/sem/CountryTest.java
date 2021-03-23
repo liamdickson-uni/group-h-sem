@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-public class CountryTests {
+public class CountryTest {
 
     static Country country;
     static App app;

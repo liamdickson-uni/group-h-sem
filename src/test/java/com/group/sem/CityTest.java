@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class CityTests {
+public class CityTest {
 
     static City city;
 

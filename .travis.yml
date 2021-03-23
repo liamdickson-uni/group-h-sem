@@ -21,7 +21,7 @@ jobs:
     - stage: Unit Tests
       install: skip
       jdk: oraclejdk11
-      script: mvn test -Dtest=com.group.sem.AppTests
+      script: mvn test -Dtest=com.group.sem.AppTest
     - stage: Integration Tests
       jdk: oraclejdk11
       script: mvn test -Dtest=com.group.sem.AppIntegrationTest

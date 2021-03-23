@@ -2,7 +2,7 @@ package com.group.sem;
 
 import org.junit.jupiter.api.BeforeAll;
 
-public class LanguageTests {
+public class LanguageTest {
 
 
     static Language language;
