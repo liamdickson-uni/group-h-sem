@@ -199,7 +199,7 @@ public class App {
     private Connection con = null;
 
     /**
-     * Connect to the MySQL database.
+     * Connect to the MySQL database..
      *
      * @param isConnected -- Displays different text depending on connection status
      */
