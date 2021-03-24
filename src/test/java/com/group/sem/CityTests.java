@@ -170,19 +170,19 @@ public class CityTests {
      */
     @Test
     void getCapitalCitiesInRegionTest(){
-        city.getCapitalCitiesInRegionByPoP();
+        city.getCapitalCitiesInRegionByPoP("Middle East");
     }
 
     @Test
     void getCapitalCitiesInRegionNotNullTest(){
-        ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP();
+        ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP("Middle East");
         for (City city: cities){
             assertNotNull(cities);}
     }
 
     @Test
     void getCapitalCitiesInRegionCanConnect(){
-        ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP();
+        ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP("Middle East");
     }
 
 

@@ -234,4 +234,53 @@ public class Country {
             return null;
         }
     }
+
+    public enum RegionEnum {
+        EASTERN_ASIA    ("Eastern Asia"),
+        MIDDLE_EAST     ("Middle East"),
+        SOUTHEAST_ASIA  ("Southeast Asia"),
+        SOUTHERN_AND_CENTRAL_ASIA   ("Southern and Central Asia"),
+        BALTIC_COUNTRIES    ("Baltic Countries"),
+        BRITISH_ISLANDS     ("British Islands"),
+        EASTERN_EUROPE  ("Eastern_Europe"),
+        NORDIC_COUNTRIES    ("Nordic Countries"),
+        SOUTHERN_EUROPE     ("Southern Europe"),
+        WESTERN_EUROPE  ("Western Europe"),
+        CARIBBEAN   ("Caribbean"),
+        CENTRAL_AMERICA ("Central America"),
+        NORTH_AMERICA   ("North America"),
+        CENTRAL_AFRICA  ("Central Africa"),
+        EASTERN_AFRICA  ("Eastern Africa"),
+        NORTHERN_AFRICA ("Northern Africa"),
+        SOUTHERN_AFRICA ("Southern Africa"),
+        WESTERN_AFRICA  ("Western Africa"),
+        AUSTRALIA_AND_NEW_ZEALAND   ("Australia and New Zealand"),
+        MELANESIA   ("Melanesia"),
+        MICRONESIA  ("Micronesia"),
+        MICRONESIA_CARIBBEAN    ("Micronesia/Caribbean"),
+        POLYNESIA   ("Polynesia"),
+        ANTARTICA   ("Antartica"),
+        SOUTH_AMERICA   ("South America"),
+        ;
+
+        public final String label;
+
+        RegionEnum(String label) {
+            this.label = label;
+        }
+
+        public static RegionEnum valueOfLabel(String label) {
+
+            for (RegionEnum r : values()) {
+                if (r.label.equals(label)) {
+                    return r;
+                }
+            } return null;
+        }
+
+        @Override
+        public String toString() {
+            return label;
+        }
+    }
 }

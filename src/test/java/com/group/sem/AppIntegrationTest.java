@@ -113,7 +113,7 @@ public class AppIntegrationTest {
     @Test
     void testInput11(){
         City cty = new City();
-        ArrayList<City> cities = cty.getCapitalCitiesInRegionByPoP();
+        ArrayList<City> cities = cty.getCapitalCitiesInRegionByPoP("Middle East");
         app.displayCity(cities, "11");
         String output = "Test input 11 -- passed\n\n\n";
         System.out.println(output);

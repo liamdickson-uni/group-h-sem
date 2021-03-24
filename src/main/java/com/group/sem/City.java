@@ -42,7 +42,7 @@ public class City {
     /*
      * Represents a City
      */
-    public String cityID;
+    public int cityID;
 
 
     /*
@@ -367,7 +367,7 @@ public class City {
      *
      * @return an ArrayList of Cities
      */
-    public ArrayList<City> getCapitalCitiesInRegionByPoP() {
+    public ArrayList<City> getCapitalCitiesInRegionByPoP(String Region) {
 
         try {
             //Create a SQL Statement
@@ -378,8 +378,8 @@ public class City {
             String strSelect =
                     "SELECT cty.Name, cty.Population" +
                             " FROM city cty" +
-                            " JOIN country cnt ON (cnt.Capital = cty.ID) " +
-                            " WHERE cnt.Region = 'Middle East'" +
+                            " JOIN country cnt ON (cnt.Capital = cty.ID)" +
+                            " WHERE cnt.Region =" + Region  +
                             " ORDER BY cty.Population DESC";
 
             //Execute SQL Statement
@@ -403,5 +403,6 @@ public class City {
         }
 
     }
+
 
 }

@@ -106,13 +106,13 @@ public class AppTests
     void displayCities()
     {
         ArrayList<City> city = new ArrayList<City>();
-        City cnt = new City();
+        City cty = new City();
 
-        cnt.cityID = "1";
-        cnt.cityName = "Scotland";
-        cnt.countryCode = "AFG";
-        cnt.cityDistrict = "Kabol";
-        cnt.cityPopulation = 1780000;
+        cty.cityID = 1;
+        cty.cityName = "Scotland";
+        cty.countryCode = "AFG";
+        cty.cityDistrict = "Kabol";
+        cty.cityPopulation = 1780000;
 
         app.displayCity(city, "1");
     }
