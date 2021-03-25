@@ -51,7 +51,7 @@ public class AppIntegrationTest {
     @Test
     void testInput4(){
         City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCitiesInCountryByPop();
+        ArrayList<City> cities = cty.getCitiesInCountryByPop("United Kingdom");
         app.displayCity(cities, "4");
         String output = "Test input 4 -- passed\n\n\n";
         System.out.println(output);
@@ -69,7 +69,7 @@ public class AppIntegrationTest {
     @Test
     void testInput6(){
         City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCitiesInDistrictByPop();
+        ArrayList<City> cities = cty.getCitiesInDistrictByPop("Arizona");
         app.displayCity(cities, "6");
         String output = "Test input 6 -- passed\n\n\n";
         System.out.println(output);
@@ -78,7 +78,7 @@ public class AppIntegrationTest {
     @Test
     void testInput7(){
         City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCitiesInCont();
+        ArrayList<City> cities = cty.getCitiesInCont("Europe");
         app.displayCity(cities, "7");
         String output = "Test input 7 -- passed\n\n\n";
         System.out.println(output);
@@ -87,7 +87,7 @@ public class AppIntegrationTest {
     @Test
     void testInput8(){
         City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCitiesInRegion();
+        ArrayList<City> cities = cty.getCitiesInRegion("Western Europe");
         app.displayCity(cities, "8");
         String output = "Test input 8 -- passed\n\n\n";
         System.out.println(output);
@@ -96,7 +96,7 @@ public class AppIntegrationTest {
     @Test
     void testInput9(){
         City cty = City.getInstance();
-        ArrayList<City> cities = cty.getDistrictByPop();
+        ArrayList<City> cities = cty.getDistrictByPop("Texas");
         app.displayCity(cities, "9");
         String output = "Test input 9 - passed \n\n\n";
         System.out.println(output);
@@ -105,7 +105,7 @@ public class AppIntegrationTest {
     @Test
     void testInput10(){
         City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCapitalCitiesInContinentByPoP();
+        ArrayList<City> cities = cty.getCapitalCitiesInContinentByPoP("Asia");
         app.displayCity(cities, "10");
         String output = "Test input 10 -- passed\n\n\n";
         System.out.println(output);

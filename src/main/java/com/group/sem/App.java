@@ -183,11 +183,6 @@ public class App {
 
                 //Get all capital cities in a region ordered by largest population to smallest
                 System.out.println("\n\nWhich region would you like to see the capital cities of?\n\n");
-
-                for (Country.RegionEnum region : EnumSet.allOf(Country.RegionEnum.class)) {
-                    System.out.println(region);
-                }
-
                 System.out.println("\n\nPlease make your selection:");
                 String regionOption = in.nextLine();
                 System.out.println("Retrieving data on " + regionOption + "...");
@@ -202,7 +197,16 @@ public class App {
             }
             case "4": {
                 //Gets all cities in a selected country ordered by population largest to smallest
-                ArrayList<City> cities = cc.getCitiesInCountryByPop();
+                System.out.println("\n\nWhich country would you like to see the cities of?\n\n");
+
+
+                System.out.println("\n\nPlease make your selection:");
+                String countryOption = in.nextLine();
+                System.out.println("Retrieving data on " + countryOption + "...");
+
+
+
+                ArrayList<City> cities = cc.getCitiesInCountryByPop(countryOption);
 
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
@@ -220,7 +224,12 @@ public class App {
             }
             case "6": {
                 //Gets all cities in a district ordered by population largest to smallest
-                ArrayList<City> cities = cc.getCitiesInDistrictByPop();
+                System.out.println("Which district would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:\n\n");
+                String districtOption = in.nextLine();
+                System.out.println("Retrieving data on " + districtOption + "...");
+
+                ArrayList<City> cities = cc.getCitiesInDistrictByPop(districtOption);
 
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
@@ -229,13 +238,7 @@ public class App {
             case "7": {
 
                 //Gets all cities in a continent, ordered by largest population to smallest
-
                 System.out.println("Which continent would you like to see the cities of?\n\n");
-
-                for (Country.Continent continent : EnumSet.allOf(Country.Continent.class)) {
-                    System.out.println(continent);
-                }
-
                 System.out.println("Please make your selection:");
                 String continentOption = in.nextLine();
                 System.out.println("Retrieving data on " + continentOption + "...");
@@ -248,15 +251,26 @@ public class App {
             }
             case "8": {
                 //Get all cities in a region ordered by population largest to smallest
-                ArrayList<City> cities = cc.getCitiesInRegion();
+                System.out.println("Which region would you like to see the cities of\n\n");
+                System.out.println("Please make your selection:\n");
+                String regionOption = in.nextLine();
+                System.out.println("Retrieving data on " + regionOption + "...");
+
+
+                ArrayList<City> cities = cc.getCitiesInRegion(regionOption);
 
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
                 break;
             }
             case "9": {
-                //Get all cities in a region ordered by population largest to smallest
-                ArrayList<City> cities = cc.getDistrictByPop();
+                //Gets district by population
+                System.out.println("Which district would you like to see the population of?");
+                System.out.println("Please make your selection:\n");
+                String districtOption = in.nextLine();
+                System.out.println("Retrieving data on " + districtOption + "...");
+
+                ArrayList<City> cities = cc.getDistrictByPop(districtOption);
 
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
@@ -264,7 +278,13 @@ public class App {
             }
             case "10": {
                 //Get all capital cities in a continent ordered by largest population to smallest
-                ArrayList<City> cities = cc.getCapitalCitiesInContinentByPoP();
+                System.out.println("Which continent would you like to see the capital cities of?\n\n");
+                System.out.println("Please make your selection:\n");
+                String continentOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+
+                ArrayList<City> cities = cc.getCapitalCitiesInContinentByPoP(continentOption);
 
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
@@ -274,11 +294,6 @@ public class App {
 
                 //Get all capital cities in a region ordered by largest population to smallest
                 System.out.println("Which region would you like to see the capital cities of?\n\n");
-
-                for (Country.RegionEnum region : EnumSet.allOf(Country.RegionEnum.class)) {
-                    System.out.println(region);
-                }
-
                 System.out.println("Please make your selection:");
                 String regionOption = in.nextLine();
                 System.out.println("Retrieving data on " + regionOption + "...");
