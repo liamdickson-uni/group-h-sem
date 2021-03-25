@@ -70,13 +70,13 @@ public class CountryTests {
      */
     @Test
     void getCountryInRegionByPopTest() {
-        country.getCountryInRegionByPop();
+        country.getCountryInRegionByPop("Middle East");
     }
 
     @Test
     void getCountryInRegionByPopTestIsNotNull()
     {
-        ArrayList<Country> countries = country.getCountryInRegionByPop();
+        ArrayList<Country> countries = country.getCountryInRegionByPop("British Islands");
         for (Country country: countries){
             assertNotNull(countries);}
     }

@@ -1,9 +1,10 @@
 package com.group.sem;
 
-import org.junit.jupiter.api.*;
 
-
+import org.junit.jupiter.api.* ;
+import java.sql.SQLException;
 import java.util.ArrayList;
+
 
 
 public class AppIntegrationTest {
@@ -19,7 +20,7 @@ public class AppIntegrationTest {
     }
 
     @Test
-    void testInput1()
+    void getCountryByPopDescInputTest()
     {
         Country c = Country.getInstance();
         ArrayList<Country> countries = c.getCountryByPopDesc();
@@ -28,10 +29,9 @@ public class AppIntegrationTest {
         System.out.println(output);
     }
 
-
-
     @Test
-    void testInput2() {
+    void getCountryInContinentByPopInputTest()
+    {
         Country c = Country.getInstance();
         ArrayList<Country> countries = c.getCountryInContinentByPop();
         app.displayCountry(countries, "2");
@@ -42,7 +42,7 @@ public class AppIntegrationTest {
     @Test
     void testInput3(){
         Country c = Country.getInstance();
-        ArrayList<Country> countries = c.getCountryInRegionByPop();
+        ArrayList<Country> countries = c.getCountryInRegionByPop("North America");
         app.displayCountry(countries, "3");
         String output = "Test input 3 -- passed \n\n\n";
         System.out.println(output);

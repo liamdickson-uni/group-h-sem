@@ -225,7 +225,7 @@ public class Country {
      * This method gets a list of countries in a specified region
      * @return an ArrayList of countries
      */
-    public ArrayList<Country> getCountryInRegionByPop() {
+    public ArrayList<Country> getCountryInRegionByPop(String region) {
 
         try {
             // Create an SQL statement
@@ -234,7 +234,7 @@ public class Country {
             String strSelect =
                     " SELECT c.Region, c.Name, c.Population" +
                             " FROM country c" +
-                            " WHERE c.Region = 'Southern Europe'" +
+                            " WHERE c.Region =" + region +
                             " ORDER BY c.Population DESC";
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);

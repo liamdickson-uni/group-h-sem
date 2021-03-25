@@ -57,8 +57,7 @@ public class App {
         Scanner in = new Scanner(System.in);
 
         //Print out welcome message
-        System.out.println("\n\n\nWelcome to Wildcat Bikes Global Information App. " +
-                            "Please wait a moment while we connect you to our database.\n\n");
+        System.out.println("\n\n\nWelcome to Wildcat Bikes Global Information App.\n\n");
 
         //Asks the user if they would like to start the program and passes their answer to the appPath() method
         System.out.println("Would you like to start?   Yes/No\n\n");
@@ -181,8 +180,20 @@ public class App {
                 break;
             }
             case "3": {
+
+                //Get all capital cities in a region ordered by largest population to smallest
+                System.out.println("\n\nWhich region would you like to see the capital cities of?\n\n");
+
+                for (Country.RegionEnum region : EnumSet.allOf(Country.RegionEnum.class)) {
+                    System.out.println(region);
+                }
+
+                System.out.println("\n\nPlease make your selection:");
+                String regionOption = in.nextLine();
+                System.out.println("Retrieving data on " + regionOption + "...");
+
                 //Gets all countries in a selected region ordered by population largest to smallest
-                ArrayList<Country> countries = c.getCountryInRegionByPop();
+                ArrayList<Country> countries = c.getCountryInRegionByPop(regionOption);
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
@@ -263,7 +274,7 @@ public class App {
                 ArrayList<City> cities = cc.getCapitalCitiesInRegionByPoP(regionOption);
 
                 //Displays list of selected query
-                a.displayCity(cities, "11");
+                a.displayCity(cities, userInput);
                 break;
             }
         }
