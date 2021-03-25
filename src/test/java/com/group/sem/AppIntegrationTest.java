@@ -14,7 +14,8 @@ public class AppIntegrationTest {
     static void init()
     {
         app = App.getInstance();
-        app.connect(false);
+        DatabaseConnection db = DatabaseConnection.getInstance();
+        db.connect(false);
     }
 
     @Test

@@ -137,8 +137,11 @@ public class Country {
     public String code2;
 
 
-    //Creates a new instance of App
+    //Gets the singleton instance of App
     App app = App.getInstance();
+
+    //Gets the singleton instance of Database Connection
+    DatabaseConnection db = DatabaseConnection.getInstance();
 
     /*
      * These methods are used to get country data and to display country data.
@@ -153,7 +156,7 @@ public class Country {
     public ArrayList<Country> getCountryByPopDesc() {
         try {
             // Create an SQL statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Name, c.Continent, c.Population" +
@@ -188,7 +191,7 @@ public class Country {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
 
             // Create string for SQL statement
             String strSelect =
@@ -226,7 +229,7 @@ public class Country {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Region, c.Name, c.Population" +

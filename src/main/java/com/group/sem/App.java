@@ -80,8 +80,11 @@ public class App {
             //Get singleton instance of App
             App a = App.getInstance();
 
+            //Get singleton instance of Database Connection
+            DatabaseConnection db = DatabaseConnection.getInstance();
+
             // Connect to the database
-            a.connect(false);
+            db.connect(false);
 
             System.out.println("Please select of the options:\n\n " +
                     "1 - Get all counties by population\n " +
@@ -125,7 +128,7 @@ public class App {
             }
 
             // App Disconnects from database
-            a.disconnect();
+            db.disconnect();
 
             //Exits the app
             System.exit(0);
@@ -133,7 +136,10 @@ public class App {
     }
 
 
-
+    /**
+     *
+     * @param userInput - The users query option from appPath()
+     */
     public static void options(String userInput) {
 
         //Get Singleton instance of App
@@ -262,79 +268,6 @@ public class App {
             }
         }
 
-    }
-
-
-
-
-
-    /**
-     * Connection to MySQL database.
-     */
-    private Connection con = null;
-
-    /**
-     * Connect to the MySQL database..
-     *
-     * @param isConnected -- Displays different text depending on connection status
-     */
-    public Connection connect(boolean isConnected) {
-
-        if (con == null) {
-            try {
-                // Load Database driver
-                Class.forName("com.mysql.cj.jdbc.Driver");
-            } catch (ClassNotFoundException e) {
-                System.out.println("Could not load SQL driver");
-                System.exit(-1);
-            }
-
-            int retries = 10;
-
-            for (int i = 0; i < retries; ++i) {
-                if (!isConnected) {
-                    System.out.println("Connecting to database...");
-                }
-
-                try {
-
-                    System.out.println("Loading...");
-                    // Wait a bit for db to start
-                    Thread.sleep(30000);
-                    // Connect to database
-                    con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
-
-                    if (!isConnected) {
-                        System.out.println("Successfully connected");
-                    }
-                    break;
-
-                } catch (SQLException sqle) {
-                    System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                    System.out.println(sqle.getMessage());
-                } catch (InterruptedException ie) {
-                    System.out.println("Thread interrupted? Should not happen.");
-                }
-            }
-        }
-        return con;
-    }
-
-
-
-
-    /**
-     * Disconnects from the MySQL database.
-     */
-    public void disconnect() {
-        if (con != null) {
-            try {
-                // Close connection
-                con.close();
-            } catch (Exception e) {
-                System.out.println("Error closing connection to database");
-            }
-        }
     }
 
 

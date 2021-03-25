@@ -101,8 +101,11 @@ public class City {
      * These methods are used to get city data and to display city data.
      */
 
-
+    //Gets singleton instance of App
     App app = App.getInstance();
+
+    //Gets singleton instance of Database Connection
+    DatabaseConnection db = DatabaseConnection.getInstance();
 
     /**
      * This method gets the cities in a country ordered by population
@@ -114,7 +117,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.Name" +
@@ -154,7 +157,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT c.Name, c.Population FROM city c ORDER BY c.Population DESC";
@@ -195,7 +198,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.Name" +
@@ -234,7 +237,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.District, cty.Name" +
@@ -277,7 +280,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.Name" +
@@ -318,7 +321,7 @@ public class City {
 
         try {
             // Create an SQL statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
             // Create string for SQL statement
             String strSelect =
                     " SELECT cty.District, sum(cty.Population) as pop" +
@@ -357,7 +360,7 @@ public class City {
 
         try {
             //Create a SQL Statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
 
             //Create String fro SQL Statement
 
@@ -400,7 +403,7 @@ public class City {
 
         try {
             //Create a SQL Statement
-            Statement stmt = app.connect(true).createStatement();
+            Statement stmt = db.connect(true).createStatement();
 
             //Create String fro SQL Statement
 
