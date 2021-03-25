@@ -14,7 +14,7 @@ public class CityTests {
 
     @BeforeAll
     static void init() {
-        city = new City();
+        city = City.getInstance();
     }
 
     /**

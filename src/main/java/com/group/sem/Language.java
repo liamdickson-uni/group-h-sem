@@ -2,6 +2,25 @@ package com.group.sem;
 
 public class Language {
 
+    /**
+     *  The following code creates a singleton instance of the Language Class to be used throughout the program
+     */
+
+    //Private constructor
+    private static Language INSTANCE;
+
+    //Empty Constructor
+    private Language(){
+    }
+
+    //Static factory method for obtaining the instance
+    public static Language getInstance(){
+        if (INSTANCE == null) {
+            INSTANCE = new Language();
+        }
+        return INSTANCE;
+    }
+
 
     /**
      * Represents Country Code

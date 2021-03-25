@@ -14,8 +14,8 @@ public class CountryTests {
 
     @BeforeAll
     static void init() {
-        country = new Country();
-        app = new App();
+        country = Country.getInstance();
+        app = App.getInstance();
     }
 
 

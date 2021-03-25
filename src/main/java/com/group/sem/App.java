@@ -23,56 +23,138 @@ import java.util.*;
 
 public class App {
 
+    /**
+     *  The following code creates a singleton instance of the App Class to be used throughout the program
+     */
+
+    //Private Constructor
+    private static App INSTANCE;
+
+    //Empty Constructor
+    private App() {
+
+    }
+
+    //Static factory method for obtaining the instance
+    public static App getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new App();
+        }
+         return INSTANCE;
+    }
+
+
+
 
     /**
      * @param args
      */
     public static void main(String[] args) {
-        // Create new Application
+        //Access instance of App Class
+        App a = App.getInstance();
+
+        //Creates new Scanner for user Input
+        Scanner in = new Scanner(System.in);
+
+        //Print out welcome message
         System.out.println("\n\n\nWelcome to Wildcat Bikes Global Information App. " +
                             "Please wait a moment while we connect you to our database.\n\n");
 
-        //Runs the main code
-        appPath();
+        //Asks the user if they would like to start the program and passes their answer to the appPath() method
+        System.out.println("Would you like to start?   Yes/No\n\n");
+        String startInput = in.nextLine();
+
+        //Runs the appPath() method
+        a.appPath(startInput);
 
     }
 
-    public static void appPath() {
 
-        App a = new App();
-        //Create new country
-        Country c = new Country();
-        //Create new City
-        City cc = new City();
+    /**
+     * This method runs the app in a loop until the user wants to exit
+     */
+    public void appPath(String start) {
+
+        if(start.equals("Yes")) {
+
+            //Get singleton instance of App
+            App a = App.getInstance();
+
+            // Connect to the database
+            a.connect(false);
+
+            System.out.println("Please select of the options:\n\n " +
+                    "1 - Get all counties by population\n " +
+                    "2 - Get all countries in a specific continent\n" +
+                    "3 - Get all countries in a specific region\n" +
+                    "4 - Get all cities in a specific country\n" +
+                    "5 - Get all cities ordered by population\n" +
+                    "6 - Get all cities in a specific District\n" +
+                    "7 - Get all cities in a specific continent\n" +
+                    "8 - Get all cities in a region\n" +
+                    "9 - Get the population in a district\n" +
+                    "10 - Get the capital cities in a specified continent\n" +
+                    "11 - Get the capital cities in a specified region\n"
+            );
+
+            //Creates new Scanner for user input
+            Scanner in = new Scanner(System.in);
+
+            //Asks the user to select an option
+            System.out.println("Select your option:");
+
+            //User inputs their option
+            String userInput = in.nextLine();
+
+            //Tells the user what they have selected and that their query results are on the way
+            System.out.println("You have selected " + userInput + " as your option.\n Your results are:\n");
+
+            //Passes the users option to the options() method which runs the specified query
+            options(userInput);
+
+
+            //Asks the user if they would like to make another query
+            System.out.println("Would you like to make another query?    Yes/No");
+
+            //User says 'yes' or 'no'
+            String restartOption = in.nextLine();
+
+            //Program will loop until user selects 'no'
+            while (restartOption.equals("Yes")) {
+                appPath(restartOption);
+            }
+
+            // App Disconnects from database
+            a.disconnect();
+
+            //Exits the app
+            System.exit(0);
+        }
+    }
+
+
+
+    public static void options(String userInput) {
+
+        //Get Singleton instance of App
+        App a = App.getInstance();
+
+        //Get singleton instance of Country
+        Country c = Country.getInstance();
+
+        //Get singleton instance of City
+        City cc = City.getInstance();
+
         //Create new Language
-        Language l = new Language();
+        Language l = Language.getInstance();
 
-
-        // Connect to the database
-        a.connect(false);
-
-
-        System.out.println("Please select of the options:\n\n " +
-                "1 - Get all counties by population\n " +
-                "2 - Get all countries in a specific continent\n" +
-                "3 - Get all countries in a specific region\n" +
-                "4 - Get all cities in a specific country\n" +
-                "5 - Get all cities ordered by population\n" +
-                "6 - Get all cities in a specific District\n" +
-                "7 - Get all cities in a specific continent\n" +
-                "8 - Get all cities in a region\n" +
-                "9 - Get the population in a district\n" +
-                "10 - Get the capital cities in a specified continent\n" +
-                "11 - Get the capital cities in a specified region\n"
-        );
-
-
+        //Creates new Scanner for user Input
         Scanner in = new Scanner(System.in);
-        System.out.println("Select your option:");
-        String userInput = in.nextLine();
-        System.out.println("You have selected " + userInput + " as your option.\n Your results are:\n");
 
 
+        /*
+         * This switch statement takes the users input and carries out the query they specified
+         */
         switch (userInput) {
             case "1": {
                 //Gets all countries ordered by population largest to smallest
@@ -180,17 +262,10 @@ public class App {
             }
         }
 
-        System.out.println("Would you like to make another query?    Yes/No");
-        String restartOption = in.nextLine();
-
-        while (restartOption.equals("Yes")){
-            appPath();
-        }
-
-        // App Disconnects from database
-        a.disconnect();
-        System.exit(0);
     }
+
+
+
 
 
     /**
@@ -205,9 +280,7 @@ public class App {
      */
     public Connection connect(boolean isConnected) {
 
-
         if (con == null) {
-
             try {
                 // Load Database driver
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -246,6 +319,9 @@ public class App {
         }
         return con;
     }
+
+
+
 
     /**
      * Disconnects from the MySQL database.
@@ -443,7 +519,6 @@ public class App {
                     }
                 }
             }
-
 
         } catch (Exception e) {
             if (userInput == null && cities == null) {

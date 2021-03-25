@@ -39,6 +39,35 @@ import java.util.ArrayList;
  * This class represents a city
  */
 public class City {
+
+    /**
+     *  The following code creates a singleton instance of the City Class to be used throughout the program
+     */
+
+    //Private constructor
+    private static City INSTANCE;
+
+    //Empty Constructor
+    private City(){
+    }
+
+    //Static factory method for obtaining the instance
+    public static City getInstance(){
+        if (INSTANCE == null) {
+            INSTANCE = new City();
+        }
+        return INSTANCE;
+    }
+
+
+
+
+
+
+
+
+
+
     /*
      * Represents a City
      */
@@ -73,7 +102,7 @@ public class City {
      */
 
 
-    App app = new App();
+    App app = App.getInstance();
 
     /**
      * This method gets the cities in a country ordered by population

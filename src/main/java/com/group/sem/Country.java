@@ -44,6 +44,27 @@ import java.util.ArrayList;
  */
 public class Country {
 
+
+    /**
+     *  The following code creates a singleton instance of the Country Class to be used throughout the program
+     */
+
+    //Private constructor
+    private static Country INSTANCE;
+
+    //Empty Constructor
+    private Country(){
+    }
+
+    //Static factory method for obtaining the instance
+    public static Country getInstance(){
+        if (INSTANCE == null) {
+            INSTANCE = new Country();
+        }
+        return INSTANCE;
+    }
+
+
     /*
      * Represents Country Code
      */
@@ -117,7 +138,7 @@ public class Country {
 
 
     //Creates a new instance of App
-    App app = new App();
+    App app = App.getInstance();
 
     /*
      * These methods are used to get country data and to display country data.

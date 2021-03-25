@@ -13,7 +13,7 @@ public class AppTests
     @BeforeAll
     static void init()
     {
-        app = new App();
+        app = App.getInstance();
     }
 
 
@@ -82,7 +82,7 @@ public class AppTests
     void displayCountries()
     {
         ArrayList<Country> country = new ArrayList<Country>();
-        Country cnt = new Country();
+        Country cnt = Country.getInstance();
 
         cnt.Code = "1";
         cnt.Name = "Scotland";
@@ -106,7 +106,7 @@ public class AppTests
     void displayCities()
     {
         ArrayList<City> city = new ArrayList<City>();
-        City cty = new City();
+        City cty =  City.getInstance();
 
         cty.cityID = 1;
         cty.cityName = "Scotland";
