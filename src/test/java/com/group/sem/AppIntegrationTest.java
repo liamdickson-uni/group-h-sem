@@ -120,4 +120,11 @@ public class AppIntegrationTest {
         System.out.println(output);
     }
 
+
+    @Test
+    void disconnectTest(){
+        DatabaseConnection db = DatabaseConnection.getInstance();
+        db.disconnect();
+    }
+
 }

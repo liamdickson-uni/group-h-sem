@@ -92,6 +92,7 @@ public class DatabaseConnection {
             try {
                 // Close connection
                 con.close();
+                System.out.println("Database Disconnected");
             } catch (Exception e) {
                 System.out.println("Error closing connection to database");
             }
