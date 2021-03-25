@@ -155,16 +155,19 @@ public class Country {
      */
     public ArrayList<Country> getCountryByPopDesc() {
         try {
-            // Create an SQL statement
-            Statement stmt = db.connect(true).createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    " SELECT c.Name, c.Continent, c.Population" +
+
+            //Defines the prepared SQL Statement
+            String sql = "SELECT c.Name, c.Continent, c.Population" +
                             " FROM country c" +
                             " ORDER BY c.Population DESC";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
             // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new country while valid.
+            ResultSet rset = ps.executeQuery();
+
+            //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<Country>();
 
             // Check one is returned
@@ -187,25 +190,24 @@ public class Country {
      * This method gets a list of countries
      * @return an ArrayList of countries
      */
-    public ArrayList<Country> getCountryInContinentByPop() {
+    public ArrayList<Country> getCountryInContinentByPop()  {
 
         try {
-            // Create an SQL statement
-            Statement stmt = db.connect(true).createStatement();
-
-            // Create string for SQL statement
-            String strSelect =
-                    " SELECT c.Continent, c.Name" +
+            // Defines the prepared SQL statement
+            String sql = " SELECT c.Continent, c.Name" +
                             " FROM country c" +
                             " ORDER BY c.Continent, c.Population DESC";
 
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+            //Sets up the prepared statement
+           PreparedStatement ps = db.connect(true).prepareStatement(sql);
 
-            // Return new country while valid.
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            // Creates an ArrayList of countries
             ArrayList<Country> countries = new ArrayList<>();
 
-            // Check one is returned
+            // Check that a country is returned
             while (rset.next()) {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
@@ -214,7 +216,7 @@ public class Country {
             }
             return countries;
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get countries in selected continent");
             return null;
@@ -228,21 +230,25 @@ public class Country {
     public ArrayList<Country> getCountryInRegionByPop(String region) {
 
         try {
-            // Create an SQL statement
-            Statement stmt = db.connect(true).createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    " SELECT c.Region, c.Name, c.Population" +
-                            " FROM country c" +
-                            " WHERE c.Region =" + region +
-                            " ORDER BY c.Population DESC";
-            // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
-            // Return new country while valid.
+            //Defines the prepared SQL statement
+            String sql = "SELECT c.Region, c.Name, c.Population " +
+                    "FROM country c " +
+                    "WHERE c.Region = ? " +
+                    "ORDER BY c.Population DESC";
 
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assign userInput to the first parameterIndex
+            ps.setString(1, region);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<>();
 
-            // Check one is returned
+            // Check that a county is returned and add the data to the ArrayList
             while (rset.next()) {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
@@ -307,4 +313,37 @@ public class Country {
             return label;
         }
     }
+
+    public enum Continent {
+
+        ASIA ("Asia"),
+        EUROPE ("Europe"),
+        NORTH_AMERICA("North America"),
+        AFRICA ("Africa"),
+        OCEANIA ("Oceania"),
+        ANTARTICA("Antartica"),
+        SOUTH_AMERICA ("South America");
+
+        public final String label;
+
+        Continent(String label) {this.label = label;
+        }
+
+        public static Continent valueOfLabel(String label) {
+
+            for (Continent c : values()) {
+                if (c.label.equals(label)) {
+                    return c;
+                }
+            } return null;
+        }
+
+        @Override
+        public String toString() {
+            return label;
+        }
+
+    }
+
+
 }

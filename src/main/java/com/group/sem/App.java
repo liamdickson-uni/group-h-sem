@@ -228,7 +228,19 @@ public class App {
             }
             case "7": {
 
-                ArrayList<City> cities = cc.getCitiesInCont();
+                //Gets all cities in a continent, ordered by largest population to smallest
+
+                System.out.println("Which continent would you like to see the cities of?\n\n");
+
+                for (Country.Continent continent : EnumSet.allOf(Country.Continent.class)) {
+                    System.out.println(continent);
+                }
+
+                System.out.println("Please make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+                ArrayList<City> cities = cc.getCitiesInCont(continentOption);
 
                 a.displayCity(cities, userInput);
 

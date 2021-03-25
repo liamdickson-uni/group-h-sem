@@ -190,24 +190,25 @@ public class City {
      *
      * @return an ArrayList of Cities
      */
-    public ArrayList<City> getCitiesInCont() {
-
-        System.out.println("Which continent would you like to see cities in");
-
-        String contInput = "Europe";
+    public ArrayList<City> getCitiesInCont(String continent) {
 
         try {
-            // Create an SQL statement
-            Statement stmt = db.connect(true).createStatement();
-            // Create string for SQL statement
-            String strSelect =
-                    " SELECT cty.Name" +
+
+            // Defines the prepared SQL statement
+            String sql = " SELECT cty.Name" +
                             " FROM city cty" +
                             " JOIN country cnt ON (cnt.Code = cty.CountryCode) " +
-                            "WHERE cnt.Continent IN ('" + contInput + "')" +
+                            "WHERE cnt.Continent = ?" +
                             "ORDER BY cty.Population DESC";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assigns user input to parameterIndex
+            ps.setString(1, continent);
+
             // Execute SQL statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+            ResultSet rset = ps.executeQuery();
             // Return new country while valid.
 
             ArrayList<City> cities = new ArrayList<>();
@@ -402,20 +403,22 @@ public class City {
     public ArrayList<City> getCapitalCitiesInRegionByPoP(String Region) {
 
         try {
-            //Create a SQL Statement
-            Statement stmt = db.connect(true).createStatement();
 
-            //Create String fro SQL Statement
-
-            String strSelect =
-                    "SELECT cty.Name, cty.Population" +
+            //Defines the prepared SQL statement
+            String sql = "SELECT cty.Name, cty.Population" +
                             " FROM city cty" +
                             " JOIN country cnt ON (cnt.Capital = cty.ID)" +
-                            " WHERE cnt.Region =" + Region  +
+                            " WHERE cnt.Region = ?" +
                             " ORDER BY cty.Population DESC";
 
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assigns user input to parameterIndex 1
+            ps.setString(1, Region);
+
             //Execute SQL Statement
-            ResultSet rset = stmt.executeQuery(strSelect);
+            ResultSet rset = ps.executeQuery();
 
             //Create a list to store the data
             ArrayList<City> cities = new ArrayList<>();
