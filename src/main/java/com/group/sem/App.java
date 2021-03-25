@@ -1,8 +1,7 @@
 package com.group.sem;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
 
 
 /**
@@ -24,191 +23,289 @@ import java.util.Scanner;
 
 public class App {
 
+    /**
+     *  The following code creates a singleton instance of the App Class to be used throughout the program
+     */
+
+    //Private Constructor
+    private static App INSTANCE;
+
+    //Empty Constructor
+    private App() {
+
+    }
+
+    //Static factory method for obtaining the instance
+    public static App getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new App();
+        }
+         return INSTANCE;
+    }
+
+
+
 
     /**
      * @param args
      */
     public static void main(String[] args) {
-        // Create new Application
-        App a = new App();
+        //Access instance of App Class
+        App a = App.getInstance();
 
-        //Create new country
-        Country c = new Country();
-
-        //Create new City
-        City cc = new City();
-
-        // Connect to the database
-        a.connect(false);
-
-
-        System.out.println("Please select of the options:\n\n " +
-                "1 - Get all counties by population\n " +
-                "2 - Get all countries in a specific continent\n" +
-                "3 - Get all countries in a specific region\n" +
-                "4 - Get all cities in a specific country\n" +
-                "5 - Get all cities ordered by population\n" +
-                "6 - Get all cities in a specific District\n" +
-                "7 - Get all cities in a specific continent\n" +
-                "8 - Get all cities in a region\n" +
-                "9 - Get the population in a district\n" +
-                "10 - Get the capital cities in a specified continent\n" +
-                "11 - Get the capital cities in a specified region\n"
-        );
-
-
+        //Creates new Scanner for user Input
         Scanner in = new Scanner(System.in);
-        System.out.println("Select your option:");
-        String userInput = in.nextLine();
-        System.out.println("You have selected " + userInput + " as your option.\n Your results are:\n");
 
+        //Print out welcome message
+        System.out.println("\n\n\nWelcome to Wildcat Bikes Global Information App.\n\n");
 
+        //Asks the user if they would like to start the program and passes their answer to the appPath() method
+        System.out.println("Would you like to start?   Yes/No\n\n");
+        String startInput = in.nextLine();
 
-        if (userInput.equals("1")) {
-            //Gets all countries ordered by population largest to smallest
-            ArrayList<Country> countries = c.getCountryByPopDesc();
-
-            //Displays list of selected query
-            a.displayCountry(countries, userInput);
-
-        } else if (userInput.equals("2")) {
-            //Gets all countries by a selected continent ordered by population largest to smallest
-            ArrayList<Country> countries = c.getCountryInContinentByPop();
-
-            //Displays list of selected query
-            a.displayCountry(countries, userInput);
-
-        } else if (userInput.equals("3")) {
-            //Gets all countries in a selected region ordered by population largest to smallest
-            ArrayList<Country> countries = c.getCountryInRegionByPop();
-
-            //Displays list of selected query
-            a.displayCountry(countries, userInput);
-
-        } else if (userInput.equals("4")) {
-            //Gets all cities in a selected country ordered by population largest to smallest
-            ArrayList<City> cities = cc.getCitiesInCountryByPop();
-
-            //Displays list of selected query
-            a.displayCity(cities, userInput);
-
-        } else if (userInput.equals("5")) {
-            //Gets all cities ordered by population largest to smallest
-            ArrayList<City> cities = cc.getCitiesByPop();
-
-            //Displays list of selected query
-            a.displayCity(cities, userInput);
-
-        } else if (userInput.equals("6")) {
-            //Gets all cities in a district ordered by population largest to smallest
-            ArrayList<City> cities = cc.getCitiesInDistrictByPop();
-
-            //Displays list of selected query
-            a.displayCity(cities, userInput);
-        } else if (userInput.equals("7")) {
-
-            ArrayList<City> cities = cc.getCitiesInCont();
-
-            a.displayCity(cities, userInput);
-
-        } else if (userInput.equals("8")) {
-            //Get all cities in a region ordered by population largest to smallest
-            ArrayList<City> cities = cc.getCitiesInRegion();
-
-            //Displays list of selected query
-            a.displayCity(cities, userInput);
-        }else if (userInput.equals("9")) {
-            //Get all cities in a region ordered by population largest to smallest
-            ArrayList<City> cities = cc.getDistrictByPop();
-
-            //Displays list of selected query
-            a.displayCity(cities, userInput);
-        } else if (userInput.equals("10")){
-            //Get all capital cities in a continent ordered by largest population to smallest
-            ArrayList<City> cities = cc.getCapitalCitiesInContinentByPoP();
-
-            //Displays list of selected query
-            a.displayCity(cities, userInput);
-        } else if (userInput.equals("11")) {
-            //Get all capital cities in a region ordered by largest population to smallest
-            ArrayList<City> cities = cc.getCapitalCitiesInRegionByPoP();
-
-            //Displays list of selected query
-            a.displayCity(cities, "11");
-        }
-
-
-        // App Disconnects from database
-        a.disconnect();
+        //Runs the appPath() method
+        a.appPath(startInput);
 
     }
 
-    /**
-     * Connection to MySQL database.
-     */
-    private Connection con = null;
 
     /**
-     * Connect to the MySQL database.
+     * This method runs the app in a loop until the user wants to exit
+     */
+    public void appPath(String start) {
+
+        if(start.equals("Yes")) {
+
+            //Get singleton instance of App
+            App a = App.getInstance();
+
+            //Get singleton instance of Database Connection
+            DatabaseConnection db = DatabaseConnection.getInstance();
+
+            // Connect to the database
+            db.connect(false);
+
+            System.out.println("Please select of the options:\n\n " +
+                    "1 - Get all counties by population\n " +
+                    "2 - Get all countries in a specific continent\n" +
+                    "3 - Get all countries in a specific region\n" +
+                    "4 - Get all cities in a specific country\n" +
+                    "5 - Get all cities ordered by population\n" +
+                    "6 - Get all cities in a specific District\n" +
+                    "7 - Get all cities in a specific continent\n" +
+                    "8 - Get all cities in a region\n" +
+                    "9 - Get the population in a district\n" +
+                    "10 - Get the capital cities in a specified continent\n" +
+                    "11 - Get the capital cities in a specified region\n"
+            );
+
+            //Creates new Scanner for user input
+            Scanner in = new Scanner(System.in);
+
+            //Asks the user to select an option
+            System.out.println("Select your option:");
+
+            //User inputs their option
+            String userInput = in.nextLine();
+
+            //Tells the user what they have selected and that their query results are on the way
+            System.out.println("You have selected " + userInput + " as your option.\n Your results are:\n");
+
+            //Passes the users option to the options() method which runs the specified query
+            options(userInput);
+
+
+            //Asks the user if they would like to make another query
+            System.out.println("Would you like to make another query?    Yes/No");
+
+            //User says 'yes' or 'no'
+            String restartOption = in.nextLine();
+
+            //Program will loop until user selects 'no'
+            while (restartOption.equals("Yes")) {
+                appPath(restartOption);
+            }
+
+            // App Disconnects from database
+            db.disconnect();
+
+            //Exits the app
+            System.exit(0);
+        }
+    }
+
+
+    /**
      *
-     * @param isConnected -- Displays different text depending on connection status
+     * @param userInput - The users query option from appPath()
      */
-    public Connection connect(boolean isConnected) {
+    public static void options(String userInput) {
+
+        //Get Singleton instance of App
+        App a = App.getInstance();
+
+        //Get singleton instance of Country
+        Country c = Country.getInstance();
+
+        //Get singleton instance of City
+        City cc = City.getInstance();
+
+        //Create new Language
+        Language l = Language.getInstance();
+
+        //Creates new Scanner for user Input
+        Scanner in = new Scanner(System.in);
 
 
-        if (con == null) {
+        /*
+         * This switch statement takes the users input and carries out the query they specified
+         */
+        switch (userInput) {
+            case "1": {
+                //Gets all countries ordered by population largest to smallest
+                ArrayList<Country> countries = c.getCountryByPopDesc();
 
-            try {
-                // Load Database driver
-                Class.forName("com.mysql.cj.jdbc.Driver");
-            } catch (ClassNotFoundException e) {
-                System.out.println("Could not load SQL driver");
-                System.exit(-1);
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+
+                break;
             }
+            case "2": {
+                //Gets all countries by a selected continent ordered by population largest to smallest
+                ArrayList<Country> countries = c.getCountryInContinentByPop();
 
-            int retries = 10;
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
 
-            for (int i = 0; i < retries; ++i) {
-                if (!isConnected) {
-                    System.out.println("Connecting to database...");
-                }
+                break;
+            }
+            case "3": {
 
-                try {
+                //Get all capital cities in a region ordered by largest population to smallest
+                System.out.println("\n\nWhich region would you like to see the capital cities of?\n\n");
+                System.out.println("\n\nPlease make your selection:");
+                String regionOption = in.nextLine();
+                System.out.println("Retrieving data on " + regionOption + "...");
 
-                    System.out.println("Loading...");
-                    // Wait a bit for db to start
-                    Thread.sleep(30000);
-                    // Connect to database
-                    con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                //Gets all countries in a selected region ordered by population largest to smallest
+                ArrayList<Country> countries = c.getCountryInRegionByPop(regionOption);
 
-                    if (!isConnected) {
-                        System.out.println("Successfully connected");
-                    }
-                    break;
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
 
-                } catch (SQLException sqle) {
-                    System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                    System.out.println(sqle.getMessage());
-                } catch (InterruptedException ie) {
-                    System.out.println("Thread interrupted? Should not happen.");
-                }
+                break;
+            }
+            case "4": {
+                //Gets all cities in a selected country ordered by population largest to smallest
+                System.out.println("\n\nWhich country would you like to see the cities of?\n\n");
+
+
+                System.out.println("\n\nPlease make your selection:");
+                String countryOption = in.nextLine();
+                System.out.println("Retrieving data on " + countryOption + "...");
+
+
+
+                ArrayList<City> cities = cc.getCitiesInCountryByPop(countryOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+
+                break;
+            }
+            case "5": {
+                //Gets all cities ordered by population largest to smallest
+                ArrayList<City> cities = cc.getCitiesByPop();
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+
+                break;
+            }
+            case "6": {
+                //Gets all cities in a district ordered by population largest to smallest
+                System.out.println("Which district would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:\n\n");
+                String districtOption = in.nextLine();
+                System.out.println("Retrieving data on " + districtOption + "...");
+
+                ArrayList<City> cities = cc.getCitiesInDistrictByPop(districtOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+            case "7": {
+
+                //Gets all cities in a continent, ordered by largest population to smallest
+                System.out.println("Which continent would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+                ArrayList<City> cities = cc.getCitiesInCont(continentOption);
+
+                a.displayCity(cities, userInput);
+
+                break;
+            }
+            case "8": {
+                //Get all cities in a region ordered by population largest to smallest
+                System.out.println("Which region would you like to see the cities of\n\n");
+                System.out.println("Please make your selection:\n");
+                String regionOption = in.nextLine();
+                System.out.println("Retrieving data on " + regionOption + "...");
+
+
+                ArrayList<City> cities = cc.getCitiesInRegion(regionOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+            case "9": {
+                //Gets district by population
+                System.out.println("Which district would you like to see the population of?");
+                System.out.println("Please make your selection:\n");
+                String districtOption = in.nextLine();
+                System.out.println("Retrieving data on " + districtOption + "...");
+
+                ArrayList<City> cities = cc.getDistrictByPop(districtOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+            case "10": {
+                //Get all capital cities in a continent ordered by largest population to smallest
+                System.out.println("Which continent would you like to see the capital cities of?\n\n");
+                System.out.println("Please make your selection:\n");
+                String continentOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+
+                ArrayList<City> cities = cc.getCapitalCitiesInContinentByPoP(continentOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+            case "11": {
+
+                //Get all capital cities in a region ordered by largest population to smallest
+                System.out.println("Which region would you like to see the capital cities of?\n\n");
+                System.out.println("Please make your selection:");
+                String regionOption = in.nextLine();
+                System.out.println("Retrieving data on " + regionOption + "...");
+
+                ArrayList<City> cities = cc.getCapitalCitiesInRegionByPoP(regionOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
             }
         }
-        return con;
-    }
 
-    /**
-     * Disconnects from the MySQL database.
-     */
-    public void disconnect() {
-        if (con != null) {
-            try {
-                // Close connection
-                con.close();
-            } catch (Exception e) {
-                System.out.println("Error closing connection to database");
-            }
-        }
     }
 
 
@@ -351,7 +448,7 @@ public class App {
                 }
             }
 
-            //Gets popualtion in a specified district
+            //Gets popultion in a specified district
             else if (userInput.equals("9")) {
 
                 System.out.printf("%-20s %-15s", "District", "Population\n");
@@ -394,11 +491,14 @@ public class App {
                 }
             }
 
-
         } catch (Exception e) {
             if (userInput == null && cities == null) {
                 System.out.println("No Cities");
             }
         }
     }
+
+
+
+
 }
