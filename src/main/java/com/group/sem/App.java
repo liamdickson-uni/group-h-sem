@@ -172,7 +172,13 @@ public class App {
             }
             case "2": {
                 //Gets all countries by a selected continent ordered by population largest to smallest
-                ArrayList<Country> countries = c.getCountryInContinentByPop();
+                System.out.println("\n\nWhich continent would you like to see the countries of?\n\n");
+                System.out.println("\n\nPlease make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+
+                ArrayList<Country> countries = c.getCountryInContinentByPop(continentOption);
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
@@ -181,14 +187,13 @@ public class App {
             }
             case "3": {
 
-                //Get all capital cities in a region ordered by largest population to smallest
-                System.out.println("\n\nWhich region would you like to see the capital cities of?\n\n");
+                //Gets all countries in a selected region ordered by population largest to smallest
+                System.out.println("\n\nWhich region would you like to see the countries of?\n\n");
                 System.out.println("\n\nPlease make your selection:");
                 String regionOption = in.nextLine();
                 System.out.println("Retrieving data on " + regionOption + "...");
-
-                //Gets all countries in a selected region ordered by population largest to smallest
                 ArrayList<Country> countries = c.getCountryInRegionByPop(regionOption);
+
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);

@@ -190,16 +190,19 @@ public class Country {
      * This method gets a list of countries
      * @return an ArrayList of countries
      */
-    public ArrayList<Country> getCountryInContinentByPop()  {
+    public ArrayList<Country> getCountryInContinentByPop(String userContinent)  {
 
         try {
             // Defines the prepared SQL statement
             String sql = " SELECT c.Continent, c.Name" +
-                            " FROM country c" +
+                            " FROM country c WHERE c.Continent = ?" +
                             " ORDER BY c.Continent, c.Population DESC";
 
             //Sets up the prepared statement
            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+           //Assigns user input to parameter index
+            ps.setString(1,userContinent);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
