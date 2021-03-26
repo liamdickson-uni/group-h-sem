@@ -121,10 +121,14 @@ public class AppIntegrationTest {
     }
 
 
-    @Test
-    void disconnectTest(){
-        DatabaseConnection db = DatabaseConnection.getInstance();
-        db.disconnect();
+    @AfterAll
+   public static void disconnectTest() {
+        try{DatabaseConnection db = DatabaseConnection.getInstance();
+            db.disconnect();
+        } catch (Exception e){
+            System.out.println("Error closing connection to database");
+        }
     }
+
 
 }
