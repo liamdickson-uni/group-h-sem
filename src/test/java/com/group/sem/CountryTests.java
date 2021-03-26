@@ -48,7 +48,7 @@ public class CountryTests {
     @Test
     void getCountryInContinentByPopTest()
     {
-        ArrayList<Country> countries = country.getCountryInContinentByPop();
+        ArrayList<Country> countries = country.getCountryInContinentByPop("Europe");
         for (Country country: countries){
         assertNotNull(countries);}
     }
@@ -56,12 +56,12 @@ public class CountryTests {
     @Test
     void getCountryInContinentCanConnect()
     {
-        ArrayList<Country> countries = country.getCountryByPopDesc();
+        ArrayList<Country> countries = country.getCountryInContinentByPop("Europe");
     }
 
     @Test
     void getCountryInContinentByDescTest() {
-        country.getCountryInContinentByPop();
+        country.getCountryInContinentByPop("Europe");
     }
 
 
