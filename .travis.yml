@@ -24,6 +24,7 @@ before_script:
 
 jobs:
   include:
+
   - stage: unit tests
     install: skip
     jdk: oraclejdk11
@@ -78,7 +79,7 @@ jobs:
       # Tell kubernetes to run the built database image, opening port 3306
       - kubectl run world --image=gcr.io/${PROJECT_ID}/db --port 3306
       # Exposes the cluster to the Internet, mapping external port 3306 to internal port 3306.
-      - kubectl expose deployment world --port=3306 --target-port=3306 --type=LoadBalancer
+      - kubectl expose deployment world --port=3306 --target-port=3306 --type=LoadBalancer  
 
 stages:
 - unit tests

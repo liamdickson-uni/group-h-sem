@@ -3,7 +3,9 @@ package com.group.sem;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -28,17 +30,16 @@ public class CountryTests {
     }
 
     @Test
-    void getCountryByPopDescCanConnect()
-    {
+    void getCountryByPopDescCanConnect() {
         ArrayList<Country> countries = country.getCountryByPopDesc();
     }
 
     @Test
-    void getCountryByPopDescIsNotNull()
-    {
+    void getCountryByPopDescIsNotNull() {
         ArrayList<Country> countries = country.getCountryByPopDesc();
-        for (Country country: countries) {
-            assertNotNull(countries);}
+        for (Country country : countries) {
+            assertNotNull(countries);
+        }
     }
 
     /**
@@ -57,6 +58,7 @@ public class CountryTests {
     void getCountryInContinentCanConnect()
     {
         ArrayList<Country> countries = country.getCountryInContinentByPop("Europe");
+
     }
 
     @Test
@@ -74,20 +76,19 @@ public class CountryTests {
     }
 
     @Test
+
     void getCountryInRegionByPopTestIsNotNull()
     {
         ArrayList<Country> countries = country.getCountryInRegionByPop("British Islands");
         for (Country country: countries){
             assertNotNull(countries);}
     }
+  
 
     @Test
-    void getCountryInRegionCanConnect()
-    {
+    void getCountryInRegionCanConnect() {
         ArrayList<Country> countries = country.getCountryByPopDesc();
     }
-
-
 
 
 }

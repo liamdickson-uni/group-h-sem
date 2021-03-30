@@ -24,6 +24,7 @@ public class AppIntegrationTest {
     /**
      * Tests that getCountryByPopDesc() method produces a report
      */
+  
     @Test
     void getCountryByPopDescInputTest() {
         Country c = Country.getInstance();
