@@ -1,6 +1,5 @@
 package com.group.sem;
 
-import java.sql.*;
 import java.util.*;
 
 
@@ -31,7 +30,7 @@ public class App {
     private static App INSTANCE;
 
     //Empty Constructor
-    
+
     private App() {
 
     }
