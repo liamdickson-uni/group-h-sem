@@ -29,7 +29,7 @@ jobs:
     install: skip
     jdk: oraclejdk11
     script: mvn test -Dtest=com.group.sem.AppTests
-  - stage: integreation tests
+  - stage: integration tests
     jdk: oraclejdk11
     script: mvn test -Dtest=com.group.sem.AppIntegrationTest
   - stage: GitHub Release
@@ -42,7 +42,7 @@ jobs:
     - git config --local user.name "Tom McEachan"
     - git config --local user.email "tom.a.mceachan@outlook.com"
     - export TRAVIS_TAG=${TRAVIS_TAG:-(date +'%Y-%m-%d')-$(git log --format=%h -1)}
-    - git tage $Travis_TAG
+    - git tag $Travis_TAG
     deploy:
       provider: releases
       api-key: "$GITHUB_OATH_TOKEN"
