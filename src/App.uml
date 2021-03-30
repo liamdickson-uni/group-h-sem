@@ -4,30 +4,15 @@
   <OriginalElement>com.group.sem.App</OriginalElement>
   <nodes>
     <node x="1208.0" y="0.0">com.group.sem.Language</node>
-    <node x="233.0" y="591.0">com.group.sem.Country.Region</node>
     <node x="858.0" y="0.0">com.group.sem.App</node>
     <node x="475.0" y="0.0">com.group.sem.City</node>
     <node x="50.5" y="0.0">com.group.sem.Country</node>
-    <node x="-37.51282051282044" y="607.2051282051282">com.group.sem.Country.Continent</node>
   </nodes>
   <notes />
-  <edges>
-    <edge source="com.group.sem.Country.Region" target="com.group.sem.Country">
-      <point x="0.0" y="-358.0" />
-      <point x="331.5" y="566.0" />
-      <point x="303.25" y="566.0" />
-      <point x="84.25" y="270.5" />
-    </edge>
-    <edge source="com.group.sem.Country.Continent" target="com.group.sem.Country">
-      <point x="0.0" y="-160.0" />
-      <point x="106.5" y="566.0" />
-      <point x="134.75" y="566.0" />
-      <point x="-84.25" y="270.5" />
-    </edge>
-  </edges>
-  <settings layout="Hierarchic Group" zoom="0.8251057827926658" x="375.0" y="766.5" />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.35529237601776464" x="715.5" y="259.5" />
   <SelectedNodes>
-    <node>com.group.sem.Country.Continent</node>
+    <node>com.group.sem.App</node>
   </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
