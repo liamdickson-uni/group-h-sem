@@ -10,7 +10,7 @@ public class LanguageTests {
     @BeforeAll
     static void init()
     {
-       language = new Language();
+       language = Language.getInstance();
     }
 
 }

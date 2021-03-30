@@ -16,8 +16,8 @@ public class CountryTests {
 
     @BeforeAll
     static void init() {
-        country = new Country();
-        app = new App();
+        country = Country.getInstance();
+        app = App.getInstance();
     }
 
 
@@ -47,21 +47,23 @@ public class CountryTests {
      */
 
     @Test
-    void getCountryInContinentByPopTest() {
-        ArrayList<Country> countries = country.getCountryInContinentByPop();
-        for (Country country : countries) {
-            assertNotNull(countries);
-        }
+    void getCountryInContinentByPopTest()
+    {
+        ArrayList<Country> countries = country.getCountryInContinentByPop("Europe");
+        for (Country country: countries){
+        assertNotNull(countries);}
     }
 
     @Test
-    void getCountryInContinentCanConnect() {
-        ArrayList<Country> countries = country.getCountryByPopDesc();
+    void getCountryInContinentCanConnect()
+    {
+        ArrayList<Country> countries = country.getCountryInContinentByPop("Europe");
+
     }
 
     @Test
     void getCountryInContinentByDescTest() {
-        country.getCountryInContinentByPop();
+        country.getCountryInContinentByPop("Europe");
     }
 
 
@@ -70,16 +72,18 @@ public class CountryTests {
      */
     @Test
     void getCountryInRegionByPopTest() {
-        country.getCountryInRegionByPop();
+        country.getCountryInRegionByPop("Middle East");
     }
 
     @Test
-    void getCountryInRegionByPopTestIsNotNull() {
-        ArrayList<Country> countries = country.getCountryInRegionByPop();
-        for (Country country : countries) {
-            assertNotNull(countries);
-        }
+
+    void getCountryInRegionByPopTestIsNotNull()
+    {
+        ArrayList<Country> countries = country.getCountryInRegionByPop("British Islands");
+        for (Country country: countries){
+            assertNotNull(countries);}
     }
+  
 
     @Test
     void getCountryInRegionCanConnect() {
