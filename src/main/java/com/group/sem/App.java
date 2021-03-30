@@ -31,6 +31,7 @@ public class App {
     private static App INSTANCE;
 
     //Empty Constructor
+    
     private App() {
 
     }
