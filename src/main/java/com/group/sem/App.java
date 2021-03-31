@@ -1,6 +1,6 @@
 package com.group.sem;
 
-import java.sql.*;
+
 import java.util.*;
 
 
@@ -350,6 +350,7 @@ public class App {
 
                     }
                 }
+
             }
             //Displays countries in region
             else if (userInput.equals("3")) {
@@ -371,6 +372,7 @@ public class App {
                 System.out.println("No Countries");
             }
         }
+
     }
 
 
@@ -494,6 +496,7 @@ public class App {
                         System.out.println(output);
                     }
                 }
+
             }
 
         } catch (Exception e) {
@@ -502,8 +505,5 @@ public class App {
             }
         }
     }
-
-
-
 
 }

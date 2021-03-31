@@ -1,5 +1,11 @@
 package com.group.sem;
 
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
+
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -140,6 +146,8 @@ public class Country {
     //Gets the singleton instance of App
     App app = App.getInstance();
 
+    CSVCreator csv = CSVCreator.getInstance();
+
     //Gets the singleton instance of Database Connection
     DatabaseConnection db = DatabaseConnection.getInstance();
 
@@ -217,9 +225,17 @@ public class Country {
                 cnt.Continent = rset.getString("Continent");
                 countries.add(cnt);
             }
+
+           //Sets the filename for the CSV file
+           String fileName = "csv/countries/countries_in_continent/Capital Cities in " + userContinent + ".csv";
+            Path path = Paths.get(fileName);
+
+            //Creates a CSV file with the queried data and adds it to the csv folder
+            csv.createCSVFileCountry(path,rset);
+
             return countries;
 
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get countries in selected continent");
             return null;
