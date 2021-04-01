@@ -1,5 +1,6 @@
 package com.group.sem;
 
+import java.io.FileWriter;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -58,14 +59,6 @@ public class City {
         }
         return INSTANCE;
     }
-
-
-
-
-
-
-
-
 
 
     /*
@@ -131,16 +124,45 @@ public class City {
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
-            // Return new country while valid.
 
+            //Sets the filename for the CSV file and creates a path to
+            String filename = "csv/cities/cities_in_country/Cities in " + country + ".csv";
+
+            //Creates a string called record to be used later
+            String record = null;
+
+            //Creates a new FileWriter and passes the filename and path to it
+            FileWriter fileWriter = new FileWriter(filename);
+
+            //Accesses the metadata from the result set to be used later
+            ResultSetMetaData metaData = rset.getMetaData();
+
+            //Gets the columns from the result set metadata and
+            int columns = metaData.getColumnCount();
+
+            //Creates an ArrayList of countries to pass back to a method
             ArrayList<City> cities = new ArrayList<>();
 
             // Check one is returned
             while (rset.next()) {
+                //Adds data from the result set to an ArrayList
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cities.add(cty);
+
+                //Adds data from the result set to a new csv file
+                for (int i =1; i <= columns; i++) {
+                    record = rset.getString(i);
+                    fileWriter.append(rset.getString(i));
+                    fileWriter.append(',');
+                }
+                //Skips to the next line
+                fileWriter.append('\n');
             }
+
+            //Closes the file writer
+            fileWriter.close();
+
             return cities;
 
         } catch (Exception e) {

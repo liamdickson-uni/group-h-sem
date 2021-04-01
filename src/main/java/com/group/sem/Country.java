@@ -3,11 +3,13 @@ package com.group.sem;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -215,24 +217,44 @@ public class Country {
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
-            // Creates an ArrayList of countries
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/countries_in_continent/Capital Cities in " + userContinent + ".csv";
+
+            //Creates  a null string record
+            String record = null;
+
+            //Creates a new FileWriter and passes the filename and path to it
+            FileWriter fileWriter = new FileWriter(fileName);
+
+            //Accesses the metadata from the result set to be used later
+            ResultSetMetaData metaData = rset.getMetaData();
+
+            //Gets the columns from th result set
+            int columns = metaData.getColumnCount();
+
+            // Creates an ArrayList of countries to pass back to method
             ArrayList<Country> countries = new ArrayList<>();
 
             // Check that a country is returned
             while (rset.next()) {
+                //Adds data from the result set to an ArrayList
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
                 cnt.Continent = rset.getString("Continent");
                 countries.add(cnt);
+
+                //Adds data from the result set to a csv file
+                for (int i =1; i <= columns; i++) {
+                    record = rset.getString(i);
+                    fileWriter.append(rset.getString(i));
+                    fileWriter.append(',');
+                }
+                //Skips to the next line
+                fileWriter.append('\n');
             }
 
-           //Sets the filename for the CSV file
-           String fileName = "csv/countries/countries_in_continent/Capital Cities in " + userContinent + ".csv";
-            Path path = Paths.get(fileName);
-
-            //Creates a CSV file with the queried data and adds it to the csv folder
-            csv.createCSVFileCountry(path,rset);
-
+            //Closes the file writer
+            fileWriter.close();
             return countries;
 
         } catch (SQLException | IOException e) {
