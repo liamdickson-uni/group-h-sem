@@ -225,6 +225,7 @@ public class Country {
 
             //Creates a new FileWriter and passes the filename and path to it
             FileWriter fileWriter = new FileWriter(fileName);
+            fileWriter.append("Continent" + "," + "Capital City\n");
 
             //Accesses the metadata from the result set to be used later
             ResultSetMetaData metaData = rset.getMetaData();
@@ -246,7 +247,7 @@ public class Country {
                 //Adds data from the result set to a csv file
                 for (int i =1; i <= columns; i++) {
                     record = rset.getString(i);
-                    fileWriter.append(rset.getString(i));
+                    fileWriter.append(record);
                     fileWriter.append(',');
                 }
                 //Skips to the next line

@@ -153,7 +153,7 @@ public class City {
                 //Adds data from the result set to a new csv file
                 for (int i =1; i <= columns; i++) {
                     record = rset.getString(i);
-                    fileWriter.append(rset.getString(i));
+                    fileWriter.append(record);
                     fileWriter.append(',');
                 }
                 //Skips to the next line
