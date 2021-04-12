@@ -1,6 +1,6 @@
 package com.group.sem;
 
-import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -103,7 +103,8 @@ public class City {
     /**
      * This method gets the cities in a country ordered by population
      *
-     * @return ArrayList of Cities
+     * @return - ArrayList of Cities
+     * @param country - User Selected Country
      *
      */
     public ArrayList<City> getCitiesInCountryByPop(String country) {
@@ -126,19 +127,7 @@ public class City {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path to
-            String filename = "csv/cities/cities_in_country/Cities in " + country + ".csv";
-
-            //Creates a string called record to be used later
-            String record = null;
-
-            //Creates a new FileWriter and passes the filename and path to it
-            FileWriter fileWriter = new FileWriter(filename);
-
-            //Accesses the metadata from the result set to be used later
-            ResultSetMetaData metaData = rset.getMetaData();
-
-            //Gets the columns from the result set metadata and
-            int columns = metaData.getColumnCount();
+            String fileName = "csv/cities/cities_in_country/Cities in " + country + ".csv";
 
             //Creates an ArrayList of countries to pass back to a method
             ArrayList<City> cities = new ArrayList<>();
@@ -148,20 +137,9 @@ public class City {
                 //Adds data from the result set to an ArrayList
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
+                CSVCreator.createCSV(fileName,rset);
                 cities.add(cty);
-
-                //Adds data from the result set to a new csv file
-                for (int i =1; i <= columns; i++) {
-                    record = rset.getString(i);
-                    fileWriter.append(record);
-                    fileWriter.append(',');
-                }
-                //Skips to the next line
-                fileWriter.append('\n');
             }
-
-            //Closes the file writer
-            fileWriter.close();
 
             return cities;
 
@@ -191,8 +169,11 @@ public class City {
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
-            // Return new country while valid.
 
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/cities_by_pop/All cities by population " + ".csv";
+
+            //Creates an ArrayList
             ArrayList<City> cities = new ArrayList<>();
 
             // Check one is returned
@@ -200,6 +181,7 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
                 cities.add(cty);
             }
             return cities;
@@ -216,7 +198,8 @@ public class City {
     /**
      * This method gets a list of cities in a specified continent
      *
-     * @return an ArrayList of Cities
+     * @return - An ArrayList of Cities
+     * @param continent - User selected continent
      */
     public ArrayList<City> getCitiesInCont(String continent) {
 
@@ -237,16 +220,21 @@ public class City {
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
-            // Return new country while valid.
 
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/cities_in_continent/Cities in " + continent + ".csv";
+
+            //Creates an empty ArrayList of Cities for printing
             ArrayList<City> cities = new ArrayList<>();
 
             // Check one is returned
             while (rset.next()) {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
+                CSVCreator.createCSV(fileName,rset);
                 cities.add(cty);
             }
+
             return cities;
 
         } catch (Exception e) {
@@ -280,8 +268,11 @@ public class City {
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
-            // Return new country while valid.
 
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/cities_in_district/Cities in " + userDistrict + ".csv";
+
+            //Creates an empty ArrayList of cities for printing
             ArrayList<City> cities = new ArrayList<>();
 
             // Check one is returned
@@ -289,6 +280,7 @@ public class City {
                 City cty = new City();
                 cty.cityDistrict = rset.getString("District");
                 cty.cityName = rset.getString("Name");
+                CSVCreator.createCSV(fileName,rset);
                 cities.add(cty);
             }
             return cities;
@@ -303,7 +295,6 @@ public class City {
 
     /**
      * This method gets a list of cities in a specified region, ordered by population
-     *
      * @return an ArrayList of cities
      */
     public ArrayList<City> getCitiesInRegion(String userRegion) {
@@ -325,14 +316,18 @@ public class City {
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
-            // Return new country while valid.
 
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/cities_in_region/Cities in " + userRegion + ".csv";
+
+            //Creates an Empty ArrayList of Cities
             ArrayList<City> cities = new ArrayList<>();
 
             // Check one is returned
             while (rset.next()) {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
+                CSVCreator.createCSV(fileName,rset);
                 cities.add(cty);
             }
             return cities;
@@ -346,44 +341,45 @@ public class City {
     }
 
     /**
-     * This method gets a list cities in a district ordered by population
+     * This method gets a list of districts and orders them by population
      *
      * @return an ArrayList of Cities
      */
 
-    public ArrayList<City> getDistrictByPop(String userDistrict) {
+    public ArrayList<City> getDistrictByPop() {
 
         try {
             //Defines the prepared SQL statement
-            String sql = " SELECT cty.District, sum(cty.Population) as pop" +
+            String sql = " SELECT cty.District, sum(cty.Population) as Population" +
                             " FROM city cty" +
-                            " WHERE cty.District = ?" +
                             " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
 
-            //Assigns user input to parameterIndex
-            ps.setString(1, userDistrict);
-
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
-            // Return new country while valid.
 
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/district/district_by_population/All Districts By Population" + ".csv";
+
+            //Creates an Empty ArrayList of Cities
             ArrayList<City> cities = new ArrayList<>();
 
             // Check one is returned
             while (rset.next()) {
                 City cty = new City();
+                cty.cityName = rset.getString("City");
                 cty.cityDistrict = rset.getString("District");
-                cty.cityPopulation = rset.getInt("pop");
+                cty.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
                 cities.add(cty);
             }
             return cities;
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get population for in selected district");
+            System.out.println("Failed to get data on the selected district");
             return null;
 
         }
@@ -413,6 +409,9 @@ public class City {
             //Execute SQL Statement
             ResultSet rset = ps.executeQuery();
 
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/capital_cities_in_continent/Capital Cities in " + userContinent + ".csv";
+
             //Create a list to store the data
             ArrayList<City> cities = new ArrayList<>();
 
@@ -421,10 +420,13 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
                 cities.add(cty);
             }
+
              return cities;
-        } catch (SQLException e) {
+
+        } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get capital cities and their populations.");
             return null;
@@ -438,10 +440,9 @@ public class City {
      *
      * @return an ArrayList of Cities
      */
-    public ArrayList<City> getCapitalCitiesInRegionByPoP(String Region) {
+    public ArrayList<City> getCapitalCitiesInRegionByPoP(String userRegion) {
 
         try {
-
             //Defines the prepared SQL statement
             String sql = "SELECT cty.Name, cty.Population" +
                             " FROM city cty" +
@@ -453,10 +454,13 @@ public class City {
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
 
             //Assigns user input to parameterIndex 1
-            ps.setString(1, Region);
+            ps.setString(1, userRegion);
 
             //Execute SQL Statement
             ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/capital_cities_in_region/Capital Cities in " + userRegion + ".csv";
 
             //Create a list to store the data
             ArrayList<City> cities = new ArrayList<>();
@@ -466,10 +470,11 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
                 cities.add(cty);
             }
             return cities;
-        } catch (SQLException e) {
+        } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get capital cities and their populations.");
             return null;

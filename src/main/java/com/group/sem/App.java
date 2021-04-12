@@ -275,7 +275,7 @@ public class App {
                 String districtOption = in.nextLine();
                 System.out.println("Retrieving data on " + districtOption + "...");
 
-                ArrayList<City> cities = cc.getDistrictByPop(districtOption);
+                ArrayList<City> cities = cc.getDistrictByPop();
 
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
