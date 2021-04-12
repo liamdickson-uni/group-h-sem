@@ -127,7 +127,7 @@ public class AppIntegrationTest {
     @Test
     void getDistrictByPopInputTest() {
         City cty = City.getInstance();
-        ArrayList<City> cities = cty.getDistrictByPop("Texas");
+        ArrayList<City> cities = cty.getDistrictByPop();
         app.displayCity(cities, "9");
         String output = "Test input 9 - passed \n\n\n";
         System.out.println(output);

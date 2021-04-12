@@ -41,7 +41,6 @@ public class Language {
 
     public Enum IsOfficial;
 
-
     /**
      * Represents the percentage of people who speak the language in a given country
      */

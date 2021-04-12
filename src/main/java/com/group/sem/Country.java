@@ -172,6 +172,9 @@ public class Country {
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/countries_by_population/Countries by population" + ".csv";
+
             //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<Country>();
 
@@ -180,6 +183,7 @@ public class Country {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
                 cnt.Population = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
                 countries.add(cnt);
             }
             return countries;
@@ -213,7 +217,7 @@ public class Country {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/countries_in_continent/Capital Cities in " + userContinent + ".csv";
+            String fileName = "csv/countries/countries_in_continent/Countries in " + userContinent + ".csv";
 
             // Creates an ArrayList of countries to pass back to method
             ArrayList<Country> countries = new ArrayList<>();
@@ -228,11 +232,7 @@ public class Country {
                 countries.add(cnt);
             }
 
-
-
-
             return countries;
-
 
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
@@ -263,6 +263,9 @@ public class Country {
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/countries_in_region/Countries in " + region + ".csv";
+
             //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<>();
 
@@ -272,6 +275,7 @@ public class Country {
                 cnt.Name = rset.getString("Name");
                 cnt.Region = rset.getString("Region");
                 cnt.Population = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
                 countries.add(cnt);
             }
             return countries;
