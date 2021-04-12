@@ -1,14 +1,15 @@
 package com.group.sem;
 
 
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 
-
-import java.io.*;
-
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-
+import java.util.HashMap;
 
 
 public class CSVCreator {
@@ -32,15 +33,23 @@ public class CSVCreator {
         return INSTANCE;
     }
 
-    /**
-     *
-     * @param pathToCSV
-     * @param data
-     * @throws IOException
-     * @throws SQLException
-     */
-    public void createCSVFile(String pathToCSV, ResultSet data) throws IOException, SQLException {
+    public static void createCSV(String pathToCSV, ResultSet rset) throws IOException, SQLException {
 
-    }
+        FileWriter out = new FileWriter(pathToCSV);
+        CSVPrinter printer = CSVFormat.RFC4180.withHeader(rset).print(out);
+        printer.printRecords(rset);
+        printer.flush();
 }
+
+
+}
+
+
+
+
+
+
+
+
+
 

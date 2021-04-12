@@ -1,15 +1,12 @@
 package com.group.sem;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVPrinter;
 
-import java.io.FileWriter;
+
+
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
+
 
 
 /**
@@ -148,8 +145,6 @@ public class Country {
     //Gets the singleton instance of App
     App app = App.getInstance();
 
-    CSVCreator csv = CSVCreator.getInstance();
-
     //Gets the singleton instance of Database Connection
     DatabaseConnection db = DatabaseConnection.getInstance();
 
@@ -220,19 +215,6 @@ public class Country {
             //Sets the filename for the CSV file and creates a path
             String fileName = "csv/countries/countries_in_continent/Capital Cities in " + userContinent + ".csv";
 
-            //Creates  a null string record
-            String record = null;
-
-            //Creates a new FileWriter and passes the filename and path to it
-            FileWriter fileWriter = new FileWriter(fileName);
-            fileWriter.append("Continent" + "," + "Capital City\n");
-
-            //Accesses the metadata from the result set to be used later
-            ResultSetMetaData metaData = rset.getMetaData();
-
-            //Gets the columns from th result set
-            int columns = metaData.getColumnCount();
-
             // Creates an ArrayList of countries to pass back to method
             ArrayList<Country> countries = new ArrayList<>();
 
@@ -242,21 +224,15 @@ public class Country {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
                 cnt.Continent = rset.getString("Continent");
+                CSVCreator.createCSV(fileName,rset);
                 countries.add(cnt);
-
-                //Adds data from the result set to a csv file
-                for (int i =1; i <= columns; i++) {
-                    record = rset.getString(i);
-                    fileWriter.append(record);
-                    fileWriter.append(',');
-                }
-                //Skips to the next line
-                fileWriter.append('\n');
             }
 
-            //Closes the file writer
-            fileWriter.close();
+
+
+
             return countries;
+
 
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
