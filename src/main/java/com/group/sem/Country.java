@@ -286,4 +286,39 @@ public class Country {
             return null;
         }
     }
+    public ArrayList<Country> getWorldPopulation() {
+        try {
+
+            //Defines the prepared SQL Statement
+            String sql = "SELECT sum(c.Population)" +
+                    " FROM country c";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/world/world-population/World Population" + ".csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<Country> countries = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                Country cnt = new Country();
+                cnt.Population = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                countries.add(cnt);
+            }
+            return countries;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get Population");
+            return null;
+        }
+    }
+
 }

@@ -96,7 +96,8 @@ public class App {
                     "8 - Get all cities in a region\n" +
                     "9 - Get the population in a district\n" +
                     "10 - Get the capital cities in a specified continent\n" +
-                    "11 - Get the capital cities in a specified region\n"
+                    "11 - Get the capital cities in a specified region\n" +
+                    "12 - Get the population of the world\n"
             );
 
             //Creates new Scanner for user input
@@ -309,6 +310,15 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
+            case "12": {
+                //Gets all countries ordered by population largest to smallest
+                ArrayList<Country> countries = c.getWorldPopulation();
+
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+
+                break;
+            }
         }
 
     }
@@ -365,6 +375,21 @@ public class App {
 
                     }
                 }
+            }
+            //Displays countries in a continent
+            else if (userInput.equals("12")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s %-15s", "Population\n");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s %-15s", country.Population);
+                        System.out.println(output);
+
+                    }
+                }
+
             }
 
         } catch (Exception e) {
