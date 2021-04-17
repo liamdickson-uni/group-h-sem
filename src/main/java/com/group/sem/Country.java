@@ -290,7 +290,7 @@ public class Country {
         try {
 
             //Defines the prepared SQL Statement
-            String sql = "SELECT sum(c.Population)" +
+            String sql = "SELECT sum(c.Population) as Population" +
                     " FROM country c";
 
             //Sets up the prepared statement
@@ -308,7 +308,7 @@ public class Country {
             // Check one is returned
             while (rset.next()) {
                 Country cnt = new Country();
-                cnt.Population = rset.getInt("Population");
+                cnt.Population= rset.getInt("Population");
                 CSVCreator.createCSV(fileName,rset);
                 countries.add(cnt);
             }
