@@ -90,6 +90,23 @@ public class CountryTests {
         ArrayList<Country> countries = country.getCountryByPopDesc();
     }
 
+    @Test
+    void getWorldPopulationTest() {
+        country.getWorldPopulation();
+    }
+
+    @Test
+    void getWorldPopulationCanConnect() {
+        ArrayList<Country> countries = country.getWorldPopulation();
+    }
+
+    @Test
+    void getWorldPopulationIsNotNull() {
+        ArrayList<Country> countries = country.getWorldPopulation();
+        for (Country country : countries) {
+            assertNotNull(countries);
+        }
+    }
 
 }
 

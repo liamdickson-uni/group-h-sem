@@ -172,6 +172,14 @@ public class AppIntegrationTest {
             System.out.println("Error closing connection to database");
         }
     }
+    @Test
+    void getWorldPopulationTest() {
+        Country c = Country.getInstance();
+        ArrayList<Country> countries = c.getWorldPopulation();
+        app.displayCountry(countries, "12");
+        String output = "Test input 12 -- passed \n\n\n";
+        System.out.println(output);
+    }
 
 
 }
