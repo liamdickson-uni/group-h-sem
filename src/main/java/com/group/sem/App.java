@@ -97,7 +97,8 @@ public class App {
                     "9 - Get the population in a district\n" +
                     "10 - Get the capital cities in a specified continent\n" +
                     "11 - Get the capital cities in a specified region\n" +
-                    "12 - Get the population of the world\n"
+                    "12 - Get the population of the world\n" +
+                    "13 - Get the population in a country\n"
             );
 
             //Creates new Scanner for user input
@@ -211,7 +212,6 @@ public class App {
                 System.out.println("Retrieving data on " + countryOption + "...");
 
 
-
                 ArrayList<City> cities = cc.getCitiesInCountryByPop(countryOption);
 
                 //Displays list of selected query
@@ -319,9 +319,23 @@ public class App {
 
                 break;
             }
-        }
+            case "13": {
+                //Gets the population of a selected country
+                System.out.println("\n\nWhich country would you like the see the population of?\n\n");
+                System.out.println("\n\nPlease make your selection:");
+                String userCountry = in.nextLine();
+                System.out.println("Retrieving data on " + userCountry + "...");
+                ArrayList<Country> countries = c.getCountryPopulation(userCountry);
 
+
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+
+                break;
+            }
+        }
     }
+
 
 
     /**
@@ -391,6 +405,20 @@ public class App {
                 }
 
             }
+            else if (userInput.equals("13")) {
+                if (countries != null) {
+
+                    //Prints Column Header
+                    System.out.printf("%-45s %-15s", "Country", "Population\n");
+
+                    //Loops over all the countries in the database
+                    for (Country country : countries) {
+                        String output = String.format("%-45s %-15s", country.Name, country.Population);
+                        System.out.println(output);
+                    }
+                }
+            }
+
 
         } catch (Exception e) {
             if (userInput == null && countries == null) {

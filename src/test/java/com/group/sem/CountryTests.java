@@ -47,16 +47,15 @@ public class CountryTests {
      */
 
     @Test
-    void getCountryInContinentByPopTest()
-    {
+    void getCountryInContinentByPopTest() {
         ArrayList<Country> countries = country.getCountryInContinentByPop("Europe");
-        for (Country country: countries){
-        assertNotNull(countries);}
+        for (Country country : countries) {
+            assertNotNull(countries);
+        }
     }
 
     @Test
-    void getCountryInContinentCanConnect()
-    {
+    void getCountryInContinentCanConnect() {
         ArrayList<Country> countries = country.getCountryInContinentByPop("Europe");
 
     }
@@ -76,14 +75,13 @@ public class CountryTests {
     }
 
     @Test
-
-    void getCountryInRegionByPopTestIsNotNull()
-    {
+    void getCountryInRegionByPopTestIsNotNull() {
         ArrayList<Country> countries = country.getCountryInRegionByPop("British Islands");
-        for (Country country: countries){
-            assertNotNull(countries);}
+        for (Country country : countries) {
+            assertNotNull(countries);
+        }
     }
-  
+
 
     @Test
     void getCountryInRegionCanConnect() {
@@ -107,6 +105,29 @@ public class CountryTests {
             assertNotNull(countries);
         }
     }
+
+    /**
+     * Tests that getDistrictByPop() runs with out errors
+     */
+    @Test
+    void getDistrictByPopTest() {
+        country.getCountryPopulation("American Samoa");
+    }
+
+    @Test
+    void getDistrictByPopNotNull() {
+        ArrayList<Country> countries = country.getCountryPopulation("Belgium");
+        for (Country country : countries) {
+            assertNotNull(countries);
+        }
+    }
+
+        @Test
+        void getCountryPopulationCanConnect() {
+            ArrayList<Country> countries = country.getCountryPopulation("Belgium");
+
+        }
+
 
 }
 

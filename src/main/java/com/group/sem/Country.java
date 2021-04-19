@@ -320,5 +320,45 @@ public class Country {
             return null;
         }
     }
+    public ArrayList<Country> getCountryPopulation(String userCountry)  {
+
+        try {
+            // Defines the prepared SQL statement
+            String sql = " SELECT c.Name, c.Population" +
+                    " FROM country c WHERE c.Name = ?" ;
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assigns user input to parameter index
+            ps.setString(1,userCountry);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/country_population/Population of " + userCountry + ".csv";
+
+            // Creates an ArrayList of countries to pass back to method
+            ArrayList<Country> countries = new ArrayList<>();
+
+            // Check that a country is returned
+            while (rset.next()) {
+                //Adds data from the result set to an ArrayList
+                Country cnt = new Country();
+                cnt.Name = rset.getString("Name");
+                cnt.Population = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                countries.add(cnt);
+            }
+
+            return countries;
+
+        } catch (SQLException | IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get population in selected country");
+            return null;
+        }
+    }
 
 }
