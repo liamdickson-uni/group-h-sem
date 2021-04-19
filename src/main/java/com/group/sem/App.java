@@ -98,7 +98,8 @@ public class App {
                     "10 - Get the capital cities in a specified continent\n" +
                     "11 - Get the capital cities in a specified region\n" +
                     "12 - Get the population of the world\n" +
-                    "13 - Get the population in a country\n"
+                    "13 - Get the population in a country\n" +
+                    "14 - Get the population in a city\n"
             );
 
             //Creates new Scanner for user input
@@ -333,6 +334,19 @@ public class App {
 
                 break;
             }
+            case "14": {
+                //Gets district by population
+                System.out.println("Which city would you like to see the population of?");
+                System.out.println("Please make your selection:\n");
+                String userCity = in.nextLine();
+                System.out.println("Retrieving data on " + userCity + "...");
+
+                ArrayList<City> cities = cc.getCitiesPopulation(userCity);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
         }
     }
 
@@ -550,6 +564,19 @@ public class App {
                     }
                 }
 
+            }
+            //Gets popultion in a specified city
+            else if (userInput.equals("14")) {
+
+                System.out.printf("%-20s %-15s", "City", "Population\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        String output = String.format("%-25s %-15s", city.cityName, city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
             }
 
         } catch (Exception e) {

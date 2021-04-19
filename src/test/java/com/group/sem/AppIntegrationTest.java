@@ -178,6 +178,17 @@ public class AppIntegrationTest {
         String output = "Test input 13 -- passed \n\n\n";
         System.out.println(output);
     }
+    /**
+     * Tests that getCitiesPopulation() method produces a report
+     */
+    @Test
+    void getCitiesPopulationInputTest() {
+        City cty = City.getInstance();
+        ArrayList<City> cities = cty.getCitiesPopulation("Texas");
+        app.displayCity(cities, "14");
+        String output = "Test input 14 -- passed\n\n\n";
+        System.out.println(output);
+    }
 
     /**
      * Tests that the database can be disconnected from after all other tests have run

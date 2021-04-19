@@ -481,6 +481,47 @@ public class City {
         }
 
     }
+    public ArrayList<City> getCitiesPopulation(String userCity) {
+
+        try {
+
+            //Defines the prepared SQL statement
+            String sql = " SELECT cty.Name, cty.Population" +
+                    " FROM city cty" +
+                    " WHERE cty.Name = ?";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assigns user input to parameterIndex
+            ps.setString(1, userCity);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/cities_population/Population of " + userCity + ".csv";
+
+            //Creates an empty ArrayList of cities for printing
+            ArrayList<City> cities = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityName = rset.getString("Name");
+                cty.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                cities.add(cty);
+            }
+            return cities;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get population of city");
+            return null;
+
+        }
+    }
 
 
 }
