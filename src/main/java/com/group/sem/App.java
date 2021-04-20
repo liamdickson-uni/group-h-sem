@@ -102,6 +102,7 @@ public class App {
                     "14 - Get the population in a city\n" +
                     "15 - Get information on a specified city \n" +  
                     "16 - Get a set number countries in a specific region\n"
+                    "17 - Get the population in a region\n"
                     "18 - Get the population in a continent\n"
             );
 
@@ -390,9 +391,24 @@ public class App {
                 a.displayCountry(countries, userInput);
                 break;
             }
+            
+            case "17": {
+
+                //Gets population of a region
+                System.out.println("\n\nWhich region would you like to see the population of\n\n");
+                System.out.println("\n\nPlease make your selection:");
+                String regionOption = in.nextLine();
+                System.out.println("Retrieving data on " + regionOption + "...");
+                ArrayList<Country> countries = c.getPopOfContinent(regionOption);
 
 
-            case "15": {
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+
+                break;
+            }
+
+            case "18": {
 
                 //Gets population of a continent
                 System.out.println("\n\nWhich continent would you like to see the population of\n\n");
@@ -405,7 +421,7 @@ public class App {
 
                 break;
             }
-      
+
         }
     }
 
@@ -493,7 +509,7 @@ public class App {
             }
 
 
-            //Displays countries in region
+            //Displays population of a continent
             else if (userInput.equals("15")) {
 
                 //Prints Column Header
@@ -506,7 +522,22 @@ public class App {
 
                     }
                 }
-            }
+                    //Displays population of a region
+                else if (userInput.equals("17")) {
+
+                        //Prints Column Header
+                        System.out.printf("%-20s", "Population\n");
+
+                        if (countries != null) {
+                            for (Country country : countries) {
+                                String output = String.format("%-20s", country.Population);
+                                System.out.println(output);
+                            }
+                            }
+                        }
+                    }
+                
+
 
         } catch (Exception e) {
             if (userInput == null && countries == null) {
@@ -515,7 +546,6 @@ public class App {
         }
 
     }
-
 
     /**
      * @param cities
@@ -596,7 +626,7 @@ public class App {
                 }
             }
 
-            //Gets popultion in a specified district
+            //Gets population in a specified district
             else if (userInput.equals("9")) {
 
                 System.out.printf("%-20s %-15s", "District", "Population\n");

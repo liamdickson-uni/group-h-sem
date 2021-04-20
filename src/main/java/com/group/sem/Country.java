@@ -417,9 +417,9 @@ public class Country {
 
         try {
             //Defines the prepared SQL statement
-            String sql = "SELECT SUM (c.population)" +
-                    "FROM country c" +
-                    "WHERE c.continent =?";
+            String sql = "SELECT sum(c.population) as 'Population'" +
+                    " FROM country c" +
+                    " WHERE c.continent = ?";
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, continent);
@@ -434,12 +434,58 @@ public class Country {
             while (rset.next()) {
                 Country cnt = new Country();
                 cnt.Population = rset.getInt("Population");
-                CSVCreator.createCSV(fileName,rset);
+                CSVCreator.createCSV(fileName, rset);
                 Countries.add(cnt);
             }
             return Countries;
+        }
+            catch (Exception e) {
+                System.out.println(e.getMessage());
+                System.out.println("Failed to get country in selected region");
+                return null;
+            }
 
-        } catch (Exception e) {
+        }
+
+        /**
+         * This method gets the population of a region
+         * @return the number of people in a region
+         */
+        public ArrayList<Country> getPopOfRegion(String Region){
+
+            try {
+                //Defines the prepared SQL statement
+                String sql = "SELECT SUM (c.population)" +
+                        "FROM country c" +
+                        " WHERE c.Region =?";
+
+                //Sets up the prepared statement
+                PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+                //Assign userInput to the first parameterIndex
+                ps.setString(1, Region);
+
+                // Execute SQL statement
+                ResultSet rset = ps.executeQuery();
+
+                //Sets the filename for the CSV file and creates a path
+                String fileName = "csv/countries/population_of_region/Population of " + Region + ".csv";
+
+                //Creates an ArrayList of countries to store data
+                ArrayList<Country> Countries = new ArrayList<>();
+
+                // Check that a county is returned and add the data to the ArrayList
+                while (rset.next()) {
+                    Country cnt = new Country();
+                    cnt.Population = rset.getInt("Population");
+                    CSVCreator.createCSV(fileName, rset);
+                    Countries.add(cnt);
+                }
+                return Countries;
+            }
+
+
+        catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get population of selected continent");
             return null;
