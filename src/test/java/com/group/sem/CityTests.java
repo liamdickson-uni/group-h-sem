@@ -185,6 +185,24 @@ public class CityTests {
         ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP("Middle East");
     }
 
+    /**
+     * Tests that getDistrictByPop() runs with out errors
+     */
+    @Test
+    void getCitiesPopulationTest() {
+        city.getCitiesPopulation("Texas");
+    }
 
+    @Test
+    void getCitiesPopulationNotNull(){
+        ArrayList<City> cities = city.getCitiesPopulation("Texas");
+        for (City city: cities){
+            assertNotNull(cities);}
+    }
+
+    @Test
+    void getCitiesPopulationCanConnect(){
+        ArrayList<City> cities = city.getCitiesPopulation("Texas");
+    }
 }
 
