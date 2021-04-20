@@ -440,7 +440,6 @@ public class App {
 
     }
 
-
     /**
      * @param cities
      * @param userInput
@@ -520,7 +519,7 @@ public class App {
                 }
             }
 
-            //Gets popultion in a specified district
+            //Gets population in a specified district
             else if (userInput.equals("9")) {
 
                 System.out.printf("%-20s %-15s", "District", "Population\n");

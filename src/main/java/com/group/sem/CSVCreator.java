@@ -39,6 +39,7 @@ public class CSVCreator {
         CSVPrinter printer = CSVFormat.RFC4180.withHeader(rset).print(out);
         printer.printRecords(rset);
         printer.flush();
+        printer.close();
 }
 
 

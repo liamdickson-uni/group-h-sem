@@ -295,9 +295,9 @@ public class Country {
 
         try {
             //Defines the prepared SQL statement
-            String sql = "SELECT SUM (c.population)" +
-                    "FROM country c" +
-                    "WHERE c.continent =?";
+            String sql = "SELECT sum(c.population) as 'Population'" +
+                    " FROM country c" +
+                    " WHERE c.continent = ?";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
@@ -341,7 +341,7 @@ public class Country {
                 //Defines the prepared SQL statement
                 String sql = "SELECT SUM (c.population)" +
                         "FROM country c" +
-                        "WHERE c.Region =?";
+                        " WHERE c.Region =?";
 
                 //Sets up the prepared statement
                 PreparedStatement ps = db.connect(true).prepareStatement(sql);
@@ -353,7 +353,7 @@ public class Country {
                 ResultSet rset = ps.executeQuery();
 
                 //Sets the filename for the CSV file and creates a path
-                String fileName = "csv/countries/population_of_continent/Population of " + Region + ".csv";
+                String fileName = "csv/countries/population_of_region/Population of " + Region + ".csv";
 
                 //Creates an ArrayList of countries to store data
                 ArrayList<Country> Countries = new ArrayList<>();
