@@ -100,6 +100,7 @@ public class App {
                     "12 - Get the population of the world\n" +
                     "13 - Get the population in a country\n" +
                     "14 - Get the population in a city\n"
+                    "16 - Get a set number countries in a specific region\n"
             );
 
             //Creates new Scanner for user input
@@ -331,7 +332,6 @@ public class App {
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
-
                 break;
             }
             case "14": {
@@ -347,6 +347,23 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
+            case "16": {
+
+                //Get all capital cities in a region ordered by largest population to smallest
+                System.out.println("Which region would you like to see the countries cities of?\n\n");
+                System.out.println("Please make your selection:");
+                String regionOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                System.out.println("Retrieving data on " + regionOption + "...");
+
+                ArrayList<Country> countries = c.getSetNCountryInRegionByPop(regionOption, limitOption);
+
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+                break;
+            }
+
         }
     }
 
@@ -390,8 +407,8 @@ public class App {
                 }
 
             }
-            //Displays countries in region
-            else if (userInput.equals("3")) {
+            //Displays countries in region and set number countries in a specified region
+            else if (userInput.equals("3") || userInput.equals("16")) {
 
                 //Prints Column Header
                 System.out.printf("%-20s %-15s %-15s", "Region", "Country", "Population\n");
