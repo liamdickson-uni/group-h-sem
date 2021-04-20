@@ -100,8 +100,9 @@ public class App {
                     "12 - Get the population of the world\n" +
                     "13 - Get the population in a country\n" +
                     "14 - Get the population in a city\n" +
-                    "12 - Get information on a specified city \n" +  
+                    "15 - Get information on a specified city \n" +  
                     "16 - Get a set number countries in a specific region\n"
+                    "18 - Get the population in a continent\n"
             );
 
             //Creates new Scanner for user input
@@ -324,6 +325,7 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
+
             case "12": {
                 //Gets all countries ordered by population largest to smallest
                 ArrayList<Country> countries = c.getWorldPopulation();
@@ -340,9 +342,9 @@ public class App {
                 System.out.println("Retrieving data on " + userCountry + "...");
                 ArrayList<Country> countries = c.getCountryPopulation(userCountry);
 
-
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
+
                 break;
             }
             case "14": {
@@ -371,7 +373,7 @@ public class App {
                 a.displayWorld(world, userInput);
                 break;
             }
-        }
+
             case "16": {
 
                 //Get all capital cities in a region ordered by largest population to smallest
@@ -389,6 +391,21 @@ public class App {
                 break;
             }
 
+
+            case "15": {
+
+                //Gets population of a continent
+                System.out.println("\n\nWhich continent would you like to see the population of\n\n");
+                System.out.println("\n\nPlease make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+                ArrayList<Country> countries = c.getPopOfContinent(continentOption);
+              
+                a.displayCountry(countries, userInput);
+
+                break;
+            }
+      
         }
     }
 
@@ -475,6 +492,21 @@ public class App {
                 }
             }
 
+
+            //Displays countries in region
+            else if (userInput.equals("15")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s", "Population\n");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s", country.Population);
+                        System.out.println(output);
+
+                    }
+                }
+            }
 
         } catch (Exception e) {
             if (userInput == null && countries == null) {
