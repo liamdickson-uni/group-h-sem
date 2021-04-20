@@ -86,7 +86,7 @@ public class App {
             db.connect(false);
 
             System.out.println("Please select of the options:\n\n " +
-                    "1 - Get all counties by population\n " +
+                    "1 - Get all countries by population\n " +
                     "2 - Get all countries in a specific continent\n" +
                     "3 - Get all countries in a specific region\n" +
                     "4 - Get all cities in a specific country\n" +
@@ -364,11 +364,12 @@ public class App {
             case "15": {
                 //Get information on a specified city
                 System.out.println("Which city would you like to know about?\n\n");
-                System.out.println("Please make your selection:");
+                System.out.println("Please make your city selection:");
                 String cityOption = in.nextLine();
+                System.out.println("Which country is your city in?");
+                String countryOption = in.nextLine();
                 System.out.println("Retrieving data on " + cityOption + "...");
-
-                ArrayList<World> world = cc.getCityInfo(cityOption);
+                ArrayList<World> world = cc.getCityInfo(cityOption, countryOption);
 
                 //Displays list of selected query
                 a.displayWorld(world, userInput);

@@ -98,7 +98,7 @@ public class Country {
     /*
      * Represents Population
      */
-    public int Population;
+    public long Population;
 
     /*
      * Represents Life Expectancy
@@ -311,7 +311,7 @@ public class Country {
             // Check one is returned
             while (rset.next()) {
                 Country cnt = new Country();
-                cnt.Population = rset.getInt("Population");
+                cnt.Population = rset.getLong("Population");
                 CSVCreator.createCSV(fileName, rset);
                 countries.add(cnt);
             }

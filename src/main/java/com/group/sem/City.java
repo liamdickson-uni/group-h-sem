@@ -311,7 +311,7 @@ public class City {
             // Defines the prepared SQL statement
             String sql = " SELECT cty.Name" +
                             " FROM city cty" +
-                            " JOIN country cnt ON (cnt.Code = cty.CountryCode) " +
+                            " JOIN country cnt ON cnt.Code = cty.CountryCode" +
                             " WHERE cnt.Region = ?" +
                             " ORDER BY cty.Population DESC";
 
@@ -368,7 +368,7 @@ public class City {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path to
-            String fileName = "csv/district/district_by_population/All Districts By Population" + ".csv";
+            String fileName = "csv/district/district_by_pop/All Districts By Population" + ".csv";
 
             //Creates an Empty ArrayList of Cities
             ArrayList<City> cities = new ArrayList<>();
@@ -403,7 +403,7 @@ public class City {
             //Defines the prepared SQL statement
             String sql = "SELECT cty.Name, cty.Population" +
                             " FROM city cty" +
-                            " JOIN country cnt ON (cnt.Capital = cty.ID) " +
+                            " JOIN country cnt ON cnt.Capital = cty.ID" +
                             " WHERE cnt.Continent = ?" +
                             " ORDER BY cty.Population DESC";
 
@@ -417,7 +417,7 @@ public class City {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path to
-            String fileName = "csv/cities/capital_cities_in_continent/Capital Cities in " + userContinent + ".csv";
+            String fileName = "csv/cities/capitals_in_continent/Capital Cities in " + userContinent + ".csv";
 
             //Create a list to store the data
             ArrayList<City> cities = new ArrayList<>();
@@ -453,7 +453,7 @@ public class City {
             //Defines the prepared SQL statement
             String sql = "SELECT cty.Name, cty.Population" +
                             " FROM city cty" +
-                            " JOIN country cnt ON (cnt.Capital = cty.ID)" +
+                            " JOIN country cnt ON cnt.Capital = cty.ID" +
                             " WHERE cnt.Region = ?" +
                             " ORDER BY cty.Population DESC";
 
@@ -533,14 +533,14 @@ public class City {
      *
      */
 
-    public ArrayList<World> getCityInfo(String userCity) {
+    public ArrayList<World> getCityInfo(String userCity, String userCountry) {
 
         try {
             //Defines the prepared SQL Statement
             String sql = "SELECT cty.Name, cnt.Name, cty.District, cty.Population" +
                     " FROM city cty" +
-                    " JOIN country cnt ON cnt.Capital = cty.ID" +
-                    " WHERE cty.Name = ?" +
+                    " JOIN country cnt ON cnt.Code = cty.CountryCode" +
+                    " WHERE cty.Name = ? AND cnt.Name = ?" +
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
@@ -548,6 +548,7 @@ public class City {
 
             //Assigns user input to parameterIndex 1
             ps.setString(1,userCity);
+            ps.setString(2,userCountry);
 
             //Execute SQL Statement
             ResultSet rset = ps.executeQuery();
