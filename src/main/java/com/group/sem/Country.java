@@ -300,7 +300,7 @@ public class Country {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/world/world-population/World Population" + ".csv";
+            String fileName = "csv/population/world-population/World Population" + ".csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<>();
@@ -320,6 +320,9 @@ public class Country {
             return null;
         }
     }
+
+
+
     public ArrayList<Country> getCountryPopulation(String userCountry)  {
 
         try {

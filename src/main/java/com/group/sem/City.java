@@ -484,7 +484,6 @@ public class City {
     public ArrayList<City> getCitiesPopulation(String userCity) {
 
         try {
-
             //Defines the prepared SQL statement
             String sql = " SELECT cty.Name, cty.Population" +
                     " FROM city cty" +
