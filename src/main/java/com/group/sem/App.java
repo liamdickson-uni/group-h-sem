@@ -101,8 +101,8 @@ public class App {
                     "13 - Get the population in a country\n" +
                     "14 - Get the population in a city\n" +
                     "15 - Get information on a specified city \n" +  
-                    "16 - Get a set number countries in a specific region\n"
-                    "17 - Get the population in a region\n"
+                    "16 - Get a set number countries in a specific region\n" +
+                    "17 - Get the population in a region\n" +
                     "18 - Get the population in a continent\n"
             );
 

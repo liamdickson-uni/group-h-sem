@@ -375,7 +375,7 @@ public class Country {
      * This method gets a set number of countries in a specified region
      * @return an ArrayList of countries
      */
-    public ArrayList<Country> getSetNCountryInRegionByPop(String region, String limit) {
+    public ArrayList<Country> getSetNCountryInRegionByPop(String region, String limit) throws SQLException {
 
         try {
             //Defines the prepared SQL statement
@@ -385,31 +385,38 @@ public class Country {
                     "ORDER BY c.Population DESC " +
                     "LIMIT ?";
 
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
             ps.setInt(2, Integer.parseInt(limit));
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
 
             String fileName = "csv/countries/set_countries_in_region/Set Number of Countries in " + region + ".csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<>();
 
-            // Check that a county is returned and add the data to the ArrayList
+            // Check that a country is returned and add the data to the ArrayList
             while (rset.next()) {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
                 cnt.Region = rset.getString("Region");
-
+                CSVCreator.createCSV(fileName,rset);
+                countries.add(cnt);
+            }
             return countries;
 
-        } catch (Exception e) {
+        } catch(Exception e){
             System.out.println(e.getMessage());
             System.out.println("Failed to get countries in selected region");
             return null;
-        }
     }
-
-    /**
+        
+    /*
      * This method gets the population of a continent
      * @return the number of people in a continent
      */
@@ -447,11 +454,11 @@ public class Country {
 
         }
 
-        /**
+        /*
          * This method gets the population of a region
          * @return the number of people in a region
          */
-        public ArrayList<Country> getPopOfRegion(String Region){
+        public ArrayList<Country> getPopOfRegion(String region){
 
             try {
                 //Defines the prepared SQL statement
@@ -492,4 +499,5 @@ public class Country {
         }
     }
 
+    }
 }
