@@ -96,7 +96,8 @@ public class App {
                     "8 - Get all cities in a region\n" +
                     "9 - Get the population in a district\n" +
                     "10 - Get the capital cities in a specified continent\n" +
-                    "11 - Get the capital cities in a specified region\n"
+                    "11 - Get the capital cities in a specified region\n" +
+                    "15 - Get the population in a continent\n"
             );
 
             //Creates new Scanner for user input
@@ -210,7 +211,6 @@ public class App {
                 System.out.println("Retrieving data on " + countryOption + "...");
 
 
-
                 ArrayList<City> cities = cc.getCitiesInCountryByPop(countryOption);
 
                 //Displays list of selected query
@@ -309,9 +309,27 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
+
+            case "15": {
+
+                //Gets population of a continent
+                System.out.println("\n\nWhich continent would you like to see the population of\n\n");
+                System.out.println("\n\nPlease make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+                ArrayList<Country> countries = c.getPopOfContinent(continentOption);
+
+
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+
+                break;
+            }
+
         }
 
     }
+
 
 
     /**
@@ -361,6 +379,21 @@ public class App {
                 if (countries != null) {
                     for (Country country : countries) {
                         String output = String.format("%-20s %-15s %-15s", country.Region, country.Name, country.Population);
+                        System.out.println(output);
+
+                    }
+                }
+            }
+
+            //Displays countries in region
+            else if (userInput.equals("15")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s", "Population\n");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s", country.Population);
                         System.out.println(output);
 
                     }

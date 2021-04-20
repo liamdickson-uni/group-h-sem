@@ -269,7 +269,7 @@ public class Country {
             //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<>();
 
-            // Check that a county is returned and add the data to the ArrayList
+            // Check that a country is returned and add the data to the ArrayList
             while (rset.next()) {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
@@ -283,6 +283,49 @@ public class Country {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get country in selected region");
+            return null;
+        }
+    }
+
+    /**
+     * This method gets the population of a continent
+     * @return the number of people in a continent
+     */
+    public ArrayList<Country> getPopOfContinent(String continent) {
+
+        try {
+            //Defines the prepared SQL statement
+            String sql = "SELECT SUM (c.population)" +
+                    "FROM country c" +
+                    "WHERE c.continent =?";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assign userInput to the first parameterIndex
+            ps.setString(1, continent);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/population_of_continent/Population of " + continent + ".csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<Country> Countries = new ArrayList<>();
+
+            // Check that a county is returned and add the data to the ArrayList
+            while (rset.next()) {
+                Country cnt = new Country();
+                cnt.Population = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                Countries.add(cnt);
+            }
+            return Countries;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get population of selected continent");
             return null;
         }
     }
