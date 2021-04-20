@@ -74,7 +74,7 @@ public class App {
      */
     public void appPath(String start) {
 
-        if(start.equals("Yes")) {
+        if(start.equals("Yes") | start.equals("yes")| start.equals("y")) {
 
             //Get singleton instance of App
             App a = App.getInstance();
@@ -99,7 +99,8 @@ public class App {
                     "11 - Get the capital cities in a specified region\n" +
                     "12 - Get the population of the world\n" +
                     "13 - Get the population in a country\n" +
-                    "14 - Get the population in a city\n"
+                    "14 - Get the population in a city\n" +
+                    "12 - Get information on a specified city \n" +  
                     "16 - Get a set number countries in a specific region\n"
             );
 
@@ -127,15 +128,23 @@ public class App {
 
             //Program will loop until user selects 'no'
             while (restartOption.equals("Yes")) {
-                appPath(restartOption);
+                       appPath("Yes");
             }
 
             // App Disconnects from database
             db.disconnect();
 
+            //Says goodbye
+            System.out.println("\n\n\n Goodbye!");
+
             //Exits the app
             System.exit(0);
+
+
         }
+
+
+
     }
 
 
@@ -154,8 +163,11 @@ public class App {
         //Get singleton instance of City
         City cc = City.getInstance();
 
-        //Create new Language
+        //Gets singleton instance of language
         Language l = Language.getInstance();
+
+        //Gets singleton instance of World
+        World wld = World.getInstance();
 
         //Creates new Scanner for user Input
         Scanner in = new Scanner(System.in);
@@ -315,7 +327,6 @@ public class App {
             case "12": {
                 //Gets all countries ordered by population largest to smallest
                 ArrayList<Country> countries = c.getWorldPopulation();
-
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
 
@@ -342,11 +353,25 @@ public class App {
                 System.out.println("Retrieving data on " + userCity + "...");
 
                 ArrayList<City> cities = cc.getCitiesPopulation(userCity);
-
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
                 break;
             }
+            
+            case "15": {
+                //Get information on a specified city
+                System.out.println("Which city would you like to know about?\n\n");
+                System.out.println("Please make your selection:");
+                String cityOption = in.nextLine();
+                System.out.println("Retrieving data on " + cityOption + "...");
+
+                ArrayList<World> world = cc.getCityInfo(cityOption);
+
+                //Displays list of selected query
+                a.displayWorld(world, userInput);
+                break;
+            }
+        }
             case "16": {
 
                 //Get all capital cities in a region ordered by largest population to smallest
@@ -599,6 +624,39 @@ public class App {
         } catch (Exception e) {
             if (userInput == null && cities == null) {
                 System.out.println("No Cities");
+            }
+        }
+    }
+
+
+    public void displayWorld(ArrayList<World> worldData, String userInput) {
+
+        try {
+
+            //Gets capital cities in a specified region
+            if (userInput.equals("12")) {
+
+                System.out.printf("%-20s %-15s %-15s %-15s", "City", "Country", "District", "Population\n");
+
+                if (worldData != null) {
+
+                    for (World result : worldData) {
+
+                        String output = String.format("%-25s %-15s %-15s %-15s", result.cityName, result.countryName, result.cityDistrict, result.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+
+            }
+        }
+
+
+
+
+
+        catch (Exception e) {
+            if(userInput == null && worldData == null) {
+                System.out.println("No Data");
             }
         }
     }

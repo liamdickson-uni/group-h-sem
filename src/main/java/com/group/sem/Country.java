@@ -58,7 +58,7 @@ public class Country {
     private static Country INSTANCE;
 
     //Empty Constructor
-    private Country(){
+    Country(){
     }
 
     //Static factory method for obtaining the instance

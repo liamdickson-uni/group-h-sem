@@ -100,6 +100,13 @@ public class City {
     //Gets singleton instance of Database Connection
     DatabaseConnection db = DatabaseConnection.getInstance();
 
+    //Gets the singleton instance of Country
+    Country cnt = Country.getInstance();
+
+    //Gets the singleton instance of World World
+
+    World world = World.getInstance();
+
     /**
      * This method gets the cities in a country ordered by population
      *
@@ -459,7 +466,7 @@ public class City {
             //Execute SQL Statement
             ResultSet rset = ps.executeQuery();
 
-            //Sets the filename for the CSV file and creates a path to
+            //Sets the filename for the CSV file and creates a path
             String fileName = "csv/cities/capital_cities_in_region/Capital Cities in " + userRegion + ".csv";
 
             //Create a list to store the data
@@ -479,7 +486,6 @@ public class City {
             System.out.println("Failed to get capital cities and their populations.");
             return null;
         }
-
     }
     public ArrayList<City> getCitiesPopulation(String userCity) {
 
@@ -522,5 +528,54 @@ public class City {
         }
     }
 
+    /*
+     * This method gets all the key information about a specified city
+     *
+     */
 
+    public ArrayList<World> getCityInfo(String userCity) {
+
+        try {
+            //Defines the prepared SQL Statement
+            String sql = "SELECT cty.Name, cnt.Name, cty.District, cty.Population" +
+                    " FROM city cty" +
+                    " JOIN country cnt ON cnt.Capital = cty.ID" +
+                    " WHERE cty.Name = ?" +
+                    " ORDER BY cty.Population DESC";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assigns user input to parameterIndex 1
+            ps.setString(1,userCity);
+
+            //Execute SQL Statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/cities/city_info/Information on " + userCity + ".csv";
+
+            //Create an ArrayList to store the data
+            ArrayList<World> world = new ArrayList<>();
+
+            //Check that a result is returned
+            while (rset.next()) {
+                World wld = new World();
+                wld.cityName = rset.getString("Name");
+                wld.countryName = rset.getString("Name");
+                wld.cityDistrict = rset.getString("District");
+                wld.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                world.add(wld);
+            }
+
+            return world;
+        }
+
+        catch (SQLException | IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get info on " + userCity + ".");
+            return null;
+        }
+    }
 }
