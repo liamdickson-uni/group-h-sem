@@ -286,4 +286,126 @@ public class Country {
             return null;
         }
     }
+
+    public ArrayList<Country> getWorldPopulation() {
+        try {
+
+            //Defines the prepared SQL Statement
+            String sql = "SELECT sum(c.Population) as Population" +
+                    " FROM country c";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/population/world-population/World Population" + ".csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<Country> countries = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                Country cnt = new Country();
+                cnt.Population= rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                countries.add(cnt);
+            }
+            return countries;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get Population");
+            return null;
+        }
+    }
+
+
+
+    public ArrayList<Country> getCountryPopulation(String userCountry)  {
+
+        try {
+            // Defines the prepared SQL statement
+            String sql = " SELECT c.Name, c.Population" +
+                    " FROM country c WHERE c.Name = ?" ;
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+
+            //Assigns user input to parameter index
+            ps.setString(1,userCountry);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+
+            String fileName = "csv/countries/country_population/Population of " + userCountry + ".csv";
+
+            // Creates an ArrayList of countries to pass back to method
+            ArrayList<Country> countries = new ArrayList<>();
+
+            // Check that a country is returned
+            while (rset.next()) {
+                //Adds data from the result set to an ArrayList
+                Country cnt = new Country();
+                cnt.Name = rset.getString("Name");
+                cnt.Population = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                countries.add(cnt);
+            }
+
+
+
+            return countries;
+
+        } catch (SQLException | IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get population in selected country");
+            return null;
+        }
+    }
+
+
+    /**
+     * This method gets a set number of countries in a specified region
+     * @return an ArrayList of countries
+     */
+    public ArrayList<Country> getSetNCountryInRegionByPop(String region, String limit) {
+
+        try {
+            //Defines the prepared SQL statement
+            String sql = "SELECT c.Region, c.Name, c.Population " +
+                    "FROM country c " +
+                    "WHERE c.Region = ? " +
+                    "ORDER BY c.Population DESC " +
+                    "LIMIT ?";
+
+            //Assign userInput to the first parameterIndex
+            ps.setString(1, region);
+            ps.setInt(2, Integer.parseInt(limit));
+
+            String fileName = "csv/countries/set_countries_in_region/Set Number of Countries in " + region + ".csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<Country> countries = new ArrayList<>();
+
+            // Check that a county is returned and add the data to the ArrayList
+            while (rset.next()) {
+                Country cnt = new Country();
+                cnt.Name = rset.getString("Name");
+                cnt.Region = rset.getString("Region");
+
+            return countries;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get countries in selected region");
+            return null;
+        }
+    }
+      
 }
