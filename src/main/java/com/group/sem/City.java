@@ -601,7 +601,7 @@ public class City {
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
-            String fileName = "csv/countries/set_countries_in_region/Set Number of Cities in " + continent + ".csv";
+            String fileName = "csv/countries/set_cities_in_cont/Set Number of Cities in " + continent + ".csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<City> cities = new ArrayList<>();

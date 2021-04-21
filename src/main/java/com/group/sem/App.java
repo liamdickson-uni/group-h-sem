@@ -103,7 +103,8 @@ public class App {
                     "15 - Get information on a specified city \n" +  
                     "16 - Get a set number countries in a specific region\n" +
                     "17 - Get the population in a region\n" +
-                    "18 - Get the population in a continent\n"
+                    "18 - Get the population in a continent\n" +
+                    "19 - Get the TopN Populated Capital Cities in a Continent\n"
             );
 
             //Creates new Scanner for user input
