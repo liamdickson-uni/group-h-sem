@@ -103,7 +103,8 @@ public class App {
                     "15 - Get information on a specified city \n" +  
                     "16 - Get a set number countries in a specific region\n" +
                     "17 - Get the population in a region\n" +
-                    "18 - Get the population in a continent\n"
+                    "18 - Get the population in a continent\n" +
+                    "20 - Get the top N capital cities in a continent\n"
             );
 
             //Creates new Scanner for user input
@@ -422,6 +423,22 @@ public class App {
 
                 break;
             }
+            case "20": {
+
+                //Get all capital cities in a region ordered by largest population to smallest
+                System.out.println("Which continent would you like to see the capital cities of?\n\n");
+                System.out.println("Please make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+                ArrayList<City> cities = cc.getSetNCapitalCitiesInContByPop(continentOption, limitOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
 
         }
     }
@@ -670,8 +687,21 @@ public class App {
                 }
 
             }
-            //Gets popultion in a specified city
+            //Gets population in a specified city
             else if (userInput.equals("14")) {
+
+                System.out.printf("%-20s %-15s", "City", "Population\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        String output = String.format("%-25s %-15s", city.cityName, city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+            //Gets the TopN Populated Capital Cities in the Continent
+            else if (userInput.equals("20")) {
 
                 System.out.printf("%-20s %-15s", "City", "Population\n");
 
