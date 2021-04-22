@@ -98,7 +98,7 @@ public class App {
                     "10 - Get the capital cities in a specified continent\n" +
                     "11 - Get the capital cities in a specified region\n" +
                     "15 - Get the population in a continent\n" +
-                    "17 - Get the population in a region\n"
+                    "17 - Get the population in a region\n" +
                     "19 - Get the top N cities in a District\n"
             );
 
@@ -344,6 +344,23 @@ public class App {
                 break;
             }
 
+            case "18": {
+
+                //Get top N cities in a district ordered by largest population to smallest
+                System.out.println("Which district would you like to see the district's cities of?\n\n");
+                System.out.println("Please make your selection:");
+                String districtOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                System.out.println("Retrieving data on " + districtOption + "...");
+
+                ArrayList<City> cities = cc.getSetNCityInDistrictByPop(districtOption, limitOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
         }
 
     }
@@ -427,11 +444,9 @@ public class App {
                                 String output = String.format("%-20s", country.Population);
                                 System.out.println(output);
                             }
-                            }
+                        }
                         }
                     }
-                
-
 
         } catch (Exception e) {
             if (userInput == null && countries == null) {
@@ -562,7 +577,19 @@ public class App {
                         System.out.println(output);
                     }
                 }
+            //Displays top N cities in a district
+            else if (userInput.equals("19")) {
 
+                    //Prints Column Header
+                    System.out.printf("%-20s", "Cities\n");
+
+                    if (cities != null) {
+                        for (City city : cities) {
+                            String output = String.format("%-20s", city.cityPopulation);
+                            System.out.println(output);
+                        }
+                    }
+                }
             }
 
         } catch (Exception e) {

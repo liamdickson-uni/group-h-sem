@@ -395,16 +395,16 @@ public class City {
         try {
             //Defines the prepared SQL statement
             String sql = "SELECT cty.Name, cty.Population" +
-                            " FROM city cty" +
-                            " JOIN country cnt ON (cnt.Capital = cty.ID) " +
-                            " WHERE cnt.Continent = ?" +
-                            " ORDER BY cty.Population DESC";
+                    " FROM city cty" +
+                    " JOIN country cnt ON (cnt.Capital = cty.ID) " +
+                    " WHERE cnt.Continent = ?" +
+                    " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
 
             //Assigns uer input to parameterIndex
-            ps.setString(1,userContinent);
+            ps.setString(1, userContinent);
 
             //Execute SQL Statement
             ResultSet rset = ps.executeQuery();
@@ -420,11 +420,11 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName,rset);
+                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
 
-             return cities;
+            return cities;
 
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
@@ -432,13 +432,13 @@ public class City {
             return null;
         }
 
-
+    }
     /**
      * This method gets a list of capital cities in a specified region, ordered by population
      *
      * @return an ArrayList of Cities
      */
-    public ArrayList<City> getCapitalCitiesInRegionByPoP(String userRegion){
+    public ArrayList<City> getCapitalCitiesInRegionByPoP(String userRegion) {
 
             try {
                 //Defines the prepared SQL statement
@@ -472,7 +472,8 @@ public class City {
                     cities.add(cty);
                 }
                 return cities;
-            } catch (SQLException | IOException e) {
+            }
+            catch (SQLException | IOException e) {
                 System.out.println(e.getMessage());
                 System.out.println("Failed to get capital cities and their populations.");
                 return null;
@@ -485,7 +486,7 @@ public class City {
          *
          * @return an ArrayList of cities
          */
-        public ArrayList<City> getSetNCityInDisttrictByPop(String cityDistrict, String limit) {
+        public ArrayList<City> getSetNCityInDistrictByPop(String cityDistrict, String limit) {
 
             try {
                 //Defines the prepared SQL statement
@@ -528,4 +529,4 @@ public class City {
                 return null;
             }
 
-}
+}}
