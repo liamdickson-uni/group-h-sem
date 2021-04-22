@@ -432,55 +432,100 @@ public class City {
             return null;
         }
 
-    }
-
 
     /**
      * This method gets a list of capital cities in a specified region, ordered by population
      *
      * @return an ArrayList of Cities
      */
-    public ArrayList<City> getCapitalCitiesInRegionByPoP(String userRegion) {
+    public ArrayList<City> getCapitalCitiesInRegionByPoP(String userRegion){
 
-        try {
-            //Defines the prepared SQL statement
-            String sql = "SELECT cty.Name, cty.Population" +
-                            " FROM city cty" +
-                            " JOIN country cnt ON (cnt.Capital = cty.ID)" +
-                            " WHERE cnt.Region = ?" +
-                            " ORDER BY cty.Population DESC";
+            try {
+                //Defines the prepared SQL statement
+                String sql = "SELECT cty.Name, cty.Population" +
+                        " FROM city cty" +
+                        " JOIN country cnt ON (cnt.Capital = cty.ID)" +
+                        " WHERE cnt.Region = ?" +
+                        " ORDER BY cty.Population DESC";
 
-            //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+                //Sets up the prepared statement
+                PreparedStatement ps = db.connect(true).prepareStatement(sql);
 
-            //Assigns user input to parameterIndex 1
-            ps.setString(1, userRegion);
+                //Assigns user input to parameterIndex 1
+                ps.setString(1, userRegion);
 
-            //Execute SQL Statement
-            ResultSet rset = ps.executeQuery();
+                //Execute SQL Statement
+                ResultSet rset = ps.executeQuery();
 
-            //Sets the filename for the CSV file and creates a path to
-            String fileName = "csv/cities/capital_cities_in_region/Capital Cities in " + userRegion + ".csv";
+                //Sets the filename for the CSV file and creates a path to
+                String fileName = "csv/cities/capital_cities_in_region/Capital Cities in " + userRegion + ".csv";
 
-            //Create a list to store the data
-            ArrayList<City> cities = new ArrayList<>();
+                //Create a list to store the data
+                ArrayList<City> cities = new ArrayList<>();
 
-            //Check a result is returned
-            while (rset.next()) {
-                City cty = new City();
-                cty.cityName = rset.getString("Name");
-                cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName,rset);
-                cities.add(cty);
+                //Check a result is returned
+                while (rset.next()) {
+                    City cty = new City();
+                    cty.cityName = rset.getString("Name");
+                    cty.cityPopulation = rset.getInt("Population");
+                    CSVCreator.createCSV(fileName, rset);
+                    cities.add(cty);
+                }
+                return cities;
+            } catch (SQLException | IOException e) {
+                System.out.println(e.getMessage());
+                System.out.println("Failed to get capital cities and their populations.");
+                return null;
             }
-            return cities;
-        } catch (SQLException | IOException e) {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get capital cities and their populations.");
-            return null;
+
         }
 
-    }
+        /**
+         * This method gets a set number of cities in a specified district
+         *
+         * @return an ArrayList of cities
+         */
+        public ArrayList<City> getSetNCityInDisttrictByPop(String cityDistrict, String limit) {
 
+            try {
+                //Defines the prepared SQL statement
+                String sql = "SELECT cty.cityDistrict, cty.cityName, cty.cityPopulation " +
+                        "FROM city cty " +
+                        "WHERE cty.cityDistrict = ? " +
+                        "ORDER BY c.Population DESC " +
+                        "LIMIT ?";
+
+                //Sets up the prepared statement
+                PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+
+                //Assign userInput to the first parameterIndex
+                ps.setString(1, cityDistrict);
+                ps.setInt(2, Integer.parseInt(limit));
+
+                // Execute SQL statement
+                ResultSet rset = ps.executeQuery();
+
+                String fileName = "csv/cities/set_cities_in_district/Set Number of Cities in " + cityDistrict + ".csv";
+
+                //Creates an ArrayList of cities to store data
+                ArrayList<City> cities = new ArrayList<>();
+
+                // Check that a city is returned and add the data to the ArrayList
+                while (rset.next()) {
+                    City cty = new City();
+                    cty.cityName = rset.getString("Name");
+                    cty.cityDistrict = rset.getString("District");
+                    CSVCreator.createCSV(fileName, rset);
+                    cities.add(cty);
+                }
+
+                return cities;
+
+            } catch (SQLException | IOException e) {
+                System.out.println(e.getMessage());
+                System.out.println("Failed to get cities in selected district");
+                return null;
+            }
 
 }

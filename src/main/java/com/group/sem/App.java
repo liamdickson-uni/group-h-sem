@@ -99,6 +99,7 @@ public class App {
                     "11 - Get the capital cities in a specified region\n" +
                     "15 - Get the population in a continent\n" +
                     "17 - Get the population in a region\n"
+                    "19 - Get the top N cities in a District\n"
             );
 
             //Creates new Scanner for user input
