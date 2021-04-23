@@ -580,6 +580,18 @@ public class City {
         }
     }
 
+
+    public ArrayList<City> getSetNCapitalCitiesInContByPop(String continent, String limit) {
+
+        try {
+            //Defines the prepared SQL statement
+            String sql = "SELECT cty.Name, cty.Population" +
+                    "FROM city cty " +
+                    "JOIN country cnt ON cnt.Capital = cty.ID" +
+                    "WHERE c.Continent = ? " +
+                    "ORDER BY c.Population DESC " +
+                    "LIMIT ?";
+
     public ArrayList<World> getNumberOfCapitalCities (int limit, String region) {
 
         try {
@@ -592,8 +604,37 @@ public class City {
                     "ORDER BY cnt.Population DESC" +
                     " LIMIT ?";
 
+
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+
+
+            //Assign userInput to the first parameterIndex
+            ps.setString(1, continent );
+            ps.setInt(2, Integer.parseInt(limit));
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            String fileName = "csv/countries/set_capital_cities_in_cont/Set Number of Cities in " + continent + ".csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<City> cities = new ArrayList<>();
+
+            // Check that a county is returned and add the data to the ArrayList
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityName = rset.getString("Name");
+                cty.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                cities.add(cty);
+            }
+            return cities;
+
+        } catch (SQLException | IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get capital cities in selected continent");
 
             //Assigns user input to the parameter index of
             ps.setString(1,region);
@@ -625,10 +666,8 @@ public class City {
         catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get info on " + region + ".");
+          
             return null;
         }
     }
-
-
-
 }
