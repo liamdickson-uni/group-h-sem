@@ -127,7 +127,7 @@ public class AppIntegrationTest {
     @Test
     void getDistrictByPopInputTest() {
         City cty = City.getInstance();
-        ArrayList<City> cities = cty.getDistrictByPop("Texas");
+        ArrayList<City> cities = cty.getDistrictByPop();
         app.displayCity(cities, "9");
         String output = "Test input 9 - passed \n\n\n";
         System.out.println(output);
@@ -159,6 +159,36 @@ public class AppIntegrationTest {
         System.out.println(output);
     }
 
+    @Test
+    void getWorldPopulationTest() {
+        Country c = Country.getInstance();
+        ArrayList<Country> countries = c.getWorldPopulation();
+        app.displayCountry(countries, "12");
+        String output = "Test input 12 -- passed \n\n\n";
+        System.out.println(output);
+    }
+    /**
+     * Tests that getCountryPopulation() method produces a report
+     */
+    @Test
+    void getCountryPopulationInputTest() {
+        Country c = Country.getInstance();
+        ArrayList<Country> countries = c.getCountryPopulation("American Samoa");
+        app.displayCountry(countries, "13");
+        String output = "Test input 13 -- passed \n\n\n";
+        System.out.println(output);
+    }
+    /**
+     * Tests that getCitiesPopulation() method produces a report
+     */
+    @Test
+    void getCitiesPopulationInputTest() {
+        City cty = City.getInstance();
+        ArrayList<City> cities = cty.getCitiesPopulation("Texas");
+        app.displayCity(cities, "14");
+        String output = "Test input 14 -- passed\n\n\n";
+        System.out.println(output);
+    }
 
     /**
      * Tests that the database can be disconnected from after all other tests have run
@@ -172,6 +202,7 @@ public class AppIntegrationTest {
             System.out.println("Error closing connection to database");
         }
     }
+
 
 
 }

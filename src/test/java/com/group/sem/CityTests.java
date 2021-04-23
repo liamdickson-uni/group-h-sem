@@ -26,14 +26,15 @@ public class CityTests {
     }
 
     @Test
-    void getCitiesByPopIsNotNull(){
+    void getCitiesByPopIsNotNull() {
         ArrayList<City> cities = city.getCitiesByPop();
-        for (City city: cities){
-            assertNotNull(cities);}
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
     }
 
     @Test
-    void getCitiesByPopCanConnect(){
+    void getCitiesByPopCanConnect() {
         ArrayList<City> cities = city.getCitiesByPop();
     }
 
@@ -47,14 +48,15 @@ public class CityTests {
     }
 
     @Test
-    void getCitiesInCountryByPopIsNotNull(){
+    void getCitiesInCountryByPopIsNotNull() {
         ArrayList<City> cities = city.getCitiesInCountryByPop("Italy");
-        for (City city: cities){
-            assertNotNull(cities);}
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
     }
 
     @Test
-    void getCitiesInCountryByPopCanConnect(){
+    void getCitiesInCountryByPopCanConnect() {
         ArrayList<City> cities = city.getCitiesInCountryByPop("France");
     }
 
@@ -68,14 +70,15 @@ public class CityTests {
     }
 
     @Test
-    void getCitiesInDistrictByPopIsNotNull(){
+    void getCitiesInDistrictByPopIsNotNull() {
         ArrayList<City> cities = city.getCitiesInDistrictByPop("Texas");
-        for (City city: cities){
-            assertNotNull(cities);}
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
     }
 
     @Test
-    void getCitiesInDistrictByPopCanConnect(){
+    void getCitiesInDistrictByPopCanConnect() {
         ArrayList<City> cities = city.getCitiesInDistrictByPop("Arizona");
     }
 
@@ -85,40 +88,41 @@ public class CityTests {
      */
     @Test
     void getDistrictByPopTest() {
-        city.getDistrictByPop("Texas");
+        city.getDistrictByPop();
     }
 
     @Test
-    void getDistrictByPopNotNull(){
-        ArrayList<City> cities = city.getDistrictByPop("California");
-        for (City city: cities){
-            assertNotNull(cities);}
+    void getDistrictByPopNotNull() {
+        ArrayList<City> cities = city.getDistrictByPop();
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
     }
 
     @Test
-    void getDistrictByPopCanConnect(){
-        ArrayList<City> cities = city.getDistrictByPop("California");
+    void getDistrictByPopCanConnect() {
+        ArrayList<City> cities = city.getDistrictByPop();
     }
-
 
 
     /**
      * Tests that getCapitalCitiesInContinentByPop() runs without errors
      */
     @Test
-    void getCapitalCitiesInContinentByPopTest(){
+    void getCapitalCitiesInContinentByPopTest() {
         city.getCapitalCitiesInContinentByPoP("North America");
     }
 
     @Test
-    void getCapitalCityInContinentByPopNotNullTest(){
+    void getCapitalCityInContinentByPopNotNullTest() {
         ArrayList<City> cities = city.getCapitalCitiesInContinentByPoP("Europe");
-        for (City city: cities){
-            assertNotNull(cities);}
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
     }
 
     @Test
-    void getCapitalCitiesIContinentByPopCanConnect(){
+    void getCapitalCitiesIContinentByPopCanConnect() {
         ArrayList<City> cities = city.getCapitalCitiesInContinentByPoP("Oceania");
     }
 
@@ -127,19 +131,20 @@ public class CityTests {
      * Tests that getCitiesInCont() runs without errors
      */
     @Test
-    void getCitiesInContinentTest(){
+    void getCitiesInContinentTest() {
         city.getCitiesInCont("North America");
     }
 
     @Test
-    void getCitiesInContNotNullTest(){
+    void getCitiesInContNotNullTest() {
         ArrayList<City> cities = city.getCitiesInCont("North America");
-        for (City city: cities){
-            assertNotNull(cities);}
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
     }
 
     @Test
-    void getCitiesInContCanConnect(){
+    void getCitiesInContCanConnect() {
         ArrayList<City> cities = city.getCapitalCitiesInContinentByPoP("Europe");
     }
 
@@ -148,43 +153,130 @@ public class CityTests {
      * Tests that getCitiesInRegion() runs without errors
      */
     @Test
-    void getCitiesInRegionTest(){
+    void getCitiesInRegionTest() {
         city.getCitiesInRegion("Western Europe");
     }
 
     @Test
-    void getCitiesInRegionNotNullTest(){
+    void getCitiesInRegionNotNullTest() {
         ArrayList<City> cities = city.getCitiesInRegion("Western Europe");
-        for (City city: cities){
-            assertNotNull(cities);}
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
     }
 
     @Test
-    void getCitiesInRegionCanConnect(){
+    void getCitiesInRegionCanConnect() {
         ArrayList<City> cities = city.getCitiesInRegion("Western Europe");
     }
 
 
-    /*
+    /**
      * Tests that getCitiesInRegion() runs without errors
      */
     @Test
-    void getCapitalCitiesInRegionTest(){
+    void getCapitalCitiesInRegionTest() {
         city.getCapitalCitiesInRegionByPoP("Middle East");
     }
 
     @Test
-    void getCapitalCitiesInRegionNotNullTest(){
+    void getCapitalCitiesInRegionNotNullTest() {
         ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP("Middle East");
-        for (City city: cities){
-            assertNotNull(cities);}
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
     }
 
     @Test
-    void getCapitalCitiesInRegionCanConnect(){
+    void getCapitalCitiesInRegionCanConnect() {
         ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP("Middle East");
     }
 
+    /**
+     * Tests that getDistrictByPop() runs with out errors
+     */
+    @Test
+    void getCitiesPopulationTest() {
+        city.getCitiesPopulation("Texas");
+    }
+
+    @Test
+    void getCitiesPopulationNotNull() {
+        ArrayList<City> cities = city.getCitiesPopulation("Texas");
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void getCitiesPopulationCanConnect() {
+        ArrayList<City> cities = city.getCitiesPopulation("Texas");
+    }
+
+    /**
+     * Tests that getS() runs with out errors
+     */
+    @Test
+    void getSetNCitiesInContByPopTest() {
+        city.getSetNCitiesInContByPop("North America", "1");
+    }
+
+    @Test
+    void getSetNCitiesInContByPopNotNull() {
+        ArrayList<City> cities = city.getSetNCitiesInContByPop("North America", "10");
+
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void getSetNCitiesInContByPopCanConnect() {
+        ArrayList<City> cities = city.getSetNCitiesInContByPop("North America", "5");
+    }
+
+    /**
+     * Tests that setNGetCitiesInDistrictByPop() runs with out errors
+     */
+    @Test
+    void setNGetCitiesInDistrictByPopTest() {
+        city.setNGetCitiesInDistrictByPop("Texas", 10);
+    }
+
+    @Test
+    void setNGetCitiesInDistrictByPopNotNull() {
+        ArrayList<City> cities = city.setNGetCitiesInDistrictByPop("Texas", 10);
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void setNGetCitiesInDistrictByPopCanConnect() {
+        ArrayList<City> cities = city.setNGetCitiesInDistrictByPop("Texas", 10);
+    }
+
+    /**
+     * Tests that setNGetCitiesInRegionByPop() runs with out errors
+     */
+    @Test
+    void setNGetCitiesInRegionByPopTest() {
+        city.setNGetCitiesInRegionByPop("Middle East", 10);
+    }
+
+    @Test
+    void setNGetCitiesInRegionByPopNotNull() {
+        ArrayList<City> cities = city.setNGetCitiesInRegionByPop("Middle East", 10);
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void setNGetCitiesInRegionByPopCanConnect() {
+        ArrayList<City> cities = city.setNGetCitiesInRegionByPop("Middle East", 10);
+    }
 
 }
+
 
