@@ -473,7 +473,7 @@ public class App {
                 System.out.println("\n\nPlease make your selection:");
                 String userRegion = in.nextLine();
                 System.out.println("Retrieving data on " + userRegion + "...");
-                ArrayList<Country> countries = c.getContinentPopReport(userRegion);
+                ArrayList<Country> countries = c.getRegionPopReport(userRegion);
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
@@ -486,7 +486,7 @@ public class App {
                 System.out.println("\n\nPlease make your selection:");
                 String userCountry = in.nextLine();
                 System.out.println("Retrieving data on " + userCountry + "...");
-                ArrayList<Country> countries = c.getContinentPopReport(userCountry);
+                ArrayList<Country> countries = c.getCountryPopReport(userCountry);
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);

@@ -582,6 +582,7 @@ public class Country {
             //Assign userInput to the first parameterIndex
             ps.setString(1,continent);
             ps.setString(2,continent);
+            ps.setString(3,continent);
             ps.setString(4,continent);
             ps.setString(5,continent);
 
@@ -636,6 +637,7 @@ public class Country {
             //Assign userInput to the first parameterIndex
             ps.setString(1,region);
             ps.setString(2,region);
+            ps.setString(3,region);
             ps.setString(4,region);
             ps.setString(5,region);
 
@@ -690,6 +692,7 @@ public class Country {
             //Assign userInput to the first parameterIndex
             ps.setString(1,country);
             ps.setString(2,country);
+            ps.setString(3,country);
             ps.setString(4,country);
             ps.setString(5,country);
 
