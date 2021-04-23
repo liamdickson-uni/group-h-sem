@@ -106,10 +106,15 @@ public class App {
                     "18 - Get the population in a continent\n" +
                     "19 - Get the countries in a specific region, ordered by population.\n" +
                     "20 - Get a specified number of capital cities in a specific region\n" +
+                    "21 - Get the number and percentage of speakers of a selected language\n" +
+                    "22 - Get a specified number capital cities in a continent\n" +
+                    "23 - Get the TopN Populated Cities in a Continent\n" +
                     "24 - Continent Population Report\n" +
                     "25 - Region Population Report\n" +
-                    "26 - Country Population Report\n"
-
+                    "26 - Country Population Report\n" +
+                    "27 - Get a specified number cities in a specific District\n" +
+                    "28 - Get a specified number cities in a specific region\n" +
+                    "29 - Get the top N cities in the world\n"
             );
 
             //Creates new Scanner for user input
@@ -393,6 +398,7 @@ public class App {
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
+
                 break;
             }
 
@@ -411,9 +417,25 @@ public class App {
 
                 break;
             }
+            
+            case "29": {
+
+                //Get top N cities in the world ordered by largest population to smallest
+                System.out.println("How many cities would you like to see?");
+                String limitOption = in.nextLine();
+                System.out.println("Retrieving data on " + limitOption + " cities...");
+
+                ArrayList<City> cities = cc.getSetNCityInWorldByPop(limitOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
+        }
 
             case "18": {
-
+              
                 //Gets population of a continent
                 System.out.println("\n\nWhich continent would you like to see the population of\n\n");
                 System.out.println("\n\nPlease make your selection:");
@@ -423,6 +445,23 @@ public class App {
 
                 a.displayCountry(countries, userInput);
 
+                break;
+            }
+      
+            case "23": {
+
+                //Get all capital cities in a region ordered by largest population to smallest
+                System.out.println("Which continent would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+                ArrayList<City> cities = cc.getSetNCitiesInContByPop(continentOption, limitOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
                 break;
             }
 
@@ -448,7 +487,7 @@ public class App {
                 String limitOption = in.nextLine();
                 int num = Integer.parseInt(limitOption);
                 System.out.println("Retrieving " + limitOption + " records on " + regionOption + "...");
-                ArrayList<World> world = cc.getNumberOfCapitalCities(num,regionOption);
+                ArrayList<World> world = cc.getNumberOfCapitalCities(num, regionOption);
 
                 //Displays this to the user via the displayWorld method
                 a.displayWorld(world, userInput);
@@ -495,9 +534,72 @@ public class App {
             }
 
 
+            case "21": {
+
+                //Gets the number and percentage of speakers of a user specified language
+                System.out.println("\n\nWhich language would you like to see the percentage and number of speakers?");
+                System.out.println("\n\nPlease make your selection:");
+                String languageOption = in.nextLine();
+                System.out.println("Retrieving data on" + languageOption + "...");
+                ArrayList<World> world = wld.getLanguagePercentage(languageOption);
+
+                //Display this to the user via the displayWorld method
+                a.displayWorld(world, userInput);
+            }
+
+
+            case "22": {
+                //Get all capital cities in a region ordered by largest population to smallest
+                System.out.println("Which continent would you like to see the capital cities of?\n\n");
+                System.out.println("Please make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+                ArrayList<City> cities = cc.getSetNCapitalCitiesInContByPop(continentOption, num);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
+            case "27": {
+                //Gets a specified number cities in a district ordered by population largest to smallest
+                System.out.println("Which district would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:\n\n");
+                String districtOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
+                System.out.println("Retrieving data on " + districtOption + "...");
+
+                ArrayList<City> cities = cc.setNGetCitiesInDistrictByPop(districtOption, num);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
+            case "28": {
+                //Gets a specified number cities in a region ordered by population largest to smallest
+                System.out.println("Which region would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:\n\n");
+                String regionOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
+                System.out.println("Retrieving data on " + regionOption + "...");
+
+                ArrayList<City> cities = cc.setNGetCitiesInRegionByPop(regionOption, num);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
         }
     }
-
 
 
     /**
@@ -509,7 +611,6 @@ public class App {
     public void displayCountry(ArrayList<Country> countries, String userInput) {
 
         try {
-
             //Displays countries by population
             if (userInput.equals("1")) {
                 if (countries != null) {
@@ -598,9 +699,8 @@ public class App {
                         System.out.println(output);
 
                     }
-                }
-            }
-
+                }    
+      
             //Displays population of a region
             else if (userInput.equals("17")) {
 
@@ -670,19 +770,21 @@ public class App {
             }
         }
 
-
         catch (Exception e) {
             if (userInput == null && countries == null) {
                 System.out.println("No Countries");
             }
         }
     }
+      
+    
 
     /**
      * @param cities
      * @param userInput
      */
     public void displayCity(ArrayList<City> cities, String userInput) {
+
         try {
             //Displays cities in a country by population
             if (userInput.equals("4")) {
@@ -696,7 +798,6 @@ public class App {
                         System.out.println(city.cityName);
                     }
                 }
-
             }
 
             //Displays all cities by population
@@ -715,8 +816,8 @@ public class App {
 
             }
 
-            //Displays cities in a district
-            else if (userInput.equals("6")) {
+            //Displays cities in a district and a displays a specified number of cities in a district
+            else if (userInput.equals("6") || userInput.equals("27")) {
 
                 //Prints Column Header
                 System.out.printf("%-20s %-15s", "District", "City\n");
@@ -745,7 +846,7 @@ public class App {
             }
 
             //Gets cities in a specified region
-            else if (userInput.equals("8")) {
+            else if (userInput.equals("8") || userInput.equals("28")) {
 
                 System.out.println("City\n");
 
@@ -776,7 +877,7 @@ public class App {
 
                 System.out.printf("%-20s %-15s", "City Name", "Population\n");
 
-                if (cities != null){
+                if (cities != null) {
 
                     for (City city : cities) {
                         String output = String.format("%-25s %-15s", city.cityName, city.cityPopulation);
@@ -798,9 +899,22 @@ public class App {
                         System.out.println(output);
                     }
                 }
-
             }
-            //Gets popultion in a specified city
+
+            //Displays top N cities in a district
+            else if (userInput.equals("19")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s", "Cities\n");
+
+                if (cities != null) {
+                    for (City city : cities) {
+                        String output = String.format("%-20s", city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+            //Gets population in a specified city
             else if (userInput.equals("14")) {
 
                 System.out.printf("%-20s %-15s", "City", "Population\n");
@@ -813,8 +927,52 @@ public class App {
                     }
                 }
             }
+            else if (userInput.equals("23")) {
 
-        } catch (Exception e) {
+                //Prints Column Header
+                System.out.printf("%-20s %-15s", "City", "Population\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        String output = String.format("%-45s %-15s", city.cityName, city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+
+            }
+
+            //Gets the TopN Populated Capital Cities in the Continent
+            else if (userInput.equals("22")) {
+
+                System.out.printf("%-20s %-15s", "City", "Population\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        String output = String.format("%-25s %-15s", city.cityName, city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+
+            //Displays top N cities in the world
+            else if (userInput.equals("29")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s", "Cities\n");
+
+                if (cities != null) {
+                    for (City city : cities) {
+                        String output = String.format("%-20s", city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+
+        }
+
+        catch (Exception e) {
             if (userInput == null && cities == null) {
                 System.out.println("No Cities");
             }
@@ -822,7 +980,6 @@ public class App {
     }
 
     /**
-     *
      * @param worldData
      * @param userInput
      */
@@ -857,12 +1014,21 @@ public class App {
                 }
 
             }
+
+            //Gets a specified number of capital cities in a region
+            else if (userInput.equals("21")) {
+
+                System.out.printf("%-20s %-15s %-15s", "Language", "Population", "Percentage\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s", result.language, result.countryPopulation, result.languagePercentage);
+                        System.out.println(output);
+                    }
+                }
+
+            }
         }
-
-
-
-
-
         catch (Exception e) {
             if(userInput == null && worldData == null) {
                 System.out.println("No Data");
