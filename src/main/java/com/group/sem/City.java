@@ -580,7 +580,7 @@ public class City {
     }
 
 
-    public ArrayList<City> getSetNCapitalCitiesInContByPop(String continent, String limit) {
+    public ArrayList<City> getSetNCapitalCitiesInContByPop(String continent, int limit) {
 
         try {
             //Defines the prepared SQL statement
@@ -596,7 +596,7 @@ public class City {
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, continent);
-            ps.setInt(2, Integer.parseInt(limit));
+            ps.setInt(2, limit);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -682,7 +682,8 @@ public class City {
         try {
 
             //Defines the prepared SQL statement
-            String sql = "SELECT cty.Name, cty.Population" +
+
+           String sql = "SELECT cty.Name, cty.Population" +
                     " FROM city cty " +
                     " JOIN country c ON c.Code = cty.CountryCode" +
                     " WHERE c.Continent = ? " +
@@ -721,4 +722,101 @@ public class City {
             return null;
         }
     }
+
+
+     /**
+     * This method gets a specified list of cities in a district ordered by population
+     *
+     * @return an ArrayList of Cities
+     */
+    public ArrayList<City> setNGetCitiesInDistrictByPop(String userDistrict, int limit) {
+
+            String sql = " SELECT cty.District, cty.Name" +
+                    " FROM city cty" +
+                    " WHERE cty.District = ?" +
+                    "ORDER BY cty.Population DESC " +
+                    "LIMIT ?";
+  
+              //Assigns user input to parameterIndex
+            ps.setString(1, userDistrict);
+            ps.setInt(2,limit);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/set_cities_in_district/" + "Cities in " + userDistrict + ".csv";
+
+            //Creates an empty ArrayList of cities for printing
+            ArrayList<City> cities = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityDistrict = rset.getString("District");
+                cty.cityName = rset.getString("Name");
+                CSVCreator.createCSV(fileName, rset);
+                cities.add(cty);
+            }
+            return cities;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities in selected district");
+            return null;
+
+        }
+    }
+    
+
+
+    /**
+     * This method gets a specified list of cities in a region ordered by population
+     *
+     * @return an ArrayList of Cities
+     */
+    public ArrayList<City> setNGetCitiesInRegionByPop(String userRegion, int limit) {
+
+        try {
+
+            //Defines the prepared SQL statement
+            String sql = " SELECT cty.Name" +
+                    " FROM city cty" +
+                    " INNER JOIN country c ON c.code = cty.CountryCode" +
+                    " WHERE c.Region = ?" +
+                    " ORDER BY cty.Population DESC" +
+                    " LIMIT ?";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assigns user input to parameterIndex
+            ps.setString(1, userRegion);
+            ps.setInt(2,limit);
+          
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/set_cities_in_region/" + "Cities in " + userRegion + ".csv";
+
+            //Creates an empty ArrayList of cities for printing
+            ArrayList<City> cities = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityName = rset.getString("Name");
+                CSVCreator.createCSV(fileName, rset);
+                cities.add(cty);
+            }
+            return cities;
+          
+            } catch (Exception e) {
+              System.out.println(e.getMessage());
+              System.out.println("Failed to get cities in selected region");
+              return null;
+
+        }
+
+    }
+
+  
 }
