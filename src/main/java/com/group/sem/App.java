@@ -100,11 +100,14 @@ public class App {
                     "12 - Get the population of the world\n" +
                     "13 - Get the population in a country\n" +
                     "14 - Get the population in a city\n" +
-                    "15 - Get information on a specified city \n" +  
+                    "15 - Get information on a specified city \n" +
                     "16 - Get a set number countries in a specific region\n" +
                     "17 - Get the population in a region\n" +
                     "18 - Get the population in a continent\n" +
-                    "20 - Get the top N capital cities in a continent\n"
+                    "19 - Get the countries in a specific region, ordered by population.\n" +
+                    "20 - Get a specified number of capital cities in a specific region\n" +
+                    "21 - Get the number and percentage of speakers of a selected language\n" +
+                    "22 - Get the top N capital cities in a continent\n"
             );
 
             //Creates new Scanner for user input
@@ -145,9 +148,6 @@ public class App {
 
 
         }
-
-
-
     }
 
 
@@ -361,7 +361,7 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
-            
+
             case "15": {
                 //Get information on a specified city
                 System.out.println("Which city would you like to know about?\n\n");
@@ -391,9 +391,10 @@ public class App {
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
+
                 break;
             }
-            
+
             case "17": {
 
                 //Gets population of a region
@@ -418,13 +419,56 @@ public class App {
                 String continentOption = in.nextLine();
                 System.out.println("Retrieving data on " + continentOption + "...");
                 ArrayList<Country> countries = c.getPopOfContinent(continentOption);
-              
+
                 a.displayCountry(countries, userInput);
 
                 break;
             }
-            case "20": {
+           
+            case "19": {
+                //Gets the countries in a specific region, ordered by population.
+                System.out.println("\n\nWhich region would you like to see the countries of?");
+                System.out.println("\n\nPlease make your selection:");
+                String regionOption = in.nextLine();
+                System.out.println("Retrieving data on " + regionOption + "...");
+                ArrayList<Country> countries = c.getCountriesInRegionByPop(regionOption);
 
+                //Displays this to the user via the displayCountry method
+                a.displayCountry(countries, userInput);
+                break;
+            }
+
+            case "20": {
+                //Gets a specific number of capital cities in a specific region
+                System.out.println("\n\nWhich region would you like to see the capital cities of?");
+                System.out.println("\n\nPlease make your selection:");
+                String regionOption = in.nextLine();
+                System.out.println("How many would you like to see?");
+                String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
+                System.out.println("Retrieving " + limitOption + " records on " + regionOption + "...");
+                ArrayList<World> world = cc.getNumberOfCapitalCities(num,regionOption);
+
+                //Displays this to the user via the displayWorld method
+                a.displayWorld(world, userInput);
+
+            }
+
+            case "21": {
+
+                //Gets the number and percentage of speakers of a user specified language
+                System.out.println("\n\nWhich language would you like to see the percentage and number of speakers?");
+                System.out.println("\n\nPlease make your selection:");
+                String languageOption = in.nextLine();
+                System.out.println("Retrieving data on" + languageOption + "...");
+                ArrayList<World> world = wld.getLanguagePercentage(languageOption);
+
+                //Display this to the user via the displayWorld method
+                a.displayWorld(world, userInput);
+            }
+            
+            
+            case "22": {
                 //Get all capital cities in a region ordered by largest population to smallest
                 System.out.println("Which continent would you like to see the capital cities of?\n\n");
                 System.out.println("Please make your selection:");
@@ -438,8 +482,6 @@ public class App {
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
                 break;
-            }
-
         }
     }
 
@@ -454,6 +496,7 @@ public class App {
     public void displayCountry(ArrayList<Country> countries, String userInput) {
 
         try {
+
             //Displays countries by population
             if (userInput.equals("1")) {
                 if (countries != null) {
@@ -468,6 +511,7 @@ public class App {
                     }
                 }
             }
+
             //Displays countries in a continent
             else if (userInput.equals("2")) {
 
@@ -483,6 +527,7 @@ public class App {
                 }
 
             }
+
             //Displays countries in region and set number countries in a specified region
             else if (userInput.equals("3") || userInput.equals("16")) {
 
@@ -497,21 +542,23 @@ public class App {
                     }
                 }
             }
+
             //Displays countries in a continent
             else if (userInput.equals("12")) {
 
                 //Prints Column Header
-                System.out.printf("%-20s %-15s", "Population\n");
+                System.out.printf("%-20s", "Population\n");
 
+                //Loops over all the countries in the database
                 if (countries != null) {
                     for (Country country : countries) {
-                        String output = String.format("%-20s %-15s", country.Population);
+                        String output = String.format("%-20s", country.Population);
                         System.out.println(output);
-
                     }
                 }
 
             }
+
             else if (userInput.equals("13")) {
                 if (countries != null) {
 
@@ -526,7 +573,6 @@ public class App {
                 }
             }
 
-
             //Displays population of a continent
             else if (userInput.equals("15")) {
 
@@ -540,29 +586,44 @@ public class App {
 
                     }
                 }
-                    //Displays population of a region
-                else if (userInput.equals("17")) {
+            }
 
-                        //Prints Column Header
-                        System.out.printf("%-20s", "Population\n");
+            //Displays population of a region
+            else if (userInput.equals("17")) {
 
-                        if (countries != null) {
-                            for (Country country : countries) {
-                                String output = String.format("%-20s", country.Population);
-                                System.out.println(output);
-                            }
-                            }
-                        }
+                //Prints Column Header
+                System.out.printf("%-20s", "Population\n");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s", country.Population);
+                        System.out.println(output);
                     }
-                
+                }
+            }
 
 
-        } catch (Exception e) {
+            //Displays the countries in a specified region by population
+            else if (userInput.equals("18")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s", "Country Name", "Region", "Population");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s, %-15s, %-20s", country.Name, country.Region, country.Population);
+                        System.out.println(output);
+                    }
+                }
+            }
+        }
+
+
+        catch (Exception e) {
             if (userInput == null && countries == null) {
                 System.out.println("No Countries");
             }
         }
-
     }
 
     /**
@@ -701,7 +762,7 @@ public class App {
                 }
             }
             //Gets the TopN Populated Capital Cities in the Continent
-            else if (userInput.equals("20")) {
+            else if (userInput.equals("22")) {
 
                 System.out.printf("%-20s %-15s", "City", "Population\n");
 
@@ -721,11 +782,13 @@ public class App {
         }
     }
 
-
+    /**
+     * @param worldData
+     * @param userInput
+     */
     public void displayWorld(ArrayList<World> worldData, String userInput) {
 
         try {
-
             //Gets capital cities in a specified region
             if (userInput.equals("12")) {
 
@@ -739,10 +802,36 @@ public class App {
                         System.out.println(output);
                     }
                 }
+            }
+
+            //Gets a specified number of capital cities in a region
+            else if (userInput.equals("20")) {
+
+                System.out.printf("%-20s %-15s %-15s %-15s", "City Name", "Country Name", "Region", "City Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s %-15s", result.cityName, result.countryName, result.region, result.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+
+            }
+
+            //Gets a specified number of capital cities in a region
+            else if (userInput.equals("21")) {
+
+                System.out.printf("%-20s %-15s %-15s", "Language", "Population", "Percentage\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s", result.language, result.countryPopulation, result.languagePercentage);
+                        System.out.println(output);
+                    }
+                }
 
             }
         }
-
 
 
 
