@@ -544,55 +544,5 @@ public class Country {
             return null;
         }
     }
-
-    /**
-     * This method gets a set number of countries in a specified region
-     *
-     * @return an ArrayList of countries
-     */
-    public ArrayList<Country> getLanguagePercentage(String language) {
-
-        try {
-            //Defines the prepared SQL statement
-            String sql = "SELECT ROUND(Sum(((cl.Percentage/100) *  c.Population)),0) As Population, " +
-                    "ROUND((ROUND(Sum(((cl.Percentage/100) *  c.Population)),0)/(SELECT sum(c.Population) as Population FROM country c)* 100),2) As Percentage\n" +
-                    "FROM countrylanguage cl\n" +
-                    "INNER JOIn country c on cl.CountryCode = c.Code\n" +
-                    "where Language = ? ";
-
-
-            //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
-
-
-            //Assign userInput to the first parameterIndex
-            ps.setString(1, language);
-
-            // Execute SQL statement
-            ResultSet rset = ps.executeQuery();
-
-            String fileName = "csv/countries/set_countries_in_region/Set Number of Countries in " + language + ".csv";
-
-            //Creates an ArrayList of countries to store data
-            ArrayList<Country> countries = new ArrayList<>();
-
-            // Check that a county is returned and add the data to the ArrayList
-            while (rset.next()) {
-                Country cnt = new Country();
-                cnt.Population = rset.getLong("Population");
-                cnt.L = rset.getString("Region");
-                CSVCreator.createCSV(fileName, rset);
-                countries.add(cnt);
-            }
-
-            return countries;
-
-        } catch (SQLException | IOException e) {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get countries in selected region");
-            return null;
-        }
-    }
-
 }
 
