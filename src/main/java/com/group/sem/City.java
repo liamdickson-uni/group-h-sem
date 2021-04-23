@@ -585,7 +585,7 @@ public class City {
         try {
 
             //Defines the prepared SQL statement
-            String sql = "SELECT cty.Name, cnt.Name, cnt.Region, cty.Population" +
+            String sql = "SELECT cty.Name, cnt.Name, cnt.Region, ROUND(cty.Population)" +
                     " FROM country cnt" +
                     " JOIN city cty on cty.ID = cnt.Capital" +
                     " WHERE cnt.Region = ? " +

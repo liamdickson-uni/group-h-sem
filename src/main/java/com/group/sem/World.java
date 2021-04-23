@@ -85,13 +85,13 @@ public class World {
 
         try {
             //Defines the prepared SQL statement
-            String sql = "SELECT cl.Language, ROUND(Sum(((cl.Percentage/100) *  c.Population)),0) As Population, " +
-                    " ROUND((ROUND(Sum(((cl.Percentage/100) *  c.Population)),0)/(SELECT sum(c.Population) as Population FROM country c)* 100),2) As Percentage" +
+            String sql = "SELECT cl.Language, " +
+                    " ROUND(Sum(((cl.Percentage/100) *  c.Population)),0) AS Population, " +
+                    " ROUND((ROUND(Sum(((cl.Percentage/100) *  c.Population)),0) / (SELECT sum(c.Population) as Population FROM country c)* 100),2) As Percentage" +
                     " FROM countrylanguage cl" +
                     " INNER JOIN country c on cl.CountryCode = c.Code" +
                     " WHERE cl.Language = ? ";
-
-
+            
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
 
