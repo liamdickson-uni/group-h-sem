@@ -579,4 +579,56 @@ public class City {
             return null;
         }
     }
+
+    public ArrayList<World> getNumberOfCapitalCities (int limit, String region) {
+
+        try {
+
+            //Defines the prepared SQL statement
+            String sql = "SELECT cty.Name, cnt.Name, cnt.Region, cnt.Population" +
+                    " FROM country cnt" +
+                    " JOIN city cty on cty.ID = cnt.Capital" +
+                    " WHERE cnt.Region = ? " +
+                    "ORDER BY cnt.Population DESC" +
+                    " LIMIT ?";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assigns user input to the parameter index of
+            ps.setString(1,region);
+            ps.setInt(2,limit);
+
+            //Executes SQL Statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/cities/capital_cities_by_pop_limit/Capital Cities in " + region + ".csv";
+
+            //Create an ArrayList to store the data
+            ArrayList<World> world = new ArrayList<>();
+
+            //Check that a result is returned
+            while (rset.next()) {
+                World wld = new World();
+                wld.cityName = rset.getString("Name");
+                wld.countryName = rset.getString("Name");
+                wld.region = rset.getString("Region");
+                wld.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                world.add(wld);
+            }
+
+            return world;
+        }
+
+        catch (SQLException | IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get info on " + region + ".");
+            return null;
+        }
+    }
+
+
+
 }
