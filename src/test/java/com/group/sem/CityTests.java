@@ -165,7 +165,7 @@ public class CityTests {
     }
 
 
-    /*
+    /**
      * Tests that getCitiesInRegion() runs without errors
      */
     @Test
@@ -203,6 +203,26 @@ public class CityTests {
     @Test
     void getCitiesPopulationCanConnect(){
         ArrayList<City> cities = city.getCitiesPopulation("Texas");
+    }
+
+    /**
+     * Tests that getS() runs with out errors
+     */
+    @Test
+    void getSetNCitiesInContByPopTest() {
+        city.getSetNCitiesInContByPop("North America","1");
+    }
+
+    @Test
+    void getSetNCitiesInContByPopNotNull(){
+        ArrayList<City> cities = city.getSetNCitiesInContByPop("North America","10");
+        for (City city: cities){
+            assertNotNull(cities);}
+    }
+
+    @Test
+    void getSetNCitiesInContByPopCanConnect(){
+        ArrayList<City> cities = city.getSetNCitiesInContByPop("North America","5");
     }
 }
 

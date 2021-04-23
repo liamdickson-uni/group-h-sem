@@ -107,7 +107,8 @@ public class App {
                     "19 - Get the countries in a specific region, ordered by population.\n" +
                     "20 - Get a specified number of capital cities in a specific region\n" +
                     "21 - Get the number and percentage of speakers of a selected language\n" +
-                    "22 - Get the top N capital cities in a continent\n"
+                    "22 - Get the top N capital cities in a continent\n" +
+                    "23 - Get the TopN Populated Cities in a Continent\n"
             );
 
             //Creates new Scanner for user input
@@ -422,6 +423,22 @@ public class App {
 
                 a.displayCountry(countries, userInput);
 
+                break;
+            }
+            case "23": {
+
+                //Get all capital cities in a region ordered by largest population to smallest
+                System.out.println("Which continent would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+                ArrayList<City> cities = cc.getSetNCitiesInContByPop(continentOption, limitOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
                 break;
             }
 
@@ -758,6 +775,20 @@ public class App {
                         System.out.println(output);
                     }
                 }
+            }
+            else if (userInput.equals("23")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s %-15s", "City", "Population\n");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        String output = String.format("%-45s %-15s", city.cityName, city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+
             }
 
             //Gets the TopN Populated Capital Cities in the Continent
