@@ -105,7 +105,8 @@ public class App {
                     "17 - Get the population in a region\n" +
                     "18 - Get the population in a continent\n" +
                     "19 - Get the countries in a specific region, ordered by population.\n" +
-                    "20 - Get a specified number of capital cities in a specific region\n"
+                    "20 - Get a specified number of capital cities in a specific region\n" +
+                    "21 - Get the number and percentage of speakers of a selected language\n"
             );
 
             //Creates new Scanner for user input
@@ -389,6 +390,7 @@ public class App {
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
+
                 break;
             }
 
@@ -449,6 +451,19 @@ public class App {
                 //Displays this to the user via the displayWorld method
                 a.displayWorld(world, userInput);
 
+            }
+
+            case "21": {
+
+                //Gets the number and percentage of speakers of a user specified language
+                System.out.println("\n\nWhich language would you like to see the percentage and number of speakers?");
+                System.out.println("\n\nPlease make your selection:");
+                String languageOption = in.nextLine();
+                System.out.println("Retrieving data on" + languageOption + "...");
+                ArrayList<World> world = wld.getLanguagePercentage(languageOption);
+
+                //Display this to the user via the displayWorld method
+                a.displayWorld(world, userInput);
             }
 
         }
@@ -739,7 +754,6 @@ public class App {
     }
 
     /**
-     *
      * @param worldData
      * @param userInput
      */
@@ -774,8 +788,21 @@ public class App {
                 }
 
             }
-        }
 
+            //Gets a specified number of capital cities in a region
+            else if (userInput.equals("21")) {
+
+                System.out.printf("%-20s %-15s %-15s", "Language", "Population", "Percentage\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s", result.language, result.countryPopulation, result.languagePercentage);
+                        System.out.println(output);
+                    }
+                }
+
+            }
+        }
 
 
 
