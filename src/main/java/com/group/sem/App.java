@@ -107,7 +107,8 @@ public class App {
                     "19 - Get the countries in a specific region, ordered by population.\n" +
                     "20 - Get a specified number of capital cities in a specific region\n" +
                     "21 - Get the number and percentage of speakers of a selected language\n" +
-                    "22 - Get the top N capital cities in a continent\n"
+                    "22 - Get a specified number capital cities in a continent\n" +
+                    "27 - Get a specified number cities in a specific District\n"
             );
 
             //Creates new Scanner for user input
@@ -475,14 +476,33 @@ public class App {
                 String continentOption = in.nextLine();
                 System.out.println("How many rows would you like?:");
                 String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
                 System.out.println("Retrieving data on " + continentOption + "...");
 
-                ArrayList<City> cities = cc.getSetNCapitalCitiesInContByPop(continentOption, limitOption);
+                ArrayList<City> cities = cc.getSetNCapitalCitiesInContByPop(continentOption, num);
 
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
                 break;
             }
+
+            case "27": {
+                //Gets a specified number cities in a district ordered by population largest to smallest
+                System.out.println("Which district would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:\n\n");
+                String districtOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
+                System.out.println("Retrieving data on " + districtOption + "...");
+
+                ArrayList<City> cities = cc.setNGetCitiesInDistrictByPop(districtOption, num);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
         }
     }
 
@@ -661,8 +681,8 @@ public class App {
 
             }
 
-            //Displays cities in a district
-            else if (userInput.equals("6")) {
+            //Displays cities in a district and a displays a specified number of cities in a district
+            else if (userInput.equals("6") || userInput.equals("27")) {
 
                 //Prints Column Header
                 System.out.printf("%-20s %-15s", "District", "City\n");
