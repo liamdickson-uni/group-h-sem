@@ -24,7 +24,7 @@ import java.util.*;
 public class App {
 
     /**
-     *  The following code creates a singleton instance of the App Class to be used throughout the program
+     * The following code creates a singleton instance of the App Class to be used throughout the program
      */
 
     //Private Constructor
@@ -40,10 +40,8 @@ public class App {
         if (INSTANCE == null) {
             INSTANCE = new App();
         }
-         return INSTANCE;
+        return INSTANCE;
     }
-
-
 
 
     /**
@@ -74,7 +72,7 @@ public class App {
      */
     public void appPath(String start) {
 
-        if(start.equals("Yes") | start.equals("yes")| start.equals("y")) {
+        if (start.equals("Yes") | start.equals("yes") | start.equals("y")) {
 
             //Get singleton instance of App
             App a = App.getInstance();
@@ -141,7 +139,7 @@ public class App {
 
             //Program will loop until user selects 'no'
             while (restartOption.equals("Yes")) {
-                       appPath("Yes");
+                appPath("Yes");
             }
 
             // App Disconnects from database
@@ -159,7 +157,6 @@ public class App {
 
 
     /**
-     *
      * @param userInput - The users query option from appPath()
      */
     public static void options(String userInput) {
@@ -417,7 +414,7 @@ public class App {
 
                 break;
             }
-            
+
             case "29": {
 
                 //Get top N cities in the world ordered by largest population to smallest
@@ -432,10 +429,9 @@ public class App {
                 break;
             }
 
-        }
 
             case "18": {
-              
+
                 //Gets population of a continent
                 System.out.println("\n\nWhich continent would you like to see the population of\n\n");
                 System.out.println("\n\nPlease make your selection:");
@@ -445,23 +441,6 @@ public class App {
 
                 a.displayCountry(countries, userInput);
 
-                break;
-            }
-      
-            case "23": {
-
-                //Get all capital cities in a region ordered by largest population to smallest
-                System.out.println("Which continent would you like to see the cities of?\n\n");
-                System.out.println("Please make your selection:");
-                String continentOption = in.nextLine();
-                System.out.println("How many rows would you like?:");
-                String limitOption = in.nextLine();
-                System.out.println("Retrieving data on " + continentOption + "...");
-
-                ArrayList<City> cities = cc.getSetNCitiesInContByPop(continentOption, limitOption);
-
-                //Displays list of selected query
-                a.displayCity(cities, userInput);
                 break;
             }
 
@@ -491,18 +470,37 @@ public class App {
 
                 //Displays this to the user via the displayWorld method
                 a.displayWorld(world, userInput);
+                break;
 
             }
+
+            case "23": {
+
+                //Get all capital cities in a region ordered by largest population to smallest
+                System.out.println("Which continent would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:");
+                String continentOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                System.out.println("Retrieving data on " + continentOption + "...");
+
+                ArrayList<City> cities = cc.getSetNCitiesInContByPop(continentOption, limitOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
             case "24": {
                 //Gets the continent population report
                 System.out.println("\n\nWhich continent would you like a population report of?\n\n");
                 System.out.println("\n\nPlease make your selection:");
                 String userContinent = in.nextLine();
                 System.out.println("Retrieving data on " + userContinent + "...");
-                ArrayList<Country> countries = c.getContinentPopReport(userContinent);
+                ArrayList<World> world = wld.getContinentPopReport(userContinent);
 
                 //Displays list of selected query
-                a.displayCountry(countries, userInput);
+                a.displayWorld(world, userInput);
 
                 break;
             }
@@ -512,10 +510,10 @@ public class App {
                 System.out.println("\n\nPlease make your selection:");
                 String userRegion = in.nextLine();
                 System.out.println("Retrieving data on " + userRegion + "...");
-                ArrayList<Country> countries = c.getRegionPopReport(userRegion);
+                ArrayList<World> world = wld.getRegionPopReport(userRegion);
 
                 //Displays list of selected query
-                a.displayCountry(countries, userInput);
+                a.displayWorld(world, userInput);
 
                 break;
             }
@@ -525,10 +523,10 @@ public class App {
                 System.out.println("\n\nPlease make your selection:");
                 String userCountry = in.nextLine();
                 System.out.println("Retrieving data on " + userCountry + "...");
-                ArrayList<Country> countries = c.getCountryPopReport(userCountry);
+                ArrayList<World> world = wld.getCountryPopReport(userCountry);
 
                 //Displays list of selected query
-                a.displayCountry(countries, userInput);
+                a.displayWorld(world, userInput);
 
                 break;
             }
@@ -671,9 +669,7 @@ public class App {
                     }
                 }
 
-            }
-
-            else if (userInput.equals("13")) {
+            } else if (userInput.equals("13")) {
                 if (countries != null) {
 
                     //Prints Column Header
@@ -699,8 +695,10 @@ public class App {
                         System.out.println(output);
 
                     }
-                }    
-      
+                }
+
+            }
+
             //Displays population of a region
             else if (userInput.equals("17")) {
 
@@ -729,55 +727,13 @@ public class App {
                     }
                 }
             }
-            //Displays continent report
-            else if (userInput.equals("24")) {
 
-                //Prints Column Header
-                System.out.printf("%-20s, %-15s, %-20s", "Continent", "Population", "CityPercentage","RuralPercentage");
-
-                if (countries != null) {
-                    for (Country country : countries) {
-                        String output = String.format("%-20s, %-15s, %-20s", country.Continent, country.Population, country.CityPercentage, country.RuralPercentage);
-                        System.out.println(output);
-                    }
-                }
-            }
-            //Displays region report
-            else if (userInput.equals("25")) {
-
-                //Prints Column Header
-                System.out.printf("%-20s, %-15s, %-20s", "Region", "Population", "CityPercentage","RuralPercentage");
-
-                if (countries != null) {
-                    for (Country country : countries) {
-                        String output = String.format("%-20s, %-15s, %-20s", country.Region, country.Population, country.CityPercentage, country.RuralPercentage);
-                        System.out.println(output);
-                    }
-                }
-            }
-            //Displays country report
-            else if (userInput.equals("26")) {
-
-                //Prints Column Header
-                System.out.printf("%-20s, %-15s, %-20s", "Country", "Population", "CityPercentage","RuralPercentage");
-
-                if (countries != null) {
-                    for (Country country : countries) {
-                        String output = String.format("%-20s, %-15s, %-20s", country.Name, country.Population, country.CityPercentage, country.RuralPercentage);
-                        System.out.println(output);
-                    }
-                }
-            }
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             if (userInput == null && countries == null) {
-                System.out.println("No Countries");
+                System.out.println("No Cities");
             }
         }
     }
-      
-    
 
     /**
      * @param cities
@@ -926,8 +882,7 @@ public class App {
                         System.out.println(output);
                     }
                 }
-            }
-            else if (userInput.equals("23")) {
+            } else if (userInput.equals("23")) {
 
                 //Prints Column Header
                 System.out.printf("%-20s %-15s", "City", "Population\n");
@@ -970,9 +925,7 @@ public class App {
                 }
             }
 
-        }
-
-        catch (Exception e) {
+        } catch (Exception e) {
             if (userInput == null && cities == null) {
                 System.out.println("No Cities");
             }
@@ -1028,9 +981,48 @@ public class App {
                 }
 
             }
-        }
-        catch (Exception e) {
-            if(userInput == null && worldData == null) {
+
+            //Displays continent report
+            else if (userInput.equals("24")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s", "Continent", "Population", "CityPercentage", "RuralPercentage");
+
+                if (worldData != null) {
+                    for (World world : worldData) {
+                        String output = String.format("%-20s, %-15s, %-20s", world.continent, world.continentPopulation, world.cityPercentage, world.ruralPercentage);
+                        System.out.println(output);
+                    }
+                }
+            }
+            //Displays region report
+            else if (userInput.equals("25")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s", "Region", "RegionPopulation", "CityPercentage", "RuralPercentage");
+
+                if (worldData != null) {
+                    for (World world : worldData) {
+                        String output = String.format("%-20s, %-15s, %-20s", world.region, world.regionPopulation, world.cityPercentage, world.ruralPercentage);
+                        System.out.println(output);
+                    }
+                }
+            }
+            //Displays country report
+            else if (userInput.equals("26")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s", "Country", "CountryPopulation", "CityPercentage", "RuralPercentage");
+
+                if (worldData != null) {
+                    for (World world : worldData) {
+                        String output = String.format("%-20s, %-15s, %-20s", world.countryName, world.countryPopulation, world.cityPercentage, world.ruralPercentage);
+                        System.out.println(output);
+                    }
+                }
+            }
+        } catch (Exception e) {
+            if (userInput == null && worldData == null) {
                 System.out.println("No Data");
             }
         }

@@ -61,6 +61,16 @@ public class World {
     public int countryPopulation;
 
     /*
+     * Represents region population
+     */
+    public float regionPopulation;
+
+    /*
+     * Represents continent population
+     */
+    public float continentPopulation;
+
+    /*
     Represents the percentage who speak a language
      */
 
@@ -69,8 +79,23 @@ public class World {
     /*
     Represents the Languages spoken in the world
      */
-
     public String language;
+
+    /*
+     * Represents Country Continent
+     */
+    public String continent;
+
+    /*
+     * Represents CityPercentage
+     */
+    public float cityPercentage;
+
+    /*
+     * Represents RuralPercentage
+     */
+    public float ruralPercentage;
+
 
 
     //Gets the singleton instance of Database Connection
@@ -126,6 +151,172 @@ public class World {
         }
     }
 
+    /**
+     * This method gets a continent population report
+     *
+     * @return an ArrayList of countries
+     */
+    public ArrayList<World> getContinentPopReport(String continent) {
 
+        try {
+            //Defines the prepared SQL statement
+            String sql = "SELECT continent," +
+                    " (SELECT SUM(Population) FROM country c WHERE c.Continent IN (?)) as ContinentPopulation, " +
+                    " (SUM(ci.Population) / (SELECT SUM(Population) FROM country c WHERE c.Continent IN (?)) * 100) AS CityPercentage," +
+                    " ((((SELECT SUM(Population) FROM country c WHERE c.Continent IN (?)) - SUM(ci.Population)) / (SELECT SUM(Population) FROM country c WHERE c.Continent IN (?))) * 100) AS RuralPercentage" +
+                    " FROM city ci " +
+                    " INNER JOIN country c on ci.CountryCode = c.Code" +
+                    " WHERE c.Continent IN (?)";
+
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assign userInput to the first parameterIndex
+            ps.setString(1,continent);
+            ps.setString(2,continent);
+            ps.setString(3,continent);
+            ps.setString(4,continent);
+            ps.setString(5,continent);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/continent_report/" + continent + " Population Report.csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<World> world = new ArrayList<>();
+
+            // Check that a country is returned and add the data to the ArrayList
+            while (rset.next()) {
+                World wld = new World();
+                wld.continent = rset.getString("Continent");
+                wld.continentPopulation = rset.getInt("ContinentPopulation");
+                wld.cityPercentage = rset.getFloat("CityPercentage");
+                wld.ruralPercentage = rset.getFloat("RuralPercentage");
+                CSVCreator.createCSV(fileName, rset);
+                world.add(wld);
+            }
+            return world;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get continent report");
+            return null;
+        }
+    }
+
+    /**
+     * This method gets a region population report
+     *
+     * @return an ArrayList of countries
+     */
+    public ArrayList<World> getRegionPopReport(String region) {
+
+        try {
+            //Defines the prepared SQL statement
+            String sql = "SELECT Region," +
+                    " (SELECT SUM(Population) FROM country c WHERE c.Region IN (?)) as RegionPopulation, " +
+                    " (SUM(ci.Population) / (SELECT SUM(Population) FROM country c WHERE c.Region IN (?)) * 100) AS CityPercentage," +
+                    " ((((SELECT SUM(Population) FROM country c WHERE c.Region IN (?)) - SUM(ci.Population)) / (SELECT SUM(Population) FROM country c WHERE c.Region IN (?))) * 100) AS RuralPercentage" +
+                    " FROM city ci " +
+                    " INNER JOIN country c on ci.CountryCode = c.Code" +
+                    " WHERE c.Region IN (?)";
+
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assign userInput to the first parameterIndex
+            ps.setString(1,region);
+            ps.setString(2,region);
+            ps.setString(3,region);
+            ps.setString(4,region);
+            ps.setString(5,region);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/region_report/" + region + " Population Report.csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<World> world = new ArrayList<>();
+
+            // Check that a country is returned and add the data to the ArrayList
+            while (rset.next()) {
+                World wld = new World();
+                wld.region = rset.getString("Region");
+                wld.regionPopulation = rset.getInt("RegionPopulation");
+                wld.cityPercentage = rset.getFloat("CityPercentage");
+                wld.ruralPercentage = rset.getFloat("RuralPercentage");
+                CSVCreator.createCSV(fileName, rset);
+                world.add(wld);
+            }
+            return world;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get region report");
+            return null;
+        }
+    }
+
+    /**
+     * This method gets a Country population report
+     *
+     * @return an ArrayList of countries
+     */
+    public ArrayList<World> getCountryPopReport(String country) {
+
+        try {
+            //Defines the prepared SQL statement
+            String sql = "SELECT Name," +
+                    " (SELECT SUM(Population) FROM country c WHERE c.Region IN (?)) as CountryPopulation, " +
+                    " (SUM(ci.Population) / (SELECT SUM(Population) FROM country c WHERE c.Country IN (?)) * 100) AS CityPercentage," +
+                    " ((((SELECT SUM(Population) FROM country c WHERE c.Country IN (?)) - SUM(ci.Population)) / (SELECT SUM(Population) FROM country c WHERE c.Country IN (?))) * 100) AS RuralPercentage" +
+                    " FROM city ci " +
+                    " INNER JOIN country c on ci.CountryCode = c.Code" +
+                    " WHERE c.Country IN (?)";
+
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assign userInput to the first parameterIndex
+            ps.setString(1,country);
+            ps.setString(2,country);
+            ps.setString(3,country);
+            ps.setString(4,country);
+            ps.setString(5,country);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/country_report/" + country + " Population Report.csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<World> world = new ArrayList<>();
+
+            // Check that a country is returned and add the data to the ArrayList
+            while (rset.next()) {
+                World wld = new World();
+                wld.countryName = rset.getString("Name");
+                wld.countryPopulation = rset.getInt("CountryPopulation");
+                wld.cityPercentage = rset.getFloat("CityPercentage");
+                wld.ruralPercentage = rset.getFloat("RuralPercentage");
+                CSVCreator.createCSV(fileName, rset);
+                world.add(wld);
+            }
+            return world;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get country report");
+            return null;
+        }
+    }
 
 }
