@@ -224,6 +224,27 @@ public class CityTests {
     void setNGetCitiesInDistrictByPopCanConnect(){
         ArrayList<City> cities = city.setNGetCitiesInDistrictByPop("Texas",10);
     }
+
+    /**
+     * Tests that setNGetCitiesInDistrictByPop() runs with out errors
+     */
+    @Test
+    void setNGetCitiesInRegionByPopTest() {
+        city.setNGetCitiesInRegionByPop("Middle East",10);
+    }
+
+    @Test
+    void setNGetCitiesInRegionByPopNotNull(){
+        ArrayList<City> cities = city.setNGetCitiesInRegionByPop("Middle East",10);
+        for (City city: cities){
+            assertNotNull(cities);}
+    }
+
+    @Test
+    void setNGetCitiesInRegionByPopCanConnect(){
+        ArrayList<City> cities = city.setNGetCitiesInRegionByPop("Middle East",10);
+    }
+
 }
 
 

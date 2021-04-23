@@ -108,7 +108,8 @@ public class App {
                     "20 - Get a specified number of capital cities in a specific region\n" +
                     "21 - Get the number and percentage of speakers of a selected language\n" +
                     "22 - Get a specified number capital cities in a continent\n" +
-                    "27 - Get a specified number cities in a specific District\n"
+                    "27 - Get a specified number cities in a specific District\n" +
+                    "28 - Get a specified number cities in a specific region\n"
             );
 
             //Creates new Scanner for user input
@@ -503,6 +504,23 @@ public class App {
                 break;
             }
 
+            case "28": {
+                //Gets a specified number cities in a region ordered by population largest to smallest
+                System.out.println("Which region would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection:\n\n");
+                String regionOption = in.nextLine();
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
+                System.out.println("Retrieving data on " + regionOption + "...");
+
+                ArrayList<City> cities = cc.setNGetCitiesInRegionByPop(regionOption, num);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
         }
     }
 
@@ -711,7 +729,7 @@ public class App {
             }
 
             //Gets cities in a specified region
-            else if (userInput.equals("8")) {
+            else if (userInput.equals("8") || userInput.equals("28")) {
 
                 System.out.println("City\n");
 
