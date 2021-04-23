@@ -105,7 +105,7 @@ public class World {
             String fileName = "csv/language/get_language_percentage/People Who Speak " + language + ".csv";
 
             //Creates an ArrayList of countries to store data
-            ArrayList<World> countries = new ArrayList<>();
+            ArrayList<World> languages = new ArrayList<>();
 
             // Check that a county is returned and add the data to the ArrayList
             while (rset.next()) {
@@ -114,10 +114,10 @@ public class World {
                 wld.countryPopulation = rset.getInt("Population");
                 wld.languagePercentage = rset.getFloat("Percentage");
                 CSVCreator.createCSV(fileName, rset);
-                countries.add(wld);
+                languages.add(wld);
             }
 
-            return countries;
+            return languages;
 
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());

@@ -792,7 +792,7 @@ public class App {
             //Gets a specified number of capital cities in a region
             else if (userInput.equals("21")) {
 
-                System.out.printf("%-20s %-15s %-15s", "Language", "Population", "Percentage");
+                System.out.printf("%-20s %-15s %-15s", "Language", "Population", "Percentage\n");
 
                 if (worldData != null) {
                     for (World result : worldData) {
