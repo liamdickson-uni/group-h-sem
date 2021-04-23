@@ -165,7 +165,7 @@ public class CityTests {
     }
 
 
-    /*
+    /**
      * Tests that getCitiesInRegion() runs without errors
      */
     @Test
@@ -206,8 +206,29 @@ public class CityTests {
     }
 
     /**
-     * Tests that setNGetCitiesInDistrictByPop() runs with out errors
+     * Tests that getS() runs with out errors
      */
+    @Test
+    void getSetNCitiesInContByPopTest() {
+        city.getSetNCitiesInContByPop("North America","1");
+    }
+
+    @Test
+    void getSetNCitiesInContByPopNotNull(){
+        ArrayList<City> cities = city.getSetNCitiesInContByPop("North America","10");
+
+        for (City city: cities){
+            assertNotNull(cities);}
+    }
+
+    @Test
+    void getSetNCitiesInContByPopCanConnect(){
+        ArrayList<City> cities = city.getSetNCitiesInContByPop("North America","5");
+    }
+  
+    /**
+    * Tests that setNGetCitiesInDistrictByPop() runs with out errors
+    */
     @Test
     void setNGetCitiesInDistrictByPopTest() {
         city.setNGetCitiesInDistrictByPop("Texas",10);
@@ -216,17 +237,14 @@ public class CityTests {
     @Test
     void setNGetCitiesInDistrictByPopNotNull(){
         ArrayList<City> cities = city.setNGetCitiesInDistrictByPop("Texas",10);
-        for (City city: cities){
-            assertNotNull(cities);}
-    }
-
+      
     @Test
     void setNGetCitiesInDistrictByPopCanConnect(){
         ArrayList<City> cities = city.setNGetCitiesInDistrictByPop("Texas",10);
     }
 
     /**
-     * Tests that setNGetCitiesInDistrictByPop() runs with out errors
+     * Tests that setNGetCitiesInRegionByPop() runs with out errors
      */
     @Test
     void setNGetCitiesInRegionByPopTest() {
@@ -244,7 +262,7 @@ public class CityTests {
     void setNGetCitiesInRegionByPopCanConnect(){
         ArrayList<City> cities = city.setNGetCitiesInRegionByPop("Middle East",10);
     }
-
+  
 }
 
 

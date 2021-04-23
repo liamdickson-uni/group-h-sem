@@ -673,25 +673,71 @@ public class City {
     }
 
     /**
+     * @param continent
+     * @param limit
+     * @return
+     */
+    public ArrayList<City> getSetNCitiesInContByPop(String continent, String limit) {
+
+        try {
+
+            //Defines the prepared SQL statement
+
+           String sql = "SELECT cty.Name, cty.Population" +
+                    " FROM city cty " +
+                    " JOIN country c ON c.Code = cty.CountryCode" +
+                    " WHERE c.Continent = ? " +
+                    "ORDER BY c.Population DESC " +
+                    "LIMIT ?";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+
+            //Assign userInput to the first parameterIndex
+            ps.setString(1, continent );
+            ps.setInt(2, Integer.parseInt(limit));
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            String fileName = "csv/cities/set_cities_in_cont/Set Number of Cities in " + continent + ".csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<City> cities = new ArrayList<>();
+
+            // Check that a county is returned and add the data to the ArrayList
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityName = rset.getString("Name");
+                cty.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName,rset);
+                cities.add(cty);
+            }
+            return cities;
+
+        } catch (SQLException | IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities in selected continent");
+            return null;
+        }
+    }
+
+
+     /**
      * This method gets a specified list of cities in a district ordered by population
      *
      * @return an ArrayList of Cities
      */
     public ArrayList<City> setNGetCitiesInDistrictByPop(String userDistrict, int limit) {
 
-        try {
-
-            //Defines the prepared SQL statement
             String sql = " SELECT cty.District, cty.Name" +
                     " FROM city cty" +
                     " WHERE cty.District = ?" +
                     "ORDER BY cty.Population DESC " +
                     "LIMIT ?";
-
-            //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
-
-            //Assigns user input to parameterIndex
+  
+              //Assigns user input to parameterIndex
             ps.setString(1, userDistrict);
             ps.setInt(2,limit);
 
@@ -721,6 +767,8 @@ public class City {
 
         }
     }
+    
+
 
     /**
      * This method gets a specified list of cities in a region ordered by population
@@ -745,10 +793,7 @@ public class City {
             //Assigns user input to parameterIndex
             ps.setString(1, userRegion);
             ps.setInt(2,limit);
-
-            // Execute SQL statement
-            ResultSet rset = ps.executeQuery();
-
+          
             //Sets the filename for the CSV file and creates a path to
             String fileName = "csv/cities/set_cities_in_region/" + "Cities in " + userRegion + ".csv";
 
@@ -763,13 +808,15 @@ public class City {
                 cities.add(cty);
             }
             return cities;
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.out.println("Failed to get cities in selected region");
-            return null;
+          
+            } catch (Exception e) {
+              System.out.println(e.getMessage());
+              System.out.println("Failed to get cities in selected region");
+              return null;
 
         }
+
     }
 
+  
 }
