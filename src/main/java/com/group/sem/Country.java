@@ -506,5 +506,48 @@ public class Country {
         }
     }
 
+    public ArrayList<Country>  getCountriesInRegionByPop(String region) {
+
+        try {
+            //Defines the prepared SQL statement to
+            String sql = "SELECT cnt.Name, cnt.Region, cnt.Population" +
+                    " FROM country cnt" +
+                    " WHERE cnt.Region =?" +
+                    " ORDER BY cnt.Population DESC";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assign userInput to the first parameterIndex
+            ps.setString(1, region);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/country_in_region_by_pop/Countries in " + region + ".csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<Country> Countries = new ArrayList<>();
+
+            // Check that a county is returned and add the data to the ArrayList
+            while (rset.next()) {
+                Country cnt = new Country();
+                cnt.Name = rset.getString("Name");
+                cnt.Name = rset.getString("Region");
+                cnt.Population = rset.getInt("Population");
+                Countries.add(cnt);
+                CSVCreator.createCSV(fileName, rset);
+            }
+            return Countries;
+        }
+
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get the countries in " + region + ". Please try again.");
+            return null;
+        }
+    }
+
 }
 

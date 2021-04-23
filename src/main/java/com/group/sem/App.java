@@ -100,10 +100,11 @@ public class App {
                     "12 - Get the population of the world\n" +
                     "13 - Get the population in a country\n" +
                     "14 - Get the population in a city\n" +
-                    "15 - Get information on a specified city \n" +  
+                    "15 - Get information on a specified city \n" +
                     "16 - Get a set number countries in a specific region\n" +
                     "17 - Get the population in a region\n" +
-                    "18 - Get the population in a continent\n"
+                    "18 - Get the population in a continent\n" +
+                    "19 - Get the countries in a specific region, ordered by population.\n"
             );
 
             //Creates new Scanner for user input
@@ -144,9 +145,6 @@ public class App {
 
 
         }
-
-
-
     }
 
 
@@ -360,7 +358,7 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
-            
+
             case "15": {
                 //Get information on a specified city
                 System.out.println("Which city would you like to know about?\n\n");
@@ -392,7 +390,7 @@ public class App {
                 a.displayCountry(countries, userInput);
                 break;
             }
-            
+
             case "17": {
 
                 //Gets population of a region
@@ -417,9 +415,22 @@ public class App {
                 String continentOption = in.nextLine();
                 System.out.println("Retrieving data on " + continentOption + "...");
                 ArrayList<Country> countries = c.getPopOfContinent(continentOption);
-              
+
                 a.displayCountry(countries, userInput);
 
+                break;
+            }
+
+            case "19": {
+                //Gets the countries in a specific region, ordered by population.
+                System.out.println("\n\nWhich region would you like to see the countries of?");
+                System.out.println("\n\nPlease make your selection:");
+                String regionOption = in.nextLine();
+                System.out.println("Retrieving data on " + regionOption + "...");
+                ArrayList<Country> countries = c.getCountriesInRegionByPop(regionOption);
+
+                //Displays this to the user via the displayCountry method
+                a.displayCountry(countries, userInput);
                 break;
             }
 
@@ -437,6 +448,7 @@ public class App {
     public void displayCountry(ArrayList<Country> countries, String userInput) {
 
         try {
+
             //Displays countries by population
             if (userInput.equals("1")) {
                 if (countries != null) {
@@ -451,6 +463,7 @@ public class App {
                     }
                 }
             }
+
             //Displays countries in a continent
             else if (userInput.equals("2")) {
 
@@ -466,6 +479,7 @@ public class App {
                 }
 
             }
+
             //Displays countries in region and set number countries in a specified region
             else if (userInput.equals("3") || userInput.equals("16")) {
 
@@ -480,21 +494,23 @@ public class App {
                     }
                 }
             }
+
             //Displays countries in a continent
             else if (userInput.equals("12")) {
 
                 //Prints Column Header
-                System.out.printf("%-20s %-15s", "Population\n");
+                System.out.printf("%-20s", "Population\n");
 
+                //Loops over all the countries in the database
                 if (countries != null) {
                     for (Country country : countries) {
-                        String output = String.format("%-20s %-15s", country.Population);
+                        String output = String.format("%-20s", country.Population);
                         System.out.println(output);
-
                     }
                 }
 
             }
+
             else if (userInput.equals("13")) {
                 if (countries != null) {
 
@@ -509,7 +525,6 @@ public class App {
                 }
             }
 
-
             //Displays population of a continent
             else if (userInput.equals("15")) {
 
@@ -523,29 +538,44 @@ public class App {
 
                     }
                 }
-                    //Displays population of a region
-                else if (userInput.equals("17")) {
+            }
 
-                        //Prints Column Header
-                        System.out.printf("%-20s", "Population\n");
+            //Displays population of a region
+            else if (userInput.equals("17")) {
 
-                        if (countries != null) {
-                            for (Country country : countries) {
-                                String output = String.format("%-20s", country.Population);
-                                System.out.println(output);
-                            }
-                            }
-                        }
+                //Prints Column Header
+                System.out.printf("%-20s", "Population\n");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s", country.Population);
+                        System.out.println(output);
                     }
-                
+                }
+            }
 
 
-        } catch (Exception e) {
+            //Displays the countries in a specified region by population
+            else if (userInput.equals("18")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s", "Country Name", "Region", "Population");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s, %-15s, %-20s", country.Name, country.Region, country.Population);
+                        System.out.println(output);
+                    }
+                }
+            }
+        }
+
+
+        catch (Exception e) {
             if (userInput == null && countries == null) {
                 System.out.println("No Countries");
             }
         }
-
     }
 
     /**
