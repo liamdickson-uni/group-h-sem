@@ -109,6 +109,9 @@ public class App {
                     "21 - Get the number and percentage of speakers of a selected language\n" +
                     "22 - Get a specified number capital cities in a continent\n" +
                     "23 - Get the TopN Populated Cities in a Continent\n" +
+                    "24 - Continent Population Report\n" +
+                    "25 - Region Population Report\n" +
+                    "26 - Country Population Report\n" +
                     "27 - Get a specified number cities in a specific District\n" +
                     "28 - Get a specified number cities in a specific region\n" +
                     "29 - Get the top N cities in the world\n"
@@ -490,6 +493,46 @@ public class App {
                 a.displayWorld(world, userInput);
 
             }
+            case "24": {
+                //Gets the continent population report
+                System.out.println("\n\nWhich continent would you like a population report of?\n\n");
+                System.out.println("\n\nPlease make your selection:");
+                String userContinent = in.nextLine();
+                System.out.println("Retrieving data on " + userContinent + "...");
+                ArrayList<Country> countries = c.getContinentPopReport(userContinent);
+
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+
+                break;
+            }
+            case "25": {
+                //Gets the region population report
+                System.out.println("\n\nWhich region would you like a population report of?\n\n");
+                System.out.println("\n\nPlease make your selection:");
+                String userRegion = in.nextLine();
+                System.out.println("Retrieving data on " + userRegion + "...");
+                ArrayList<Country> countries = c.getRegionPopReport(userRegion);
+
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+
+                break;
+            }
+            case "26": {
+                //Gets the country population report
+                System.out.println("\n\nWhich country would you like a population report of?\n\n");
+                System.out.println("\n\nPlease make your selection:");
+                String userCountry = in.nextLine();
+                System.out.println("Retrieving data on " + userCountry + "...");
+                ArrayList<Country> countries = c.getCountryPopReport(userCountry);
+
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+
+                break;
+            }
+
 
             case "21": {
 
@@ -682,6 +725,45 @@ public class App {
                 if (countries != null) {
                     for (Country country : countries) {
                         String output = String.format("%-20s, %-15s, %-20s", country.Name, country.Region, country.Population);
+                        System.out.println(output);
+                    }
+                }
+            }
+            //Displays continent report
+            else if (userInput.equals("24")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s", "Continent", "Population", "CityPercentage","RuralPercentage");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s, %-15s, %-20s", country.Continent, country.Population, country.CityPercentage, country.RuralPercentage);
+                        System.out.println(output);
+                    }
+                }
+            }
+            //Displays region report
+            else if (userInput.equals("25")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s", "Region", "Population", "CityPercentage","RuralPercentage");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s, %-15s, %-20s", country.Region, country.Population, country.CityPercentage, country.RuralPercentage);
+                        System.out.println(output);
+                    }
+                }
+            }
+            //Displays country report
+            else if (userInput.equals("26")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s", "Country", "Population", "CityPercentage","RuralPercentage");
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s, %-15s, %-20s", country.Name, country.Population, country.CityPercentage, country.RuralPercentage);
                         System.out.println(output);
                     }
                 }
