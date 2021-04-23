@@ -110,8 +110,8 @@ public class App {
                     "22 - Get a specified number capital cities in a continent\n" +
                     "23 - Get the TopN Populated Cities in a Continent\n" +
                     "27 - Get a specified number cities in a specific District\n" +
-                    "28 - Get a specified number cities in a specific region\n"
-
+                    "28 - Get a specified number cities in a specific region\n" +
+                    "29 - Get the top N cities in the world\n"
             );
 
             //Creates new Scanner for user input
@@ -414,9 +414,25 @@ public class App {
 
                 break;
             }
+            
+            case "29": {
+
+                //Get top N cities in the world ordered by largest population to smallest
+                System.out.println("How many cities would you like to see?");
+                String limitOption = in.nextLine();
+                System.out.println("Retrieving data on " + limitOption + " cities...");
+
+                ArrayList<City> cities = cc.getSetNCityInWorldByPop(limitOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
+        }
 
             case "18": {
-
+              
                 //Gets population of a continent
                 System.out.println("\n\nWhich continent would you like to see the population of\n\n");
                 System.out.println("\n\nPlease make your selection:");
@@ -428,6 +444,7 @@ public class App {
 
                 break;
             }
+      
             case "23": {
 
                 //Get all capital cities in a region ordered by largest population to smallest
@@ -538,7 +555,6 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
-
         }
     }
 
@@ -640,9 +656,8 @@ public class App {
                         System.out.println(output);
 
                     }
-                }
-            }
-
+                }    
+      
             //Displays population of a region
             else if (userInput.equals("17")) {
 
@@ -679,6 +694,8 @@ public class App {
             }
         }
     }
+      
+    
 
     /**
      * @param cities
@@ -778,7 +795,7 @@ public class App {
 
                 System.out.printf("%-20s %-15s", "City Name", "Population\n");
 
-                if (cities != null){
+                if (cities != null) {
 
                     for (City city : cities) {
                         String output = String.format("%-25s %-15s", city.cityName, city.cityPopulation);
@@ -800,7 +817,20 @@ public class App {
                         System.out.println(output);
                     }
                 }
+            }
 
+            //Displays top N cities in a district
+            else if (userInput.equals("19")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s", "Cities\n");
+
+                if (cities != null) {
+                    for (City city : cities) {
+                        String output = String.format("%-20s", city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
             }
             //Gets population in a specified city
             else if (userInput.equals("14")) {
@@ -844,7 +874,23 @@ public class App {
                 }
             }
 
-        } catch (Exception e) {
+            //Displays top N cities in the world
+            else if (userInput.equals("29")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s", "Cities\n");
+
+                if (cities != null) {
+                    for (City city : cities) {
+                        String output = String.format("%-20s", city.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+
+        }
+
+        catch (Exception e) {
             if (userInput == null && cities == null) {
                 System.out.println("No Cities");
             }

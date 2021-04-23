@@ -440,15 +440,13 @@ public class City {
         }
 
     }
-
-
     /**
      * This method gets a list of capital cities in a specified region, ordered by population
      *
      * @return an ArrayList of Cities
      */
     public ArrayList<City> getCapitalCitiesInRegionByPoP(String userRegion) {
-
+      
         try {
             //Defines the prepared SQL statement
             String sql = "SELECT cty.Name, cty.Population" +
@@ -525,7 +523,6 @@ public class City {
             System.out.println(e.getMessage());
             System.out.println("Failed to get population of city");
             return null;
-
         }
     }
 
@@ -818,5 +815,51 @@ public class City {
 
     }
 
-  
+/**
+             * This method gets a set number of cities in a the world
+             *
+             * @return an ArrayList of cities
+             */
+            public ArrayList<City> getSetNCityInWorldByPop(String limit) {
+
+                try {
+                    //Defines the prepared SQL statement
+                    String sql = "SELECT  cty.Name, cty.Population" +
+                            " FROM city cty " +
+                            "ORDER BY cty.Population DESC " +
+                            "LIMIT ?";
+
+                    //Sets up the prepared statement
+                    PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+                    //Assign userInput to the first parameterIndex
+                    ps.setInt(1, Integer.parseInt(limit));
+
+                    // Execute SQL statement
+                    ResultSet rset = ps.executeQuery();
+
+                    //Create a filepath
+                    String fileName = "csv/cities/set_n_cities_in_world/Set Number of Cities in world.csv";
+
+                    //Creates an ArrayList of cities to store data
+                    ArrayList<City> cities = new ArrayList<>();
+
+                    // Check that a city is returned and add the data to the ArrayList
+                    while (rset.next()) {
+                        City cty = new City();
+                        cty.cityName = rset.getString("Name");
+                        cty.cityPopulation = rset.getInt("Population");
+                        CSVCreator.createCSV(fileName, rset);
+                        cities.add(cty);
+                    }
+
+                    return cities;
+
+                } catch (SQLException | IOException e) {
+                    System.out.println(e.getMessage());
+                    System.out.println("Failed to get cities");
+                    return null;
+                }
+
+            }
 }
