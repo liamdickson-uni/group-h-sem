@@ -579,14 +579,21 @@ public class City {
             return null;
         }
     }
+
+    /**
+     * @param continent
+     * @param limit
+     * @return
+     */
     public ArrayList<City> getSetNCitiesInContByPop(String continent, String limit) {
 
         try {
+
             //Defines the prepared SQL statement
             String sql = "SELECT cty.Name, cty.Population" +
-                    "FROM city cty " +
-                    "JOIN country c ON c.Code = cty.CountryCode" +
-                    "WHERE c.Continent = ? " +
+                    " FROM city cty " +
+                    " JOIN country c ON c.Code = cty.CountryCode" +
+                    " WHERE c.Continent = ? " +
                     "ORDER BY c.Population DESC " +
                     "LIMIT ?";
 
@@ -601,7 +608,7 @@ public class City {
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
-            String fileName = "csv/countries/set_cities_in_cont/Set Number of Cities in " + continent + ".csv";
+            String fileName = "csv/cities/set_cities_in_cont/Set Number of Cities in " + continent + ".csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<City> cities = new ArrayList<>();

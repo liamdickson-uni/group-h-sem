@@ -104,7 +104,7 @@ public class App {
                     "16 - Get a set number countries in a specific region\n" +
                     "17 - Get the population in a region\n" +
                     "18 - Get the population in a continent\n" +
-                    "19 - Get the TopN Populated Capital Cities in a Continent\n"
+                    "23 - Get the TopN Populated Cities in a Continent\n"
             );
 
             //Creates new Scanner for user input
@@ -423,7 +423,7 @@ public class App {
 
                 break;
             }
-            case "19": {
+            case "23": {
 
                 //Get all capital cities in a region ordered by largest population to smallest
                 System.out.println("Which continent would you like to see the cities of?\n\n");
@@ -700,7 +700,7 @@ public class App {
                     }
                 }
             }
-            else if (userInput.equals("19")) {
+            else if (userInput.equals("23")) {
 
                 //Prints Column Header
                 System.out.printf("%-20s %-15s", "City", "Population\n");
