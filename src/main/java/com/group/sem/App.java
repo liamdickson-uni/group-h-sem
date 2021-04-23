@@ -99,7 +99,8 @@ public class App {
                     "11 - Get the capital cities in a specified region\n" +
                     "15 - Get the population in a continent\n" +
                     "17 - Get the population in a region\n" +
-                    "19 - Get the top N cities in a District\n"
+                    "19 - Get the top N cities in a District\n" +
+                    "21 - Get the top N cities in the world\n"
             );
 
             //Creates new Scanner for user input
@@ -344,7 +345,7 @@ public class App {
                 break;
             }
 
-            case "18": {
+            case "19": {
 
                 //Get top N cities in a district ordered by largest population to smallest
                 System.out.println("Which district would you like to see the district's cities of?\n\n");
@@ -355,6 +356,20 @@ public class App {
                 System.out.println("Retrieving data on " + districtOption + "...");
 
                 ArrayList<City> cities = cc.getSetNCityInDistrictByPop(districtOption, limitOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
+            case "21": {
+
+                //Get top N cities in the world ordered by largest population to smallest
+                System.out.println("How many rows would you like?:");
+                String limitOption = in.nextLine();
+                System.out.println("Retrieving data on " + limitOption + "...");
+
+                ArrayList<City> cities = cc.getSetNCityInWorldByPop(limitOption);
 
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
@@ -590,6 +605,21 @@ public class App {
                         }
                     }
                 }
+
+                //Displays top N cities in the world
+                else if (userInput.equals("21")) {
+
+                    //Prints Column Header
+                    System.out.printf("%-20s", "Cities\n");
+
+                    if (cities != null) {
+                        for (City city : cities) {
+                            String output = String.format("%-20s", city.cityPopulation);
+                            System.out.println(output);
+                        }
+                    }
+                }
+
             }
 
         } catch (Exception e) {
