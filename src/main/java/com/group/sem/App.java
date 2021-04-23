@@ -389,6 +389,7 @@ public class App {
 
                 //Displays list of selected query
                 a.displayCountry(countries, userInput);
+
                 break;
             }
 
