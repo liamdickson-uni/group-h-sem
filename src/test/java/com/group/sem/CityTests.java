@@ -165,7 +165,7 @@ public class CityTests {
     }
 
 
-    /*
+    /**
      * Tests that getCitiesInRegion() runs without errors
      */
     @Test
@@ -185,6 +185,84 @@ public class CityTests {
         ArrayList<City> cities = city.getCapitalCitiesInRegionByPoP("Middle East");
     }
 
+    /**
+     * Tests that getDistrictByPop() runs with out errors
+     */
+    @Test
+    void getCitiesPopulationTest() {
+        city.getCitiesPopulation("Texas");
+    }
 
+    @Test
+    void getCitiesPopulationNotNull(){
+        ArrayList<City> cities = city.getCitiesPopulation("Texas");
+        for (City city: cities){
+            assertNotNull(cities);}
+    }
+
+    @Test
+    void getCitiesPopulationCanConnect(){
+        ArrayList<City> cities = city.getCitiesPopulation("Texas");
+    }
+
+    /**
+     * Tests that getS() runs with out errors
+     */
+    @Test
+    void getSetNCitiesInContByPopTest() {
+        city.getSetNCitiesInContByPop("North America","1");
+    }
+
+    @Test
+    void getSetNCitiesInContByPopNotNull(){
+        ArrayList<City> cities = city.getSetNCitiesInContByPop("North America","10");
+
+        for (City city: cities){
+            assertNotNull(cities);}
+    }
+
+    @Test
+    void getSetNCitiesInContByPopCanConnect(){
+        ArrayList<City> cities = city.getSetNCitiesInContByPop("North America","5");
+    }
+  
+    /**
+    * Tests that setNGetCitiesInDistrictByPop() runs with out errors
+    */
+    @Test
+    void setNGetCitiesInDistrictByPopTest() {
+        city.setNGetCitiesInDistrictByPop("Texas",10);
+    }
+
+    @Test
+    void setNGetCitiesInDistrictByPopNotNull(){
+        ArrayList<City> cities = city.setNGetCitiesInDistrictByPop("Texas",10);
+      
+    @Test
+    void setNGetCitiesInDistrictByPopCanConnect(){
+        ArrayList<City> cities = city.setNGetCitiesInDistrictByPop("Texas",10);
+    }
+
+    /**
+     * Tests that setNGetCitiesInRegionByPop() runs with out errors
+     */
+    @Test
+    void setNGetCitiesInRegionByPopTest() {
+        city.setNGetCitiesInRegionByPop("Middle East",10);
+    }
+
+    @Test
+    void setNGetCitiesInRegionByPopNotNull(){
+        ArrayList<City> cities = city.setNGetCitiesInRegionByPop("Middle East",10);
+        for (City city: cities){
+            assertNotNull(cities);}
+    }
+
+    @Test
+    void setNGetCitiesInRegionByPopCanConnect(){
+        ArrayList<City> cities = city.setNGetCitiesInRegionByPop("Middle East",10);
+    }
+  
 }
+
 
