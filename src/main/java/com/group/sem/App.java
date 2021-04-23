@@ -104,7 +104,8 @@ public class App {
                     "16 - Get a set number countries in a specific region\n" +
                     "17 - Get the population in a region\n" +
                     "18 - Get the population in a continent\n" +
-                    "19 - Get the countries in a specific region, ordered by population.\n"
+                    "19 - Get the countries in a specific region, ordered by population.\n" +
+                    "20 - Get a specified number of capital cities in a specific region\n"
             );
 
             //Creates new Scanner for user input
@@ -434,6 +435,22 @@ public class App {
                 break;
             }
 
+            case "20": {
+                //Gets a specific number of capital cities in a specific region
+                System.out.println("\n\nWhich region would you like to see the capital cities of?");
+                System.out.println("\n\nPlease make your selection:");
+                String regionOption = in.nextLine();
+                System.out.println("How many would you like to see?");
+                String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
+                System.out.println("Retrieving " + limitOption + " records on " + regionOption + "...");
+                ArrayList<World> world = cc.getNumberOfCapitalCities(num,regionOption);
+
+                //Displays this to the user via the displayWorld method
+                a.displayWorld(world, userInput);
+
+            }
+
         }
     }
 
@@ -721,11 +738,14 @@ public class App {
         }
     }
 
-
+    /**
+     *
+     * @param worldData
+     * @param userInput
+     */
     public void displayWorld(ArrayList<World> worldData, String userInput) {
 
         try {
-
             //Gets capital cities in a specified region
             if (userInput.equals("12")) {
 
@@ -736,6 +756,19 @@ public class App {
                     for (World result : worldData) {
 
                         String output = String.format("%-25s %-15s %-15s %-15s", result.cityName, result.countryName, result.cityDistrict, result.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+
+            //Gets a specified number of capital cities in a region
+            else if (userInput.equals("20")) {
+
+                System.out.printf("%-20s %-15s %-15s %-15s", "City Name", "Country Name", "Region", "City Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s %-15s", result.cityName, result.countryName, result.region, result.cityPopulation);
                         System.out.println(output);
                     }
                 }

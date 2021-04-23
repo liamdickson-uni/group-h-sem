@@ -45,5 +45,12 @@ public class World {
      */
     public int cityPopulation;
 
+
+    /*
+    * Represents a countries region
+     */
+
+    public String region;
+
     
 }
