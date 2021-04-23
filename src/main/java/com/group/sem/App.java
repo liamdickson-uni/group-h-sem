@@ -424,7 +424,7 @@ public class App {
 
                 break;
             }
-           
+
             case "19": {
                 //Gets the countries in a specific region, ordered by population.
                 System.out.println("\n\nWhich region would you like to see the countries of?");
@@ -447,7 +447,7 @@ public class App {
                 String limitOption = in.nextLine();
                 int num = Integer.parseInt(limitOption);
                 System.out.println("Retrieving " + limitOption + " records on " + regionOption + "...");
-                ArrayList<World> world = cc.getNumberOfCapitalCities(num,regionOption);
+                ArrayList<World> world = cc.getNumberOfCapitalCities(num, regionOption);
 
                 //Displays this to the user via the displayWorld method
                 a.displayWorld(world, userInput);
@@ -466,8 +466,8 @@ public class App {
                 //Display this to the user via the displayWorld method
                 a.displayWorld(world, userInput);
             }
-            
-            
+
+
             case "22": {
                 //Get all capital cities in a region ordered by largest population to smallest
                 System.out.println("Which continent would you like to see the capital cities of?\n\n");
@@ -482,9 +482,9 @@ public class App {
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
                 break;
+            }
         }
     }
-
 
 
     /**
@@ -496,7 +496,6 @@ public class App {
     public void displayCountry(ArrayList<Country> countries, String userInput) {
 
         try {
-
             //Displays countries by population
             if (userInput.equals("1")) {
                 if (countries != null) {
@@ -618,7 +617,6 @@ public class App {
             }
         }
 
-
         catch (Exception e) {
             if (userInput == null && countries == null) {
                 System.out.println("No Countries");
@@ -631,6 +629,7 @@ public class App {
      * @param userInput
      */
     public void displayCity(ArrayList<City> cities, String userInput) {
+
         try {
             //Displays cities in a country by population
             if (userInput.equals("4")) {
@@ -644,7 +643,6 @@ public class App {
                         System.out.println(city.cityName);
                     }
                 }
-
             }
 
             //Displays all cities by population
@@ -761,6 +759,7 @@ public class App {
                     }
                 }
             }
+
             //Gets the TopN Populated Capital Cities in the Continent
             else if (userInput.equals("22")) {
 
@@ -832,10 +831,6 @@ public class App {
 
             }
         }
-
-
-
-
         catch (Exception e) {
             if(userInput == null && worldData == null) {
                 System.out.println("No Data");
