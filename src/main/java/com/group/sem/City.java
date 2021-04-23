@@ -534,27 +534,26 @@ public class City {
              *
              * @return an ArrayList of cities
              */
-            public ArrayList<City> getSetNCityInWorldByPop(String cityName, String limit) {
+            public ArrayList<City> getSetNCityInWorldByPop(String limit) {
 
                 try {
                     //Defines the prepared SQL statement
-                    String sql = "SELECT  cty.cityName, cty.cityPopulation " +
-                            "FROM city cty " +
-                            "WHERE cty.cityDistrict = ? " +
-                            "ORDER BY c.Population DESC " +
+                    String sql = "SELECT  cty.Name, cty.Population" +
+                            " FROM city cty " +
+                            "ORDER BY cty.Population DESC " +
                             "LIMIT ?";
 
                     //Sets up the prepared statement
                     PreparedStatement ps = db.connect(true).prepareStatement(sql);
 
-
                     //Assign userInput to the first parameterIndex
-                    ps.setInt(2, Integer.parseInt(limit));
+                    ps.setInt(1, Integer.parseInt(limit));
 
                     // Execute SQL statement
                     ResultSet rset = ps.executeQuery();
 
-                    String fileName = "csv/cities/set_cities_in_district/Set Number of Cities in world.csv";
+                    //Create a filepath
+                    String fileName = "csv/cities/set_n_cities_in_world/Set Number of Cities in world.csv";
 
                     //Creates an ArrayList of cities to store data
                     ArrayList<City> cities = new ArrayList<>();
@@ -563,6 +562,7 @@ public class City {
                     while (rset.next()) {
                         City cty = new City();
                         cty.cityName = rset.getString("Name");
+                        cty.cityPopulation = rset.getInt("Population");
                         CSVCreator.createCSV(fileName, rset);
                         cities.add(cty);
                     }
@@ -575,4 +575,5 @@ public class City {
                     return null;
                 }
 
-}}
+            }
+}
