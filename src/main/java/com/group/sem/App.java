@@ -1,6 +1,5 @@
 package com.group.sem;
 
-
 import java.util.*;
 
 
@@ -31,6 +30,7 @@ public class App {
     private static App INSTANCE;
 
     //Empty Constructor
+
     private App() {
 
     }
