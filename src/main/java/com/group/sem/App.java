@@ -113,6 +113,7 @@ public class App {
                     "27 - Get a specified number of cities in a specific District\n" +
                     "28 - Get a specified number of cities in a specific region\n" +
                     "29 - Get a specified number of cities in the world\n" +
+                    "32 - Population of People in Cities and not in each Country\n"
                     "33 - Get a specified number of cities in a specified Continent\n"
             );
 
@@ -598,6 +599,7 @@ public class App {
             }
 
 
+
             case "30": {
                 //Gets the specified number of cities in a specified country, ordered by largest population to the smallest
                 System.out.println("Which country would you like to see the cities of?\n\n");
@@ -610,6 +612,16 @@ public class App {
 
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
+                break;
+            }
+            
+            case "32": {
+                //Gets the population of people that live in cities and rurally in each country
+                ArrayList<World> world = wld.getCitiesAndRuralForCountry();
+
+                //Displays list of selected query
+                a.displayWorld(world, userInput);
+
                 break;
             }
 
@@ -967,6 +979,19 @@ public class App {
                         System.out.println(output);
                     }
                 }
+            }
+            //Displays population of people living in cities and not in each country
+            else if (userInput.equals("32")) {
+
+                System.out.printf("%-20s %-15s %-15s", "Country Name", "City Population", "Rural Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s", result.countryName, result.cityPopulation, result.ruralPopulation);
+                        System.out.println(output);
+                    }
+                }
+
             }
         } catch (Exception e) {
             if (userInput == null && worldData == null) {
