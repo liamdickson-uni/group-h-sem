@@ -881,11 +881,11 @@ public class City {
             //Defines the prepared SQL statement
             String sql =
                     " SELECT  cty.Name, cty.Population, cnt.Name" +
-                    " FROM city cty " +
-                    " JOIN country cnt ON cnt.Code = cty.CountryCode" +
-                    " WHERE cnt.Name = ? " +
-                    " ORDER BY cty.Population DESC " +
-                    " LIMIT ?";
+                            " FROM city cty " +
+                            " JOIN country cnt ON cnt.Code = cty.CountryCode" +
+                            " WHERE cnt.Name = ? " +
+                            " ORDER BY cty.Population DESC " +
+                            " LIMIT ?";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
@@ -898,9 +898,8 @@ public class City {
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
-
             //Create a filepath
-            String fileName = "csv/cities/set_n_cities_in_country_by_pop/Top " + limit + " cities in " + userCountry +".csv";
+            String fileName = "csv/cities/set_n_cities_in_country_by_pop/Top " + limit + " cities in " + userCountry + ".csv";
 
             //Creates an ArrayList of cities to store data
             ArrayList<City> cities = new ArrayList<>();
@@ -925,7 +924,7 @@ public class City {
 
     }
 
-     /**
+    /**
      * This method gets a specified list of cities in a continent ordered by population
      *
      * @return an ArrayList of Cities
@@ -942,10 +941,16 @@ public class City {
                     " ORDER BY cty.Population DESC" +
                     " LIMIT ?";
 
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
             //Assigns user input to parameterIndex
             ps.setString(1, userContinent);
             ps.setInt(2, limit);
-          
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
             //Sets the filename for the CSV file and creates a path to
             String fileName = "csv/cities/set_cities_in_continent/" + "Cities in " + userContinent + ".csv";
 
@@ -967,4 +972,6 @@ public class City {
             return null;
 
 
+        }
+    }
 }
