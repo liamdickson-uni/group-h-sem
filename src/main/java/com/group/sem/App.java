@@ -113,7 +113,8 @@ public class App {
                     "27 - Get a specified number cities in a specific District\n" +
                     "28 - Get a specified number cities in a specific region\n" +
                     "29 - Get the top N cities in the world\n" +
-                    "30 - Get the top N populated cities in a specific country\n"
+                    "30 - Get the top N populated cities in a specific country\n" +
+                    "36 - Gets a report for all the countries in the world."
             );
 
             //Creates new Scanner for user input
@@ -614,6 +615,18 @@ public class App {
                 break;
             }
 
+            case "36": {
+
+                //Assigns results from query to the ArrayList
+                ArrayList<Country> countries = c.getCountryReport();
+
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+                break;
+            }
+
+
+
         }
     }
 
@@ -741,6 +754,35 @@ public class App {
                 if (countries != null) {
                     for (Country country : countries) {
                         String output = String.format("%-20s, %-15s, %-20s", country.Name, country.Region, country.Population);
+                        System.out.println(output);
+                    }
+                }
+            }
+
+
+            //Displays information on all the countries in the world
+            else if (userInput.equals("26")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s, %-20s, %-15s, %-20s",
+                        "Country Name",
+                        "Code",
+                        "Continent",
+                        "Region",
+                        "Population",
+                        "Capital City"
+                );
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s, %-15s, %-20s, %-20s, %-15s, %-20s",
+                                country.Name,
+                                country.Code,
+                                country.Continent,
+                                country.Region,
+                                country.Population,
+                                country.cityName);
+
                         System.out.println(output);
                     }
                 }
