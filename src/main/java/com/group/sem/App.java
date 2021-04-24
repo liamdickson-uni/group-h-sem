@@ -113,8 +113,13 @@ public class App {
                     "27 - Get a specified number of cities in a specific District\n" +
                     "28 - Get a specified number of cities in a specific region\n" +
                     "29 - Get a specified number of cities in the world\n" +
+                    "30 - Get a specified number of populated cities in a specific country\n" +
+                    "31 - Get a specified number of capital cities in the world\n" +
+                    "32 - Population of People in Cities and not in each Country\n" +
                     "33 - Get a specified number of cities in a specified Continent\n" +
-                    "35 - Population of People in Cities and not in each Region\n"
+                    "34 - Population of People in Cities and not in each Continent\n" +
+                    "35 - Population of People in Cities and not in each Region\n" +
+                    "36 - Gets a report for all the countries in the world."
             );
 
             //Creates new Scanner for user input
@@ -614,6 +619,29 @@ public class App {
                 break;
             }
 
+            
+            case "31": {
+                //Gets a specific number of capital cities in the world
+                System.out.println("How many capital cities would you like to see?");
+                String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
+                System.out.println("Retrieving " + limitOption + " records on the world...");
+                ArrayList<World> world = cc.getNumberOfCapitalCities(num, limitOption);
+
+                //Displays this to the user via the displayWorld method
+                a.displayWorld(world, userInput);
+                break;
+            }
+
+            case "32": {
+                //Gets the population of people that live in cities and rurally in each country
+                ArrayList<World> world = wld.getCitiesAndRuralForCountry();
+                
+                //Displays list of selected query
+                a.displayWorld(world, userInput);
+                break;
+            }
+
             case "33": {
                 //Gets a specified number cities in a continent ordered by population largest to smallest
                 System.out.println("Which continent would you like to see the cities of?\n\n");
@@ -630,16 +658,35 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
+              
+            case "34": {
+                //Gets the population of people that live in cities and rurally in each continent
+                ArrayList<World> world = wld.getCitiesAndRuralForContinent();
+
+                //Displays list of selected query
+                a.displayWorld(world, userInput);
+                break;
+            }
+            
             case "35": {
                 //Gets the population of people that live in cities and rurally in each country
                 ArrayList<World> world = wld.getCitiesAndRuralForRegion();
 
                 //Displays list of selected query
                 a.displayWorld(world, userInput);
-
                 break;
+              
             }
 
+            case "36": {
+                //Assigns results from query to the ArrayList
+                ArrayList<Country> countries = c.getCountryReport();
+
+                //Displays list of selected query
+                a.displayCountry(countries, userInput);
+                break;
+            }
+            
         }
     }
 
@@ -767,6 +814,35 @@ public class App {
                 if (countries != null) {
                     for (Country country : countries) {
                         String output = String.format("%-20s, %-15s, %-20s", country.Name, country.Region, country.Population);
+                        System.out.println(output);
+                    }
+                }
+            }
+
+
+            //Displays information on all the countries in the world
+            else if (userInput.equals("26")) {
+
+                //Prints Column Header
+                System.out.printf("%-20s, %-15s, %-20s, %-20s, %-15s, %-20s",
+                        "Country Name",
+                        "Code",
+                        "Continent",
+                        "Region",
+                        "Population",
+                        "Capital City"
+                );
+
+                if (countries != null) {
+                    for (Country country : countries) {
+                        String output = String.format("%-20s, %-15s, %-20s, %-20s, %-15s, %-20s",
+                                country.Name,
+                                country.Code,
+                                country.Continent,
+                                country.Region,
+                                country.Population,
+                                country.cityName);
+
                         System.out.println(output);
                     }
                 }
@@ -978,6 +1054,48 @@ public class App {
                     }
                 }
             }
+
+          
+            //Gets a specified number of capital cities in the world
+            else if (userInput.equals("31")) {
+
+                System.out.printf("%-20s %-15s %-15s %-15s", "City Name", "Country Name", "City Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s %-15s", result.cityName, result.countryName, result.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+
+            }
+
+            //Displays population of people living in cities and not in each country
+            else if (userInput.equals("32")) {
+
+                System.out.printf("%-20s %-15s %-15s", "Country Name", "City Population", "Rural Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s", result.countryName, result.cityPopulation, result.ruralPopulation);
+                        System.out.println(output);
+                    }
+                }
+
+            }
+
+          else if (userInput.equals("34")) {
+
+                System.out.printf("%-20s %-15s %-15s", "Continent Name", "City Population", "Rural Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s", result.continent, result.cityPopulation, result.ruralPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+
             else if (userInput.equals("35")) {
 
                 System.out.printf("%-20s %-15s %-15s", "Region Name", "City Population", "Rural Population\n");
@@ -989,11 +1107,13 @@ public class App {
                     }
                 }
             }
+
         } catch (Exception e) {
             if (userInput == null && worldData == null) {
                 System.out.println("No Data");
             }
         }
+
     }
 
 }
