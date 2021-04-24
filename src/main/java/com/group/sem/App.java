@@ -597,6 +597,22 @@ public class App {
                 break;
             }
 
+
+            case "30": {
+                //Gets the specified number of cities in a specified country, ordered by largest population to the smallest
+                System.out.println("Which country would you like to see the cities of?\n\n");
+                System.out.println("Please make your selection\n\n");
+                String countryOption = in.nextLine();
+                System.out.print("How many cities would you like to see?\n\n");
+                String limitOption = in.nextLine();
+
+                ArrayList<City> cities = cc.getSetNCityInCountryByPop(limitOption, countryOption);
+
+                //Displays list of selected query
+                a.displayCity(cities, userInput);
+                break;
+            }
+
             case "33": {
                 //Gets a specified number cities in a continent ordered by population largest to smallest
                 System.out.println("Which continent would you like to see the cities of?\n\n");
@@ -608,12 +624,11 @@ public class App {
                 System.out.println("Retrieving data on " + continentOption + "...");
 
                 ArrayList<City> cities = cc.setNGetCitiesInContinentByPop(continentOption, num);
-
+              
                 //Displays list of selected query
                 a.displayCity(cities, userInput);
                 break;
             }
-
 
         }
     }
@@ -838,6 +853,25 @@ public class App {
                 }
             }
 
+
+            //Displays the top N cities in a specified country
+
+            else if (userInput.equals("30")) {
+
+                //Prints Column Headers
+                System.out.printf("%-20s, %-15s, %-15s", "City Name", "City Population", "Country Name");
+
+                if (cities != null) {
+
+                    for (City city : cities) {
+                        String output = String.format("%-20s, %-15s, %-15s", city.cityName, city.cityPopulation, city.countryName);
+                    }
+                }
+
+
+
+            }
+
         } catch (Exception e) {
             if (userInput == null && cities == null) {
                 System.out.println("No Cities");
@@ -899,11 +933,11 @@ public class App {
             else if (userInput.equals("24")) {
 
                 //Prints Column Header
-                System.out.printf("%-20s, %-15s, %-20s", "Continent", "Population", "CityPercentage", "RuralPercentage");
+                System.out.printf("%-20s, %-15s, %-20s, %-20s", "Continent", "Population", "CityPercentage", "RuralPercentage");
 
                 if (worldData != null) {
                     for (World world : worldData) {
-                        String output = String.format("%-20s, %-15s, %-20s", world.continent, world.continentPopulation, world.cityPercentage, world.ruralPercentage);
+                        String output = String.format("%-20s, %-15s, %-20s, %-20s", world.continent, world.continentPopulation, world.cityPercentage, world.ruralPercentage);
                         System.out.println(output);
                     }
                 }
@@ -912,11 +946,11 @@ public class App {
             else if (userInput.equals("25")) {
 
                 //Prints Column Header
-                System.out.printf("%-20s, %-15s, %-20s", "Region", "RegionPopulation", "CityPercentage", "RuralPercentage");
+                System.out.printf("%-20s, %-15s, %-20s, %-20s", "Region", "RegionPopulation", "CityPercentage", "RuralPercentage");
 
                 if (worldData != null) {
                     for (World world : worldData) {
-                        String output = String.format("%-20s, %-15s, %-20s", world.region, world.regionPopulation, world.cityPercentage, world.ruralPercentage);
+                        String output = String.format("%-20s, %-15s, %-20s, %-20s", world.region, world.regionPopulation, world.cityPercentage, world.ruralPercentage);
                         System.out.println(output);
                     }
                 }
@@ -925,11 +959,11 @@ public class App {
             else if (userInput.equals("26")) {
 
                 //Prints Column Header
-                System.out.printf("%-20s, %-15s, %-20s", "Country", "CountryPopulation", "CityPercentage", "RuralPercentage");
+                System.out.printf("%-20s, %-15s, %-20s %-20s", "Country", "CountryPopulation", "CityPercentage", "RuralPercentage");
 
                 if (worldData != null) {
                     for (World world : worldData) {
-                        String output = String.format("%-20s, %-15s, %-20s", world.countryName, world.countryPopulation, world.cityPercentage, world.ruralPercentage);
+                        String output = String.format("%-20s, %-15s, %-20s %-20s", world.countryName, world.countryPopulation, world.cityPercentage, world.ruralPercentage);
                         System.out.println(output);
                     }
                 }
