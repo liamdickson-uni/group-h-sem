@@ -626,7 +626,7 @@ public class App {
                 String limitOption = in.nextLine();
                 int num = Integer.parseInt(limitOption);
                 System.out.println("Retrieving " + limitOption + " records on the world...");
-                ArrayList<World> world = cc.getNumberOfCapitalCities(num, limitOption);
+                ArrayList<World> world = cc.getNumberOfCapitalCitiesWorld(num);
 
                 //Displays this to the user via the displayWorld method
                 a.displayWorld(world, userInput);

@@ -979,18 +979,22 @@ public class City {
      *
      * @return an ArrayList of capital cities
      */
-    public ArrayList<World> getNumberOfCapitalCitiesWorld(int limit, String region) {
+    public ArrayList<World> getNumberOfCapitalCitiesWorld(int limit) {
 
         try {
             //Defines the prepared SQL statement
             String sql = "SELECT cty.Name, cnt.Name, ROUND(cty.Population)" +
                     " FROM country cnt" +
                     " JOIN city cty on cty.ID = cnt.Capital" +
-                    "ORDER BY cnt.Population DESC" +
+                    " ORDER BY cnt.Population DESC" +
                     " LIMIT ?";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
           
             //Assigns user input to the parameter index of
-            ps.setInt(2, limit);
+            //Assigns user input to parameterIndex
+            ps.setInt(1, limit);
 
             //Executes SQL Statement
             ResultSet rset = ps.executeQuery();
@@ -1014,7 +1018,7 @@ public class City {
             return world;
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get info on " + region + ".");
+            System.out.println("Failed to get info on capital cities.");
             return null;
         }
     }
