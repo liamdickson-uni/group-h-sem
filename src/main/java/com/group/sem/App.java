@@ -113,7 +113,8 @@ public class App {
                     "27 - Get a specified number of cities in a specific District\n" +
                     "28 - Get a specified number of cities in a specific region\n" +
                     "29 - Get a specified number of cities in the world\n" +
-                    "33 - Get a specified number of cities in a specified Continent\n"
+                    "33 - Get a specified number of cities in a specified Continent\n" +
+                    "35 - Population of People in Cities and not in each Region\n"
             );
 
             //Creates new Scanner for user input
@@ -629,6 +630,15 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
+            case "35": {
+                //Gets the population of people that live in cities and rurally in each country
+                ArrayList<World> world = wld.getCitiesAndRuralForRegion();
+
+                //Displays list of selected query
+                a.displayWorld(world, userInput);
+
+                break;
+            }
 
         }
     }
@@ -964,6 +974,17 @@ public class App {
                 if (worldData != null) {
                     for (World world : worldData) {
                         String output = String.format("%-20s, %-15s, %-20s %-20s", world.countryName, world.countryPopulation, world.cityPercentage, world.ruralPercentage);
+                        System.out.println(output);
+                    }
+                }
+            }
+            else if (userInput.equals("35")) {
+
+                System.out.printf("%-20s %-15s %-15s", "Region Name", "City Population", "Rural Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s", result.region, result.cityPopulation, result.ruralPopulation);
                         System.out.println(output);
                     }
                 }
