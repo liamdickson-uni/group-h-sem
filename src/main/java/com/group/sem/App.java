@@ -118,6 +118,7 @@ public class App {
                     "32 - Population of People in Cities and not in each Country\n" +
                     "33 - Get a specified number of cities in a specified Continent\n" +
                     "34 - Population of People in Cities and not in each Continent\n" +
+                    "35 - Population of People in Cities and not in each Region\n" +
                     "36 - Gets a report for all the countries in the world."
             );
 
@@ -666,9 +667,18 @@ public class App {
                 a.displayWorld(world, userInput);
                 break;
             }
+            
+            case "35": {
+                //Gets the population of people that live in cities and rurally in each country
+                ArrayList<World> world = wld.getCitiesAndRuralForRegion();
+
+                //Displays list of selected query
+                a.displayWorld(world, userInput);
+                break;
+              
+            }
 
             case "36": {
-
                 //Assigns results from query to the ArrayList
                 ArrayList<Country> countries = c.getCountryReport();
 
@@ -676,7 +686,7 @@ public class App {
                 a.displayCountry(countries, userInput);
                 break;
             }
-
+            
         }
     }
 
@@ -1045,6 +1055,21 @@ public class App {
                 }
             }
 
+          
+            //Gets a specified number of capital cities in the world
+            else if (userInput.equals("31")) {
+
+                System.out.printf("%-20s %-15s %-15s %-15s", "City Name", "Country Name", "City Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s %-15s", result.cityName, result.countryName, result.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+
+            }
+
             //Displays population of people living in cities and not in each country
             else if (userInput.equals("32")) {
 
@@ -1059,20 +1084,6 @@ public class App {
 
             }
 
-            //Gets a specified number of capital cities in the world
-            else if (userInput.equals("31")) {
-
-                System.out.printf("%-20s %-15s %-15s %-15s", "City Name", "Country Name", "City Population\n");
-
-                if (worldData != null) {
-                    for (World result : worldData) {
-                        String output = String.format("%-25s %-15s %-15s %-15s", result.cityName, result.countryName, result.cityPopulation);
-                        System.out.println(output);
-                    }
-                }
-
-            }
-          
           else if (userInput.equals("34")) {
 
                 System.out.printf("%-20s %-15s %-15s", "Continent Name", "City Population", "Rural Population\n");
@@ -1080,6 +1091,18 @@ public class App {
                 if (worldData != null) {
                     for (World result : worldData) {
                         String output = String.format("%-25s %-15s %-15s", result.continent, result.cityPopulation, result.ruralPopulation);
+                        System.out.println(output);
+                    }
+                }
+            }
+
+            else if (userInput.equals("35")) {
+
+                System.out.printf("%-20s %-15s %-15s", "Region Name", "City Population", "Rural Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s", result.region, result.cityPopulation, result.ruralPopulation);
                         System.out.println(output);
                     }
                 }
