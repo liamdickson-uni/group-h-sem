@@ -623,7 +623,6 @@ public class City {
         }
     }
 
-
     public ArrayList<World> getNumberOfCapitalCities(int limit, String region) {
 
         try {
@@ -881,14 +880,15 @@ public class City {
             //Defines the prepared SQL statement
             String sql =
                     " SELECT  cty.Name, cty.Population, cnt.Name" +
-                    " FROM city cty " +
-                    " JOIN country cnt ON cnt.Code = cty.CountryCode" +
-                    " WHERE cnt.Name = ? " +
-                    " ORDER BY cty.Population DESC " +
-                    " LIMIT ?";
+                            " FROM city cty " +
+                            " JOIN country cnt ON cnt.Code = cty.CountryCode" +
+                            " WHERE cnt.Name = ? " +
+                            " ORDER BY cty.Population DESC " +
+                            " LIMIT ?";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, userCountry);
@@ -898,7 +898,7 @@ public class City {
             ResultSet rset = ps.executeQuery();
 
             //Create a filepath
-            String fileName = "csv/cities/set_n_cities_in_country_by_pop/Top " + limit + " cities in " + userCountry +".csv";
+            String fileName = "csv/cities/set_n_cities_in_country_by_pop/Top " + limit + " cities in " + userCountry + ".csv";
 
             //Creates an ArrayList of cities to store data
             ArrayList<City> cities = new ArrayList<>();
@@ -923,15 +923,100 @@ public class City {
 
     }
 
+    /**
+     * This method gets a specified list of cities in a continent ordered by population
+     *
+     * @return an ArrayList of Cities
+     */
+    public ArrayList<City> setNGetCitiesInContinentByPop(String userContinent, int limit) {
+
+        try {
+
+            //Defines the prepared SQL statement
+            String sql = " SELECT cty.Name" +
+                    " FROM city cty" +
+                    " INNER JOIN country c ON c.code = cty.CountryCode" +
+                    " WHERE c.Continent = ?" +
+                    " ORDER BY cty.Population DESC" +
+                    " LIMIT ?";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assigns user input to parameterIndex
+            ps.setString(1, userContinent);
+            ps.setInt(2, limit);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/set_cities_in_continent/" + "Cities in " + userContinent + ".csv";
+
+            //Creates an empty ArrayList of cities for printing
+            ArrayList<City> cities = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityName = rset.getString("Name");
+                CSVCreator.createCSV(fileName, rset);
+                cities.add(cty);
+            }
+            return cities;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities in selected continent");
+            return null;
 
 
+        }
+    }
 
+    /**
+     * This method gets a set number of capital cities in a the world
+     *
+     * @return an ArrayList of capital cities
+     */
+    public ArrayList<World> getNumberOfCapitalCitiesWorld(int limit, String region) {
 
+        try {
+            //Defines the prepared SQL statement
+            String sql = "SELECT cty.Name, cnt.Name, ROUND(cty.Population)" +
+                    " FROM country cnt" +
+                    " JOIN city cty on cty.ID = cnt.Capital" +
+                    "ORDER BY cnt.Population DESC" +
+                    " LIMIT ?";
+          
+            //Assigns user input to the parameter index of
+            ps.setInt(2, limit);
 
+            //Executes SQL Statement
+            ResultSet rset = ps.executeQuery();
 
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/cities/capital_cities_by_pop_limit_world/Capital Cities in world.csv";
 
+            //Create an ArrayList to store the data
+            ArrayList<World> world = new ArrayList<>();
 
+            //Check that a result is returned
+            while (rset.next()) {
+                World wld = new World();
+                wld.cityName = rset.getString("Name");
+                wld.countryName = rset.getString("Name");
+                wld.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName, rset);
+                world.add(wld);
+            }
 
-
+            return world;
+        } catch (SQLException | IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get info on " + region + ".");
+            return null;
+        }
+    }
 
 }

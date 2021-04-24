@@ -138,6 +138,12 @@ public class Country {
      */
     public String code2;
 
+    /*
+    Represents City Name
+     */
+
+    public String cityName;
+
     //Gets the singleton instance of App
     App app = App.getInstance();
 
@@ -532,7 +538,7 @@ public class Country {
             while (rset.next()) {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
-                cnt.Name = rset.getString("Region");
+                cnt.Region = rset.getString("Region");
                 cnt.Population = rset.getInt("Population");
                 Countries.add(cnt);
                 CSVCreator.createCSV(fileName, rset);
@@ -544,6 +550,57 @@ public class Country {
             return null;
         }
     }
+
+    public ArrayList<Country> getCountryReport() {
+
+        try {
+            //Defines the prepared SQL statement to
+            String sql =
+                    " SELECT cnt.Name, cnt.Code, cnt.Continent, cnt.Region, cnt.Population, cty.Name AS 'City Name'" +
+                    " FROM country cnt" +
+                    " JOIN city cty ON cty.ID = cnt.Capital";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/country_report/Countries in the World.csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<Country> Countries = new ArrayList<>();
+
+            // Check that a county is returned and add the data to the ArrayList
+            while (rset.next()) {
+                Country cnt = new Country();
+                cnt.Name = rset.getString("Name");
+                cnt.Code = rset.getString("Code");
+                cnt.Continent = rset.getString("Continent");
+                cnt.Region = rset.getString("Region");
+                cnt.Population = rset.getInt("Population");
+                cnt.cityName = rset.getString("Name");
+                Countries.add(cnt);
+                CSVCreator.createCSV(fileName, rset);
+            }
+
+            return Countries;
+
+        }
+
+
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get information on the cities in the world.");
+            return null;
+        }
+
+
+    }
+
+
+
 
 }
 
