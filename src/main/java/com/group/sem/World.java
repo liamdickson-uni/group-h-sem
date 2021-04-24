@@ -49,6 +49,15 @@ public class World {
      * Represents a City Population
      */
     public int cityPopulation;
+    /*
+     * Represents a Rural Population
+     */
+    public int ruralPopulation;
+
+    /*
+     * Represents a City Population
+     */
+    public int ruralPopulation;
 
     /*
     * Represents a countries region
@@ -59,6 +68,10 @@ public class World {
     Represents country population
      */
     public int countryPopulation;
+    /*
+   Represents country population
+    */
+    public int ruralPopulation;
 
     /*
      * Represents region population
@@ -318,5 +331,132 @@ public class World {
             return null;
         }
     }
+    public ArrayList<World> getCitiesAndRuralForRegion() {
+        try {
 
+            //Defines the prepared SQL Statement
+            String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation"+
+                    "From country cnt"+
+                    "Inner Join city ci on cnt.code = ci.CountryCode"+
+                    "Group By cnt.region";
+
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/Cities and Rural Population in Region" + ".csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<World> world = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                World wld = new World();
+                wld.region = rset.getString("Region");
+                wld.cityPopulation = rset.getInt("City Population");
+                wld.ruralPopulation = rset.getInt("Rural Population");
+                CSVCreator.createCSV(fileName, rset);
+                world.add(wld);
+            }
+            return world;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get Population of Peoples in Cities and Rurally in Regions");
+            return null;
+        }
+    }
+
+    /**
+     * This method gets the population of a country divided by the population in cities and in rural areas
+     *
+     * @return an ArrayList of populations
+     */
+    public ArrayList<World> getCitiesAndRuralForCountry() {
+        try {
+
+            //Defines the prepared SQL Statement
+            String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation"+
+                    "From country cnt"+
+                    "Inner Join city ci on cnt.code = ci.CountryCode"+
+                    "Group By cnt.code";
+
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/Cities and Rural Population in Country" + ".csv";
+
+            //Creates an ArrayList of countries to store data
+            ArrayList<World> world = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                World wld = new World();
+                wld.countryName = rset.getString("Name");
+                wld.cityPopulation = rset.getInt("City Population");
+                wld.ruralPopulation = rset.getInt("Rural Population");
+                CSVCreator.createCSV(fileName, rset);
+                world.add(wld);
+            }
+            return world;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get Population of Peoples in Cities and Rurally in Countries");
+            return null;
+        }
+    }
+
+    /**
+     * This method gets the population of a continenent divided by the population in cities and in rural areas
+     *
+     * @return an ArrayList of populations
+     */
+    public ArrayList<World> getCitiesAndRuralForContinent() {
+        try {
+
+            //Defines the prepared SQL Statement
+            String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation"+
+                    "From country cnt"+
+                    "Inner Join city ci on cnt.code = ci.CountryCode"+
+                    "Group By cnt.continent";
+          
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/countries/Cities and Rural Population in Country" + ".csv";
+  
+            //Creates an ArrayList of countries to store data
+            ArrayList<World> world = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                World wld = new World();
+                wld.continent = rset.getString("Continent");
+                wld.cityPopulation = rset.getInt("City Population");
+                wld.ruralPopulation = rset.getInt("Rural Population");
+                CSVCreator.createCSV(fileName, rset);
+                world.add(wld);
+            }
+            return world;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get Population of Peoples in Cities and Rurally in Continent");
+            return null;
+        }
+    }
 }
