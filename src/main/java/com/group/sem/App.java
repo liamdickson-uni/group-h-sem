@@ -112,7 +112,8 @@ public class App {
                     "26 - Country Population Report\n" +
                     "27 - Get a specified number cities in a specific District\n" +
                     "28 - Get a specified number cities in a specific region\n" +
-                    "29 - Get the top N cities in the world\n"
+                    "29 - Get the top N cities in the world\n" +
+                    "31 - Get the top N capital cities in the world\n"
             );
 
             //Creates new Scanner for user input
@@ -596,6 +597,21 @@ public class App {
                 a.displayCity(cities, userInput);
                 break;
             }
+
+            case "31": {
+                //Gets a specific number of capital cities in the world
+                System.out.println("How many capital cities would you like to see?");
+                String limitOption = in.nextLine();
+                int num = Integer.parseInt(limitOption);
+                System.out.println("Retrieving " + limitOption + " records on the world...");
+                ArrayList<World> world = cc.getNumberOfCapitalCities(num, limitOption);
+
+                //Displays this to the user via the displayWorld method
+                a.displayWorld(world, userInput);
+                break;
+
+            }
+
         }
     }
 
@@ -1021,11 +1037,27 @@ public class App {
                     }
                 }
             }
+
+            //Gets a specified number of capital cities in the world
+            else if (userInput.equals("31")) {
+
+                System.out.printf("%-20s %-15s %-15s %-15s", "City Name", "Country Name", "City Population\n");
+
+                if (worldData != null) {
+                    for (World result : worldData) {
+                        String output = String.format("%-25s %-15s %-15s %-15s", result.cityName, result.countryName, result.cityPopulation);
+                        System.out.println(output);
+                    }
+                }
+
+            }
+
         } catch (Exception e) {
             if (userInput == null && worldData == null) {
                 System.out.println("No Data");
             }
         }
+
     }
 
 }

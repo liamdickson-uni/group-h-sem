@@ -620,7 +620,6 @@ public class City {
         }
     }
 
-
     public ArrayList<World> getNumberOfCapitalCities(int limit, String region) {
 
         try {
@@ -866,4 +865,53 @@ public class City {
         }
 
     }
+
+    /**
+     * This method gets a set number of capital cities in a the world
+     *
+     * @return an ArrayList of capital cities
+     */
+    public ArrayList<World> getNumberOfCapitalCitiesWorld(int limit, String region) {
+
+        try {
+            //Defines the prepared SQL statement
+            String sql = "SELECT cty.Name, cnt.Name, ROUND(cty.Population)" +
+                    " FROM country cnt" +
+                    " JOIN city cty on cty.ID = cnt.Capital" +
+                    "ORDER BY cnt.Population DESC" +
+                    " LIMIT ?";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+
+            //Assigns user input to the parameter index of
+            ps.setInt(2, limit);
+
+            //Executes SQL Statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path
+            String fileName = "csv/cities/capital_cities_by_pop_limit_world/Capital Cities in world.csv";
+
+            //Create an ArrayList to store the data
+            ArrayList<World> world = new ArrayList<>();
+
+            //Check that a result is returned
+            while (rset.next()) {
+                World wld = new World();
+                wld.cityName = rset.getString("Name");
+                wld.countryName = rset.getString("Name");
+                wld.cityPopulation = rset.getInt("Population");
+                CSVCreator.createCSV(fileName, rset);
+                world.add(wld);
+            }
+
+            return world;
+        } catch (SQLException | IOException e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get info on " + region + ".");
+            return null;
+        }
+    }
+
 }
