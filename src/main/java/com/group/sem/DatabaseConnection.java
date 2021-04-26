@@ -6,12 +6,11 @@ import java.sql.SQLException;
 
 public class DatabaseConnection {
 
-    /**
+    /*
      *  The following code creates a singleton instance of the DatabaseConnection Class to be used throughout the program.
      *
      *  This ensures that there is only ever one connection to the database at any one time.
      */
-
     //Private Constructor
     private static DatabaseConnection INSTANCE;
 
@@ -52,7 +51,7 @@ public class DatabaseConnection {
                 System.exit(-1);
             }
 
-            int retries = 10;
+            int retries = 60;
 
             for (int i = 0; i < retries; ++i) {
                 if (!isConnected) {
@@ -63,9 +62,9 @@ public class DatabaseConnection {
 
                     System.out.println("Loading...");
                     // Wait a bit for db to start
-                    Thread.sleep(30000);
+                    Thread.sleep(5000);
                     // Connect to database
-                    con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                    con = DriverManager.getConnection("jdbc:mysql://localhost:33060/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
 
                     if (!isConnected) {
                         System.out.println("Successfully connected");
