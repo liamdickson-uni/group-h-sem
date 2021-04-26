@@ -65,7 +65,7 @@ public class DatabaseConnection {
                     // Wait a bit for db to start
                     Thread.sleep(30000);
                     // Connect to database
-                    con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                    con = DriverManager.getConnection("jdbc:mysql://" + "34.105.188.21:3306" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
 
                     if (!isConnected) {
                         System.out.println("Successfully connected");
@@ -92,7 +92,6 @@ public class DatabaseConnection {
             try {
                 // Close connection
                 con.close();
-                System.out.println("Database Disconnected");
             } catch (Exception e) {
                 System.out.println("Error closing connection to database");
             }
