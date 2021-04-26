@@ -2,60 +2,60 @@ language: java
 
 addons:
   hosts:
-  - db
-
-env:
-  global:
-  - CLOUDSDK_CORE_DISABLE_PROMPTS=1
-
-
+    - db
 
 services:
-- docker
+  - docker
 
 install:
-- docker build -t database db/.
-- docker run --rm -d -e MYSQL_ROOT_PASSWORD=example -p 33060:3306 database
-- mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - docker build -t database db/.
+  - docker run --rm -d -e MYSQL_ROOT_PASSWORD=example -p 33060:3306 database
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 before_script:
-- mvn clean
+  - mvn clean
 
 
 jobs:
   include:
-
-  - stage: unit tests
-    install: skip
-    jdk: oraclejdk11
-    script: mvn test -Dtest=com.group.sem.AppTests
-  - stage: integration tests
-    jdk: oraclejdk11
-    script: mvn test -Dtest=com.group.sem.AppIntegrationTest
-  - stage: GitHub Release
-    install: skip
-    jdk: oraclejdk11
-    script:
-    - echo "Deploying to GitHub Releases"
-    - mvn package -DskipTests=true -Dmaven.javadoc.skip=true
-    before_deploy:
-    - git config --local user.name "Tom McEachan"
-    - git config --local user.email "tom.a.mceachan@outlook.com"
-    - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y-%m-%d')-$(git log --format=%h -1)}
-    - git tag $TRAVIS_TAG
-    deploy:
-      provider: releases
-      api-key: "$GITHUB_OAUTH_TOKEN"
-      file: "$TRAVIS_BUILD_DIR/target/groupHSemMethods.jar"
-      cleanup: false
+    - stage: Unit Tests
+      install: skip
+      jdk: oraclejdk11
+      script: mvn test -Dtest=com.group.sem.AppTest
+    - stage: Integration Tests
+      jdk: oraclejdk11
+      script: mvn test -Dtest=com.group.sem.AppIntegrationTest
+    - stage: GitHub Release
+      #We don't want to install
+      install: skip
+      #We will build the jar
+      jdk: oraclejdk11
+      script:
+        - echo "Deploying to GitHub Releases"
+        #Package (build the jar)
+        - mvn package -DskipTests=true -Dmaven.javadoc.skip=true
+      before_deploy:
+        #Set up git user name and tag this commit
+        - git config --local user.name "Tom McEachan"
+        - git config --local user.email "tom.a.mceachan@outlook.com"
+        #Create temporary tag from date and Git log.
+        - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y-%m-%d')-$(git log --format=%h -1)}
+        #Set tag
+        - git tag $TRAVIS_TAG
+      deploy:
+        provider: releases
+        #This is the token we set before
+        api-key: $GITHUB_OAUTH_TOKEN
+        #Copy built JAR file to release. JAR built in $TRAVIS_BUILD_DIR/target
+        file: $TRAVIS_BUILD_DIR/target/groupHSemMethods.jar
+        cleanup: false
 
 
 stages:
-- unit tests
-- integration tests
-- name: GitHub Release
-  if: branch = master
+  - unit tests
+  - integration tests
+  - name: deploy
+    if: branch = master
 
 after_success:
-- bash <(curl -s https://codecov.io/bash)
-
+  - bash <(curl -s https://codecov.io/bash)
