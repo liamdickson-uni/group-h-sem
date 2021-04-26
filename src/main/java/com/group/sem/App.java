@@ -1034,7 +1034,10 @@ public class App {
                     }
                 }
 
-            } else if (userInput.equals("34")) {
+            }
+
+            //Displays the population of a continent divided by the population in cities and in rural areas
+            else if (userInput.equals("34")) {
 
                 System.out.printf("%-20s %-15s %-15s", "Continent Name", "City Population", "Rural Population\n");
 
@@ -1044,7 +1047,10 @@ public class App {
                         System.out.println(output);
                     }
                 }
-            } else if (userInput.equals("35")) {
+            }
+
+            //Displays the population of People in Cities and not in each Region
+            else if (userInput.equals("35")) {
 
                 System.out.printf("%-20s %-15s %-15s", "Region Name", "City Population", "Rural Population\n");
 
@@ -1054,7 +1060,10 @@ public class App {
                         System.out.println(output);
                     }
                 }
-            } else if (userInput.equals("36")) {
+            }
+
+            //Displays a Country report
+            else if (userInput.equals("36")) {
 
                 System.out.printf("%-20s %-15s %-15s %-15s %-15s %-15s", "Country", "Code", "Continent", "Region", "Population", "City Name\n");
 

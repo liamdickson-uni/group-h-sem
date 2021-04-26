@@ -1,46 +1,47 @@
-Name,Population
-London,7285000
-Berlin,3386667
-Madrid,2879052
-Roma,2643581
-Kyiv,2624000
-Paris,2125246
-Bucuresti,2016131
-Budapest,1811552
-Minsk,1674000
-Warszawa,1615369
-Wien,1608144
-Beograd,1204000
-Praha,1181126
-Sofija,1122302
-Athenai,772072
-Riga,764328
-Stockholm,750348
-Amsterdam,731200
-Chisinau,719900
-Zagreb,706770
-Vilnius,577969
-Lisboa,563210
-Helsinki [Helsingfors],555474
-Oslo,508726
-København,495699
-Dublin,481854
-Bratislava,448292
-Skopje,444299
-Tallinn,403981
-Sarajevo,360000
-Ljubljana,270986
-Tirana,270000
-Bruxelles [Brussel],133859
-Bern,122700
-Reykjavík,109184
-Luxembourg [Luxemburg/Lëtzebuerg],80700
-Gibraltar,27025
-Andorra la Vella,21189
-Tórshavn,14542
-Valletta,7073
-Vaduz,5043
-San Marino,2294
-Longyearbyen,1438
-Monaco-Ville,1234
-Città del Vaticano,455
+Continent,Name,Population
+Europe,Moscow,8389200
+Europe,London,7285000
+Europe,Berlin,3386667
+Europe,Madrid,2879052
+Europe,Roma,2643581
+Europe,Kyiv,2624000
+Europe,Paris,2125246
+Europe,Bucuresti,2016131
+Europe,Budapest,1811552
+Europe,Minsk,1674000
+Europe,Warszawa,1615369
+Europe,Wien,1608144
+Europe,Beograd,1204000
+Europe,Praha,1181126
+Europe,Sofija,1122302
+Europe,Athenai,772072
+Europe,Riga,764328
+Europe,Stockholm,750348
+Europe,Amsterdam,731200
+Europe,Chisinau,719900
+Europe,Zagreb,706770
+Europe,Vilnius,577969
+Europe,Lisboa,563210
+Europe,Helsinki [Helsingfors],555474
+Europe,Oslo,508726
+Europe,København,495699
+Europe,Dublin,481854
+Europe,Bratislava,448292
+Europe,Skopje,444299
+Europe,Tallinn,403981
+Europe,Sarajevo,360000
+Europe,Ljubljana,270986
+Europe,Tirana,270000
+Europe,Bruxelles [Brussel],133859
+Europe,Bern,122700
+Europe,Reykjavík,109184
+Europe,Luxembourg [Luxemburg/Lëtzebuerg],80700
+Europe,Gibraltar,27025
+Europe,Andorra la Vella,21189
+Europe,Tórshavn,14542
+Europe,Valletta,7073
+Europe,Vaduz,5043
+Europe,San Marino,2294
+Europe,Longyearbyen,1438
+Europe,Monaco-Ville,1234
+Europe,Città del Vaticano,455

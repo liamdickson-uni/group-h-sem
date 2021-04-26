@@ -1,240 +1,240 @@
-Name,Continent,Population
-China,Asia,1277558000
-India,Asia,1013662000
-United States,North America,278357000
-Indonesia,Asia,212107000
-Brazil,South America,170115000
-Pakistan,Asia,156483000
-Russian Federation,Europe,146934000
-Bangladesh,Asia,129155000
-Japan,Asia,126714000
-Nigeria,Africa,111506000
-Mexico,North America,98881000
-Germany,Europe,82164700
-Vietnam,Asia,79832000
-Philippines,Asia,75967000
-Egypt,Africa,68470000
-Iran,Asia,67702000
-Turkey,Asia,66591000
-Ethiopia,Africa,62565000
-Thailand,Asia,61399000
-United Kingdom,Europe,59623400
-France,Europe,59225700
-Italy,Europe,57680000
-"Congo, The Democratic Republic of the",Africa,51654000
-Ukraine,Europe,50456000
-South Korea,Asia,46844000
-Myanmar,Asia,45611000
-Colombia,South America,42321000
-South Africa,Africa,40377000
-Spain,Europe,39441700
-Poland,Europe,38653600
-Argentina,South America,37032000
-Tanzania,Africa,33517000
-Algeria,Africa,31471000
-Canada,North America,31147000
-Kenya,Africa,30080000
-Sudan,Africa,29490000
-Morocco,Africa,28351000
-Peru,South America,25662000
-Uzbekistan,Asia,24318000
-Venezuela,South America,24170000
-North Korea,Asia,24039000
-Nepal,Asia,23930000
-Iraq,Asia,23115000
-Afghanistan,Asia,22720000
-Romania,Europe,22455500
-Taiwan,Asia,22256000
-Malaysia,Asia,22244000
-Uganda,Africa,21778000
-Saudi Arabia,Asia,21607000
-Ghana,Africa,20212000
-Mozambique,Africa,19680000
-Australia,Oceania,18886000
-Sri Lanka,Asia,18827000
-Yemen,Asia,18112000
-Kazakstan,Asia,16223000
-Syria,Asia,16125000
-Madagascar,Africa,15942000
-Netherlands,Europe,15864000
-Chile,South America,15211000
-Cameroon,Africa,15085000
-Côte d’Ivoire,Africa,14786000
-Angola,Africa,12878000
-Ecuador,South America,12646000
-Burkina Faso,Africa,11937000
-Zimbabwe,Africa,11669000
-Guatemala,North America,11385000
-Mali,Africa,11234000
-Cuba,North America,11201000
-Cambodia,Asia,11168000
-Malawi,Africa,10925000
-Niger,Africa,10730000
-Yugoslavia,Europe,10640000
-Greece,Europe,10545700
-Czech Republic,Europe,10278100
-Belgium,Europe,10239000
-Belarus,Europe,10236000
-Somalia,Africa,10097000
-Hungary,Europe,10043200
-Portugal,Europe,9997600
-Tunisia,Africa,9586000
-Senegal,Africa,9481000
-Zambia,Africa,9169000
-Sweden,Europe,8861400
-Dominican Republic,North America,8495000
-Bolivia,South America,8329000
-Haiti,North America,8222000
-Bulgaria,Europe,8190900
-Austria,Europe,8091800
-Azerbaijan,Asia,7734000
-Rwanda,Africa,7733000
-Chad,Africa,7651000
-Guinea,Africa,7430000
-Switzerland,Europe,7160400
-Hong Kong,Asia,6782000
-Burundi,Africa,6695000
-Honduras,North America,6485000
-El Salvador,North America,6276000
-Israel,Asia,6217000
-Tajikistan,Asia,6188000
-Benin,Africa,6097000
-Libyan Arab Jamahiriya,Africa,5605000
-Paraguay,South America,5496000
-Laos,Asia,5433000
-Slovakia,Europe,5398700
-Denmark,Europe,5330000
-Finland,Europe,5171300
-Jordan,Asia,5083000
-Nicaragua,North America,5074000
-Georgia,Asia,4968000
-Sierra Leone,Africa,4854000
-Papua New Guinea,Oceania,4807000
-Kyrgyzstan,Asia,4699000
-Togo,Africa,4629000
-Norway,Europe,4478500
-Croatia,Europe,4473000
-Turkmenistan,Asia,4459000
-Moldova,Europe,4380000
-Costa Rica,North America,4023000
-Bosnia and Herzegovina,Europe,3972000
-Puerto Rico,North America,3869000
-New Zealand,Oceania,3862000
-Eritrea,Africa,3850000
-Ireland,Europe,3775100
-Lithuania,Europe,3698500
-Central African Republic,Africa,3615000
-Singapore,Asia,3567000
-Armenia,Asia,3520000
-Albania,Europe,3401200
-Uruguay,South America,3337000
-Lebanon,Asia,3282000
-Liberia,Africa,3154000
-Palestine,Asia,3101000
-Congo,Africa,2943000
-Panama,North America,2856000
-Mauritania,Africa,2670000
-Mongolia,Asia,2662000
-Jamaica,North America,2583000
-Oman,Asia,2542000
-United Arab Emirates,Asia,2441000
-Latvia,Europe,2424200
-Lesotho,Africa,2153000
-Bhutan,Asia,2124000
-Macedonia,Europe,2024000
-Slovenia,Europe,1987800
-Kuwait,Asia,1972000
-Namibia,Africa,1726000
-Botswana,Africa,1622000
-Estonia,Europe,1439200
-Gambia,Africa,1305000
-Trinidad and Tobago,North America,1295000
-Gabon,Africa,1226000
-Guinea-Bissau,Africa,1213000
-Mauritius,Africa,1158000
-Swaziland,Africa,1008000
-East Timor,Asia,885000
-Guyana,South America,861000
-Fiji Islands,Oceania,817000
-Cyprus,Asia,754700
-Réunion,Africa,699000
-Djibouti,Africa,638000
-Bahrain,Asia,617000
-Qatar,Asia,599000
-Comoros,Africa,578000
-Macao,Asia,473000
-Guadeloupe,North America,456000
-Equatorial Guinea,Africa,453000
-Solomon Islands,Oceania,444000
-Luxembourg,Europe,435700
-Cape Verde,Africa,428000
-Suriname,South America,417000
-Martinique,North America,395000
-Malta,Europe,380200
-Brunei,Asia,328000
-Bahamas,North America,307000
-Western Sahara,Africa,293000
-Maldives,Asia,286000
-Iceland,Europe,279000
-Barbados,North America,270000
-Belize,North America,241000
-French Polynesia,Oceania,235000
-Netherlands Antilles,North America,217000
-New Caledonia,Oceania,214000
-Vanuatu,Oceania,190000
-French Guiana,South America,181000
-Samoa,Oceania,180000
-Guam,Oceania,168000
-Saint Lucia,North America,154000
-Mayotte,Africa,149000
-Sao Tome and Principe,Africa,147000
-"Micronesia, Federated States of",Oceania,119000
-Saint Vincent and the Grenadines,North America,114000
-Aruba,North America,103000
-Tonga,Oceania,99000
-Grenada,North America,94000
-"Virgin Islands, U.S.",North America,93000
-Kiribati,Oceania,83000
-Andorra,Europe,78000
-Northern Mariana Islands,Oceania,78000
-Seychelles,Africa,77000
-Dominica,North America,71000
-American Samoa,Oceania,68000
-Antigua and Barbuda,North America,68000
-Bermuda,North America,65000
-Marshall Islands,Oceania,64000
-Greenland,North America,56000
-Faroe Islands,Europe,43000
-Cayman Islands,North America,38000
-Saint Kitts and Nevis,North America,38000
-Monaco,Europe,34000
-Liechtenstein,Europe,32300
-San Marino,Europe,27000
-Gibraltar,Europe,25000
-"Virgin Islands, British",North America,21000
-Cook Islands,Oceania,20000
-Palau,Oceania,19000
-Turks and Caicos Islands,North America,17000
-Wallis and Futuna,Oceania,15000
-Nauru,Oceania,12000
-Tuvalu,Oceania,12000
-Montserrat,North America,11000
-Anguilla,North America,8000
-Saint Pierre and Miquelon,North America,7000
-Saint Helena,Africa,6000
-Svalbard and Jan Mayen,Europe,3200
-Christmas Island,Oceania,2500
-Falkland Islands,South America,2000
-Norfolk Island,Oceania,2000
-Niue,Oceania,2000
-Tokelau,Oceania,2000
-Holy See (Vatican City State),Europe,1000
-Cocos (Keeling) Islands,Oceania,600
-Pitcairn,Oceania,50
-Antarctica,Antarctica,0
-French Southern territories,Antarctica,0
-Bouvet Island,Antarctica,0
-Heard Island and McDonald Islands,Antarctica,0
-British Indian Ocean Territory,Africa,0
-South Georgia and the South Sandwich Islands,Antarctica,0
-United States Minor Outlying Islands,Oceania,0
+Name,Population
+China,1277558000
+India,1013662000
+United States,278357000
+Indonesia,212107000
+Brazil,170115000
+Pakistan,156483000
+Russian Federation,146934000
+Bangladesh,129155000
+Japan,126714000
+Nigeria,111506000
+Mexico,98881000
+Germany,82164700
+Vietnam,79832000
+Philippines,75967000
+Egypt,68470000
+Iran,67702000
+Turkey,66591000
+Ethiopia,62565000
+Thailand,61399000
+United Kingdom,59623400
+France,59225700
+Italy,57680000
+"Congo, The Democratic Republic of the",51654000
+Ukraine,50456000
+South Korea,46844000
+Myanmar,45611000
+Colombia,42321000
+South Africa,40377000
+Spain,39441700
+Poland,38653600
+Argentina,37032000
+Tanzania,33517000
+Algeria,31471000
+Canada,31147000
+Kenya,30080000
+Sudan,29490000
+Morocco,28351000
+Peru,25662000
+Uzbekistan,24318000
+Venezuela,24170000
+North Korea,24039000
+Nepal,23930000
+Iraq,23115000
+Afghanistan,22720000
+Romania,22455500
+Taiwan,22256000
+Malaysia,22244000
+Uganda,21778000
+Saudi Arabia,21607000
+Ghana,20212000
+Mozambique,19680000
+Australia,18886000
+Sri Lanka,18827000
+Yemen,18112000
+Kazakstan,16223000
+Syria,16125000
+Madagascar,15942000
+Netherlands,15864000
+Chile,15211000
+Cameroon,15085000
+Côte d’Ivoire,14786000
+Angola,12878000
+Ecuador,12646000
+Burkina Faso,11937000
+Zimbabwe,11669000
+Guatemala,11385000
+Mali,11234000
+Cuba,11201000
+Cambodia,11168000
+Malawi,10925000
+Niger,10730000
+Yugoslavia,10640000
+Greece,10545700
+Czech Republic,10278100
+Belgium,10239000
+Belarus,10236000
+Somalia,10097000
+Hungary,10043200
+Portugal,9997600
+Tunisia,9586000
+Senegal,9481000
+Zambia,9169000
+Sweden,8861400
+Dominican Republic,8495000
+Bolivia,8329000
+Haiti,8222000
+Bulgaria,8190900
+Austria,8091800
+Azerbaijan,7734000
+Rwanda,7733000
+Chad,7651000
+Guinea,7430000
+Switzerland,7160400
+Hong Kong,6782000
+Burundi,6695000
+Honduras,6485000
+El Salvador,6276000
+Israel,6217000
+Tajikistan,6188000
+Benin,6097000
+Libyan Arab Jamahiriya,5605000
+Paraguay,5496000
+Laos,5433000
+Slovakia,5398700
+Denmark,5330000
+Finland,5171300
+Jordan,5083000
+Nicaragua,5074000
+Georgia,4968000
+Sierra Leone,4854000
+Papua New Guinea,4807000
+Kyrgyzstan,4699000
+Togo,4629000
+Norway,4478500
+Croatia,4473000
+Turkmenistan,4459000
+Moldova,4380000
+Costa Rica,4023000
+Bosnia and Herzegovina,3972000
+Puerto Rico,3869000
+New Zealand,3862000
+Eritrea,3850000
+Ireland,3775100
+Lithuania,3698500
+Central African Republic,3615000
+Singapore,3567000
+Armenia,3520000
+Albania,3401200
+Uruguay,3337000
+Lebanon,3282000
+Liberia,3154000
+Palestine,3101000
+Congo,2943000
+Panama,2856000
+Mauritania,2670000
+Mongolia,2662000
+Jamaica,2583000
+Oman,2542000
+United Arab Emirates,2441000
+Latvia,2424200
+Lesotho,2153000
+Bhutan,2124000
+Macedonia,2024000
+Slovenia,1987800
+Kuwait,1972000
+Namibia,1726000
+Botswana,1622000
+Estonia,1439200
+Gambia,1305000
+Trinidad and Tobago,1295000
+Gabon,1226000
+Guinea-Bissau,1213000
+Mauritius,1158000
+Swaziland,1008000
+East Timor,885000
+Guyana,861000
+Fiji Islands,817000
+Cyprus,754700
+Réunion,699000
+Djibouti,638000
+Bahrain,617000
+Qatar,599000
+Comoros,578000
+Macao,473000
+Guadeloupe,456000
+Equatorial Guinea,453000
+Solomon Islands,444000
+Luxembourg,435700
+Cape Verde,428000
+Suriname,417000
+Martinique,395000
+Malta,380200
+Brunei,328000
+Bahamas,307000
+Western Sahara,293000
+Maldives,286000
+Iceland,279000
+Barbados,270000
+Belize,241000
+French Polynesia,235000
+Netherlands Antilles,217000
+New Caledonia,214000
+Vanuatu,190000
+French Guiana,181000
+Samoa,180000
+Guam,168000
+Saint Lucia,154000
+Mayotte,149000
+Sao Tome and Principe,147000
+"Micronesia, Federated States of",119000
+Saint Vincent and the Grenadines,114000
+Aruba,103000
+Tonga,99000
+Grenada,94000
+"Virgin Islands, U.S.",93000
+Kiribati,83000
+Andorra,78000
+Northern Mariana Islands,78000
+Seychelles,77000
+Dominica,71000
+American Samoa,68000
+Antigua and Barbuda,68000
+Bermuda,65000
+Marshall Islands,64000
+Greenland,56000
+Faroe Islands,43000
+Cayman Islands,38000
+Saint Kitts and Nevis,38000
+Monaco,34000
+Liechtenstein,32300
+San Marino,27000
+Gibraltar,25000
+"Virgin Islands, British",21000
+Cook Islands,20000
+Palau,19000
+Turks and Caicos Islands,17000
+Wallis and Futuna,15000
+Nauru,12000
+Tuvalu,12000
+Montserrat,11000
+Anguilla,8000
+Saint Pierre and Miquelon,7000
+Saint Helena,6000
+Svalbard and Jan Mayen,3200
+Christmas Island,2500
+Falkland Islands,2000
+Norfolk Island,2000
+Niue,2000
+Tokelau,2000
+Holy See (Vatican City State),1000
+Cocos (Keeling) Islands,600
+Pitcairn,50
+Antarctica,0
+French Southern territories,0
+Bouvet Island,0
+Heard Island and McDonald Islands,0
+British Indian Ocean Territory,0
+South Georgia and the South Sandwich Islands,0
+United States Minor Outlying Islands,0
