@@ -127,7 +127,7 @@ public class CityTests {
     }
 
 
-    /*
+    /**
      * Tests that getCitiesInCont() runs without errors
      */
     @Test
@@ -149,7 +149,7 @@ public class CityTests {
     }
 
 
-    /*
+    /**
      * Tests that getCitiesInRegion() runs without errors
      */
     @Test
@@ -172,7 +172,7 @@ public class CityTests {
 
 
     /**
-     * Tests that getCitiesInRegion() runs without errors
+     * Tests that getCitiesInRegionByPop() runs without errors
      */
     @Test
     void getCapitalCitiesInRegionTest() {
@@ -193,7 +193,7 @@ public class CityTests {
     }
 
     /**
-     * Tests that getDistrictByPop() runs with out errors
+     * Tests that getCitiesPopulatio() runs with out errors
      */
     @Test
     void getCitiesPopulationTest() {
@@ -214,7 +214,7 @@ public class CityTests {
     }
 
     /**
-     * Tests that getS() runs with out errors
+     * Tests that getSetNCitiesInContByPop() runs with out errors
      */
     @Test
     void getSetNCitiesInContByPopTest() {
@@ -307,6 +307,196 @@ public class CityTests {
         }
     }
 
+    /**
+     * Tests that getCityInfo() runs with out errors
+     */
+    @Test
+    void getByPopTest() {
+        city.getCityInfo("Europe", "Scotland");
+    }
+
+    @Test
+    void getCityInfoNotNull() {
+        ArrayList<World> worlds = city.getCityInfo("Europe", "Scotland");
+        for (World world : worlds) {
+            assertNotNull(worlds);
+        }
+    }
+
+    @Test
+    void getCityInfoCanConnect() {
+        ArrayList<World> worlds = city.getCityInfo("Europe", "Scotland");
+        for (World world : worlds) {
+            assertNotNull(worlds);
+        }
+    }
+
+    /**
+     * Tests that getSetNCapitalCitiesInContByPop() runs with out errors
+     */
+    @Test
+    void getSetNCapitalCitiesInContByPop() {
+        city.getSetNCapitalCitiesInContByPop("Europe", 5);
+    }
+
+    @Test
+    void getSetNCapitalCitiesInContByPop() {
+        ArrayList<City> cities = city.getSetNCapitalCitiesInContByPop("Europe", 5);
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void getSetNCapitalCitiesInContByPopCanConnect() {
+        ArrayList<City> cities  = city.getSetNCapitalCitiesInContByPop("Europe", 5);
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    /**
+     * Tests that getNumberOfCapitalCities() runs with out errors
+     */
+    @Test
+    void getNumberOfCapitalCitiesTest() {
+        city.getNumberOfCapitalCities(5, "Caribbean");
+    }
+
+    @Test
+    void getNumberOfCapitalCitiesNotNull() {
+        ArrayList<World> worlds = city.getNumberOfCapitalCities(5, "Caribbean");
+        for (World world : worlds) {
+            assertNotNull(worlds);
+        }
+    }
+
+    @Test
+    void getNumberOfCapitalCitiesCanConnect() {
+        ArrayList<World> worlds = city.getNumberOfCapitalCities(5, "Caribbean");
+        for (World world : worlds) {
+            assertNotNull(worlds);
+        }
+    }
+
+    /**
+     * Tests that setNGetCitiesInContinentByPop() runs with out errors
+     */
+    @Test
+    void setNGetCitiesInContinentByPopTest() {
+        city.setNGetCitiesInContinentByPop("Europe", 10);
+    }
+
+    @Test
+    void setNGetCitiesInContinentByPopNotNull() {
+        ArrayList<City> cities = city.setNGetCitiesInContinentByPop("Europe", 10);
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void setNGetCitiesInContinentByPopCanConnect() {
+        ArrayList<City> cities = city.setNGetCitiesInContinentByPop("Europe", 10);
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    /**
+     * Tests that getSetNCityInWorldByPop() runs with out errors
+     */
+    @Test
+    void getSetNCityInWorldByPopTest() {
+        city.getSetNCityInWorldByPop("10" );
+    }
+
+    @Test
+    void getSetNCityInWorldByPopNotNull() {
+        ArrayList<City> cities = city.getSetNCityInWorldByPop( "10");
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void getSetNCityInWorldByPopCanConnect() {
+        ArrayList<City> cities = city.getSetNCityInWorldByPop( "10");
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    /**
+     * Tests that getSetNCityInCountryByPop() runs with out errors
+     */
+    @Test
+    void getSetNCityInCountryByPopTest() {
+        city.getSetNCityInCountryByPop("10","Scotland" );
+    }
+
+    @Test
+    void getSetNCityInCountryByPopNotNull() {
+        ArrayList<City> cities = city.getSetNCityInCountryByPop( "10", "Scotland");
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void getSetNCityInCountryByPopCanConnect() {
+        ArrayList<City> cities = city.getSetNCityInCountryByPop( "10","Scotland");
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+    /**
+     * Tests that getSetNCityInCountryByPop() runs with out errors
+     */
+    @Test
+    void getSetNCityInCountryByPopTest() {
+        city.getSetNCityInCountryByPop("10","Scotland" );
+    }
+
+    @Test
+    void getSetNCityInCountryByPopNotNull() {
+        ArrayList<City> cities = city.getSetNCityInCountryByPop( "10", "Scotland");
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void getSetNCityInCountryByPopCanConnect() {
+        ArrayList<City> cities = city.getSetNCityInCountryByPop( "10","Scotland");
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    /**
+     * Tests that getNumberOfCapitalCitiesWorld() runs with out errors
+     */
+    @Test
+    void getNumberOfCapitalCitiesWorldTest() {
+        city.getNumberOfCapitalCitiesWorld(5);
+    }
+
+    @Test
+    void getNumberOfCapitalCitiesWorldNotNull() {
+        ArrayList<World> worlds = city.getNumberOfCapitalCitiesWorld(5);
+        for (World world : worlds) {
+            assertNotNull(worlds);
+        }
+    }
+
+    @Test
+    void getNumberOfCapitalCitiesWorldCanConnect() {
+        ArrayList<World> worlds = city.getNumberOfCapitalCitiesWorld(5);
+        for (World world : worlds) {
+            assertNotNull(worlds);
+        }
+    }
 }
 
 
