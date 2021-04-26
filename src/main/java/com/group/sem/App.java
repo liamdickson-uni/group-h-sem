@@ -52,7 +52,7 @@ public class App {
         String location;
         if (args.length < 1)
         {
-            location = "localhost:33060";
+            location = "localhost:33059";
         }
         else
         {
