@@ -55,11 +55,6 @@ public class World {
     public int ruralPopulation;
 
     /*
-     * Represents a City Population
-     */
-    public int ruralPopulation;
-
-    /*
     * Represents a countries region
      */
     public String region;
@@ -68,10 +63,6 @@ public class World {
     Represents country population
      */
     public int countryPopulation;
-    /*
-   Represents country population
-    */
-    public int ruralPopulation;
 
     /*
      * Represents region population
@@ -151,8 +142,13 @@ public class World {
                 wld.language = rset.getString("Language");
                 wld.countryPopulation = rset.getInt("Population");
                 wld.languagePercentage = rset.getFloat("Percentage");
-                CSVCreator.createCSV(fileName, rset);
                 languages.add(wld);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
             }
 
             return languages;
@@ -208,9 +204,15 @@ public class World {
                 wld.continentPopulation = rset.getInt("ContinentPopulation");
                 wld.cityPercentage = rset.getFloat("CityPercentage");
                 wld.ruralPercentage = rset.getFloat("RuralPercentage");
-                CSVCreator.createCSV(fileName, rset);
                 world.add(wld);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return world;
 
         } catch (Exception e) {
@@ -264,9 +266,15 @@ public class World {
                 wld.regionPopulation = rset.getInt("RegionPopulation");
                 wld.cityPercentage = rset.getFloat("CityPercentage");
                 wld.ruralPercentage = rset.getFloat("RuralPercentage");
-                CSVCreator.createCSV(fileName, rset);
                 world.add(wld);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return world;
 
         } catch (Exception e) {
@@ -320,9 +328,15 @@ public class World {
                 wld.countryPopulation = rset.getInt("CountryPopulation");
                 wld.cityPercentage = rset.getFloat("CityPercentage");
                 wld.ruralPercentage = rset.getFloat("RuralPercentage");
-                CSVCreator.createCSV(fileName, rset);
                 world.add(wld);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return world;
 
         } catch (Exception e) {
@@ -336,9 +350,9 @@ public class World {
 
             //Defines the prepared SQL Statement
             String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation"+
-                    "From country cnt"+
-                    "Inner Join city ci on cnt.code = ci.CountryCode"+
-                    "Group By cnt.region";
+                    " From country cnt"+
+                    " Inner Join city ci on cnt.code = ci.CountryCode"+
+                    " Group By cnt.region";
 
 
             //Sets up the prepared statement
@@ -359,9 +373,15 @@ public class World {
                 wld.region = rset.getString("Region");
                 wld.cityPopulation = rset.getInt("City Population");
                 wld.ruralPopulation = rset.getInt("Rural Population");
-                CSVCreator.createCSV(fileName, rset);
                 world.add(wld);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return world;
 
         } catch (Exception e) {
@@ -381,9 +401,9 @@ public class World {
 
             //Defines the prepared SQL Statement
             String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation"+
-                    "From country cnt"+
-                    "Inner Join city ci on cnt.code = ci.CountryCode"+
-                    "Group By cnt.code";
+                    " From country cnt"+
+                    " Inner Join city ci on cnt.code = ci.CountryCode"+
+                    " Group By cnt.code";
 
 
             //Sets up the prepared statement
@@ -404,9 +424,15 @@ public class World {
                 wld.countryName = rset.getString("Name");
                 wld.cityPopulation = rset.getInt("City Population");
                 wld.ruralPopulation = rset.getInt("Rural Population");
-                CSVCreator.createCSV(fileName, rset);
                 world.add(wld);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return world;
 
         } catch (Exception e) {
@@ -426,9 +452,9 @@ public class World {
 
             //Defines the prepared SQL Statement
             String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation"+
-                    "From country cnt"+
-                    "Inner Join city ci on cnt.code = ci.CountryCode"+
-                    "Group By cnt.continent";
+                    " From country cnt"+
+                    " Inner Join city ci on cnt.code = ci.CountryCode"+
+                    " Group By cnt.continent";
           
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
@@ -448,9 +474,15 @@ public class World {
                 wld.continent = rset.getString("Continent");
                 wld.cityPopulation = rset.getInt("City Population");
                 wld.ruralPopulation = rset.getInt("Rural Population");
-                CSVCreator.createCSV(fileName, rset);
                 world.add(wld);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return world;
 
         } catch (Exception e) {

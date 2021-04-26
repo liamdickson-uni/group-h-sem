@@ -185,9 +185,15 @@ public class Country {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
                 cnt.Population = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 countries.add(cnt);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return countries;
 
         } catch (Exception e) {
@@ -231,8 +237,13 @@ public class Country {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
                 cnt.Continent = rset.getString("Continent");
-                CSVCreator.createCSV(fileName, rset);
                 countries.add(cnt);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
             }
 
             return countries;
@@ -279,9 +290,15 @@ public class Country {
                 cnt.Name = rset.getString("Name");
                 cnt.Region = rset.getString("Region");
                 cnt.Population = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 countries.add(cnt);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return countries;
 
         } catch (Exception e) {
@@ -315,9 +332,15 @@ public class Country {
             while (rset.next()) {
                 Country cnt = new Country();
                 cnt.Population = rset.getLong("Population");
-                CSVCreator.createCSV(fileName, rset);
                 countries.add(cnt);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return countries;
 
         } catch (Exception e) {
@@ -358,10 +381,14 @@ public class Country {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
                 cnt.Population = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 countries.add(cnt);
             }
 
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
 
             return countries;
 
@@ -391,7 +418,6 @@ public class Country {
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
 
-
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
             ps.setInt(2, Integer.parseInt(limit));
@@ -409,8 +435,14 @@ public class Country {
                 Country cnt = new Country();
                 cnt.Name = rset.getString("Name");
                 cnt.Region = rset.getString("Region");
-                CSVCreator.createCSV(fileName, rset);
+                cnt.Region = rset.getString("Population");
                 countries.add(cnt);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
             }
 
             return countries;
@@ -454,9 +486,15 @@ public class Country {
             while (rset.next()) {
                 Country cnt = new Country();
                 cnt.Population = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 countries.add(cnt);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return countries;
 
         } catch (Exception e) {
@@ -498,9 +536,15 @@ public class Country {
             while (rset.next()) {
                 Country cnt = new Country();
                 cnt.Population = rset.getLong("Population");
-                CSVCreator.createCSV(fileName, rset);
                 countries.add(cnt);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return countries;
 
         } catch (SQLException | IOException e) {
@@ -541,8 +585,14 @@ public class Country {
                 cnt.Region = rset.getString("Region");
                 cnt.Population = rset.getInt("Population");
                 Countries.add(cnt);
-                CSVCreator.createCSV(fileName, rset);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return Countries;
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -557,8 +607,8 @@ public class Country {
             //Defines the prepared SQL statement to
             String sql =
                     " SELECT cnt.Name, cnt.Code, cnt.Continent, cnt.Region, cnt.Population, cty.Name AS 'City Name'" +
-                    " FROM country cnt" +
-                    " JOIN city cty ON cty.ID = cnt.Capital";
+                            " FROM country cnt" +
+                            " JOIN city cty ON cty.ID = cnt.Capital";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
@@ -570,7 +620,7 @@ public class Country {
             String fileName = "csv/countries/country_report/Countries in the World.csv";
 
             //Creates an ArrayList of countries to store data
-            ArrayList<Country> Countries = new ArrayList<>();
+            ArrayList<Country> countries = new ArrayList<>();
 
             // Check that a county is returned and add the data to the ArrayList
             while (rset.next()) {
@@ -581,16 +631,18 @@ public class Country {
                 cnt.Region = rset.getString("Region");
                 cnt.Population = rset.getInt("Population");
                 cnt.cityName = rset.getString("Name");
-                Countries.add(cnt);
-                CSVCreator.createCSV(fileName, rset);
+                countries.add(cnt);
             }
 
-            return Countries;
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
 
-        }
+            return countries;
 
-
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get information on the cities in the world.");
             return null;
@@ -598,8 +650,6 @@ public class Country {
 
 
     }
-
-
 
 
 }

@@ -145,8 +145,13 @@ public class City {
                 //Adds data from the result set to an ArrayList
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
             }
 
             return cities;
@@ -189,9 +194,15 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (Exception e) {
@@ -239,8 +250,13 @@ public class City {
             while (rset.next()) {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
             }
 
             return cities;
@@ -288,9 +304,15 @@ public class City {
                 City cty = new City();
                 cty.cityDistrict = rset.getString("District");
                 cty.cityName = rset.getString("Name");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (Exception e) {
@@ -336,9 +358,15 @@ public class City {
             while (rset.next()) {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (Exception e) {
@@ -381,9 +409,15 @@ public class City {
                 cty.cityName = rset.getString("City");
                 cty.cityDistrict = rset.getString("District");
                 cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (Exception e) {
@@ -429,8 +463,13 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
             }
 
             return cities;
@@ -478,10 +517,17 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
+
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get capital cities and their populations.");
@@ -517,9 +563,15 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (Exception e) {
@@ -567,11 +619,17 @@ public class City {
                 wld.countryName = rset.getString("Name");
                 wld.cityDistrict = rset.getString("District");
                 wld.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 world.add(wld);
             }
 
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return world;
+
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get info on " + userCity + ".");
@@ -611,9 +669,15 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (SQLException | IOException e) {
@@ -657,11 +721,17 @@ public class City {
                 wld.countryName = rset.getString("Name");
                 wld.region = rset.getString("Region");
                 wld.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 world.add(wld);
             }
 
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return world;
+
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get info on " + region + ".");
@@ -707,9 +777,15 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (SQLException | IOException e) {
@@ -757,9 +833,15 @@ public class City {
                 City cty = new City();
                 cty.cityDistrict = rset.getString("District");
                 cty.cityName = rset.getString("Name");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (Exception e) {
@@ -807,9 +889,15 @@ public class City {
             while (rset.next()) {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (Exception e) {
@@ -855,8 +943,13 @@ public class City {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
             }
 
             return cities;
@@ -909,8 +1002,13 @@ public class City {
                 cty.cityName = rset.getString("Name");
                 cty.cityPopulation = rset.getInt("Population");
                 cty.countryName = rset.getString("Name");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
             }
 
             return cities;
@@ -960,9 +1058,15 @@ public class City {
             while (rset.next()) {
                 City cty = new City();
                 cty.cityName = rset.getString("Name");
-                CSVCreator.createCSV(fileName, rset);
                 cities.add(cty);
             }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
             return cities;
 
         } catch (Exception e) {
@@ -1011,8 +1115,13 @@ public class City {
                 wld.cityName = rset.getString("Name");
                 wld.countryName = rset.getString("Name");
                 wld.cityPopulation = rset.getInt("Population");
-                CSVCreator.createCSV(fileName, rset);
                 world.add(wld);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
             }
 
             return world;
