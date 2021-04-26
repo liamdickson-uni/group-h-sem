@@ -137,7 +137,6 @@ public class App {
             //Passes the users option to the options() method which runs the specified query
             options(userInput);
 
-
             //Asks the user if they would like to make another query
             System.out.println("Would you like to make another query?    Yes/No");
 
