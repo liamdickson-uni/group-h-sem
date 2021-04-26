@@ -20,7 +20,6 @@ public class AppIntegrationTest {
         db.connect(false);
     }
 
-
     /**
      * Tests that getCountryByPopDesc() method produces a report
      */

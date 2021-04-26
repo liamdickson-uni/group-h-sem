@@ -17,12 +17,6 @@ public class AppTests
     }
 
 
-
-
-
-
-
-
     /**
      * Tests what happens when displayCountry() Is Null
      */
