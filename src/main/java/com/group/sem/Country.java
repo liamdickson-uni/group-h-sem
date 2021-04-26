@@ -205,7 +205,7 @@ public class Country {
     }
 
     /**
-     * This method gets a list of countries
+     * This method gets a list of countries in a specified continent
      * 2
      *
      * @param continent - User selected continent

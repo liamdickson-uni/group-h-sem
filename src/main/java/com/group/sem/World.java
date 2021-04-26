@@ -424,11 +424,11 @@ public class World {
 
         try {
             //Defines the prepared SQL Statement
-            String sql = "SELECT cty.Name AS City, cnt.Name AS Country, cty.District, cty.Population" +
-                    " FROM city cty" +
-                    " JOIN country cnt ON cnt.Code = cty.CountryCode" +
-                    " WHERE cty.Name = ? AND cnt.Name = ?" +
-                    " ORDER BY cty.Population DESC";
+            String sql = "SELECT ci.Name AS City, c.Name AS Country, ci.District, ci.Population" +
+                    " FROM city ci" +
+                    " JOIN country c ON c.Code = ci.CountryCode" +
+                    " WHERE ci.Name = ? AND c.Name = ?" +
+                    " ORDER BY ci.Population DESC";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
@@ -958,7 +958,7 @@ public class World {
     }
 
     /**
-     * This method gets a set number of cities in a the world
+     * This method gets a set number of cities a specified country
      * 30
      *
      * @param country - User selected country
@@ -969,7 +969,7 @@ public class World {
 
         try {
             //Defines the prepared SQL statement
-            String sql = " SELECT cnt.Name AS Country,cty.Name, cty.Population" +
+            String sql = " SELECT cnt.Name AS Country, cty.Name, cty.Population" +
                     " FROM city cty " +
                     " JOIN country cnt ON cnt.Code = cty.CountryCode" +
                     " WHERE cnt.Name = ? " +
@@ -1029,7 +1029,7 @@ public class World {
 
         try {
             //Defines the prepared SQL statement
-            String sql = "SELECT cty.Name AS City, cnt.Name AS Country, ROUND(cty.Population) AS Population" +
+            String sql = "SELECT cnt.Name AS Country, cty.Name AS City, ROUND(cty.Population) AS Population" +
                     " FROM country cnt" +
                     " JOIN city cty on cty.ID = cnt.Capital" +
                     " ORDER BY cnt.Population DESC" +
