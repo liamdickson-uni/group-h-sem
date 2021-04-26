@@ -169,7 +169,7 @@ public class Country {
                     " ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -211,7 +211,7 @@ public class Country {
                     " ORDER BY c.Continent, c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assigns user input to parameter index
             ps.setString(1, userContinent);
@@ -259,7 +259,7 @@ public class Country {
                     "ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -300,7 +300,7 @@ public class Country {
                     " FROM country c";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -336,7 +336,7 @@ public class Country {
                     " FROM country c WHERE c.Name = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
 
             //Assigns user input to parameter index
@@ -389,7 +389,7 @@ public class Country {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
 
             //Assign userInput to the first parameterIndex
@@ -436,7 +436,7 @@ public class Country {
                     "WHERE c.Region = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true,null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -480,7 +480,7 @@ public class Country {
                     " WHERE c.continent = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, continent);
@@ -520,7 +520,7 @@ public class Country {
                     " ORDER BY cnt.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -561,7 +561,7 @@ public class Country {
                     " JOIN city cty ON cty.ID = cnt.Capital";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();

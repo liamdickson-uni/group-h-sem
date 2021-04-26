@@ -124,7 +124,7 @@ public class World {
                     " WHERE cl.Language = ? ";
             
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
 
             //Assign userInput to the first parameterIndex
@@ -176,7 +176,7 @@ public class World {
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1,continent);
@@ -232,7 +232,7 @@ public class World {
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1,region);
@@ -288,7 +288,7 @@ public class World {
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1,country);
@@ -329,13 +329,13 @@ public class World {
 
             //Defines the prepared SQL Statement
             String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation"+
-                    "From country cnt"+
-                    "Inner Join city ci on cnt.code = ci.CountryCode"+
-                    "Group By cnt.region";
+                    " From country cnt"+
+                    " Inner Join city ci on cnt.code = ci.CountryCode"+
+                    " Group By cnt.region";
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -374,13 +374,13 @@ public class World {
 
             //Defines the prepared SQL Statement
             String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation"+
-                    "From country cnt"+
-                    "Inner Join city ci on cnt.code = ci.CountryCode"+
-                    "Group By cnt.code";
+                    " From country cnt"+
+                    " Inner Join city ci on cnt.code = ci.CountryCode"+
+                    " Group By cnt.code";
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -419,12 +419,12 @@ public class World {
 
             //Defines the prepared SQL Statement
             String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation"+
-                    "From country cnt"+
-                    "Inner Join city ci on cnt.code = ci.CountryCode"+
-                    "Group By cnt.continent";
+                    " From country cnt"+
+                    " Inner Join city ci on cnt.code = ci.CountryCode"+
+                    " Group By cnt.continent";
           
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();

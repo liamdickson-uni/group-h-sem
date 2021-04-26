@@ -82,7 +82,7 @@ public class App {
             DatabaseConnection db = DatabaseConnection.getInstance();
 
             // Connect to the database
-            db.connect(false);
+            db.connect(false, "localhost:33060");
 
             System.out.println("Please select of the options:\n\n " +
                     "1 - Get all countries by population\n " +
