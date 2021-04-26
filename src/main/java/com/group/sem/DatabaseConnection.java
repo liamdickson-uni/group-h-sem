@@ -65,6 +65,9 @@ public class DatabaseConnection {
                     System.out.println("Loading...");
                     // Wait a bit for db to start
                     Thread.sleep(5000);
+
+                    System.out.println(location);
+
                     // Connect to database
                     con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
 
