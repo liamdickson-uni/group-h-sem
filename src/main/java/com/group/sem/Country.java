@@ -165,7 +165,7 @@ public class Country {
         try {
 
             //Defines the prepared SQL Statement
-            String sql = "SELECT c.Name, c.Continent, c.Population" +
+            String sql = "SELECT c.Name, c.Population" +
                     " FROM country c" +
                     " ORDER BY c.Population DESC";
 
@@ -215,7 +215,7 @@ public class Country {
 
         try {
             // Defines the prepared SQL statement
-            String sql = " SELECT c.Name, c.Continent" +
+            String sql = " SELECT c.Continent, c.Name" +
                     " FROM country c WHERE c.Continent = ?" +
                     " ORDER BY c.Continent, c.Population DESC";
 
@@ -269,10 +269,10 @@ public class Country {
 
         try {
             //Defines the prepared SQL statement
-            String sql = "SELECT c.Name, c.Region, c.Population " +
-                    "FROM country c " +
-                    "WHERE c.Region = ? " +
-                    "ORDER BY c.Population DESC";
+            String sql = "SELECT c.Region, c.Name" +
+                    " FROM country c" +
+                    " WHERE c.Region = ?" +
+                    " ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(true).prepareStatement(sql);
@@ -292,9 +292,8 @@ public class Country {
             // Check that a country is returned and add the data to the ArrayList
             while (rset.next()) {
                 Country cnt = new Country();
-                cnt.Name = rset.getString("Name");
                 cnt.Region = rset.getString("Region");
-                cnt.Population = rset.getInt("Population");
+                cnt.Name = rset.getString("Name");
                 countries.add(cnt);
             }
 
@@ -426,7 +425,7 @@ public class Country {
 
         try {
             //Defines the prepared SQL statement
-            String sql = "SELECT c.Name, c.Region, c.Population " +
+            String sql = "SELECT c.Region, c.Name, c.Population " +
                     "FROM country c " +
                     "WHERE c.Region = ? " +
                     "ORDER BY c.Population DESC " +
@@ -586,7 +585,7 @@ public class Country {
 
         try {
             //Defines the prepared SQL statement to
-            String sql = "SELECT cnt.Name, cnt.Region, cnt.Population" +
+            String sql = "SELECT cnt.Region, cnt.Name, cnt.Population" +
                     " FROM country cnt" +
                     " WHERE cnt.Region =?" +
                     " ORDER BY cnt.Population DESC";
