@@ -18,11 +18,11 @@ before_script:
 
 jobs:
   include:
-    - stage: Unit Tests
+    - stage: UnitTests
       install: skip
       jdk: oraclejdk11
       script: mvn test -Dtest=com.group.sem.AppTests
-    - stage: Integration Tests
+    - stage: Integration tests
       jdk: oraclejdk11
       script: mvn test -Dtest=com.group.sem.AppIntegrationTest
     - stage: GitHub Release
@@ -39,7 +39,7 @@ jobs:
         - git config --local user.name "Tom McEachan"
         - git config --local user.email "tom.a.mceachan@outlook.com"
         #Create temporary tag from date and Git log.
-        - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y-%m-%d')-$(git log --format=%h -1)}
+        -  export TRAVIS_TAG=${TRAVIS_TAG:-(date +'%Y-%m-%d')-$(git log --format=%h -1)}
         #Set tag
         - git tag $TRAVIS_TAG
       deploy:
@@ -58,4 +58,4 @@ stages:
     if: branch = master
 
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+      - bash <(curl -s https://codecov.io/bash)
