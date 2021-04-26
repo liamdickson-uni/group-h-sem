@@ -55,11 +55,6 @@ public class World {
     public int ruralPopulation;
 
     /*
-     * Represents a City Population
-     */
-    public int ruralPopulation;
-
-    /*
     * Represents a countries region
      */
     public String region;
@@ -68,10 +63,6 @@ public class World {
     Represents country population
      */
     public int countryPopulation;
-    /*
-   Represents country population
-    */
-    public int ruralPopulation;
 
     /*
      * Represents region population
