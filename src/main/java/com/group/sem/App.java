@@ -1,5 +1,6 @@
 package com.group.sem;
 
+import java.sql.Connection;
 import java.util.*;
 
 
@@ -29,11 +30,7 @@ public class App {
     //Private Constructor
     private static App INSTANCE;
 
-    //Empty Constructor
-
-    private App() {
-
-    }
+    private String databaseLocation;
 
     //Static factory method for obtaining the instance
     public static App getInstance() {
@@ -51,6 +48,17 @@ public class App {
         //Access instance of App Class
         App a = App.getInstance();
 
+        //Get Database Connection
+        String location;
+        if (args.length < 1)
+        {
+            location = "localhost:33060";
+        }
+        else
+        {
+            location = args[0];
+        }
+
         //Creates new Scanner for user Input
         Scanner in = new Scanner(System.in);
 
@@ -62,7 +70,7 @@ public class App {
         String startInput = in.nextLine();
 
         //Runs the appPath() method
-        a.appPath(startInput);
+        a.appPath(startInput, location);
 
     }
 
@@ -70,7 +78,7 @@ public class App {
     /**
      * This method runs the app in a loop until the user wants to exit
      */
-    public void appPath(String start) {
+    public void appPath(String start, String databaseLocation) {
 
         if (start.equals("Yes") | start.equals("yes") | start.equals("y")) {
 
@@ -81,7 +89,7 @@ public class App {
             DatabaseConnection db = DatabaseConnection.getInstance();
 
             // Connect to the database
-            db.connect(false);
+            db.connect(databaseLocation);
 
             System.out.println("Please select of the options:\n\n " +
                     "1 - Get all countries by population\n " +
@@ -145,7 +153,7 @@ public class App {
 
             //Program will loop until user selects 'no'
             while (restartOption.equals("Yes")) {
-                appPath("Yes");
+                appPath("Yes", databaseLocation);
             }
 
             // App Disconnects from database

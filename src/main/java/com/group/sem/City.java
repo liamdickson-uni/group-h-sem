@@ -127,7 +127,7 @@ public class City {
                     "ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             ps.setString(1, country);
 
@@ -178,7 +178,7 @@ public class City {
                     " SELECT c.Name, c.Population FROM city c ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -232,7 +232,7 @@ public class City {
                     "ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, continent);
@@ -285,7 +285,7 @@ public class City {
                     "ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, userDistrict);
@@ -340,7 +340,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns userInput to parameterIndex
             ps.setString(1, userRegion);
@@ -392,7 +392,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -444,7 +444,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns uer input to parameterIndex
             ps.setString(1, userContinent);
@@ -498,7 +498,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to parameterIndex 1
             ps.setString(1, userRegion);
@@ -544,7 +544,7 @@ public class City {
                     " WHERE cty.Name = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, userCity);
@@ -597,7 +597,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to parameterIndex 1
             ps.setString(1, userCity);
@@ -650,7 +650,7 @@ public class City {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, continent);
@@ -699,7 +699,7 @@ public class City {
                     " LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to the parameter index of
             ps.setString(1, region);
@@ -757,7 +757,7 @@ public class City {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
 
             //Assign userInput to the first parameterIndex
@@ -813,7 +813,7 @@ public class City {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, userDistrict);
@@ -870,7 +870,7 @@ public class City {
                     " LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, userRegion);
@@ -924,7 +924,7 @@ public class City {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setInt(1, Integer.parseInt(limit));
@@ -980,7 +980,7 @@ public class City {
                             " LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
 
             //Assign userInput to the first parameterIndex
@@ -1039,7 +1039,7 @@ public class City {
                     " LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, userContinent);
@@ -1094,7 +1094,7 @@ public class City {
                     " LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
           
             //Assigns user input to the parameter index of
             //Assigns user input to parameterIndex

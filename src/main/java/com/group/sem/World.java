@@ -122,7 +122,7 @@ public class World {
                     " WHERE cl.Language = ? ";
             
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
 
             //Assign userInput to the first parameterIndex
@@ -179,7 +179,7 @@ public class World {
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1,continent);
@@ -241,7 +241,7 @@ public class World {
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1,region);
@@ -303,7 +303,7 @@ public class World {
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1,country);
@@ -356,7 +356,7 @@ public class World {
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -407,7 +407,7 @@ public class World {
 
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -457,7 +457,7 @@ public class World {
                     " Group By cnt.continent";
           
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();

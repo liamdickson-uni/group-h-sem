@@ -33,14 +33,18 @@ public class DatabaseConnection {
     /**
      * Connection to MySQL database.
      */
-    private Connection con = null;
+    private static Connection con = null;
+
+    public static Connection getConnection() {
+        return con;
+    }
 
     /**
      * Connects to the MySQL database.
      *
-     * @param isConnected -- Displays different text depending on connection status
+     * @param location The location name
      */
-    public Connection connect(boolean isConnected) {
+    public Connection connect(String location) {
 
         if (con == null) {
             try {
@@ -54,9 +58,7 @@ public class DatabaseConnection {
             int retries = 60;
 
             for (int i = 0; i < retries; ++i) {
-                if (!isConnected) {
-                    System.out.println("Connecting to database...");
-                }
+                System.out.println("Connecting to database...");
 
                 try {
 
@@ -64,11 +66,9 @@ public class DatabaseConnection {
                     // Wait a bit for db to start
                     Thread.sleep(5000);
                     // Connect to database
-                    con = DriverManager.getConnection("jdbc:mysql://localhost:33060/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                    con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
 
-                    if (!isConnected) {
-                        System.out.println("Successfully connected");
-                    }
+                    System.out.println("Successfully connected");
                     break;
 
                 } catch (SQLException sqle) {

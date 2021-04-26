@@ -40,13 +40,13 @@ import java.util.*;
 
 
 
-/*
+/**
  * Represents a country
  */
 public class Country {
 
 
-    /**
+    /*
      * The following code creates a singleton instance of the Country Class to be used throughout the program
      */
 
@@ -144,9 +144,6 @@ public class Country {
 
     public String cityName;
 
-    //Gets the singleton instance of App
-    App app = App.getInstance();
-
     //Gets the singleton instance of Database Connection
     DatabaseConnection db = DatabaseConnection.getInstance();
 
@@ -169,7 +166,7 @@ public class Country {
                     " ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -178,7 +175,7 @@ public class Country {
             String fileName = "csv/countries/countries_by_population/Countries by population" + ".csv";
 
             //Creates an ArrayList of countries to store data
-            ArrayList<Country> countries = new ArrayList<Country>();
+            ArrayList<Country> countries = new ArrayList<>();
 
             // Check one is returned
             while (rset.next()) {
@@ -217,7 +214,7 @@ public class Country {
                     " ORDER BY c.Continent, c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assigns user input to parameter index
             ps.setString(1, userContinent);
@@ -270,7 +267,7 @@ public class Country {
                     "ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -317,7 +314,7 @@ public class Country {
                     " FROM country c";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -359,7 +356,7 @@ public class Country {
                     " FROM country c WHERE c.Name = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
 
             //Assigns user input to parameter index
@@ -416,7 +413,7 @@ public class Country {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -468,7 +465,7 @@ public class Country {
                     "WHERE c.Region = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -518,7 +515,7 @@ public class Country {
                     " WHERE c.continent = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, continent);
@@ -564,7 +561,7 @@ public class Country {
                     " ORDER BY cnt.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -611,7 +608,7 @@ public class Country {
                             " JOIN city cty ON cty.ID = cnt.Capital";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = DatabaseConnection.getConnection().prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
