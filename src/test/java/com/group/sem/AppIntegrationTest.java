@@ -12,7 +12,7 @@ public class AppIntegrationTest {
      * Connects to the database before running the Integration Tests
      */
     @BeforeAll
-     static void init() {
+    static void init() {
         app = App.getInstance();
         String location = "34.105.185.101:3306";
         DatabaseConnection db = DatabaseConnection.getInstance();
@@ -22,6 +22,7 @@ public class AppIntegrationTest {
     /**
      * Tests that getCountryByPopDesc() method produces a report
      */
+
     @Test
     void getCountryByPopDescInputTest() {
         Country c = Country.getInstance();
