@@ -11,11 +11,17 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class WorldTests {
 
     static World world;
+    static App app;
 
     @BeforeAll
     static void init() {
         world = World.getInstance();
+        app = App.getInstance();
+        DatabaseConnection db = DatabaseConnection.getInstance();
+        db.connect(false, "0.0.0.0:33060");
     }
+
+
 
 
     /**
