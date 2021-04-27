@@ -119,7 +119,7 @@ public class City {
             String sql = "SELECT c.Name, c.Population FROM city c ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
+            PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -172,7 +172,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
+            PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, district);
@@ -227,7 +227,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
+            PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             //Assigns userInput to parameterIndex
             ps.setString(1, userRegion);
@@ -280,7 +280,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
+            PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -332,7 +332,7 @@ public class City {
                     " WHERE cty.Name = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
+            PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, city);
@@ -389,7 +389,7 @@ public class City {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
+            PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, district);
@@ -444,7 +444,7 @@ public class City {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
+            PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setInt(1, Integer.parseInt(limit));

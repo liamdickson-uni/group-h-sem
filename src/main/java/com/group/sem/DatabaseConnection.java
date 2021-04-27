@@ -31,14 +31,14 @@ public class DatabaseConnection {
     /**
      * Connection to MySQL database.
      */
-    private Connection con = null;
+    public Connection con = null;
 
     /**
      * Connects to the MySQL database.
      *
      * @param location - location of the database
      */
-    public Connection connect(boolean isConnected, String location) {
+    public Connection connect(String location) {
 
         if (con == null) {
             try {
@@ -52,10 +52,7 @@ public class DatabaseConnection {
             int retries = 10;
 
             for (int i = 0; i < retries; ++i) {
-                if (!isConnected) {
                     System.out.println("Connecting to database...");
-                }
-
                 try {
 
                     System.out.println("Loading...");
@@ -64,9 +61,8 @@ public class DatabaseConnection {
                     // Connect to database
                     con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
 
-                    if (!isConnected) {
-                        System.out.println("Successfully connected");
-                    }
+                    System.out.println("Successfully connected");
+
                     break;
 
                 } catch (SQLException sqle) {
