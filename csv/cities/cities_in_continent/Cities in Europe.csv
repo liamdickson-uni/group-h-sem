@@ -20,7 +20,7 @@ Europe,Nizni Novgorod
 Europe,Milano
 Europe,Jekaterinburg
 Europe,Beograd
-Europe,Munich [München]
+Europe,Munich [MÃ¼nchen]
 Europe,Praha
 Europe,Samara
 Europe,Omsk
@@ -28,7 +28,7 @@ Europe,Sofija
 Europe,Dnipropetrovsk
 Europe,Kazan
 Europe,Ufa
-Europe,Tšeljabinsk
+Europe,TÅ¡eljabinsk
 Europe,Donetsk
 Europe,Birmingham
 Europe,Rostov-na-Donu
@@ -36,20 +36,20 @@ Europe,Odesa
 Europe,Perm
 Europe,Napoli
 Europe,Volgograd
-Europe,Köln
+Europe,KÃ¶ln
 Europe,Voronez
 Europe,Torino
 Europe,Krasnojarsk
 Europe,Saratov
 Europe,Zaporizzja
-Europe,Lódz
+Europe,LÃ³dz
 Europe,Marseille
 Europe,Lviv
 Europe,Athenai
 Europe,Riga
 Europe,Stockholm
 Europe,Valencia
-Europe,Kraków
+Europe,KrakÃ³w
 Europe,Amsterdam
 Europe,Toljatti
 Europe,Chisinau
@@ -76,39 +76,39 @@ Europe,Stuttgart
 Europe,Barnaul
 Europe,Vilnius
 Europe,Poznan
-Europe,Düsseldorf
+Europe,DÃ¼sseldorf
 Europe,Lisboa
 Europe,Novokuznetsk
 Europe,Helsinki [Helsingfors]
 Europe,Bremen
 Europe,Penza
-Europe,Málaga
+Europe,MÃ¡laga
 Europe,Rjazan
 Europe,Orenburg
 Europe,Lipetsk
 Europe,Duisburg
 Europe,Hannover
-Europe,Nabereznyje Tšelny
+Europe,Nabereznyje TÅ¡elny
 Europe,Oslo
 Europe,Mykolajiv
 Europe,Tula
 Europe,Tjumen
-Europe,København
+Europe,KÃ¸benhavn
 Europe,Kemerovo
 Europe,Mariupol
 Europe,Leipzig
-Europe,Nürnberg
+Europe,NÃ¼rnberg
 Europe,Astrahan
 Europe,Tomsk
 Europe,Dublin
 Europe,Dresden
 Europe,Gomel
 Europe,Lugansk
-Europe,Gothenburg [Göteborg]
+Europe,Gothenburg [GÃ¶teborg]
 Europe,Kirov
 Europe,Liverpool
 Europe,Ivanovo
-Europe,Tšeboksary
+Europe,TÅ¡eboksary
 Europe,Gdansk
 Europe,Brjansk
 Europe,Tver
@@ -144,7 +144,7 @@ Europe,Wuppertal
 Europe,Kurgan
 Europe,Arkangeli
 Europe,Sarajevo
-Europe,Sotši
+Europe,SotÅ¡i
 Europe,Bilbao
 Europe,Lublin
 Europe,Mogiljov
@@ -166,13 +166,13 @@ Europe,Kaluga
 Europe,Simferopol
 Europe,Catania
 Europe,Vladimir
-Europe,Zürich
-Europe,Mahatškala
+Europe,ZÃ¼rich
+Europe,MahatÅ¡kala
 Europe,Cluj-Napoca
 Europe,Bari
 Europe,Galati
 Europe,Palma de Mallorca
-Europe,Tšerepovets
+Europe,TÅ¡erepovets
 Europe,Timisoara
 Europe,Bielefeld
 Europe,Cardiff
@@ -182,12 +182,12 @@ Europe,Saransk
 Europe,Brasov
 Europe,Craiova
 Europe,Pultava [Poltava]
-Europe,Tšernigiv
+Europe,TÅ¡ernigiv
 Europe,Tambov
-Europe,Córdoba
+Europe,CÃ³rdoba
 Europe,Vladikavkaz
-Europe,Tšita
-Europe,Tšerkasy
+Europe,TÅ¡ita
+Europe,TÅ¡erkasy
 Europe,Mannheim
 Europe,Coventry
 Europe,Vologda
@@ -206,7 +206,7 @@ Europe,Belfast
 Europe,Nottingham
 Europe,Volzski
 Europe,Brest
-Europe,Århus
+Europe,Ã…rhus
 Europe,Taganrog
 Europe,Bialystok
 Europe,Vigo
@@ -225,19 +225,19 @@ Europe,Nantes
 Europe,Tirana
 Europe,Dniprodzerzynsk
 Europe,Wiesbaden
-Europe,Gijón
+Europe,GijÃ³n
 Europe,Sterlitamak
 Europe,Kirovograd
 Europe,Angarsk
-Europe,Münster
+Europe,MÃ¼nster
 Europe,Strasbourg
-Europe,Mönchengladbach
+Europe,MÃ¶nchengladbach
 Europe,Chemnitz
 Europe,Kingston upon Hull
 Europe,Hmelnytskyi
-Europe,Malmö
+Europe,MalmÃ¶
 Europe,Messina
-Europe,Tšernivtsi
+Europe,TÅ¡ernivtsi
 Europe,Czestochowa
 Europe,Verona
 Europe,Augsburg
@@ -246,20 +246,20 @@ Europe,Gdynia
 Europe,Plymouth
 Europe,Stoke-on-Trent
 Europe,Ploiesti
-Europe,Joškar-Ola
-Europe,L´Hospitalet de Llobregat
+Europe,JoÅ¡kar-Ola
+Europe,LÂ´Hospitalet de Llobregat
 Europe,Braunschweig
 Europe,Rivne
 Europe,Granada
 Europe,Sosnowiec
 Europe,Aachen
-Europe,A Coruña (La Coruña)
+Europe,A CoruÃ±a (La CoruÃ±a)
 Europe,Wolverhampton
-Europe,Košice
+Europe,KoÅ¡ice
 Europe,Krefeld
 Europe,Graz
 Europe,Rybinsk
-Europe,Krementšuk
+Europe,KrementÅ¡uk
 Europe,Prokopjevsk
 Europe,Ivano-Frankivsk
 Europe,Derby
@@ -269,7 +269,7 @@ Europe,Utrecht
 Europe,Niznevartovsk
 Europe,Kiel
 Europe,Braila
-Europe,Naltšik
+Europe,NaltÅ¡ik
 Europe,Radom
 Europe,Bergen
 Europe,Swansea
@@ -281,8 +281,8 @@ Europe,Gent
 Europe,Niznekamsk
 Europe,Oberhausen
 Europe,Oradea
-Europe,Blagoveštšensk
-Europe,Šahty
+Europe,BlagoveÅ¡tÅ¡ensk
+Europe,Å ahty
 Europe,Bobruisk
 Europe,Vitoria-Gasteiz
 Europe,Lutsk
@@ -291,7 +291,7 @@ Europe,Southampton
 Europe,Bordeaux
 Europe,Bila Tserkva
 Europe,Staryi Oskol
-Europe,Lübeck
+Europe,LÃ¼beck
 Europe,Espoo
 Europe,Aberdeen
 Europe,Santa Cruz de Tenerife
@@ -323,11 +323,11 @@ Europe,Kassel
 Europe,Northampton
 Europe,Tampere
 Europe,Jakutsk
-Europe,Móstoles
+Europe,MÃ³stoles
 Europe,Burgas
 Europe,Tiraspol
 Europe,Podolsk
-Europe,Petropavlovsk-Kamtšatski
+Europe,Petropavlovsk-KamtÅ¡atski
 Europe,Tilburg
 Europe,Elche [Elx]
 Europe,Dudley
@@ -345,14 +345,14 @@ Europe,Pitesti
 Europe,Syzran
 Europe,Kramatorsk
 Europe,Grozny
-Europe,Liège
+Europe,LiÃ¨ge
 Europe,Sabadell
 Europe,Lille
 Europe,Arad
-Europe,Novotšerkassk
+Europe,NovotÅ¡erkassk
 Europe,Santander
 Europe,Odense
-Europe,Saarbrücken
+Europe,SaarbrÃ¼cken
 Europe,Sunderland
 Europe,Mainz
 Europe,Luton
@@ -360,13 +360,13 @@ Europe,Pireus
 Europe,Jerez de la Frontera
 Europe,Berezniki
 Europe,Hamm
-Europe,Pamplona [Iruña]
+Europe,Pamplona [IruÃ±a]
 Europe,Bielsko-Biala
-Europe,St-Étienne
+Europe,St-Ã‰tienne
 Europe,Swindon
 Europe,Novi Sad
 Europe,Reggio di Calabria
-Europe,Donostia-San Sebastián
+Europe,Donostia-San SebastiÃ¡n
 Europe,Juzno-Sahalinsk
 Europe,Vantaa
 Europe,Volgodonsk
@@ -374,43 +374,43 @@ Europe,Cartagena
 Europe,Modena
 Europe,Southend-on-Sea
 Europe,Herne
-Europe,Niš
+Europe,NiÅ¡
 Europe,Walsall
-Europe,Mülheim an der Ruhr
+Europe,MÃ¼lheim an der Ruhr
 Europe,Geneve
-Europe,Leganés
+Europe,LeganÃ©s
 Europe,Groningen
-Europe,Turku [Åbo]
+Europe,Turku [Ã…bo]
 Europe,Prato
 Europe,Miskolc
 Europe,Fuenlabrada
 Europe,Olsztyn
 Europe,Sibiu
 Europe,Abakan
-Europe,Almería
+Europe,AlmerÃ­a
 Europe,Melitopol
 Europe,Parma
 Europe,Terrassa
 Europe,Rijeka
 Europe,Maikop
-Europe,Baranovitši
+Europe,BaranovitÅ¡i
 Europe,Plzen
 Europe,Basel
 Europe,Ruse
 Europe,Miass
 Europe,Cagliari
 Europe,Solingen
-Europe,Târgu Mures
+Europe,TÃ¢rgu Mures
 Europe,Armavir
-Europe,Osnabrück
-Europe,Alcalá de Henares
+Europe,OsnabrÃ¼ck
+Europe,AlcalÃ¡ de Henares
 Europe,Ljubertsy
 Europe,Ludwigshafen am Rhein
 Europe,Burgos
 Europe,Rubtsovsk
-Europe,Rzeszów
+Europe,RzeszÃ³w
 Europe,Bournemouth
-Europe,Kertš
+Europe,KertÅ¡
 Europe,Livorno
 Europe,Aalborg
 Europe,Leverkusen
@@ -421,14 +421,14 @@ Europe,Ruda Slaska
 Europe,Salamanca
 Europe,Szeged
 Europe,Nahodka
-Europe,Pécs
+Europe,PÃ©cs
 Europe,Ussurijsk
 Europe,Salavat
 Europe,Perugia
 Europe,Brighton
 Europe,Peterborough
-Europe,Mytištši
-Europe,Priština
+Europe,MytiÅ¡tÅ¡i
+Europe,PriÅ¡tina
 Europe,Foggia
 Europe,Oldenburg
 Europe,Apeldoorn
@@ -455,7 +455,7 @@ Europe,Albacete
 Europe,Kragujevac
 Europe,Elektrostal
 Europe,Dundee
-Europe,Šiauliai
+Europe,Å iauliai
 Europe,West Bromwich
 Europe,Le Mans
 Europe,Oldbury/Smethwick (Warley)
@@ -465,21 +465,21 @@ Europe,Rybnik
 Europe,Salzburg
 Europe,Oxford
 Europe,Huddersfield
-Europe,Reggio nell´ Emilia
+Europe,Reggio nellÂ´ Emilia
 Europe,Banja Luka
 Europe,Almere
-Europe,Cádiz
+Europe,CÃ¡diz
 Europe,Murom
 Europe,Salerno
-Europe,Alcorcón
+Europe,AlcorcÃ³n
 Europe,Kolpino
 Europe,Poole
 Europe,Norilsk
 Europe,Almetjevsk
 Europe,Huelva
 Europe,Blackburn
-Europe,León
-Europe,Castellón de la Plana [Castell
+Europe,LeÃ³n
+Europe,CastellÃ³n de la Plana [Castell
 Europe,Heidelberg
 Europe,Bolton
 Europe,Newport
@@ -503,10 +503,10 @@ Europe,Limoges
 Europe,Bruxelles [Brussel]
 Europe,Himki
 Europe,Panevezys
-Europe,Nîmes
+Europe,NÃ®mes
 Europe,Tychy
-Europe,Linköping
-Europe,Balašiha
+Europe,LinkÃ¶ping
+Europe,BalaÅ¡iha
 Europe,Tours
 Europe,Stockport
 Europe,Nevinnomyssk
@@ -515,55 +515,55 @@ Europe,Korolev
 Europe,Ferrara
 Europe,Serpuhov
 Europe,Rimini
-Europe,Dabrowa Górnicza
+Europe,Dabrowa GÃ³rnicza
 Europe,Plock
 Europe,Satu Mare
 Europe,Berdjansk
 Europe,Pinsk
 Europe,Elblag
 Europe,Opole
-Europe,´s-Hertogenbosch
+Europe,Â´s-Hertogenbosch
 Europe,Potsdam
 Europe,Botosani
-Europe,[San Cristóbal de] la Laguna
+Europe,[San CristÃ³bal de] la Laguna
 Europe,Odintsovo
-Europe,Würzburg
+Europe,WÃ¼rzburg
 Europe,Cork
-Europe,Györ
-Europe,Logroño
+Europe,GyÃ¶r
+Europe,LogroÃ±o
 Europe,Pavlograd
 Europe,Sjeverodonetsk
 Europe,Slovjansk
 Europe,Uzgorod
-Europe,Västerås
+Europe,VÃ¤sterÃ¥s
 Europe,Syrakusa
 Europe,Amersfoort
-Europe,Gorzów Wielkopolski
-Europe,Bender (Tîghina)
+Europe,GorzÃ³w Wielkopolski
+Europe,Bender (TÃ®ghina)
 Europe,Regensburg
 Europe,Piatra Neamt
 Europe,Recklinghausen
 Europe,Orehovo-Zujevo
-Europe,Göttingen
-Europe,Kamyšin
+Europe,GÃ¶ttingen
+Europe,KamyÅ¡in
 Europe,Villeurbanne
-Europe,Örebro
+Europe,Ã–rebro
 Europe,Norwich
-Europe,Orša
+Europe,OrÅ¡a
 Europe,Metz
-Europe,Novotšeboksarsk
+Europe,NovotÅ¡eboksarsk
 Europe,Wloclawek
 Europe,Bremerhaven
 Europe,Bern
-Europe,Norrköping
+Europe,NorrkÃ¶ping
 Europe,Amadora
 Europe,Maastricht
 Europe,Wolfsburg
 Europe,Pleven
-Europe,Chorzów
-Europe,Tšerkessk
-Europe,Atšinsk
-Europe,Tarnów
+Europe,ChorzÃ³w
+Europe,TÅ¡erkessk
+Europe,AtÅ¡insk
+Europe,TarnÃ³w
 Europe,Rotherham
 Europe,Bottrop
 Europe,Cambridge
@@ -571,33 +571,33 @@ Europe,Magadan
 Europe,Sassari
 Europe,Santa Coloma de Gramenet
 Europe,Oulu
-Europe,Mitšurinsk
+Europe,MitÅ¡urinsk
 Europe,Kislovodsk
 Europe,Remscheid
 Europe,Dordrecht
-Europe,Râmnicu Vâlcea
+Europe,RÃ¢mnicu VÃ¢lcea
 Europe,Heilbronn
 Europe,Monza
 Europe,Jelets
-Europe,Altševsk
+Europe,AltÅ¡evsk
 Europe,Seversk
 Europe,Suceava
-Europe,Zielona Góra
+Europe,Zielona GÃ³ra
 Europe,Drobeta-Turnu Severin
 Europe,Bergamo
 Europe,Helsingborg
-Europe,Besançon
+Europe,BesanÃ§on
 Europe,Pforzheim
 Europe,Noginsk
 Europe,Leiden
-Europe,Jönköping
+Europe,JÃ¶nkÃ¶ping
 Europe,Offenbach am Main
 Europe,Velikije Luki
 Europe,Brugge
-Europe,Novokuibyševsk
+Europe,NovokuibyÅ¡evsk
 Europe,Herakleion
 Europe,Ulm
-Europe,Lysytšansk
+Europe,LysytÅ¡ansk
 Europe,Neftekamsk
 Europe,Pescara
 Europe,Maribor
@@ -610,14 +610,14 @@ Europe,Latina
 Europe,Ipswich
 Europe,Caen
 Europe,Leninsk-Kuznetski
-Europe,Orléans
+Europe,OrlÃ©ans
 Europe,Larisa
 Europe,Watford
 Europe,Tarragona
 Europe,Salzgitter
-Europe,Nyiregyháza
+Europe,NyiregyhÃ¡za
 Europe,Koszalin
-Europe,Lleida (Lérida)
+Europe,Lleida (LÃ©rida)
 Europe,Slough
 Europe,Jevpatorija
 Europe,Innsbruck
@@ -632,20 +632,20 @@ Europe,Reutlingen
 Europe,Zoetermeer
 Europe,Mozyr
 Europe,Kiseljovsk
-Europe,Fürth
+Europe,FÃ¼rth
 Europe,Vicenza
 Europe,Novotroitsk
 Europe,Legnica
-Europe,Jaén
+Europe,JaÃ©n
 Europe,Siegen
-Europe,Reykjavík
+Europe,ReykjavÃ­k
 Europe,Ourense (Orense)
 Europe,Kamjanets-Podilskyi
 Europe,Stavanger
 Europe,Obninsk
 Europe,Koblenz
 Europe,Terni
-Europe,Forlì
+Europe,ForlÃ¬
 Europe,Kansk
 Europe,Gloucester
 Europe,Moers
@@ -663,21 +663,21 @@ Europe,Emmen
 Europe,Zwolle
 Europe,Sarapul
 Europe,Schaerbeek
-Europe,Kecskemét
+Europe,KecskemÃ©t
 Europe,Sliven
 Europe,Namur
 Europe,Ust-Ilimsk
-Europe,Székesfehérvár
+Europe,SzÃ©kesfehÃ©rvÃ¡r
 Europe,Perpignan
 Europe,Jenakijeve
 Europe,Trento
-Europe,Štšolkovo
+Europe,Å tÅ¡olkovo
 Europe,Osijek
-Europe,Umeå
+Europe,UmeÃ¥
 Europe,York
-Europe,Mezduretšensk
+Europe,MezduretÅ¡ensk
 Europe,Zwickau
-Europe,Mataró
+Europe,MatarÃ³
 Europe,Hildesheim
 Europe,Oldham
 Europe,Nancy
@@ -689,16 +689,16 @@ Europe,Schwerin
 Europe,Olomouc
 Europe,Grudziadz
 Europe,Slupsk
-Europe,Jastrzebie-Zdrój
+Europe,Jastrzebie-ZdrÃ³j
 Europe,Novara
-Europe,Novošahtinsk
+Europe,NovoÅ¡ahtinsk
 Europe,Votkinsk
 Europe,Ede
-Europe,Bærum
+Europe,BÃ¦rum
 Europe,Tartu
 Europe,Marbella
 Europe,Kyzyl
-Europe,Krasnyi Lutš
+Europe,Krasnyi LutÅ¡
 Europe,Stahanov
 Europe,Lida
 Europe,Soligorsk
@@ -711,23 +711,23 @@ Europe,Zelenodolsk
 Europe,Zeleznodoroznyi
 Europe,Kaiserslautern
 Europe,Worthing
-Europe,Kinešma
+Europe,KineÅ¡ma
 Europe,Trier
 Europe,Jena
 Europe,Iserlohn
 Europe,Liberec
 Europe,Oleksandrija
-Europe,Târgoviste
+Europe,TÃ¢rgoviste
 Europe,Focsani
 Europe,Lund
-Europe,Târgu Jiu
+Europe,TÃ¢rgu Jiu
 Europe,Piacenza
 Europe,Ancona
 Europe,Barakaldo
 Europe,Lecce
 Europe,Kuznetsk
-Europe,Ceské Budejovice
-Europe,Hradec Králové
+Europe,CeskÃ© Budejovice
+Europe,Hradec KrÃ¡lovÃ©
 Europe,Uhta
 Europe,Jaworzno
 Europe,Jessentuki
@@ -737,30 +737,30 @@ Europe,Neftejugansk
 Europe,Bataisk
 Europe,Nojabrsk
 Europe,Bolzano
-Europe,Balašov
+Europe,BalaÅ¡ov
 Europe,Crawley
-Europe,Molodetšno
+Europe,MolodetÅ¡no
 Europe,Roubaix
 Europe,Lahti
 Europe,Zeleznogorsk
-Europe,Borås
+Europe,BorÃ¥s
 Europe,Catanzaro
 Europe,Zukovski
 Europe,Tulcea
-Europe,Coímbra
+Europe,CoÃ­mbra
 Europe,Anzero-Sudzensk
 Europe,Colchester
 Europe,Zenica
 Europe,Konotop
 Europe,La Spezia
-Europe,Ústí nad Labem
+Europe,ÃšstÃ­ nad Labem
 Europe,Delft
 Europe,Heerlen
-Europe,Gütersloh
+Europe,GÃ¼tersloh
 Europe,Worcester
 Europe,Kostjantynivka
 Europe,Udine
-Europe,Šumen
+Europe,Å umen
 Europe,Dos Hermanas
 Europe,Solihull
 Europe,Torre del Greco
@@ -768,10 +768,10 @@ Europe,Andria
 Europe,Rochdale
 Europe,Bugulma
 Europe,Zeleznogorsk
-Europe,Prešov
+Europe,PreÅ¡ov
 Europe,Resita
 Europe,Argenteuil
-Europe,Jelenia Góra
+Europe,Jelenia GÃ³ra
 Europe,Santiago de Compostela
 Europe,Marl
 Europe,Tourcoing
@@ -780,41 +780,41 @@ Europe,Novouralsk
 Europe,Giugliano in Campania
 Europe,Sundsvall
 Europe,Birkenhead
-Europe,Puškin
+Europe,PuÅ¡kin
 Europe,Alkmaar
 Europe,Vorkuta
 Europe,Pisa
 Europe,Prizren
 Europe,Derbent
-Europe,Torrejón de Ardoz
-Europe,Lünen
+Europe,TorrejÃ³n de Ardoz
+Europe,LÃ¼nen
 Europe,Gillingham
 Europe,Hartlepool
 Europe,Woking/Byfleet
 Europe,Barletta
 Europe,Arezzo
-Europe,Kirovo-Tšepetsk
+Europe,Kirovo-TÅ¡epetsk
 Europe,Pardubice
 Europe,Klagenfurt
-Europe,Düren
+Europe,DÃ¼ren
 Europe,Halifax
 Europe,Krasnogorsk
 Europe,Southport
 Europe,Ratingen
 Europe,Mons
 Europe,Maidstone
-Europe,Gävle
+Europe,GÃ¤vle
 Europe,Montreuil
 Europe,Braga
 Europe,Frederiksberg
 Europe,Alessandria
 Europe,Eastbourne
-Europe,Berdytšiv
+Europe,BerdytÅ¡iv
 Europe,Izmajil
-Europe,Šostka
+Europe,Å ostka
 Europe,Uman
 Europe,Klin
-Europe,Tšaikovski
+Europe,TÅ¡aikovski
 Europe,Velbert
 Europe,Cesena
 Europe,Novyi Urengoi
@@ -822,15 +822,15 @@ Europe,Esslingen am Neckar
 Europe,Liepaja
 Europe,Grimsby
 Europe,Brovary
-Europe,Mukatševe
+Europe,MukatÅ¡eve
 Europe,Pesaro
-Europe,Luxembourg [Luxemburg/Lëtzebuerg]
+Europe,Luxembourg [Luxemburg/LÃ«tzebuerg]
 Europe,Saint Helier
 Europe,Gibraltar
 Europe,Douglas
 Europe,Birkirkara
 Europe,Andorra la Vella
-Europe,Tórshavn
+Europe,TÃ³rshavn
 Europe,Monte-Carlo
 Europe,Valletta
 Europe,Schaan
@@ -839,4 +839,4 @@ Europe,Serravalle
 Europe,San Marino
 Europe,Longyearbyen
 Europe,Monaco-Ville
-Europe,Città del Vaticano
+Europe,CittÃ  del Vaticano

@@ -14,7 +14,7 @@ public class AppIntegrationTest {
     @BeforeAll
     static void init() {
         app = App.getInstance();
-        String location = "0.0.0.0:33060";
+        String location = "localhost:33060";
         DatabaseConnection db = DatabaseConnection.getInstance();
         db.connect(false);
     }
