@@ -18,7 +18,7 @@ public class WorldTests {
         world = World.getInstance();
         app = App.getInstance();
         DatabaseConnection db = DatabaseConnection.getInstance();
-        db.connect("0.0.0.0:33060");
+        db.connect("34.105.185.101:3306");
     }
 
 

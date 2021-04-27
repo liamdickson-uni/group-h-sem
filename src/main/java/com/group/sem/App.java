@@ -47,7 +47,7 @@ public class App {
         App a = App.getInstance();
 
         //Sets database location
-        String databaseLocation = "localhost";
+        String databaseLocation = "34.105.185.101:3306";
 
         //Get singleton instance of Database Connection
         DatabaseConnection db = DatabaseConnection.getInstance();
