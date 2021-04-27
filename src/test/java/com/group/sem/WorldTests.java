@@ -135,12 +135,12 @@ public class WorldTests {
      */
     @Test
     void getSetNCitiesInContByPopTest() {
-        world.getSetNCitiesInContByPop("North America", "1");
+        world.getSetNCitiesInContByPop("North America", 1);
     }
 
     @Test
     void getSetNCitiesInContByPopNotNull() {
-        ArrayList<World> wld = world.getSetNCitiesInContByPop("North America", "10");
+        ArrayList<World> wld = world.getSetNCitiesInContByPop("North America", 10);
 
         for (World world : wld) {
             assertNotNull(wld);
@@ -149,7 +149,7 @@ public class WorldTests {
 
     @Test
     void getSetNCitiesInContByPopCanConnect() {
-        ArrayList<World> wld = world.getSetNCitiesInContByPop("North America", "5");
+        ArrayList<World> wld = world.getSetNCitiesInContByPop("North America", 5);
     }
 
     /**

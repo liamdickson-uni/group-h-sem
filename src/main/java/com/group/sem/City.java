@@ -212,7 +212,8 @@ public class City {
             //Defines the prepared SQL statement
             String sql = " SELECT cty.District, sum(cty.Population) as Population" +
                     " FROM city cty" +
-                    " ORDER BY cty.Population DESC";
+                    " GROUP BY cty.District" +
+                    " ORDER BY sum(cty.Population) DESC";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(null).prepareStatement(sql);
@@ -221,7 +222,7 @@ public class City {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path to
-            String fileName = "csv/district/district_by_pop/All Districts By Population" + ".csv";
+            String fileName = "csv/cities/district_by_pop/All Districts By Population" + ".csv";
 
             //Creates an Empty ArrayList of Cities
             ArrayList<City> cities = new ArrayList<>();
@@ -229,7 +230,6 @@ public class City {
             // Check one is returned
             while (rset.next()) {
                 City cty = new City();
-                cty.cityName = rset.getString("City");
                 cty.cityDistrict = rset.getString("District");
                 cty.cityPopulation = rset.getInt("Population");
                 cities.add(cty);

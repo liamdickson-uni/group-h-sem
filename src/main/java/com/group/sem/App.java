@@ -47,7 +47,7 @@ public class App {
         App a = App.getInstance();
 
         //Sets database locationhbg
-        String databaseLocation = "localhost";
+        String databaseLocation = "localhost:33060";
 
         //Get singleton instance of Database Connection
         DatabaseConnection db = DatabaseConnection.getInstance();
@@ -440,7 +440,7 @@ public class App {
                 System.out.println("How many would you like to see?");
                 String limitOption = in.nextLine();
                 int num = Integer.parseInt(limitOption);
-                System.out.println("Retrieving " + limitOption + " records on " + regionOption + "...");
+                System.out.println("Retrieving records on " + regionOption + "...");
 
                 ArrayList<World> world = wld.getSetNCapitalCitiesInRegionByPop(regionOption, num);
 

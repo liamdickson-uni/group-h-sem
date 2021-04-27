@@ -101,11 +101,11 @@ public class World {
     /*
      * Represents a City Population
      */
-    public int cityPopulation;
+    public long cityPopulation;
     /*
      * Represents a Rural Population
      */
-    public int ruralPopulation;
+    public long ruralPopulation;
 
     /*
      * Represents a countries region
@@ -397,7 +397,7 @@ public class World {
             //Defines the prepared SQL statement
             String sql = "SELECT c.Region, ci.Name, ci.Population" +
                     " FROM city ci" +
-                    " JOIN country c ON cnt.Capital = ci.ID" +
+                    " JOIN country c ON c.Capital = ci.ID" +
                     " WHERE c.Region = ?" +
                     " ORDER BY ci.Population DESC";
 
@@ -511,18 +511,18 @@ public class World {
 
         try {
             //Defines the prepared SQL statement
-            String sql = "SELECT c.Region, ci.Name, ci.Population" +
-                    " FROM city ci " +
-                    "JOIN country c ON c.Capital = ci.ID" +
+            String sql = "SELECT c.Region, ci.Name AS City, ci.Population" +
+                    " FROM city ci" +
+                    " JOIN country c ON c.Capital = ci.ID" +
                     " WHERE c.Region = ? " +
-                    "ORDER BY ci.Population DESC " +
-                    "LIMIT ?";
+                    " ORDER BY ci.Population DESC" +
+                    " LIMIT ?";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
-            ps.setString(1, continent);
+            ps.setString(1, region);
             ps.setInt(2, limit);
 
             // Execute SQL statement
@@ -537,7 +537,7 @@ public class World {
             while (rset.next()) {
                 World wld = new World();
                 wld.region = rset.getString("Region");
-                wld.cityName = rset.getString("Name");
+                wld.cityName = rset.getString("City");
                 wld.cityPopulation = rset.getInt("Population");
                 world.add(wld);
             }
@@ -871,13 +871,13 @@ public class World {
 
         try {
             //Defines the prepared SQL statement
-            String sql = "SELECT Name," +
-                    " (SELECT SUM(Population) FROM country c WHERE c.Region IN (?)) as CountryPopulation, " +
-                    " (SUM(ci.Population) / (SELECT SUM(Population) FROM country c WHERE c.Country IN (?)) * 100) AS CityPercentage," +
-                    " ((((SELECT SUM(Population) FROM country c WHERE c.Country IN (?)) - SUM(ci.Population)) / (SELECT SUM(Population) FROM country c WHERE c.Country IN (?))) * 100) AS RuralPercentage" +
+            String sql = "SELECT c.Name," +
+                    " (SELECT SUM(Population) FROM country c WHERE c.Name IN (?)) as CountryPopulation, " +
+                    " (SUM(ci.Population) / (SELECT SUM(Population) FROM country c WHERE c.Name IN (?)) * 100) AS CityPercentage," +
+                    " ((((SELECT SUM(Population) FROM country c WHERE c.Name = ?) - SUM(ci.Population)) / (SELECT SUM(Population) FROM country c WHERE c.Name = ?)) * 100) AS RuralPercentage" +
                     " FROM city ci " +
                     " INNER JOIN country c on ci.CountryCode = c.Code" +
-                    " WHERE c.Country IN (?)";
+                    " WHERE c.Name = ?";
 
 
             //Sets up the prepared statement
@@ -1134,8 +1134,8 @@ public class World {
             while (rset.next()) {
                 World wld = new World();
                 wld.countryName = rset.getString("Name");
-                wld.cityPopulation = rset.getInt("City Population");
-                wld.ruralPopulation = rset.getInt("Rural Population");
+                wld.cityPopulation = rset.getLong("CityPopulation");
+                wld.ruralPopulation = rset.getLong("RuralPopulation");
                 world.add(wld);
             }
 
@@ -1225,10 +1225,10 @@ public class World {
         try {
 
             //Defines the prepared SQL Statement
-            String sql = "SELECT c.Name, SUM(ci.Population) AS CityPopulation, SUM(c.Population) - SUM(ci.Population) as RuralPopulation" +
+            String sql = "SELECT c.Continent, SUM(ci.Population) AS CityPopulation, SUM(c.Population) - SUM(ci.Population) as RuralPopulation" +
                     " From country c" +
                     " Inner Join city ci on c.code = ci.CountryCode" +
-                    " Group By c.continent";
+                    " Group By c.Continent";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect( null).prepareStatement(sql);
@@ -1246,8 +1246,8 @@ public class World {
             while (rset.next()) {
                 World wld = new World();
                 wld.continent = rset.getString("Continent");
-                wld.cityPopulation = rset.getInt("City Population");
-                wld.ruralPopulation = rset.getInt("Rural Population");
+                wld.cityPopulation = rset.getLong("CityPopulation");
+                wld.ruralPopulation = rset.getLong("RuralPopulation");
                 world.add(wld);
             }
 
@@ -1276,7 +1276,7 @@ public class World {
         try {
 
             //Defines the prepared SQL Statement
-            String sql = "SELECT c.Name, SUM(ci.Population) AS CityPopulation, SUM(c.Population) - SUM(ci.Population) as RuralPopulation" +
+            String sql = "SELECT c.Region, SUM(ci.Population) AS CityPopulation, SUM(c.Population) - SUM(ci.Population) as RuralPopulation" +
                     " From country c" +
                     " Inner Join city ci on c.code = ci.CountryCode" +
                     " Group By c.region";
@@ -1298,8 +1298,8 @@ public class World {
             while (rset.next()) {
                 World wld = new World();
                 wld.region = rset.getString("Region");
-                wld.cityPopulation = rset.getInt("City Population");
-                wld.ruralPopulation = rset.getInt("Rural Population");
+                wld.cityPopulation = rset.getLong("CityPopulation");
+                wld.ruralPopulation = rset.getLong("RuralPopulation");
                 world.add(wld);
             }
 

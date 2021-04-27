@@ -138,6 +138,11 @@ public class Country {
      */
     public String Capital;
 
+    /*
+     * Represents Code2
+     */
+    public String Code2;
+
     //Gets the singleton instance of App
     App app = App.getInstance();
 
