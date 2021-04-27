@@ -28,14 +28,19 @@ import java.util.*;
  * governmentForm
  * headOfState
  * capital
- * code2
  * <p>
  * <p>
  * Methods in this in this class include:
  * <p>
- * getCountriesByPopDesc()
+ * getCountryByPopDesc()
  * getCountryInContinentByPop()
  * getCountryInRegionByPop()
+ * getWorldPopulation()
+ * getCountryPopulation()
+ * getSetNCountryInRegionByPop()
+ * getPopOfRegion()
+ * getPopOfContinent()
+ * getCountriesInRegionByPop()
  */
 
 
@@ -133,17 +138,6 @@ public class Country {
      */
     public String Capital;
 
-    /*
-     * Represents Code2
-     */
-    public String code2;
-
-    /*
-    Represents City Name
-     */
-
-    public String cityName;
-
     //Gets the singleton instance of App
     App app = App.getInstance();
 
@@ -157,6 +151,7 @@ public class Country {
 
     /**
      * This method gets a list of countries organised by population
+     * 1
      *
      * @return an ArrayList of Countries
      */
@@ -205,10 +200,12 @@ public class Country {
 
     /**
      * This method gets a list of countries in a specified continent
-     * @param userContinent - User selected continent
+     * 2
+     *
+     * @param continent - User selected continent
      * @return an ArrayList of countries
      */
-    public ArrayList<Country> getCountryInContinentByPop(String userContinent) {
+    public ArrayList<Country> getCountryInContinentByPop(String continent) {
 
         try {
             // Defines the prepared SQL statement
@@ -220,13 +217,13 @@ public class Country {
             PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             //Assigns user input to parameter index
-            ps.setString(1, userContinent);
+            ps.setString(1, continent);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/countries_in_continent/Countries in " + userContinent + ".csv";
+            String fileName = "csv/countries/countries_in_continent/Countries in " + continent + ".csv";
 
             // Creates an ArrayList of countries to pass back to method
             ArrayList<Country> countries = new ArrayList<>();
@@ -250,14 +247,16 @@ public class Country {
 
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get countries in " + userContinent + ".");
+            System.out.println("Failed to get countries in " + continent + ".");
             return null;
         }
     }
 
     /**
      * This method gets a list of countries in a specified region
+     * 3
      *
+     * @param region - User selected region
      * @return an ArrayList of countries
      */
     public ArrayList<Country> getCountryInRegionByPop(String region) {
@@ -416,7 +415,7 @@ public class Country {
      * @param limit  - User set limit
      * @return an ArrayList of countries
      */
-    public ArrayList<Country> getSetNCountryInRegionByPop(String region, String limit) {
+    public ArrayList<Country> getSetNCountryInRegionByPop(String region, int limit) {
 
         try {
             //Defines the prepared SQL statement
@@ -431,7 +430,7 @@ public class Country {
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
-            ps.setInt(2, Integer.parseInt(limit));
+            ps.setInt(2, limit);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -533,7 +532,7 @@ public class Country {
                     " WHERE c.continent = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect( null).prepareStatement(sql);
+            PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, continent);

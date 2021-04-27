@@ -16,15 +16,45 @@ import java.util.ArrayList;
  * <p>
  * Variables in this class include:
  * <p>
- * cityName
  * countryCode
+ * countryName
+ * cityName
  * cityDistrict
  * cityPopulation
+ * ruralPopulation
+ * region
+ * countryPopulation
+ * regionPopulation
+ * continentPopulation
+ * languagePercentage
+ * language
+ * continent
+ * cityPercentage
+ * ruralPercentage
  * <p>
  * Methods in this in this class include:
  * <p>
+ * getCitiesInCountryByPop()
+ * getCitiesInCont()
+ * getCitiesInRegion()
  * getCapitalCitiesInContinentByPoP()
- * getCapitalCitiesInRegionByPop()
+ * getCapitalCitiesInRegionByPoP()
+ * getCityInfo()
+ * getSetNCapitalCitiesInRegionByPop()
+ * getLanguagePercentage()
+ * getSetNCapitalCitiesInContByPop(
+ * getSetNCitiesInContByPop()
+ * getContinentPopReport()
+ * getRegionPopReport()
+ * getCountryPopReport()
+ * setNGetCitiesInRegionByPop()
+ * getSetNCityInCountryByPop()
+ * getSetNCapitalCitiesInWorld()
+ * getCitiesAndRuralForCountry()
+ * setNGetCitiesInContinentByPop()
+ * getCitiesAndRuralForContinent()
+ * getCitiesAndRuralForRegion()
+ * getCountryReport()
  */
 
 public class World {
@@ -62,7 +92,6 @@ public class World {
      * Represents a City Name
      */
     public String cityName;
-
 
     /*
      * Represents a City District
@@ -123,7 +152,6 @@ public class World {
      * Represents RuralPercentage
      */
     public float ruralPercentage;
-
 
     //Gets the singleton instance of Database Connection
     DatabaseConnection db = DatabaseConnection.getInstance();
@@ -652,7 +680,7 @@ public class World {
      * @param limit     - User set limit
      * @return an ArrayList of cities populations
      */
-    public ArrayList<World> getSetNCitiesInContByPop(String continent, String limit) {
+    public ArrayList<World> getSetNCitiesInContByPop(String continent, int limit) {
 
         try {
 
@@ -670,7 +698,7 @@ public class World {
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, continent);
-            ps.setInt(2, Integer.parseInt(limit));
+            ps.setInt(2, limit);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -699,7 +727,7 @@ public class World {
 
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get cities in " + continent + ".");
+            System.out.println("Failed to get " + limit + " cities in " + continent + ".");
             return null;
         }
     }
@@ -965,7 +993,7 @@ public class World {
      * @param limit   - User set limit
      * @return an ArrayList of cities
      */
-    public ArrayList<World> getSetNCityInCountryByPop(String country, String limit) {
+    public ArrayList<World> getSetNCityInCountryByPop(String country, int limit) {
 
         try {
             //Defines the prepared SQL statement
@@ -982,7 +1010,7 @@ public class World {
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, country);
-            ps.setInt(2, Integer.parseInt(limit));
+            ps.setInt(2, limit);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -1012,7 +1040,7 @@ public class World {
 
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get cities in " + country + ".");
+            System.out.println("Failed to get " + limit + " cities in " + country + ".");
             return null;
         }
 
@@ -1197,10 +1225,10 @@ public class World {
         try {
 
             //Defines the prepared SQL Statement
-            String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation" +
-                    " From country cnt" +
-                    " Inner Join city ci on cnt.code = ci.CountryCode" +
-                    " Group By cnt.continent";
+            String sql = "SELECT c.Name, SUM(ci.Population) AS CityPopulation, SUM(c.Population) - SUM(ci.Population) as RuralPopulation" +
+                    " From country c" +
+                    " Inner Join city ci on c.code = ci.CountryCode" +
+                    " Group By c.continent";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect( null).prepareStatement(sql);
@@ -1248,10 +1276,10 @@ public class World {
         try {
 
             //Defines the prepared SQL Statement
-            String sql = "SELECT cnt.Name, SUM(ci.Population) AS CityPopulation, SUM(cnt.Population) - SUM(ci.Population) as RuralPopulation" +
-                    " From country cnt" +
-                    " Inner Join city ci on cnt.code = ci.CountryCode" +
-                    " Group By cnt.region";
+            String sql = "SELECT c.Name, SUM(ci.Population) AS CityPopulation, SUM(c.Population) - SUM(ci.Population) as RuralPopulation" +
+                    " From country c" +
+                    " Inner Join city ci on c.code = ci.CountryCode" +
+                    " Group By c.region";
 
 
             //Sets up the prepared statement
@@ -1300,9 +1328,9 @@ public class World {
 
         try {
             //Defines the prepared SQL statement to
-            String sql = " SELECT cnt.Name, cnt.Code, cnt.Continent, cnt.Region, cnt.Population, cty.Name AS 'City Name'" +
-                    " FROM country cnt" +
-                    " JOIN city cty ON cty.ID = cnt.Capital";
+            String sql = " SELECT c.Name, c.Code, c.Continent, c.Region, c.Population, ci.Name AS 'City Name'" +
+                    " FROM country c" +
+                    " JOIN city ci ON ci.ID = c.Capital";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(null).prepareStatement(sql);
