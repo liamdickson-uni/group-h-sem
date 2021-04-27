@@ -60,10 +60,8 @@ jobs:
     - kubectl expose deployment world --port=3306 --target-port=3306 --type=LoadBalancer
 stages:
 - unit tests
-- integration tests
 - name: GitHub Release
   if: branch = master
 - name: Google Cloud Deploy
-  if: branch = master
 after_success:
 - bash <(curl -s https://codecov.io/bash)
