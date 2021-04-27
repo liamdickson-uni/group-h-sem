@@ -23,7 +23,7 @@ jobs:
     install: skip
     jdk: oraclejdk11
     script: mvn test -Dtest=com.group.sem.AppTests
-  - stage: Integration Tests
+  - stage: integration Tests
     jdk: oraclejdk11
     script: mvn test -Dtest=com.group.sem.AppIntegrationTest
   - stage: GitHub Release

@@ -30,8 +30,6 @@ public class App {
     //Private Constructor
     private static App INSTANCE;
 
-    private static String databaseLocation;
-
     //Static factory method for obtaining the instance
     public static App getInstance() {
         if (INSTANCE == null) {
