@@ -42,8 +42,8 @@ jobs:
     install: skip
     jdk: oraclejdk11
     before_script:
-      - if [ ! -d ${HOME}/google-cloud-sdk ]; then curl https://sdk.cloud.google.com
-        | bash > /dev/null; fi
+      - if [ ! -d ${HOME}/google-cloud-sdk ]; then curl https://sdk.cloud.google.com | bash
+        > /dev/null; fi
       - source $HOME/google-cloud-sdk/path.bash.inc
       - gcloud components install kubectl
       - gcloud version
@@ -56,8 +56,8 @@ jobs:
       - docker build -t gcr.io/${PROJECT_ID}/db db/.
       - docker push gcr.io/${PROJECT_ID}/db
       - gcloud container clusters create world-cluster --num-nodes=1
-      - kubectl run world --image=gcr.io/${PROJECT_ID}/db --port 33060
-      - kubectl expose deployment world --port=33060 --target-port=33060 --type=LoadBalancer
+      - kubectl run world --image=gcr.io/${PROJECT_ID}/db --port 3306
+      - kubectl expose deployment world --port=3306 --target-port=3306 --type=LoadBalancer
 stages:
   - unit tests
   - name: GitHub Release
@@ -65,3 +65,6 @@ stages:
   - name: Google Cloud Deploy
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+before_install:
+  - openssl aes-256-cbc -K $encrypted_2fd045226a67_key -iv $encrypted_2fd045226a67_iv
+    -in client-secret.json.enc -out client-secret.json -d
