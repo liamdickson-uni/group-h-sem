@@ -28,9 +28,6 @@ public class DatabaseConnection {
         return INSTANCE;
     }
 
-
-
-
     /**
      * Connection to MySQL database.
      */
