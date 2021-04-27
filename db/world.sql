@@ -4153,7 +4153,7 @@ CREATE TABLE `country` (
   `LocalName` char(45) NOT NULL DEFAULT '',
   `GovernmentForm` char(45) NOT NULL DEFAULT '',
   `HeadOfState` char(60) DEFAULT NULL,
-  `Capital` int DEFAULT NULL**
+  `Capital` int DEFAULT NULL,
   `Code2` char(2) NOT NULL DEFAULT '',
   PRIMARY KEY (`Code`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

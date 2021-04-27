@@ -4,7 +4,7 @@
 * I will ask for help when I need it
 * I will provide help when asked
 * I will participate in all meetings
-* I will do my best to ensure that others are parpicitating in meetings
+* I will do my best to ensure that others are participating in meetings
 * I will only commit code to production once peer reviewed
 * I will add comments to my code so that it is easily understandable
 * I will be respectful of other opinions

@@ -1,33 +1,25 @@
 language: java
-
 addons:
   hosts:
   - db
-
 env:
   global:
   - CLOUDSDK_CORE_DISABLE_PROMPTS=1
-
 services:
 - docker
-
 install:
 - docker build -t database db/.
 - docker run --rm -d -e MYSQL_ROOT_PASSWORD=example -p 33060:3306 database
 - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-
 before_script:
 - mvn clean
-
-
 jobs:
   include:
-
-  - stage: unit tests
+  - stage: Unit tests
     install: skip
     jdk: oraclejdk11
     script: mvn test -Dtest=com.group.sem.AppTests
-  - stage: integration tests
+  - stage: Integration tests
     jdk: oraclejdk11
     script: mvn test -Dtest=com.group.sem.AppIntegrationTest
   - stage: GitHub Release
@@ -47,13 +39,10 @@ jobs:
       file: "$TRAVIS_BUILD_DIR/target/groupHSemMethods.jar"
       cleanup: false
 
-
 stages:
-- unit tests
-- integration tests
-- name: GitHub Release
-  if: branch = master
-
+  - Unit tests
+  - Integration tests
+  - name: GitHub Release
+    if: branch = master
 after_success:
-- bash <(curl -s https://codecov.io/bash)
-
+  - bash <(curl -s https://codecov.io/bash)

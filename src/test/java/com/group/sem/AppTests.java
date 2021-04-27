@@ -17,12 +17,6 @@ public class AppTests
     }
 
 
-
-
-
-
-
-
     /**
      * Tests what happens when displayCountry() Is Null
      */
@@ -103,7 +97,7 @@ public class AppTests
         cnt.GovernmentForm = "Liberal Democracy";
         cnt.HeadOfState = "Queen Elizabeth II";
         cnt.Capital = "Edinburgh";
-        cnt.code2 = "302";
+        cnt.Code2 = "AW";
 
         app.displayCountry(country, "1");
     }
