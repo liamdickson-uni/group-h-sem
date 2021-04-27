@@ -8,8 +8,6 @@ import java.util.ArrayList;
 public class AppIntegrationTest {
 
     static App app;
-
-
     /**
      * Connects to the database before running the Integration Tests
      */
