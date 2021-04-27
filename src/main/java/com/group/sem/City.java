@@ -119,7 +119,7 @@ public class City {
             String sql = "SELECT c.Name, c.Population FROM city c ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -172,7 +172,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, district);
@@ -210,6 +210,59 @@ public class City {
         }
     }
 
+    /**
+     * This method gets a list of cities in a specified region, ordered by population
+     *
+     * @return an ArrayList of cities
+     */
+    public ArrayList<City> getCitiesInRegion(String userRegion) {
+
+        try {
+
+            // Defines the prepared SQL statement
+            String sql = " SELECT cty.Name" +
+                    " FROM city cty" +
+                    " JOIN country cnt ON cnt.Code = cty.CountryCode" +
+                    " WHERE cnt.Region = ?" +
+                    " ORDER BY cty.Population DESC";
+
+            //Sets up the prepared statement
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
+
+            //Assigns userInput to parameterIndex
+            ps.setString(1, userRegion);
+
+            // Execute SQL statement
+            ResultSet rset = ps.executeQuery();
+
+            //Sets the filename for the CSV file and creates a path to
+            String fileName = "csv/cities/cities_in_region/Cities in " + userRegion + ".csv";
+
+            //Creates an Empty ArrayList of Cities
+            ArrayList<City> cities = new ArrayList<>();
+
+            // Check one is returned
+            while (rset.next()) {
+                City cty = new City();
+                cty.cityName = rset.getString("Name");
+                cities.add(cty);
+            }
+
+            ResultSet ruset = ps.executeQuery();
+            CSVCreator.createCSV(fileName, ruset);
+            while (ruset.next()) {
+                CSVCreator.createCSV(fileName, ruset);
+            }
+
+            return cities;
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get cities in selected region");
+            return null;
+
+        }
+    }
 
     /**
      * This method gets a list of districts and orders them by population
@@ -227,7 +280,7 @@ public class City {
                     " ORDER BY cty.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -279,7 +332,7 @@ public class City {
                     " WHERE cty.Name = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, city);
@@ -336,7 +389,7 @@ public class City {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assigns user input to parameterIndex
             ps.setString(1, district);
@@ -391,7 +444,7 @@ public class City {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setInt(1, Integer.parseInt(limit));

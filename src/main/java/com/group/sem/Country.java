@@ -157,7 +157,6 @@ public class Country {
 
     /**
      * This method gets a list of countries organised by population
-     * 1
      *
      * @return an ArrayList of Countries
      */
@@ -170,7 +169,7 @@ public class Country {
                     " ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -206,12 +205,10 @@ public class Country {
 
     /**
      * This method gets a list of countries in a specified continent
-     * 2
-     *
-     * @param continent - User selected continent
+     * @param userContinent - User selected continent
      * @return an ArrayList of countries
      */
-    public ArrayList<Country> getCountryInContinentByPop(String continent) {
+    public ArrayList<Country> getCountryInContinentByPop(String userContinent) {
 
         try {
             // Defines the prepared SQL statement
@@ -220,16 +217,16 @@ public class Country {
                     " ORDER BY c.Continent, c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assigns user input to parameter index
-            ps.setString(1, continent);
+            ps.setString(1, userContinent);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/countries_in_continent/Countries in " + continent + ".csv";
+            String fileName = "csv/countries/countries_in_continent/Countries in " + userContinent + ".csv";
 
             // Creates an ArrayList of countries to pass back to method
             ArrayList<Country> countries = new ArrayList<>();
@@ -253,16 +250,14 @@ public class Country {
 
         } catch (SQLException | IOException e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get countries in " + continent + ".");
+            System.out.println("Failed to get countries in " + userContinent + ".");
             return null;
         }
     }
 
     /**
      * This method gets a list of countries in a specified region
-     * 3
      *
-     * @param region - User selected region
      * @return an ArrayList of countries
      */
     public ArrayList<Country> getCountryInRegionByPop(String region) {
@@ -275,7 +270,7 @@ public class Country {
                     " ORDER BY c.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -292,8 +287,8 @@ public class Country {
             // Check that a country is returned and add the data to the ArrayList
             while (rset.next()) {
                 Country cnt = new Country();
-                cnt.Region = rset.getString("Region");
                 cnt.Name = rset.getString("Name");
+                cnt.Region = rset.getString("Region");
                 countries.add(cnt);
             }
 
@@ -326,7 +321,7 @@ public class Country {
                     " FROM country c";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
@@ -374,7 +369,7 @@ public class Country {
                     " FROM country c WHERE c.Name = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assigns user input to parameter index
             ps.setString(1, country);
@@ -432,7 +427,7 @@ public class Country {
                     "LIMIT ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -486,7 +481,7 @@ public class Country {
                     "WHERE c.Region = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -538,7 +533,7 @@ public class Country {
                     " WHERE c.continent = ?";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, continent);
@@ -591,7 +586,7 @@ public class Country {
                     " ORDER BY cnt.Population DESC";
 
             //Sets up the prepared statement
-            PreparedStatement ps = db.connect(true).prepareStatement(sql);
+            PreparedStatement ps = db.connect(true, null).prepareStatement(sql);
 
             //Assign userInput to the first parameterIndex
             ps.setString(1, region);
@@ -626,6 +621,8 @@ public class Country {
             System.out.println("Failed to get the countries in " + region + ".");
             return null;
         }
+
+
     }
 
 

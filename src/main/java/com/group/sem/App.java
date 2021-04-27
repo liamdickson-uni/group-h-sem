@@ -1,5 +1,6 @@
 package com.group.sem;
 
+import java.sql.Connection;
 import java.util.*;
 
 
@@ -29,11 +30,7 @@ public class App {
     //Private Constructor
     private static App INSTANCE;
 
-    //Empty Constructor
-
-    private App() {
-
-    }
+    private static String databaseLocation;
 
     //Static factory method for obtaining the instance
     public static App getInstance() {
@@ -79,9 +76,6 @@ public class App {
 
             //Get singleton instance of Database Connection
             DatabaseConnection db = DatabaseConnection.getInstance();
-
-            // Connect to the database
-            db.connect(false);
 
             System.out.println("Please select of the options:\n\n " +
                     "1 - Get all countries by population\n " +
@@ -157,8 +151,6 @@ public class App {
 
             //Exits the app
             System.exit(0);
-
-
         }
     }
 

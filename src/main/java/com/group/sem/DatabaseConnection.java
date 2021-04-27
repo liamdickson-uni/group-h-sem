@@ -39,9 +39,9 @@ public class DatabaseConnection {
     /**
      * Connects to the MySQL database.
      *
-     * @param isConnected -- Displays different text depending on connection status
+     * @param location - location of the database
      */
-    public Connection connect(boolean isConnected) {
+    public Connection connect(boolean isConnected, String location) {
 
         if (con == null) {
             try {
@@ -63,9 +63,9 @@ public class DatabaseConnection {
 
                     System.out.println("Loading...");
                     // Wait a bit for db to start
-                    Thread.sleep(30000);
+                    Thread.sleep(5000);
                     // Connect to database
-                    con = DriverManager.getConnection("jdbc:mysql://" + "localhost" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                    con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
 
                     if (!isConnected) {
                         System.out.println("Successfully connected");
