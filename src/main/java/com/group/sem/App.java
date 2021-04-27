@@ -46,6 +46,15 @@ public class App {
         //Access instance of App Class
         App a = App.getInstance();
 
+        //Sets database location
+        String databaseLocation = "localhost:33060";
+
+        //Get singleton instance of Database Connection
+        DatabaseConnection db = DatabaseConnection.getInstance();
+
+        // Connect to the database
+        db.connect(databaseLocation);
+
         //Creates new Scanner for user Input
         Scanner in = new Scanner(System.in);
 
