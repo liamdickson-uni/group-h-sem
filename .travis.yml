@@ -56,8 +56,8 @@ jobs:
       - docker build -t gcr.io/${PROJECT_ID}/db db/.
       - docker push gcr.io/${PROJECT_ID}/db
       - gcloud container clusters create world-cluster --num-nodes=1
-      - kubectl run world --image=gcr.io/${PROJECT_ID}/db --port 3306
-      - kubectl expose deployment world --port=3306 --target-port=3306 --type=LoadBalancer
+      - kubectl run world --image=gcr.io/${PROJECT_ID}/db --port 33060
+      - kubectl expose deployment world --port=33060 --target-port=33060 --type=LoadBalancer
 stages:
   - unit tests
   - name: GitHub Release
