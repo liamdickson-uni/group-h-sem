@@ -65,6 +65,3 @@ stages:
   - name: Google Cloud Deploy
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-before_install:
-  - openssl aes-256-cbc -K $encrypted_2fd045226a67_key -iv $encrypted_2fd045226a67_iv
-    -in client-secret.json.enc -out client-secret.json -d
