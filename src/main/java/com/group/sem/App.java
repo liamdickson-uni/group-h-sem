@@ -46,7 +46,7 @@ public class App {
         //Access instance of App Class
         App a = App.getInstance();
 
-        //Sets database location
+        //Sets database locationhbg
         String databaseLocation = "localhost";
 
         //Get singleton instance of Database Connection
