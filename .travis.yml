@@ -42,31 +42,26 @@ jobs:
     install: skip
     jdk: oraclejdk11
     before_script:
-    - if [ ! -d ${HOME}/google-cloud-sdk ]; then curl https://sdk.cloud.google.com
-      | bash > /dev/null; fi
-    - source $HOME/google-cloud-sdk/path.bash.inc
-    - gcloud components install kubectl
-    - gcloud version
-    - gcloud auth activate-service-account --key-file client-secret.json
+      - if [ ! -d ${HOME}/google-cloud-sdk ]; then curl https://sdk.cloud.google.com
+        | bash > /dev/null; fi
+      - source $HOME/google-cloud-sdk/path.bash.inc
+      - gcloud components install kubectl
+      - gcloud version
+      - gcloud auth activate-service-account --key-file client-secret.json
     script:
-    - gcloud config set project grouphproject
-    - gcloud config set compute/zone europe-west2-b
-    - export PROJECT_ID="$(gcloud config get-value project -q)"
-    - gcloud auth configure-docker
-    - docker build -t gcr.io/${PROJECT_ID}/db db/.
-    - docker push gcr.io/${PROJECT_ID}/db
-    - gcloud container clusters create world-cluster --num-nodes=1
-    - kubectl run world --image=gcr.io/${PROJECT_ID}/db --port 3306
-    - kubectl expose deployment world --port=3306 --target-port=3306 --type=LoadBalancer
+      - gcloud config set project group-h-database
+      - gcloud config set compute/zone europe-west2-b
+      - export PROJECT_ID="$(gcloud config get-value project -q)"
+      - gcloud auth configure-docker
+      - docker build -t gcr.io/${PROJECT_ID}/db db/.
+      - docker push gcr.io/${PROJECT_ID}/db
+      - gcloud container clusters create world-cluster --num-nodes=1
+      - kubectl run world --image=gcr.io/${PROJECT_ID}/db --port 3306
+      - kubectl expose deployment world --port=3306 --target-port=3306 --type=LoadBalancer
 stages:
-- unit tests
-- integration tests
-- name: GitHub Release
-  if: branch = master
-- name: Google Cloud Deploy
-  if: branch = master
+  - unit tests
+  - name: GitHub Release
+    if: branch = master
+  - name: Google Cloud Deploy
 after_success:
 - bash <(curl -s https://codecov.io/bash)
-before_install:
-- openssl aes-256-cbc -K $encrypted_2fd045226a67_key -iv $encrypted_2fd045226a67_iv
-  -in client-secret.json.enc -out client-secret.json -d
