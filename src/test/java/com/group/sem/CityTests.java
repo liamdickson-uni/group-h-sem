@@ -93,15 +93,7 @@ public class CityTests {
     void getCitiesPopulationTest() {
         city.getCitiesPopulation("London");
     }
-
-    @Test
-    void getCitiesPopulationNotNull() {
-        ArrayList<City> cities = city.getCitiesPopulation("London");
-        for (City city : cities) {
-            assertNotNull(cities);
-        }
-    }
-
+    
     @Test
     void getCitiesPopulationCanConnect() {
         ArrayList<City> cities = city.getCitiesPopulation("Texas");
