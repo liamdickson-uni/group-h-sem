@@ -170,8 +170,14 @@ public class AppTests
         app.displayWorld(worlds, "1");
     }
 
+    /**
+     * Tests what happens when displayWorld() is empty
+     */
+    @Test
+    void testAll() {
 
 
+    }
 
 
 
