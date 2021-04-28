@@ -170,36 +170,12 @@ public class AppIntegrationTest {
     }
 
     /**
-     * Tests that getCountryPopulation() method produces a report
-     */
-    @Test
-    void getCountryPopulationInputTest() {
-        Country c = Country.getInstance();
-        ArrayList<Country> countries = c.getCountryPopulation("American Samoa");
-        app.displayCountry(countries, "13");
-        String output = "Test input 13 -- passed \n\n\n";
-        System.out.println(output);
-    }
-
-    /**
-     * Tests that getCitiesPopulation() method produces a report
-     */
-    @Test
-    void getCitiesPopulationInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCitiesPopulation("Texas");
-        app.displayCity(cities, "14");
-        String output = "Test input 14 -- passed\n\n\n";
-        System.out.println(output);
-    }
-
-    /**
      * Tests that getCityInfo() method produces a report
      */
     @Test
     void getCityInfoTest() {
-        City cty = City.getInstance();
-        ArrayList<World> worlds = cty.getCityInfo("Glasgow","Scotland");
+        World world = World.getInstance();
+        ArrayList<World> worlds = world.getCityInfo("Glasgow","Scotland");
         app.displayWorld(worlds, "15");
         String output = "Test input 15 -- passed\n\n\n";
         System.out.println(output);
@@ -211,7 +187,7 @@ public class AppIntegrationTest {
     @Test
     void getSetNCountryInRegionByPopTest() {
         Country cnt = Country.getInstance();
-        ArrayList<Country> countries = cnt.getSetNCountryInRegionByPop("Eastern Africa","13");
+        ArrayList<Country> countries = cnt.getSetNCountryInRegionByPop("Eastern Africa",13);
         app.displayCountry(countries, "16");
         String output = "Test input 16 -- passed\n\n\n";
         System.out.println(output);
@@ -242,24 +218,12 @@ public class AppIntegrationTest {
     }
 
     /**
-     * Tests that getCountriesInRegionByPop() method produces a report
-     */
-    @Test
-    void getCountriesInRegionByPopInputTest() {
-        Country c = Country.getInstance();
-        ArrayList<Country> countries = c.getCountriesInRegionByPop("American Samoa");
-        app.displayCountry(countries, "19");
-        String output = "Test input 19 -- passed \n\n\n";
-        System.out.println(output);
-    }
-
-    /**
-     * Tests that getNumberOfCapitalCities() method produces a report
+     * Tests that getSetNCapitalCitiesInRegionByPop() method produces a report
      */
     @Test
     void getNumberOfCapitalCitiesInputTest() {
-        City cty = City.getInstance();
-        ArrayList<World> worlds = cty.getNumberOfCapitalCities(5,"Eastern Europe");
+        World world = World.getInstance();
+        ArrayList<World> worlds = world.getSetNCapitalCitiesInRegionByPop("Eastern Europe", 5);
         app.displayWorld(worlds, "20");
         String output = "Test input 20 -- passed\n\n\n";
         System.out.println(output);
@@ -282,9 +246,9 @@ public class AppIntegrationTest {
      */
     @Test
     void getCitiesPopulationInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.getSetNCapitalCitiesInContByPop("Europe", 5);
-        app.displayCity(cities, "22");
+        World world = World.getInstance();
+        ArrayList<World> worlds = world.getSetNCapitalCitiesInContByPop("Europe", 5);
+        app.displayWorld(worlds, "22");
         String output = "Test input 22 -- passed\n\n\n";
         System.out.println(output);
     }
@@ -294,13 +258,12 @@ public class AppIntegrationTest {
      */
     @Test
     void getSetNCitiesInContByPopInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.getSetNCitiesInContByPop("Europe", "5");
-        app.displayCity(cities, "23");
+        World world = World.getInstance();
+        ArrayList<World> worlds = world.getSetNCitiesInContByPop("Europe", 5);
+        app.displayWorld(worlds, "23");
         String output = "Test input 23 -- passed\n\n\n";
         System.out.println(output);
     }
-
 
     /**
      * Tests that getContinentPopReport() method produces a report
@@ -311,30 +274,6 @@ public class AppIntegrationTest {
         ArrayList<World> worlds = wld.getContinentPopReport("Europe");
         app.displayWorld(worlds, "24");
         String output = "Test input 24 -- passed\n\n\n";
-        System.out.println(output);
-    }
-
-    /**
-     * Tests that getRegionPopReport() method produces a report
-     */
-    @Test
-    void getRegionPopReportInputTest() {
-        World wld = World.getInstance();
-        ArrayList<World> worlds = wld.getRegionPopReport("American Samoa");
-        app.displayWorld(worlds, "25");
-        String output = "Test input 25 -- passed\n\n\n";
-        System.out.println(output);
-    }
-
-    /**
-     * Tests that getCountryPopReport() method produces a report
-     */
-    @Test
-    void getRegionPopReportInputTest() {
-        World wld = World.getInstance();
-        ArrayList<World> worlds = wld.getCountryPopReport("Scotland");
-        app.displayWorld(worlds, "26");
-        String output = "Test input 26 -- passed\n\n\n";
         System.out.println(output);
     }
 
@@ -351,24 +290,12 @@ public class AppIntegrationTest {
     }
 
     /**
-     * Tests that setNGetCitiesInRegionByPop() method produces a report
-     */
-    @Test
-    void setNGetCitiesInRegionByPopInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.setNGetCitiesInRegionByPop("American Samoa", 5);
-        app.displayCity(cities, "28");
-        String output = "Test input 28 -- passed\n\n\n";
-        System.out.println(output);
-    }
-
-    /**
      * Tests that getSetNCityInWorldByPop() method produces a report
      */
     @Test
     void setNGetCitiesInRegionByPopInputTest() {
         City cty = City.getInstance();
-        ArrayList<City> cities = cty.getSetNCityInWorldByPop( "5");
+        ArrayList<City> cities = cty.getSetNCityInWorldByPop( 5);
         app.displayCity(cities, "29");
         String output = "Test input 29 -- passed\n\n\n";
         System.out.println(output);
@@ -379,20 +306,20 @@ public class AppIntegrationTest {
      */
     @Test
     void getSetNCityInCountryByPopInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.getSetNCityInCountryByPop( "5", "Scotland");
-        app.displayCity(cities, "30");
+        World world = World.getInstance();
+        ArrayList<World> worlds = world.getSetNCityInCountryByPop( "Scotland", 5);
+        app.displayWorld(worlds, "30");
         String output = "Test input 30 -- passed\n\n\n";
         System.out.println(output);
     }
 
     /**
-     * Tests that getNumberOfCapitalCitiesWorld() method produces a report
+     * Tests that getSetNCapitalCitiesInWorld() method produces a report
      */
     @Test
     void getRegionPopReportInputTest() {
-        City cty = City.getInstance();
-        ArrayList<World> worlds = cty.getNumberOfCapitalCitiesWorld(5);
+        World world = World.getInstance();
+        ArrayList<World> worlds = world.getSetNCapitalCitiesInWorld(5);
         app.displayWorld(worlds, "31");
         String output = "Test input 31 -- passed\n\n\n";
         System.out.println(output);
@@ -415,9 +342,9 @@ public class AppIntegrationTest {
      */
     @Test
     void setNGetCitiesInContinentByPopInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.setNGetCitiesInContinentByPop( "Europe", 5);
-        app.displayCity(cities, "33");
+        World world = World.getInstance();
+        ArrayList<World> worlds = world.setNGetCitiesInContinentByPop( "Europe", 5);
+        app.displayWorld(worlds, "33");
         String output = "Test input 33 -- passed\n\n\n";
         System.out.println(output);
     }
@@ -451,9 +378,9 @@ public class AppIntegrationTest {
      */
     @Test
     void getCountriesInRegionByPopInputTest() {
-        Country c = Country.getInstance();
-        ArrayList<Country> countries = c.getCountryReport();
-        app.displayCountry(countries, "36");
+        World world = World.getInstance();
+        ArrayList<World> worlds = world.getCountryReport();
+        app.displayWorld(worlds, "36");
         String output = "Test input 36 -- passed \n\n\n";
         System.out.println(output);
     }

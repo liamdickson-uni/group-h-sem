@@ -136,12 +136,12 @@ public class CountryTests {
      * Tests that getSetNCountryInRegionByPop() runs with out errors
      */
     @Test
-    void getSetNCountryInRegionByPopTest() { country.getSetNCountryInRegionByPop("Caribbean","5");
+    void getSetNCountryInRegionByPopTest() { country.getSetNCountryInRegionByPop("Caribbean",5);
     }
 
     @Test
     void getSetNCountryInRegionByPopNotNull() {
-        ArrayList<Country> countries = country.getSetNCountryInRegionByPop("Caribbean","5");
+        ArrayList<Country> countries = country.getSetNCountryInRegionByPop("Caribbean",5);
         for (Country country : countries) {
             assertNotNull(countries);
         }
@@ -149,7 +149,7 @@ public class CountryTests {
 
     @Test
     void getSetNCountryInRegionByPopCanConnect() {
-        ArrayList<Country> countries = country.getSetNCountryInRegionByPop("Caribbean", "5");
+        ArrayList<Country> countries = country.getSetNCountryInRegionByPop("Caribbean", 5);
 
     }
 
@@ -182,7 +182,7 @@ public class CountryTests {
     }
 
     @Test
-    void getPopOfRegionNotNull() {
+    void getPopOfContinentNotNull() {
         ArrayList<Country> countries = country.getPopOfContinent("North America");
         for (Country country : countries) {
             assertNotNull(countries);
@@ -213,27 +213,6 @@ public class CountryTests {
     @Test
     void getCountriesInRegionByPopCanConnect() {
         ArrayList<Country> countries = country.getCountriesInRegionByPop("North America");
-
-    }
-
-    /**
-     * Tests that getCountryReport() runs with out errors
-     */
-    @Test
-    void getCountryReportByPop() { country.getCountryReport();
-    }
-
-    @Test
-    void getCountryReportpNotNull() {
-        ArrayList<Country> countries = country.getCountryReport();
-        for (Country country : countries) {
-            assertNotNull(countries);
-        }
-    }
-
-    @Test
-    void getCountryReportCanConnect() {
-        ArrayList<Country> countries = country.getCountryReport();
 
     }
 
