@@ -11,10 +11,15 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class CityTests {
 
     static City city;
+    static App app;
 
     @BeforeAll
     static void init() {
         city = City.getInstance();
+        app = App.getInstance();
+        String location = "34.105.185.101:3306";
+        DatabaseConnection db = DatabaseConnection.getInstance();
+        db.connect(location);
     }
 
     /**

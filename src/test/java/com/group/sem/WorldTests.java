@@ -11,10 +11,15 @@ import static org.junit.jupiter.api.Assertions.*;
 public class WorldTests {
 
     static World world;
+    static App app;
 
     @BeforeAll
     static void init() {
         world = World.getInstance();
+        app = App.getInstance();
+        String location = "34.105.185.101:3306";
+        DatabaseConnection db = DatabaseConnection.getInstance();
+        db.connect(location);
     }
 
     /**

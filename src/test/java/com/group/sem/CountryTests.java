@@ -18,6 +18,9 @@ public class CountryTests {
     static void init() {
         country = Country.getInstance();
         app = App.getInstance();
+        String location = "34.105.185.101:3306";
+        DatabaseConnection db = DatabaseConnection.getInstance();
+        db.connect(location);
     }
 
 
