@@ -87,16 +87,16 @@ public class CityTests {
     }
 
     /**
-     * Tests that getCitiesPopulatio() runs with out errors
+     * Tests that getCitiesPopulation() runs with out errors
      */
     @Test
     void getCitiesPopulationTest() {
-        city.getCitiesPopulation("Texas");
+        city.getCitiesPopulation("London");
     }
 
     @Test
     void getCitiesPopulationNotNull() {
-        ArrayList<City> cities = city.getCitiesPopulation("Texas");
+        ArrayList<City> cities = city.getCitiesPopulation("London");
         for (City city : cities) {
             assertNotNull(cities);
         }
