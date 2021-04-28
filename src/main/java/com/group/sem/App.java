@@ -73,6 +73,7 @@ public class App {
 
                 // Connect to the database
                 db.connect(databaseLocation);
+                break;
             }
 
             case "2": {
@@ -84,10 +85,14 @@ public class App {
 
                 // Connect to the database
                 db.connect(databaseLocation);
+                break;
             }
 
 
             case "3": {
+                //Asks the user to provide their database location
+                System.out.println("Please provide your database location\n");
+
                 //Gets database location
                 String databaseLocation = in.nextLine();
 
@@ -96,6 +101,7 @@ public class App {
 
                 // Connect to the database
                 db.connect(databaseLocation);
+                break;
             }
 
         }
