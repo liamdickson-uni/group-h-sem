@@ -23,4 +23,4 @@ Code Coverage: [![codecov](https://codecov.io/gh/TomMcEachan/group-h-sem/branch/
 Thomas McEachan \
 Liam Dickson \
 Greig Dunbar \
-Jack Burton 
+Jack Burton
