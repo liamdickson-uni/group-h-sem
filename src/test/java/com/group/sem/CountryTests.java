@@ -104,7 +104,7 @@ public class CountryTests {
     void getWorldPopulationCanConnect() {
         ArrayList<Country> countries = country.getWorldPopulation();
     }
-    
+
     /**
      * Tests that getDistrictByPop() runs with out errors
      */
