@@ -40,7 +40,7 @@ public class App {
 
 
     /**
-     * @param args
+     * @param args any ar
      */
     public static void main(String[] args) {
         //Access instance of App Class
@@ -103,7 +103,7 @@ public class App {
                     "16 - Get a set number countries in a specific region\n" +
                     "17 - Get the population in a region\n" +
                     "18 - Get the population in a continent\n" +
-                    "19 - Get the countries in a specific region, ordered by population.\n" +
+                    "19 - Get the countries in a specific region.\n" +
                     "20 - Get a specified number of capital cities in a specific region\n" +
                     "21 - Get the number and percentage of speakers of a selected language\n" +
                     "22 - Get a specified number capital cities in a continent\n" +
