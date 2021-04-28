@@ -1241,7 +1241,7 @@ public class World {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/cities_and_rural_pop_in_country/Cities and Rural Population in Country" + ".csv";
+            String fileName = "csv/countries/cities_and_rural_pop_in_continent/Cities and Rural Population in Continent.csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<World> world = new ArrayList<>();
