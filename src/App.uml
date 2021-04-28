@@ -3,14 +3,14 @@
   <ID>JAVA</ID>
   <OriginalElement>com.group.sem.App</OriginalElement>
   <nodes>
-    <node x="577.0" y="0.0">com.group.sem.Language</node>
-    <node x="130.74999999999997" y="479.0">com.group.sem.App</node>
-    <node x="299.0" y="77.0">com.group.sem.City</node>
-    <node x="0.0" y="0.0">com.group.sem.Country</node>
+    <node x="1208.0" y="0.0">com.group.sem.Language</node>
+    <node x="858.0" y="0.0">com.group.sem.App</node>
+    <node x="475.0" y="0.0">com.group.sem.City</node>
+    <node x="50.5" y="0.0">com.group.sem.Country</node>
   </nodes>
   <notes />
   <edges />
-  <settings layout="Hierarchic Group" zoom="0.6391478029294274" x="365.5" y="322.0" />
+  <settings layout="Hierarchic Group" zoom="0.35529237601776464" x="715.5" y="259.5" />
   <SelectedNodes>
     <node>com.group.sem.App</node>
   </SelectedNodes>
@@ -19,6 +19,7 @@
     <Category>Constructors</Category>
     <Category>Methods</Category>
     <Category>Properties</Category>
+    <Category>Inner Classes</Category>
   </Categories>
   <SCOPE>All</SCOPE>
   <VISIBILITY>private</VISIBILITY>

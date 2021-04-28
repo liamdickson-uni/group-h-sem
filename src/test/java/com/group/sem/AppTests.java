@@ -13,9 +13,8 @@ public class AppTests
     @BeforeAll
     static void init()
     {
-        app = new App();
+        app = App.getInstance();
     }
-
 
     /**
      * Tests what happens when displayCountry() Is Null
@@ -36,6 +35,15 @@ public class AppTests
     }
 
     /**
+     * Tests what happens when displayWorld() Is Null
+     */
+    @Test
+    void displayWorldTestNull()
+    {
+        app.displayWorld(null, null);
+    }
+
+    /**
      * Tests what happens when displayCountry() is empty
      */
     @Test
@@ -43,6 +51,16 @@ public class AppTests
     {
         ArrayList<Country> countries = new ArrayList<Country>();
         app.displayCountry(countries, "0");
+    }
+
+    /**
+     * Tests what happens when displayWorld() is empty
+     */
+    @Test
+    void displayWorldTestEmpty()
+    {
+        ArrayList<World> worlds = new ArrayList<World>();
+        app.displayWorld(worlds, "0");
     }
 
     /**
@@ -61,7 +79,7 @@ public class AppTests
     @Test
     void displayCountryTestContainsNull()
     {
-        ArrayList<Country> countries = new ArrayList<Country>();
+        ArrayList<Country> countries = new ArrayList<>();
         countries.add(null);
         app.displayCountry(countries,"0");
     }
@@ -70,11 +88,22 @@ public class AppTests
      * Tests what happens when displayCity() contains a null
      */
     @Test
-    void displayTestContainsNull()
+    void displayCityTestContainsNull()
     {
-        ArrayList<Country> countries = new ArrayList<Country>();
-        countries.add(null);
-        app.displayCountry(countries,"0");
+        ArrayList<City> cities = new ArrayList<City>();
+        cities.add(null);
+        app.displayCity(cities,"0");
+    }
+
+    /**
+     * Tests what happens when displayWorld() contains a null
+     */
+    @Test
+    void displayWorldTestContainsNull()
+    {
+        ArrayList<World> worlds = new ArrayList<World>();
+        worlds.add(null);
+        app.displayWorld(worlds,"0");
     }
 
 
@@ -82,7 +111,7 @@ public class AppTests
     void displayCountries()
     {
         ArrayList<Country> country = new ArrayList<Country>();
-        Country cnt = new Country();
+        Country cnt = Country.getInstance();
 
         cnt.Code = "1";
         cnt.Name = "Scotland";
@@ -97,7 +126,7 @@ public class AppTests
         cnt.GovernmentForm = "Liberal Democracy";
         cnt.HeadOfState = "Queen Elizabeth II";
         cnt.Capital = "Edinburgh";
-        cnt.code2 = "302";
+        cnt.Code2 = "AW";
 
         app.displayCountry(country, "1");
     }
@@ -106,19 +135,49 @@ public class AppTests
     void displayCities()
     {
         ArrayList<City> city = new ArrayList<City>();
-        City cnt = new City();
+        City cty =  City.getInstance();
 
-        cnt.cityID = "1";
-        cnt.cityName = "Scotland";
-        cnt.countryCode = "AFG";
-        cnt.cityDistrict = "Kabol";
-        cnt.cityPopulation = 1780000;
+        cty.cityID = 1;
+        cty.cityName = "Scotland";
+        cty.countryCode = "AFG";
+        cty.cityDistrict = "Kabol";
+        cty.cityPopulation = 1780000;
 
         app.displayCity(city, "1");
     }
 
+    @Test
+    void displayWorld()
+    {
+        ArrayList<World> worlds = new ArrayList<World>();
+        World wld =  World.getInstance();
+
+        wld.countryName = "Scotland";
+        wld.cityName = "Edinburgh";
+        wld.cityDistrict = "Lothian";
+        wld.cityPopulation = 43243223;
+        wld.ruralPopulation= 432524354;
+        wld.region = "North";
+        wld.countryPopulation = 842543432;
+        wld.regionPopulation = 553342432;
+        wld.continentPopulation = 342432523;
+        wld.languagePercentage = 5.99f;
+        wld.language = "English";
+        wld.continent = "Europe";
+        wld.cityPercentage = 79.2f;
+        wld.ruralPercentage = 16.2f;
+
+        app.displayWorld(worlds, "1");
+    }
+
+    /**
+     * Tests what happens when displayWorld() is empty
+     */
+    @Test
+    void testAll() {
 
 
+    }
 
 
 

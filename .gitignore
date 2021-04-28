@@ -35,3 +35,5 @@ buildNumber.properties
 Finally, at the end of the .gitignore file add the following line:
 
 .idea/
+
+group-h-sem.iml
