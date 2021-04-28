@@ -93,7 +93,7 @@ public class CityTests {
     void getCitiesPopulationTest() {
         city.getCitiesPopulation("London");
     }
-    
+
     @Test
     void getCitiesPopulationCanConnect() {
         ArrayList<City> cities = city.getCitiesPopulation("Texas");

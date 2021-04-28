@@ -104,29 +104,13 @@ public class CountryTests {
     void getWorldPopulationCanConnect() {
         ArrayList<Country> countries = country.getWorldPopulation();
     }
-
-    @Test
-    void getWorldPopulationIsNotNull() {
-        ArrayList<Country> countries = country.getWorldPopulation();
-        for (Country country : countries) {
-            assertNotNull(countries);
-        }
-    }
-
+    
     /**
      * Tests that getDistrictByPop() runs with out errors
      */
     @Test
     void getDistrictByPopTest() {
         country.getCountryPopulation("American Samoa");
-    }
-
-    @Test
-    void getDistrictByPopNotNull() {
-        ArrayList<Country> countries = country.getCountryPopulation("Belgium");
-        for (Country country : countries) {
-            assertNotNull(countries);
-        }
     }
 
         @Test
@@ -205,13 +189,6 @@ public class CountryTests {
     void getCountriesInRegionByPop() { country.getCountriesInRegionByPop("North America");
     }
 
-    @Test
-    void getCountriesInRegionByPopNotNull() {
-        ArrayList<Country> countries = country.getCountriesInRegionByPop("North America");
-        for (Country country : countries) {
-            assertNotNull(countries);
-        }
-    }
 
     @Test
     void getCountriesInRegionByPopCanConnect() {
