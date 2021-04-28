@@ -204,25 +204,28 @@ public class City {
      * This method gets a list of districts and orders them by population
      * 9
      *
+     * @param district - User selected city
      * @return an ArrayList of Cities
      */
-    public ArrayList<City> getDistrictByPop() {
+    public ArrayList<City> getDistrictByPop(String district) {
 
         try {
             //Defines the prepared SQL statement
             String sql = " SELECT cty.District, sum(cty.Population) as Population" +
                     " FROM city cty" +
-                    " GROUP BY cty.District" +
+                    " WHERE cty.District = ?" +
                     " ORDER BY sum(cty.Population) DESC";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(null).prepareStatement(sql);
 
+            ps.setString(1, district);
+
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path to
-            String fileName = "csv/district/district_by_pop/All Districts By Population" + ".csv";
+            String fileName = "csv/population/population_of_district/Population of " + district + ".csv";
 
             //Creates an Empty ArrayList of Cities
             ArrayList<City> cities = new ArrayList<>();
@@ -276,7 +279,7 @@ public class City {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path to
-            String fileName = "csv/cities/cities_population/Population of " + city + ".csv";
+            String fileName = "csv/population/cities_population/Population of " + city + ".csv";
 
             //Creates an empty ArrayList of cities for printing
             ArrayList<City> cities = new ArrayList<>();

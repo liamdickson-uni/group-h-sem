@@ -473,7 +473,7 @@ public class World {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/cities/city_info/Information on " + city + ".csv";
+            String fileName = "csv/cities/city_report/Information on " + city + ".csv";
 
             //Create an ArrayList to store the data
             ArrayList<World> world = new ArrayList<>();

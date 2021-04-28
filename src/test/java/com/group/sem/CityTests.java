@@ -70,12 +70,12 @@ public class CityTests {
      */
     @Test
     void getDistrictByPopTest() {
-        city.getDistrictByPop();
+        city.getDistrictByPop("Scotland");
     }
 
     @Test
     void getDistrictByPopNotNull() {
-        ArrayList<City> cities = city.getDistrictByPop();
+        ArrayList<City> cities = city.getDistrictByPop("Scotland");
         for (City city : cities) {
             assertNotNull(cities);
         }
@@ -83,7 +83,7 @@ public class CityTests {
 
     @Test
     void getDistrictByPopCanConnect() {
-        ArrayList<City> cities = city.getDistrictByPop();
+        ArrayList<City> cities = city.getDistrictByPop("Scotland");
     }
 
     /**

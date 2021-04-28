@@ -322,7 +322,8 @@ public class Country {
 
             //Defines the prepared SQL Statement
             String sql = "SELECT sum(c.Population) as Population" +
-                    " FROM country c";
+                    " FROM country c" +
+                    " ORDER BY sum(c.Population) DESC";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(null).prepareStatement(sql);
@@ -331,7 +332,7 @@ public class Country {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/population/world-population/World Population" + ".csv";
+            String fileName = "csv/population/world_population/World Population" + ".csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<>();
