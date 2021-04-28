@@ -1,5 +1,5 @@
 District,Population
-S√£o Paulo,26316966
+S„o Paulo,26316966
 Maharashtra,23659433
 England,19978543
 Punjab,19708438
@@ -15,7 +15,7 @@ Tokyo-to,11043967
 Sindh,11020081
 Buenos Aires,10530136
 Andhra Pradesh,10290295
-M√©xico,10181634
+MÈxico,10181634
 Seoul,9981619
 Tamil Nadu,9872164
 National Capital Reg,9848641
@@ -49,7 +49,7 @@ Hebei,6458553
 Karnataka,6416461
 Chongqing,6351600
 Bangkok,6320174
-Santaf√© de Bogot√°,6260862
+SantafÈ de Bogot·,6260862
 Madhya Pradesh,6103086
 Oyo & Osun,5884600
 Zhejiang,5807384
@@ -71,9 +71,9 @@ Chiba,4516125
 Saitama,4417768
 Baghdad,4336000
 Shaanxi,4297493
-‚Äì,4207443
+ñ,4207443
 Shanxi,4169899
-Paran√°,4123034
+Paran·,4123034
 Inner Mongolia,4121479
 Hyogo,4087840
 Jalisco,4015398
@@ -97,12 +97,12 @@ Riyadh,3324000
 Arizona,3178903
 Central Java,3152553
 Florida,3151408
-Nuevo Le√≥n,3141441
+Nuevo LeÛn,3141441
 Casablanca,3095329
 Ankara,3038159
 Bihar,3006731
 Victoria,2990711
-Cear√°,2943123
+Cear·,2943123
 Kiova,2928000
 Guangxi,2925142
 Khartum,2919773
@@ -132,8 +132,8 @@ Addis Abeba,2495000
 Pyongyang-si,2484000
 Gansu,2462631
 Yunnan,2451016
-Par√°,2430423
-√éle-de-France,2416248
+Par·,2430423
+Œle-de-France,2416248
 Lagos,2389800
 Haryana,2375451
 Western,2355971
@@ -156,13 +156,13 @@ Toskent Shahri,2117500
 Rostov-na-Donu,2080700
 Kyongsangbuk,2063477
 Pennsylvania,2062462
-Baden-W√ºrttemberg,2062370
+Baden-W¸rttemberg,2062370
 Kerala,2049812
 Luanda,2022000
 Bukarest,2016131
 Sinaloa,1995940
 Kowloon and New Kowl,1987996
-Goi√°s,1985741
+Goi·s,1985741
 Mazowieckie,1978642
 Jharkhand,1960577
 al-Sharqiya,1953059
@@ -172,7 +172,7 @@ Esfahan,1901630
 Santa Catarina,1898054
 Kaohsiung,1886267
 Virginia,1880264
-T≈°eljabinsk,1874200
+Töeljabinsk,1874200
 Michigan,1870428
 Colorado,1851149
 Harare,1849274
@@ -185,11 +185,11 @@ Baki,1787800
 Central Visayas,1787289
 Kabol,1780000
 Pichincha,1775569
-Bol√≠var,1770577
+BolÌvar,1770577
 Dar es Salaam,1747000
 Nizni Novgorod,1744800
-Qu√©bec,1742712
-Ba≈°kortostan,1740400
+QuÈbec,1742712
+Baökortostan,1740400
 Lombardia,1729647
 Kemerovo,1715900
 Western Visayas,1710438
@@ -206,27 +206,27 @@ Coahuila de Zaragoza,1630246
 North Carolina,1625851
 Zulia,1625459
 Centre,1618746
-Maranh√£o,1616536
+Maranh„o,1616536
 Distrito Nacional,1609966
 Wien,1608144
-Esp√≠rito Santo,1579739
-Michoac√°n de Ocampo,1579255
+EspÌrito Santo,1579739
+Michoac·n de Ocampo,1579255
 Emilia-Romagna,1566882
 Littoral,1560754
 Ouest,1546105
 Niedersachsen,1543380
 Khuzestan,1543134
-C√≥rdoba,1540107
+CÛrdoba,1540107
 Sonora,1539358
 Central Serbia,1526696
-Atl√°ntico,1518318
+Atl·ntico,1518318
 Chollabuk,1510489
 Harkova,1500000
 Chhatisgarh,1494314
 Adana,1479816
 Zuid-Holland,1476710
 Maputo,1443600
-Provence-Alpes-C√¥te,1436029
+Provence-Alpes-CÙte,1436029
 Lisboa,1435664
 Scotland,1429620
 Taejon,1425835
@@ -261,9 +261,9 @@ La Paz,1292607
 Taichung,1273561
 Rajshahi,1265005
 Aleppo,1261983
-Santa F√©,1260781
+Santa FÈ,1260781
 Amazonas,1255049
-Rabat-Sal√©-Zammour-Z,1254180
+Rabat-SalÈ-Zammour-Z,1254180
 Fars,1250804
 Yerevan,1248700
 Miranda,1247120
@@ -274,7 +274,7 @@ Chiapas,1210872
 Attika,1206264
 Washington,1205688
 Bursa,1186342
-Hlavn√≠ mesto Praha,1181126
+HlavnÌ mesto Praha,1181126
 Greater Accra,1179975
 Louisiana,1172322
 Nevada,1169827
@@ -282,7 +282,7 @@ Omsk,1148900
 Georgia,1148875
 Zaporizzja,1147000
 Okayama,1140542
-Para√≠ba,1140180
+ParaÌba,1140180
 Guatemala,1134387
 Almaty Qalasy,1129400
 Grad Sofija,1122302
@@ -304,14 +304,14 @@ Missouri,1054602
 Lugansk,1033000
 Auckland,1021900
 Chungchongnam,1020120
-B√≠ob√≠o,1016558
+BÌobÌo,1016558
 Santander,1006176
 Copperbelt,1002200
 Rio Grande do Norte,1000066
 Banaadir,997000
 Wisconsin,996788
-Tanger-T√©touan,996716
-San Luis Potos√≠,995720
+Tanger-TÈtouan,996716
+San Luis PotosÌ,995720
 Oklahoma,993374
 South Australia,978100
 Dolnoslaskie,976924
@@ -335,7 +335,7 @@ Gumma,910525
 Chollanam,910194
 Tel Aviv,909000
 Voronez,907700
-Rh√¥ne-Alpes,907641
+RhÙne-Alpes,907641
 Orenburg,907100
 Mato Grosso do Sul,904420
 Yamaguchi,903155
@@ -358,7 +358,7 @@ Western Mindanao,844171
 Stavropol,826700
 Kadiogo,824000
 Mato Grosso,823363
-Piau√≠,821698
+PiauÌ,821698
 Kujawsko-Pomorskie,818820
 Pomorskie,814879
 Distrito Central,813900
@@ -381,7 +381,7 @@ Kang-won,787863
 Central Mindanao,786965
 New Jersey,783391
 Haiphong,783133
-Castilla and Le√≥n,781329
+Castilla and LeÛn,781329
 Ulaanbaatar,773700
 San Salvador,772746
 Mendoza,771094
@@ -400,7 +400,7 @@ Kalimantan Timur,737927
 Liguria,731608
 Galicia,729937
 Medina,728100
-Valpara√≠so,725150
+ValparaÌso,725150
 Selangor,723952
 Kaduna,721400
 Chisinau,719900
@@ -409,10 +409,10 @@ Free State,715608
 Ehime,712697
 Hamgyong N,709730
 Grad Zagreb,706770
-Yucat√°n,703324
+Yucat·n,703324
 Ogun,701000
 Qinghai,700200
-Anzo√°tegui,699913
+Anzo·tegui,699913
 Qaraghandy,697400
 Canary Islands,695752
 Nara,693635
@@ -436,7 +436,7 @@ Maryland,651154
 Tula,644200
 Aguascalientes,643360
 Lipetsk,640400
-Quer√©taro de Arteaga,639839
+QuerÈtaro de Arteaga,639839
 Vladimir,639400
 Jerusalem,633700
 Sucre,633448
@@ -461,10 +461,10 @@ Tomsk,600700
 Ha Merkaz,592800
 Arkangeli,591100
 Bishkek shaary,589400
-I√ßel,587212
+IÁel,587212
 Gomel,585000
 Brest,583000
-T≈°uvassia,582600
+Töuvassia,582600
 Diyarbakir,581284
 East Kazakstan,580600
 Vilna,577969
@@ -480,14 +480,14 @@ al-Daqahliya,569122
 Pays de la Loire,567635
 Nampo-si,566200
 Perak,566114
-West G√∂tanmaan l√§n,563873
+West Gˆtanmaan l‰n,563873
 Ishikawa,563323
 Piura,563003
 Miyazaki,562514
 Oita,560887
 Ivanovo,559200
 Kirov,557800
-Asunci√≥n,557776
+AsunciÛn,557776
 Hainan,557120
 Belgorod,555800
 Yamagata,553573
@@ -496,7 +496,7 @@ Pultava,552000
 Kagoshima,549977
 Hamadan,545654
 Gelderland,545548
-F√®s-Boulemane,541162
+FËs-Boulemane,541162
 Risaralda,541088
 Ahal,540600
 Kursk,540400
@@ -530,7 +530,7 @@ Sanaa,503600
 Toyama,500170
 Kouilou,500000
 Utah,497658
-K√∏benhavn,495699
+K¯benhavn,495699
 Varna,494886
 Edo & Delta,494700
 Shiga,493810
@@ -544,12 +544,12 @@ Leinster,481854
 Sumy,480000
 Blantyre,478155
 Oriental,477832
-Sk√•ne l√§n,476264
+SkÂne l‰n,476264
 Kayseri,475657
 Hidalgo,474651
 Kocaeli,474238
-Panam√°,471373
-Tucum√°n,470809
+Panam·,471373
+Tucum·n,470809
 Eskisehir,470781
 Port Said,469533
 Asturia,468433
@@ -557,7 +557,7 @@ Languedoc-Roussillon,463931
 Coast,461753
 Nampula,461594
 North West,460736
-Mekn√®s-Tafilalet,460000
+MeknËs-Tafilalet,460000
 Brjansk,457400
 Federaatio,456027
 Cagayan Valley,455118
@@ -582,7 +582,7 @@ Los Lagos,426768
 Sulawesi Utara,426346
 Dagestan,425100
 Kaliningrad,424400
-Severn√≠ Morava,422743
+SevernÌ Morava,422743
 Komi,420300
 Niamey,420000
 Estuaire,419000
@@ -590,8 +590,8 @@ al-Tamim,418624
 Nonthaburi,418155
 Iowa,417696
 Suez,417610
-Haute-Za√Øre,417517
-Th√ºringen,415764
+Haute-ZaÔre,417517
+Th¸ringen,415764
 Zacatecas,415325
 Kaunas,412639
 Ha Darom,411800
@@ -599,10 +599,10 @@ Rivers & Bayelsa,410000
 Kalimantan Barat,409632
 Basra,406296
 Harjumaa,403981
-Rond√¥nia,403096
+RondÙnia,403096
 Grodno,403000
 Nayarit,400336
-T≈°erkasy,399000
+Töerkasy,399000
 Aden,398300
 Sofala,397368
 Bauchi & Gombe,394400
@@ -611,7 +611,7 @@ Kordestan,393202
 Wakayama,391233
 Vinnytsja,391000
 Oaxaca,390523
-Midi-Pyr√©n√©es,390350
+Midi-PyrÈnÈes,390350
 Toskent,389300
 Antofagasta,388694
 Campeche,388102
@@ -620,11 +620,11 @@ Jambi,385201
 Keelung,385201
 Ashanti,385192
 Central Macedonia,383967
-Cort√©s,383900
+CortÈs,383900
 Cundinamarca,383021
 Djibouti,383000
 Quang Nam-Da Nang,382674
-Jizn√≠ Morava,381862
+JiznÌ Morava,381862
 Doukkala-Abda,381383
 Markazi,380755
 Portuguesa,378844
@@ -634,7 +634,7 @@ Coquimbo,375616
 Ariana,375600
 Maritime,375000
 Alsace,374474
-Zamb√©zia,374116
+ZambÈzia,374116
 Saskatchewan,374047
 Hawaii,371657
 Hmelnytskyi,371000
@@ -643,7 +643,7 @@ Burjatia,370400
 Eastern,369004
 Salta,367550
 Loreto,367000
-Tarapac√°,366928
+Tarapac·,366928
 Kurgan,364700
 al-Sulaymaniya,364096
 Kirovograd,364000
@@ -654,13 +654,13 @@ Utrecht,360593
 Luxor,360503
 South Kazakstan,360100
 Magdalena,359147
-Thi√®s,357300
+ThiËs,357300
 Lubelskie,356251
 Doha,355000
 Changhwa,354117
 Smolensk,353400
 Herson,353000
-Falc√≥n,352981
+FalcÛn,352981
 Colima,352764
 Federal Capital Dist,350100
 Minsk,349000
@@ -670,28 +670,28 @@ Asyut,343498
 Hama,343361
 Plovdiv,342584
 Constanta,342264
-Manab√≠,341152
+ManabÌ,341152
 Ardebil,340386
 Samsun,339871
-San Jos√©,339131
+San JosÈ,339131
 Caldas,337580
-Z√ºrich,336800
+Z¸rich,336800
 Ancash,336000
-V√Ωchodn√© Slovensko,335851
+V˝chodnÈ Slovensko,335851
 Khanh Hoa,335372
 Cluj,332498
 Kagawa,332471
-Nari√±o,332396
+NariÒo,332396
 Qostanay,330900
 Malatya,330312
 Galati,330276
 Asir,330200
 Taraz,330100
-Bouak√©,329850
+BouakÈ,329850
 Bretagne,329844
 Plateau & Nassarawa,328800
 Johor,328436
-Jun√≠n,327000
+JunÌn,327000
 Balears,326993
 North Kazakstan,326900
 Yazd,326776
@@ -705,7 +705,7 @@ al-Minya,320643
 Sharja,320095
 Borno & Yobe,320000
 Monagas,319726
-T√°chira,319373
+T·chira,319373
 Andijon,318600
 Pihkova,317800
 Taizz,317600
@@ -716,15 +716,15 @@ Masqat,314469
 Akita,314440
 Brasov,314225
 Dolj,313530
-T≈°ernigiv,313000
+Töernigiv,313000
 Haute-Normandie,312821
 Friuli-Venezia Giuli,311391
 Astana,311200
 North Ossetia-Alania,310100
-T≈°ita,309900
+Töita,309900
 al-Najaf,309010
 al-Bahr al-Ahmar,308195
-Bas-Za√Øre,308014
+Bas-ZaÔre,308014
 Mon,307900
 Nusa Tenggara Barat,306600
 Mecklenburg-Vorpomme,306157
@@ -740,20 +740,20 @@ Huila,300052
 Houet,300000
 Bujumbura,300000
 Novgorod,299500
-G√§nc√§,299300
+G‰nc‰,299300
 Imo & Abia,298900
-Camag√ºey,298726
+Camag¸ey,298726
 Hodeida,298500
 Hatay,297004
 Maseru,297000
 Karbala,296705
 Pegu [Bago],296600
-Gharb-Chrarda-B√©ni H,292600
+Gharb-Chrarda-BÈni H,292600
 Tabuk,292600
 Hainaut,291762
 Qazvin,291117
 Cusco,291000
-Quind√≠o,288977
+QuindÌo,288977
 Irrawaddy [Ayeyarwad,288600
 Kostroma,288100
 North Ireland,287500
@@ -762,7 +762,7 @@ Sardinia,286729
 Balikesir,286582
 Zanjan,286295
 Kigali,286000
-√Örhus,284846
+≈rhus,284846
 Tottori,283984
 Podlaskie,283937
 Sumqayit,283000
@@ -798,25 +798,25 @@ Niger,262400
 al-Faiyum,260964
 Alaska,260283
 Acre,259537
-T≈°ernivtsi,259000
+Töernivtsi,259000
 Cheju,258511
 Benguela,258300
 Corrientes,258103
 Sfax,257800
-Amap√°,256033
-East G√∂tanmaan l√§n,255367
+Amap·,256033
+East Gˆtanmaan l‰n,255367
 Overijssel,255363
 Fukui,254818
 Ismailia,254477
 Hwanghae P,254146
 Georgetown,254000
 Denizli,253848
-Aqt√∂be,253100
+Aqtˆbe,253100
 Aceh,253009
 CAR,252386
 Prahova,251348
 Granma,250350
-Holgu√≠n,249492
+HolguÌn,249492
 Molukit,249312
 Marinmaa,249200
 al-Qasim,248600
@@ -846,7 +846,7 @@ Ternopil,236000
 Kassala,234622
 Braila,233756
 Kabardi-Balkaria,233400
-La Araucan√≠a,233041
+La AraucanÌa,233041
 Hawalli,232393
 Irbid,231511
 Hordaland,230948
@@ -854,15 +854,15 @@ Kurdufan al-Shamaliy,229425
 Tekirdag,229377
 Chaco,229212
 Hwanghae N,229172
-El√¢zig,228815
+El‚zig,228815
 Nova Scotia,228643
 Aydin,228551
 Terengganu,228119
 Lorraine,227381
 Darfur al-Janubiya,227183
-M√©rida,224887
+MÈrida,224887
 East Flanderi,224180
-Bayam√≥n,224044
+BayamÛn,224044
 Oruro,223553
 Chagang,223410
 Osh,222700
@@ -878,7 +878,7 @@ Thua Thien-Hue,219149
 Assuan,219017
 North Kivu,218500
 Barinas,217831
-Boyac√°,217468
+Boyac·,217468
 Limburg,217139
 Volynia,217000
 Kafr al-Shaykh,216119
@@ -888,9 +888,9 @@ Can Tho,215587
 Aquitaine,215363
 Pingtung,214727
 Gaborone,213017
-O¬¥Higgins,212977
+O¥Higgins,212977
 Swietokrzyskie,212383
-≈†irak,211700
+äirak,211700
 al-Jazira,211362
 El Oro,210368
 Bacau,209235
@@ -900,11 +900,11 @@ Villa Clara,207350
 Manisa,207148
 Katsina,206500
 South Carolina,205341
-Guant√°namo,205078
+Guant·namo,205078
 Batman,203793
 St. Andrew,203761
-Hajd√∫-Bihar,203648
-Gu√°rico,203073
+Hajd˙-Bihar,203648
+Gu·rico,203073
 Pondicherry,203065
 Klaipeda,202451
 Trentino-Alto Adige,202138
@@ -923,12 +923,12 @@ West Kazakstan,195500
 Pirkanmaa,195468
 Saha (Jakutia),195400
 Nicosia,195000
-Severn√≠ Cechy,194646
+SevernÌ Cechy,194646
 Dnjestria,194300
 Qashqadaryo,194100
 Karakalpakistan,194100
-Kamt≈°atka,194100
-Ou√©m√©,194000
+Kamtöatka,194100
+OuÈmÈ,194000
 Nyanza,192733
 al-Anbar,192556
 Ziguinchor,192000
@@ -936,8 +936,8 @@ al-Qadarif,191164
 Champagne-Ardenne,190905
 Sakarya,190641
 Santiago del Estero,189947
-Uppsala l√§n,189569
-V√Ωchodn√≠ Cechy,189389
+Uppsala l‰n,189569
+V˝chodnÌ Cechy,189389
 Split-Dalmatia,189388
 Lebap,189200
 Dodoma,189000
@@ -949,9 +949,9 @@ Yamalin Nenetsia,187100
 Herat,186800
 Ponce,186475
 Carolina,186076
-T≈°et≈°enia,186000
+Töetöenia,186000
 Idaho,185787
-Li√®ge,185639
+LiËge,185639
 Arad,184408
 Mississippi,184256
 Cantabria,184165
@@ -964,9 +964,9 @@ Negeri Sembilan,182869
 Bandundu,182142
 Nakhon Ratchasima,181400
 Navarra,180483
-Quer√©taro,179300
+QuerÈtaro,179300
 Sahalin,179200
-S√©tif,179055
+SÈtif,179055
 Jujuy,178748
 Chuquisaca,178426
 Yanggang,178020
@@ -977,7 +977,7 @@ Geneve,173500
 Groningen,172701
 Lori,172700
 Varsinais-Suomi,172561
-Borsod-Aba√∫j-Zempl√©n,172357
+Borsod-Aba˙j-ZemplÈn,172357
 Mwanza,172300
 Bani Suwayf,172032
 New Providence,172000
@@ -991,14 +991,14 @@ Equateur,169841
 Tungurahua,169612
 Sibiu,169611
 Hakassia,169200
-El-Aai√∫n,169000
+El-Aai˙n,169000
 Khomas,169000
 Primorje-Gorski Kota,167964
 Adygea,167300
-Neuqu√©n,167296
+NeuquÈn,167296
 Roraima,167185
 Mpumalanga,167183
-Zapadn√≠ Cechy,166759
+ZapadnÌ Cechy,166759
 Basel-Stadt,166700
 Ruse,166467
 Mures,165153
@@ -1009,21 +1009,21 @@ Podkarpackie,162049
 Khujand,161500
 Nordjylland,161161
 al-Minufiya,159909
-Csongr√°d,158158
+Csongr·d,158158
 Udon Thani,158100
 Zanzibar West,157634
 Qyzylorda,157400
 Tripura,157358
 Baranya,157332
 Kvemo Kartli,155400
-Souss Massa-Dra√¢,155244
+Souss Massa-Dra‚,155244
 Mizoram,155240
 Limassol,154400
 Balti,153400
 West Greece,153344
-Sidi Bel Abb√®s,153106
+Sidi Bel AbbËs,153106
 Riad,152100
-S√∏r-Tr√∏ndelag,150166
+S¯r-Tr¯ndelag,150166
 Bourgogne,149867
 Shimane,149821
 Maramures,149665
@@ -1032,29 +1032,29 @@ al-Manama,148000
 Haskovo,147939
 Formosa,147636
 Kastilia-La Mancha,147527
-≈†iauliai,146563
+äiauliai,146563
 Bengkulu,146439
 Osmaniye,146003
 Sousse,145900
-√áorum,145495
+«orum,145495
 Ba Ria-Vung Tau,145145
-K√ºtahya,144761
+K¸tahya,144761
 al-Hasaka,144286
 Salzburg,144247
 Bushehr,143641
 Mangghystau,143400
 Republika Srpska,143079
-Extr√™me-Nord,143000
+ExtrÍme-Nord,143000
 Sulawesi Tengah,142800
 Atyrau,142500
 Flevoland,142465
-Pinar del R√≠o,142100
+Pinar del RÌo,142100
 Kirikkale,142044
 Darfur al-Shamaliya,141884
 Dashhowuz,141800
 Adiyaman,141529
 Kien Giang,141132
-Potos√≠,140642
+PotosÌ,140642
 Caguas,140502
 Dayr al-Zawr,140459
 Tadla-Azilal,140212
@@ -1065,7 +1065,7 @@ Sagaing,138600
 Trabzon,138234
 Port-Louis,138200
 Nord-Ouest,138000
-Adzaria [At≈°ara],137700
+Adzaria [Atöara],137700
 Rakhine,137600
 Tanga,137400
 Auvergne,137140
@@ -1076,7 +1076,7 @@ Montenegro,135000
 Catamarca,134935
 Atacora,134099
 Limousin,133968
-Alto Paran√°,133881
+Alto Paran·,133881
 Panevezys,133695
 Ordu,133642
 Cienfuegos,132770
@@ -1094,7 +1094,7 @@ Satu Mare,130059
 Yamoussoukro,130000
 Battambang,129800
 Huanuco,129688
-Los R√≠os,129631
+Los RÌos,129631
 Opolskie,129553
 Nusa Tenggara Timur,129300
 Skikda,128747
@@ -1110,23 +1110,23 @@ Quang Ninh,127484
 Toamasina,127441
 Blida,127284
 Munster,127187
-Gy√∂r-Moson-Sopron,127119
+Gyˆr-Moson-Sopron,127119
 Khon Kaen,126500
 Ilam,126346
-V√§stmanlands l√§n,126328
+V‰stmanlands l‰n,126328
 Tasmania,126118
 Sabah,125841
-Bender (T√Æghina),125700
+Bender (TÓghina),125700
 Magallanes,125631
 Tarija,125255
 Neamt,125070
 Cizah,124800
-San Pedro de Macor√≠s,124735
-√ñrebros l√§n,124207
+San Pedro de MacorÌs,124735
+÷rebros l‰n,124207
 Chubut,124104
 South Dakota,123975
 Loja,123875
-Le√≥n,123865
+LeÛn,123865
 Nakhon Sawan,123800
 Edirne,123383
 Matanzas,123273
@@ -1139,28 +1139,28 @@ Hadramawt,122400
 Lovec,121952
 Isparta,121911
 Daloa,121842
-Karat≈°ai-T≈°erkessia,121700
+Karatöai-Töerkessia,121700
 Misrata,121669
 Magadan,121000
 Zinder,120892
 Pohjois-Pohjanmaa,120753
 Atacama,120128
 Tibet,120000
-V√¢lcea,119741
+V‚lcea,119741
 Dunedin,119600
 Hebron,119401
 Ayacucho,118960
 Suceava,118549
 Hamilton,118300
-Karab√ºk,118285
+Karab¸k,118285
 Kilis,118245
 Namibe,118200
 Mehedinti,117865
 Morogoro,117800
-Franche-Comt√©,117733
+Franche-ComtÈ,117733
 Sylhet,117396
-B√©ja√Øa,117162
-J√∂nk√∂pings l√§n,117095
+BÈjaÔa,117162
+Jˆnkˆpings l‰n,117095
 Ubon Ratchathani,116300
 Navoi,116300
 West Flanderi,116246
@@ -1180,8 +1180,8 @@ Kairouan,113100
 Thessalia,113090
 Maradi,112965
 Nghe An,112455
-Szabolcs-Szatm√°r-Ber,112419
-T√©bessa,112007
+Szabolcs-Szatm·r-Ber,112419
+TÈbessa,112007
 Paramaribo,112000
 Mardin,112000
 Tiroli,111752
@@ -1193,10 +1193,10 @@ Tlemcen,110242
 San Luis,110136
 Surkhondaryo,109500
 Korhogo,109445
-H√∂fu√∞borgarsv√¶√∞i,109184
+HˆfuborgarsvÊi,109184
 Biserta,108900
 Rogaland,108848
-Caquet√°,108574
+Caquet·,108574
 Duarte,108485
 Hualien,108407
 Tien Giang,108404
@@ -1204,19 +1204,19 @@ al-Khudud al-Samaliy,108100
 La Guajira,108053
 al-Raqqa,108020
 Cajamarca,108009
-B√©char,107311
+BÈchar,107311
 Siirt,107100
 New Hampshire,107006
-Gab√®s,106600
+GabËs,106600
 Lam Dong,106409
 Drenthe,105853
-B√°cs-Kiskun,105606
+B·cs-Kiskun,105606
 Namur,105419
-Fej√©r,105119
+FejÈr,105119
 Siem Reap,105100
-Boulkiemd√©,105000
+BoulkiemdÈ,105000
 Osijek-Baranja,104761
-V√§sterbottens l√§n,104512
+V‰sterbottens l‰n,104512
 Karaman,104200
 Afyon,103984
 Borgou,103577
@@ -1234,7 +1234,7 @@ Tartumaa,101246
 Tyva,101100
 Mary,101000
 Mahajanga,100807
-Sancti-Sp√≠ritus,100751
+Sancti-SpÌritus,100751
 Chaharmahal va Bakht,100477
 Shamal Sina,100447
 Nablus,100231
@@ -1246,27 +1246,27 @@ Logone Occidental,99500
 Tokat,99500
 Diourbel,99400
 Fianarantsoa,99005
-D√¢mbovita,98980
+D‚mbovita,98980
 Vrancea,98979
-Y√ºnlin,98900
+Y¸nlin,98900
 Gorj,98524
-Ciego de √Åvila,98505
-Mayag√ºez,98434
-Jizn√≠ Cechy,98186
+Ciego de ¡vila,98505
+Mayag¸ez,98434
+JiznÌ Cechy,98186
 Almaty,98000
-Dakhlet Nou√¢dhibou,97600
+Dakhlet Nou‚dhibou,97600
 Chinandega,97387
 Dac Lac,97044
 Tigray,96938
-P√§ij√§t-H√§me,96921
+P‰ij‰t-H‰me,96921
 Kilimanjaro,96800
 Chlef,96794
 Savannakhet,96652
 Tulcea,96278
-Co√≠mbra,96100
+CoÌmbra,96100
 ARMM,94861
 Sulawesi Tenggara,94800
-S√£o Tiago,94800
+S„o Tiago,94800
 Magwe [Magway],94800
 West Irian,94700
 Nakhon Pathom,94100
@@ -1274,23 +1274,23 @@ Toa Baja,94085
 Fort-de-France,94050
 Inhambane,93985
 Caras-Severin,93976
-Ming√§√ßevir,93900
+Ming‰Áevir,93900
 Apure,93809
-V√§sternorrlands l√§n,93126
+V‰sternorrlands l‰n,93126
 Kars,93000
 Montana,92988
 Tabora,92800
 Taza-Al Hoceima-Taou,92700
 Rafah,92020
 Ilan,92000
-K√§rnten,91141
+K‰rnten,91141
 Qasim,91100
 Idlib,91081
 Najran,91000
 Yaracuy,90940
 al-Batina,90814
 Quetzaltenango,90801
-G√§vleborgs l√§n,90742
+G‰vleborgs l‰n,90742
 Braga,90535
 Frederiksberg,90327
 Woqooyi Galbeed,90000
@@ -1298,9 +1298,9 @@ Jubbada Hoose,90000
 Miaoli,90000
 Liepaja,89439
 Puerto Plata,89423
-Gharda√Øa,89415
+GhardaÔa,89415
 al-Zawiya,89338
-Atl√°ntida,89200
+Atl·ntida,89200
 Masaya,88971
 Luxembourg,80700
 Maale,71000
@@ -1315,7 +1315,7 @@ Aqua Grande,49541
 Dili,47900
 Port-of-Spain,43396
 Banjul,42326
-Mah√©,41000
+MahÈ,41000
 Bioko,40000
 St George,37964
 Njazidja,36000
@@ -1354,14 +1354,14 @@ Vaduz,5043
 Serravalle/Dogano,4802
 Grand Turk,4800
 Funafuti,4600
-Cura√ßao,2345
+CuraÁao,2345
 Castries,2301
 San Marino,2294
 Plymouth,2000
-Saint George¬¥s,1800
+Saint George¥s,1800
 East Falkland,1636
 Saint Helena,1500
-L√§nsimaa,1438
+L‰nsimaa,1438
 Wallis,1137
 Home Island,503
 Fakaofo,300
