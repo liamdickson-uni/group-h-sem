@@ -753,7 +753,8 @@ public class World {
                     " ((((SELECT SUM(Population) FROM country c WHERE c.Continent IN (?)) - SUM(ci.Population)) / (SELECT SUM(Population) FROM country c WHERE c.Continent IN (?))) * 100) AS RuralPercentage" +
                     " FROM city ci " +
                     " INNER JOIN country c on ci.CountryCode = c.Code" +
-                    " WHERE c.Continent IN (?)";
+                    " WHERE c.Continent IN (?)" +
+                    " ORDER BY (SELECT SUM(Population) FROM country c WHERE c.Continent IN (?)) DESC";
 
 
             //Sets up the prepared statement
@@ -765,12 +766,13 @@ public class World {
             ps.setString(3, continent);
             ps.setString(4, continent);
             ps.setString(5, continent);
+            ps.setString(6, continent);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/continent_report/" + continent + " Population Report.csv";
+            String fileName = "csv/countries/population_reports/Continent " + continent + " Population Report.csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<World> world = new ArrayList<>();
@@ -817,7 +819,8 @@ public class World {
                     " ((((SELECT SUM(Population) FROM country c WHERE c.Region IN (?)) - SUM(ci.Population)) / (SELECT SUM(Population) FROM country c WHERE c.Region IN (?))) * 100) AS RuralPercentage" +
                     " FROM city ci " +
                     " INNER JOIN country c on ci.CountryCode = c.Code" +
-                    " WHERE c.Region IN (?)";
+                    " WHERE c.Region IN (?)" +
+                    " ORDER BY (SELECT SUM(Population) FROM country c WHERE c.Region IN (?)) DESC";
 
 
             //Sets up the prepared statement
@@ -829,12 +832,13 @@ public class World {
             ps.setString(3, region);
             ps.setString(4, region);
             ps.setString(5, region);
+            ps.setString(6, region);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/region_report/" + region + " Population Report.csv";
+            String fileName = "csv/countries/population_reports/Region " + region + " Population Report.csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<World> world = new ArrayList<>();
@@ -881,8 +885,8 @@ public class World {
                     " ((((SELECT SUM(Population) FROM country c WHERE c.Name = ?) - SUM(ci.Population)) / (SELECT SUM(Population) FROM country c WHERE c.Name = ?)) * 100) AS RuralPercentage" +
                     " FROM city ci " +
                     " INNER JOIN country c on ci.CountryCode = c.Code" +
-                    " WHERE c.Name = ?";
-
+                    " WHERE c.Name = ?" +
+                    " ORDER BY (SELECT SUM(Population) FROM country c WHERE c.Name IN (?)) DESC";
 
             //Sets up the prepared statement
             PreparedStatement ps = db.connect(null).prepareStatement(sql);
@@ -893,12 +897,13 @@ public class World {
             ps.setString(3, country);
             ps.setString(4, country);
             ps.setString(5, country);
+            ps.setString(6, country);
 
             // Execute SQL statement
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/country_report/" + country + " Population Report.csv";
+            String fileName = "csv/countries/population_reports/Country " + country + " Population Report.csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<World> world = new ArrayList<>();
