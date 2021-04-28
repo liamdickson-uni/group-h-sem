@@ -105,6 +105,10 @@ public class World {
     /*
      * Represents a Rural Population
      */
+
+    /*
+    * Represents a countries region
+    */
     public long ruralPopulation;
 
     /*
