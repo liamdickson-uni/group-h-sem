@@ -38,29 +38,6 @@ public class CityTests {
         ArrayList<City> cities = city.getCitiesByPop();
     }
 
-
-    /**
-     * Tests that getCitiesInCountryByPop() runs with out errors
-     */
-    @Test
-    void getCitiesInCountryByPopTest() {
-        city.getCitiesInCountryByPop("United States of America");
-    }
-
-    @Test
-    void getCitiesInCountryByPopIsNotNull() {
-        ArrayList<City> cities = city.getCitiesInCountryByPop("Italy");
-        for (City city : cities) {
-            assertNotNull(cities);
-        }
-    }
-
-    @Test
-    void getCitiesInCountryByPopCanConnect() {
-        ArrayList<City> cities = city.getCitiesInCountryByPop("France");
-    }
-
-
     /**
      * Tests that getCitiesInDistrictByPop() runs with out errors
      */
@@ -497,6 +474,7 @@ public class CityTests {
             assertNotNull(worlds);
         }
     }
+
 }
 
 

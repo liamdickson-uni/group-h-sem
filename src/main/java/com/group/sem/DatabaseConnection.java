@@ -28,20 +28,17 @@ public class DatabaseConnection {
         return INSTANCE;
     }
 
-
-
-
     /**
      * Connection to MySQL database.
      */
-    private Connection con = null;
+    public Connection con = null;
 
     /**
      * Connects to the MySQL database.
      *
-     * @param isConnected -- Displays different text depending on connection status
+     * @param location - location of the database
      */
-    public Connection connect(boolean isConnected) {
+    public Connection connect(String location) {
 
         if (con == null) {
             try {
@@ -55,26 +52,22 @@ public class DatabaseConnection {
             int retries = 10;
 
             for (int i = 0; i < retries; ++i) {
-                if (!isConnected) {
                     System.out.println("Connecting to database...");
-                }
-
                 try {
 
                     System.out.println("Loading...");
                     // Wait a bit for db to start
-                    Thread.sleep(30000);
+                    Thread.sleep(5000);
                     // Connect to database
-                    con = DriverManager.getConnection("jdbc:mysql://" + "localhost:33060" + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
+                    con = DriverManager.getConnection("jdbc:mysql://" + location + "/world?allowPublicKeyRetrieval=true&useSSL=false", "root", "example");
 
-                    if (!isConnected) {
-                        System.out.println("Successfully connected");
-                    }
+                    System.out.println("Successfully connected");
+
                     break;
 
-                } catch (SQLException sqle) {
+                } catch (SQLException sql) {
                     System.out.println("Failed to connect to database attempt " + Integer.toString(i));
-                    System.out.println(sqle.getMessage());
+                    System.out.println(sql.getMessage());
                 } catch (InterruptedException ie) {
                     System.out.println("Thread interrupted? Should not happen.");
                 }

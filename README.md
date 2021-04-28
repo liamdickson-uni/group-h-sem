@@ -20,7 +20,7 @@ Code Coverage: [![codecov](https://codecov.io/gh/TomMcEachan/group-h-sem/branch/
 
 ## Developed by
 
-Tom McEachan \
+Thomas McEachan \
 Liam Dickson \
 Greig Dunbar \
 Jack Burton 

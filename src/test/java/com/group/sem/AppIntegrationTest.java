@@ -8,23 +8,21 @@ import java.util.ArrayList;
 public class AppIntegrationTest {
 
     static App app;
-
-
     /**
      * Connects to the database before running the Integration Tests
      */
     @BeforeAll
     static void init() {
         app = App.getInstance();
+        String location = "34.105.185.101:3306";
         DatabaseConnection db = DatabaseConnection.getInstance();
-        db.connect(false);
+        db.connect(location);
     }
-
 
     /**
      * Tests that getCountryByPopDesc() method produces a report
      */
-  
+
     @Test
     void getCountryByPopDescInputTest() {
         Country c = Country.getInstance();
@@ -65,9 +63,9 @@ public class AppIntegrationTest {
      */
     @Test
     void getCitiesInCountryByPopInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCitiesInCountryByPop("United Kingdom");
-        app.displayCity(cities, "4");
+        World world = World.getInstance();
+        ArrayList<World> wld = world.getCitiesInCountryByPop("United Kingdom");
+        app.displayWorld(wld, "4");
         String output = "Test input 4 -- passed\n\n\n";
         System.out.println(output);
     }
@@ -102,9 +100,9 @@ public class AppIntegrationTest {
      */
     @Test
     void getCitiesInContInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCitiesInCont("Europe");
-        app.displayCity(cities, "7");
+        World world = World.getInstance();
+        ArrayList<World> wld = world.getCitiesInCont("Europe");
+        app.displayWorld(wld, "7");
         String output = "Test input 7 -- passed\n\n\n";
         System.out.println(output);
     }
@@ -114,9 +112,9 @@ public class AppIntegrationTest {
      */
     @Test
     void getCitiesInRegionInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCitiesInRegion("Western Europe");
-        app.displayCity(cities, "8");
+        World world = World.getInstance();
+        ArrayList<World> wld = world.getCitiesInRegion("Western Europe");
+        app.displayWorld(wld, "8");
         String output = "Test input 8 -- passed\n\n\n";
         System.out.println(output);
     }
@@ -139,9 +137,9 @@ public class AppIntegrationTest {
      */
     @Test
     void getCapitalCitiesInContinentByPopInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCapitalCitiesInContinentByPoP("Asia");
-        app.displayCity(cities, "10");
+        World world = World.getInstance();
+        ArrayList<World> wld = world.getCapitalCitiesInContinentByPoP("Asia");
+        app.displayWorld(wld, "10");
         String output = "Test input 10 -- passed\n\n\n";
         System.out.println(output);
     }
@@ -152,9 +150,9 @@ public class AppIntegrationTest {
      */
     @Test
     void getCapitalCitiesInRegionByPopInputTest() {
-        City cty = City.getInstance();
-        ArrayList<City> cities = cty.getCapitalCitiesInRegionByPoP("Middle East");
-        app.displayCity(cities, "11");
+        World world = World.getInstance();
+        ArrayList<World> wld = world.getCapitalCitiesInRegionByPoP("Middle East");
+        app.displayWorld(wld, "11");
         String output = "Test input 11 -- passed\n\n\n";
         System.out.println(output);
     }
