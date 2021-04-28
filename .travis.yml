@@ -15,11 +15,23 @@ before_script:
 - mvn clean
 jobs:
   include:
-  - stage: Unit tests
+  - stage: App Tests
     install: skip
     jdk: oraclejdk11
     script: mvn test -Dtest=com.group.sem.AppTests
-  - stage: Integration tests
+  - stage: City Tests
+    install: skip
+    jdk: oraclejdk11
+    script: mvn test -Dtest=com.group.sem.CityTests
+  - stage: Country Tests
+    install: skip
+    jdk: oraclejdk11
+    script: mvn test -Dtest=com.group.sem.CountryTests
+  - stage: World Tests
+    install: skip
+    jdk: oraclejdk11
+    script: mvn test -Dtest=com.group.sem.WorldTests
+  - stage: Integration Tests
     jdk: oraclejdk11
     script: mvn test -Dtest=com.group.sem.AppIntegrationTest
   - stage: GitHub Release
@@ -40,8 +52,11 @@ jobs:
       cleanup: false
 
 stages:
-  - Unit tests
-  - Integration tests
+  - App Tests
+  - City Tests
+  - Country Tests
+  - World Tests
+  - Integration Tests
   - name: GitHub Release
     if: branch = master
 after_success:
