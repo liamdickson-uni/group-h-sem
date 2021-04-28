@@ -222,7 +222,7 @@ public class City {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path to
-            String fileName = "csv/cities/district_by_pop/All Districts By Population" + ".csv";
+            String fileName = "csv/district/district_by_pop/All Districts By Population" + ".csv";
 
             //Creates an Empty ArrayList of Cities
             ArrayList<City> cities = new ArrayList<>();

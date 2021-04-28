@@ -382,7 +382,7 @@ public class Country {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/country_population/Population of " + country + ".csv";
+            String fileName = "csv/population/country_population/Population of " + country + ".csv";
 
             // Creates an ArrayList of countries to pass back to method
             ArrayList<Country> countries = new ArrayList<>();
@@ -494,7 +494,7 @@ public class Country {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/population_of_region/Population of " + region + ".csv";
+            String fileName = "csv/population/population_of_region/Population of " + region + ".csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<>();
@@ -546,7 +546,7 @@ public class Country {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/population_of_continent/Population of " + continent + ".csv";
+            String fileName = "csv/population/population_of_continent/Population of " + continent + ".csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<Country> countries = new ArrayList<>();
@@ -599,7 +599,7 @@ public class Country {
             ResultSet rset = ps.executeQuery();
 
             //Sets the filename for the CSV file and creates a path
-            String fileName = "csv/countries/country_in_region_by_pop/Countries in " + region + ".csv";
+            String fileName = "csv/countries/countries_in_region_by_pop/Countries in " + region + ".csv";
 
             //Creates an ArrayList of countries to store data
             ArrayList<Country> Countries = new ArrayList<>();

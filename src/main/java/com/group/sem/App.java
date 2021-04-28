@@ -40,26 +40,71 @@ public class App {
 
 
     /**
-     * @param args
+     * @param args any ar
      */
     public static void main(String[] args) {
         //Access instance of App Class
         App a = App.getInstance();
 
-        //Sets database location
-        String databaseLocation = "34.105.185.101:3306";
-
-        //Get singleton instance of Database Connection
-        DatabaseConnection db = DatabaseConnection.getInstance();
-
-        // Connect to the database
-        db.connect(databaseLocation);
+        //Print out welcome message
+        System.out.println("\n\n\nWelcome to Wildcat Bikes Global Information App.\n\n");
 
         //Creates new Scanner for user Input
         Scanner in = new Scanner(System.in);
 
-        //Print out welcome message
-        System.out.println("\n\n\nWelcome to Wildcat Bikes Global Information App.\n\n");
+        //Prints out a message to prompt the user to select a database location
+        System.out.println("Which database would you like to connect to?\n\n" +
+                "1 -- A version of the database hosted online.\n" +
+                "2 -- A version of the database which is local to you. (localhost:33060)\n" +
+                "3 -- Your own version of the database which is hosted online. You will be prompted to input your own IP.\n"
+        );
+
+        //Takes input from the user to make the decision
+        String userLocation = in.nextLine();
+
+        switch (userLocation) {
+
+            case "1": {
+                //Sets database location
+                String databaseLocation = "34.105.185.101:3306";
+
+                //Get singleton instance of Database Connection
+                DatabaseConnection db = DatabaseConnection.getInstance();
+
+                // Connect to the database
+                db.connect(databaseLocation);
+                break;
+            }
+
+            case "2": {
+                //Sets database location
+                String databaseLocation = "localhost:33060";
+
+                //Get singleton instance of Database Connection
+                DatabaseConnection db = DatabaseConnection.getInstance();
+
+                // Connect to the database
+                db.connect(databaseLocation);
+                break;
+            }
+
+
+            case "3": {
+                //Asks the user to provide their database location
+                System.out.println("Please provide your database location\n");
+
+                //Gets database location
+                String databaseLocation = in.nextLine();
+
+                //Get singleton instance of Database Connection
+                DatabaseConnection db = DatabaseConnection.getInstance();
+
+                // Connect to the database
+                db.connect(databaseLocation);
+                break;
+            }
+
+        }
 
         //Asks the user if they would like to start the program and passes their answer to the appPath() method
         System.out.println("Would you like to start?   Yes/No\n\n");
@@ -103,7 +148,7 @@ public class App {
                     "16 - Get a set number countries in a specific region\n" +
                     "17 - Get the population in a region\n" +
                     "18 - Get the population in a continent\n" +
-                    "19 - Get the countries in a specific region, ordered by population.\n" +
+                    "19 - Get the countries in a specific region.\n" +
                     "20 - Get a specified number of capital cities in a specific region\n" +
                     "21 - Get the number and percentage of speakers of a selected language\n" +
                     "22 - Get a specified number capital cities in a continent\n" +

@@ -1,841 +1,842 @@
-Name
-London
-St Petersburg
-Berlin
-Madrid
-Roma
-Kyiv
-Paris
-Bucuresti
-Budapest
-Hamburg
-Minsk
-Warszawa
-Wien
-Barcelona
-Harkova [Harkiv]
-Novosibirsk
-Nizni Novgorod
-Milano
-Jekaterinburg
-Beograd
-Munich [M�nchen]
-Praha
-Samara
-Omsk
-Sofija
-Dnipropetrovsk
-Kazan
-Ufa
-T�eljabinsk
-Donetsk
-Birmingham
-Rostov-na-Donu
-Odesa
-Perm
-Napoli
-Volgograd
-K�ln
-Voronez
-Torino
-Krasnojarsk
-Saratov
-Zaporizzja
-L�dz
-Marseille
-Lviv
-Athenai
-Riga
-Stockholm
-Valencia
-Krak�w
-Amsterdam
-Toljatti
-Chisinau
-Zagreb
-Kryvyi Rig
-Sevilla
-Palermo
-Uljanovsk
-Izevsk
-Frankfurt am Main
-Krasnodar
-Wroclaw
-Genova
-Glasgow
-Jaroslavl
-Habarovsk
-Vladivostok
-Zaragoza
-Essen
-Irkutsk
-Rotterdam
-Dortmund
-Stuttgart
-Barnaul
-Vilnius
-Poznan
-D�sseldorf
-Lisboa
-Novokuznetsk
-Helsinki [Helsingfors]
-Bremen
-Penza
-M�laga
-Rjazan
-Orenburg
-Lipetsk
-Duisburg
-Hannover
-Nabereznyje T�elny
-Oslo
-Mykolajiv
-Tula
-Tjumen
-K�benhavn
-Kemerovo
-Mariupol
-Leipzig
-N�rnberg
-Astrahan
-Tomsk
-Dublin
-Dresden
-Gomel
-Lugansk
-Gothenburg [G�teborg]
-Kirov
-Liverpool
-Ivanovo
-T�eboksary
-Gdansk
-Brjansk
-Tver
-Edinburgh
-Bratislava
-Antwerpen
-Lyon
-Skopje
-Kursk
-Haag
-Sheffield
-Manchester
-Magnitogorsk
-Kaliningrad
-Leeds
-Szczecin
-Kaunas
-Tallinn
-Bristol
-Bochum
-Vinnytsja
-Nizni Tagil
-Toulouse
-Bydgoszcz
-Makijivka
-Thessaloniki
-Brno
-Bologna
-Firenze
-Murmansk
-Ulan-Ude
-Wuppertal
-Kurgan
-Arkangeli
-Sarajevo
-Sot�i
-Bilbao
-Lublin
-Mogiljov
-Las Palmas de Gran Canaria
-Murcia
-Smolensk
-Herson
-Iasi
-Sevastopol
-Katowice
-Orjol
-Stavropol
-Nice
-Plovdiv
-Constanta
-Belgorod
-Vitebsk
-Kaluga
-Simferopol
-Catania
-Vladimir
-Z�rich
-Mahat�kala
-Cluj-Napoca
-Bari
-Galati
-Palma de Mallorca
-T�erepovets
-Timisoara
-Bielefeld
-Cardiff
-Ostrava
-Valladolid
-Saransk
-Brasov
-Craiova
-Pultava [Poltava]
-T�ernigiv
-Tambov
-C�rdoba
-Vladikavkaz
-T�ita
-T�erkasy
-Mannheim
-Coventry
-Vologda
-Grodno
-Bonn
-Varna
-Veliki Novgorod
-Gorlivka
-Zytomyr
-Leicester
-Sumy
-Komsomolsk-na-Amure
-Bradford
-Kostroma
-Belfast
-Nottingham
-Volzski
-Brest
-�rhus
-Taganrog
-Bialystok
-Vigo
-Petroskoi
-Gelsenkirchen
-Bratsk
-Venezia
-Karlsruhe
-Dzerzinsk
-Surgut
-Orsk
-Porto
-Alicante [Alacant]
-Ljubljana
-Nantes
-Tirana
-Dniprodzerzynsk
-Wiesbaden
-Gij�n
-Sterlitamak
-Kirovograd
-Angarsk
-M�nster
-Strasbourg
-M�nchengladbach
-Chemnitz
-Kingston upon Hull
-Hmelnytskyi
-Malm�
-Messina
-T�ernivtsi
-Czestochowa
-Verona
-Augsburg
-Halle/Saale
-Gdynia
-Plymouth
-Stoke-on-Trent
-Ploiesti
-Jo�kar-Ola
-L�Hospitalet de Llobregat
-Braunschweig
-Rivne
-Granada
-Sosnowiec
-Aachen
-A Coru�a (La Coru�a)
-Wolverhampton
-Ko�ice
-Krefeld
-Graz
-Rybinsk
-Krement�uk
-Prokopjevsk
-Ivano-Frankivsk
-Derby
-Ternopil
-Magdeburg
-Utrecht
-Niznevartovsk
-Kiel
-Braila
-Nalt�ik
-Radom
-Bergen
-Swansea
-Syktyvkar
-Severodvinsk
-Montpellier
-Bijsk
-Gent
-Niznekamsk
-Oberhausen
-Oradea
-Blagove�t�ensk
-�ahty
-Bobruisk
-Vitoria-Gasteiz
-Lutsk
-Trieste
-Southampton
-Bordeaux
-Bila Tserkva
-Staryi Oskol
-L�beck
-Espoo
-Aberdeen
-Santa Cruz de Tenerife
-Kielce
-Gliwice
-Padova
-Badalona
-Bacau
-Taranto
-Zelenograd
-Rennes
-Torun
-Balakovo
-Bytom
-Hagen
-Debrecen
-Novorossijsk
-Rostock
-Freiburg im Breisgau
-Klaipeda
-Eindhoven
-Pihkova
-Erfurt
-Charleroi
-Oviedo
-Zabrze
-Zlatoust
-Kassel
-Northampton
-Tampere
-Jakutsk
-M�stoles
-Burgas
-Tiraspol
-Podolsk
-Petropavlovsk-Kamt�atski
-Tilburg
-Elche [Elx]
-Dudley
-Brescia
-Le Havre
-Kamensk-Uralski
-Portsmouth
-Uppsala
-Split
-Newcastle upon Tyne
-Engels
-Linz
-Reims
-Pitesti
-Syzran
-Kramatorsk
-Grozny
-Li�ge
-Sabadell
-Lille
-Arad
-Novot�erkassk
-Santander
-Odense
-Saarbr�cken
-Sunderland
-Mainz
-Luton
-Pireus
-Jerez de la Frontera
-Berezniki
-Hamm
-Pamplona [Iru�a]
-Bielsko-Biala
-St-�tienne
-Swindon
-Novi Sad
-Reggio di Calabria
-Donostia-San Sebasti�n
-Juzno-Sahalinsk
-Vantaa
-Volgodonsk
-Cartagena
-Modena
-Southend-on-Sea
-Herne
-Ni�
-Walsall
-M�lheim an der Ruhr
-Geneve
-Legan�s
-Groningen
-Turku [�bo]
-Prato
-Miskolc
-Fuenlabrada
-Olsztyn
-Sibiu
-Abakan
-Almer�a
-Melitopol
-Parma
-Terrassa
-Rijeka
-Maikop
-Baranovit�i
-Plzen
-Basel
-Ruse
-Miass
-Cagliari
-Solingen
-T�rgu Mures
-Armavir
-Osnabr�ck
-Alcal� de Henares
-Ljubertsy
-Ludwigshafen am Rhein
-Burgos
-Rubtsovsk
-Rzesz�w
-Bournemouth
-Kert�
-Livorno
-Aalborg
-Leverkusen
-Toulon
-Breda
-Kovrov
-Ruda Slaska
-Salamanca
-Szeged
-Nahodka
-P�cs
-Ussurijsk
-Salavat
-Perugia
-Brighton
-Peterborough
-Myti�t�i
-Pri�tina
-Foggia
-Oldenburg
-Apeldoorn
-Balti
-Patras
-Grenoble
-Nijmegen
-Angers
-Blackpool
-Borisov
-Kolomna
-Trondheim
-Dijon
-Neuss
-Baia Mare
-Brest
-Enschede
-Nikopol
-Haarlem
-Buzau
-Reading
-Stara Zagora
-Albacete
-Kragujevac
-Elektrostal
-Dundee
-�iauliai
-West Bromwich
-Le Mans
-Oldbury/Smethwick (Warley)
-Getafe
-Middlesbrough
-Rybnik
-Salzburg
-Oxford
-Huddersfield
-Reggio nell� Emilia
-Banja Luka
-Almere
-C�diz
-Murom
-Salerno
-Alcorc�n
-Kolpino
-Poole
-Norilsk
-Almetjevsk
-Huelva
-Blackburn
-Le�n
-Castell�n de la Plana [Castell
-Heidelberg
-Bolton
-Newport
-Ravenna
-Novomoskovsk
-Arnhem
-Darmstadt
-Paderborn
-Peristerion
-Clermont-Ferrand
-Dimitrovgrad
-Walbrzych
-Badajoz
-Pervouralsk
-Zaanstad
-Amiens
-Preston
-Podgorica
-Aix-en-Provence
-Limoges
-Bruxelles [Brussel]
-Himki
-Panevezys
-N�mes
-Tychy
-Link�ping
-Bala�iha
-Tours
-Stockport
-Nevinnomyssk
-Pjatigorsk
-Korolev
-Ferrara
-Serpuhov
-Rimini
-Dabrowa G�rnicza
-Plock
-Satu Mare
-Berdjansk
-Pinsk
-Elblag
-Opole
-�s-Hertogenbosch
-Potsdam
-Botosani
-[San Crist�bal de] la Laguna
-Odintsovo
-W�rzburg
-Cork
-Gy�r
-Logro�o
-Pavlograd
-Sjeverodonetsk
-Slovjansk
-Uzgorod
-V�ster�s
-Syrakusa
-Amersfoort
-Gorz�w Wielkopolski
-Bender (T�ghina)
-Regensburg
-Piatra Neamt
-Recklinghausen
-Orehovo-Zujevo
-G�ttingen
-Kamy�in
-Villeurbanne
-�rebro
-Norwich
-Or�a
-Metz
-Novot�eboksarsk
-Wloclawek
-Bremerhaven
-Bern
-Norrk�ping
-Amadora
-Maastricht
-Wolfsburg
-Pleven
-Chorz�w
-T�erkessk
-At�insk
-Tarn�w
-Rotherham
-Bottrop
-Cambridge
-Magadan
-Sassari
-Santa Coloma de Gramenet
-Oulu
-Mit�urinsk
-Kislovodsk
-Remscheid
-Dordrecht
-R�mnicu V�lcea
-Heilbronn
-Monza
-Jelets
-Alt�evsk
-Seversk
-Suceava
-Zielona G�ra
-Drobeta-Turnu Severin
-Bergamo
-Helsingborg
-Besan�on
-Pforzheim
-Noginsk
-Leiden
-J�nk�ping
-Offenbach am Main
-Velikije Luki
-Brugge
-Novokuiby�evsk
-Herakleion
-Ulm
-Lysyt�ansk
-Neftekamsk
-Pescara
-Maribor
-Daugavpils
-Ingolstadt
-Gera
-Lausanne
-Kallithea
-Latina
-Ipswich
-Caen
-Leninsk-Kuznetski
-Orl�ans
-Larisa
-Watford
-Tarragona
-Salzgitter
-Nyiregyh�za
-Koszalin
-Lleida (L�rida)
-Slough
-Jevpatorija
-Innsbruck
-Oktjabrski
-Sergijev Posad
-Exeter
-Cottbus
-Haarlemmermeer
-Arzamas
-Mulhouse
-Reutlingen
-Zoetermeer
-Mozyr
-Kiseljovsk
-F�rth
-Vicenza
-Novotroitsk
-Legnica
-Ja�n
-Siegen
-Reykjav�k
-Ourense (Orense)
-Kamjanets-Podilskyi
-Stavanger
-Obninsk
-Koblenz
-Terni
-Forl�
-Kansk
-Gloucester
-Moers
-Kalisz
-Rouen
-Boulogne-Billancourt
-Glazov
-Saint Helens
-Bergisch Gladbach
-Sutton Coldfield
-Cheltenham
-Novopolotsk
-Solikamsk
-Emmen
-Zwolle
-Sarapul
-Schaerbeek
-Kecskem�t
-Sliven
-Namur
-Ust-Ilimsk
-Sz�kesfeh�rv�r
-Perpignan
-Jenakijeve
-Trento
-�t�olkovo
-Osijek
-Ume�
-York
-Mezduret�ensk
-Zwickau
-Matar�
-Hildesheim
-Oldham
-Nancy
-Usolje-Sibirskoje
-Witten
-Elista
-Algeciras
-Schwerin
-Olomouc
-Grudziadz
-Slupsk
-Jastrzebie-Zdr�j
-Novara
-Novo�ahtinsk
-Votkinsk
-Ede
-B�rum
-Tartu
-Marbella
-Kyzyl
-Krasnyi Lut�
-Stahanov
-Lida
-Soligorsk
-Basildon
-Erlangen
-Serov
-Dobric
-Subotica
-Zelenodolsk
-Zeleznodoroznyi
-Kaiserslautern
-Worthing
-Kine�ma
-Trier
-Jena
-Iserlohn
-Liberec
-Oleksandrija
-T�rgoviste
-Focsani
-Lund
-T�rgu Jiu
-Piacenza
-Ancona
-Barakaldo
-Lecce
-Kuznetsk
-Cesk� Budejovice
-Hradec Kr�lov�
-Uhta
-Jaworzno
-Jessentuki
-Tobolsk
-Chelmsford
-Neftejugansk
-Bataisk
-Nojabrsk
-Bolzano
-Bala�ov
-Crawley
-Molodet�no
-Roubaix
-Lahti
-Zeleznogorsk
-Bor�s
-Catanzaro
-Zukovski
-Tulcea
-Co�mbra
-Anzero-Sudzensk
-Colchester
-Zenica
-Konotop
-La Spezia
-�st� nad Labem
-Delft
-Heerlen
-G�tersloh
-Worcester
-Kostjantynivka
-Udine
-�umen
-Dos Hermanas
-Solihull
-Torre del Greco
-Andria
-Rochdale
-Bugulma
-Zeleznogorsk
-Pre�ov
-Resita
-Argenteuil
-Jelenia G�ra
-Santiago de Compostela
-Marl
-Tourcoing
-Brindisi
-Novouralsk
-Giugliano in Campania
-Sundsvall
-Birkenhead
-Pu�kin
-Alkmaar
-Vorkuta
-Pisa
-Prizren
-Derbent
-Torrej�n de Ardoz
-L�nen
-Gillingham
-Hartlepool
-Woking/Byfleet
-Barletta
-Arezzo
-Kirovo-T�epetsk
-Pardubice
-Klagenfurt
-D�ren
-Halifax
-Krasnogorsk
-Southport
-Ratingen
-Mons
-Maidstone
-G�vle
-Montreuil
-Braga
-Frederiksberg
-Alessandria
-Eastbourne
-Berdyt�iv
-Izmajil
-�ostka
-Uman
-Klin
-T�aikovski
-Velbert
-Cesena
-Novyi Urengoi
-Esslingen am Neckar
-Liepaja
-Grimsby
-Brovary
-Mukat�eve
-Pesaro
-Luxembourg [Luxemburg/L�tzebuerg]
-Saint Helier
-Gibraltar
-Douglas
-Birkirkara
-Andorra la Vella
-T�rshavn
-Monte-Carlo
-Valletta
-Schaan
-Vaduz
-Serravalle
-San Marino
-Longyearbyen
-Monaco-Ville
-Citt� del Vaticano
+Continent,Name
+Europe,Moscow
+Europe,London
+Europe,St Petersburg
+Europe,Berlin
+Europe,Madrid
+Europe,Roma
+Europe,Kyiv
+Europe,Paris
+Europe,Bucuresti
+Europe,Budapest
+Europe,Hamburg
+Europe,Minsk
+Europe,Warszawa
+Europe,Wien
+Europe,Barcelona
+Europe,Harkova [Harkiv]
+Europe,Novosibirsk
+Europe,Nizni Novgorod
+Europe,Milano
+Europe,Jekaterinburg
+Europe,Beograd
+Europe,Munich [MÃ¼nchen]
+Europe,Praha
+Europe,Samara
+Europe,Omsk
+Europe,Sofija
+Europe,Dnipropetrovsk
+Europe,Kazan
+Europe,Ufa
+Europe,TÅ¡eljabinsk
+Europe,Donetsk
+Europe,Birmingham
+Europe,Rostov-na-Donu
+Europe,Odesa
+Europe,Perm
+Europe,Napoli
+Europe,Volgograd
+Europe,KÃ¶ln
+Europe,Voronez
+Europe,Torino
+Europe,Krasnojarsk
+Europe,Saratov
+Europe,Zaporizzja
+Europe,LÃ³dz
+Europe,Marseille
+Europe,Lviv
+Europe,Athenai
+Europe,Riga
+Europe,Stockholm
+Europe,Valencia
+Europe,KrakÃ³w
+Europe,Amsterdam
+Europe,Toljatti
+Europe,Chisinau
+Europe,Zagreb
+Europe,Kryvyi Rig
+Europe,Sevilla
+Europe,Palermo
+Europe,Uljanovsk
+Europe,Izevsk
+Europe,Frankfurt am Main
+Europe,Krasnodar
+Europe,Wroclaw
+Europe,Genova
+Europe,Glasgow
+Europe,Jaroslavl
+Europe,Habarovsk
+Europe,Vladivostok
+Europe,Zaragoza
+Europe,Essen
+Europe,Irkutsk
+Europe,Rotterdam
+Europe,Dortmund
+Europe,Stuttgart
+Europe,Barnaul
+Europe,Vilnius
+Europe,Poznan
+Europe,DÃ¼sseldorf
+Europe,Lisboa
+Europe,Novokuznetsk
+Europe,Helsinki [Helsingfors]
+Europe,Bremen
+Europe,Penza
+Europe,MÃ¡laga
+Europe,Rjazan
+Europe,Orenburg
+Europe,Lipetsk
+Europe,Duisburg
+Europe,Hannover
+Europe,Nabereznyje TÅ¡elny
+Europe,Oslo
+Europe,Mykolajiv
+Europe,Tula
+Europe,Tjumen
+Europe,KÃ¸benhavn
+Europe,Kemerovo
+Europe,Mariupol
+Europe,Leipzig
+Europe,NÃ¼rnberg
+Europe,Astrahan
+Europe,Tomsk
+Europe,Dublin
+Europe,Dresden
+Europe,Gomel
+Europe,Lugansk
+Europe,Gothenburg [GÃ¶teborg]
+Europe,Kirov
+Europe,Liverpool
+Europe,Ivanovo
+Europe,TÅ¡eboksary
+Europe,Gdansk
+Europe,Brjansk
+Europe,Tver
+Europe,Edinburgh
+Europe,Bratislava
+Europe,Antwerpen
+Europe,Lyon
+Europe,Skopje
+Europe,Kursk
+Europe,Haag
+Europe,Sheffield
+Europe,Manchester
+Europe,Magnitogorsk
+Europe,Kaliningrad
+Europe,Leeds
+Europe,Szczecin
+Europe,Kaunas
+Europe,Tallinn
+Europe,Bristol
+Europe,Bochum
+Europe,Vinnytsja
+Europe,Nizni Tagil
+Europe,Toulouse
+Europe,Bydgoszcz
+Europe,Makijivka
+Europe,Thessaloniki
+Europe,Brno
+Europe,Bologna
+Europe,Firenze
+Europe,Murmansk
+Europe,Ulan-Ude
+Europe,Wuppertal
+Europe,Kurgan
+Europe,Arkangeli
+Europe,Sarajevo
+Europe,SotÅ¡i
+Europe,Bilbao
+Europe,Lublin
+Europe,Mogiljov
+Europe,Las Palmas de Gran Canaria
+Europe,Murcia
+Europe,Smolensk
+Europe,Herson
+Europe,Iasi
+Europe,Sevastopol
+Europe,Katowice
+Europe,Orjol
+Europe,Stavropol
+Europe,Nice
+Europe,Plovdiv
+Europe,Constanta
+Europe,Belgorod
+Europe,Vitebsk
+Europe,Kaluga
+Europe,Simferopol
+Europe,Catania
+Europe,Vladimir
+Europe,ZÃ¼rich
+Europe,MahatÅ¡kala
+Europe,Cluj-Napoca
+Europe,Bari
+Europe,Galati
+Europe,Palma de Mallorca
+Europe,TÅ¡erepovets
+Europe,Timisoara
+Europe,Bielefeld
+Europe,Cardiff
+Europe,Ostrava
+Europe,Valladolid
+Europe,Saransk
+Europe,Brasov
+Europe,Craiova
+Europe,Pultava [Poltava]
+Europe,TÅ¡ernigiv
+Europe,Tambov
+Europe,CÃ³rdoba
+Europe,Vladikavkaz
+Europe,TÅ¡ita
+Europe,TÅ¡erkasy
+Europe,Mannheim
+Europe,Coventry
+Europe,Vologda
+Europe,Grodno
+Europe,Bonn
+Europe,Varna
+Europe,Veliki Novgorod
+Europe,Gorlivka
+Europe,Zytomyr
+Europe,Leicester
+Europe,Sumy
+Europe,Komsomolsk-na-Amure
+Europe,Bradford
+Europe,Kostroma
+Europe,Belfast
+Europe,Nottingham
+Europe,Volzski
+Europe,Brest
+Europe,Ã…rhus
+Europe,Taganrog
+Europe,Bialystok
+Europe,Vigo
+Europe,Petroskoi
+Europe,Gelsenkirchen
+Europe,Bratsk
+Europe,Venezia
+Europe,Karlsruhe
+Europe,Dzerzinsk
+Europe,Surgut
+Europe,Orsk
+Europe,Porto
+Europe,Alicante [Alacant]
+Europe,Ljubljana
+Europe,Nantes
+Europe,Tirana
+Europe,Dniprodzerzynsk
+Europe,Wiesbaden
+Europe,GijÃ³n
+Europe,Sterlitamak
+Europe,Kirovograd
+Europe,Angarsk
+Europe,MÃ¼nster
+Europe,Strasbourg
+Europe,MÃ¶nchengladbach
+Europe,Chemnitz
+Europe,Kingston upon Hull
+Europe,Hmelnytskyi
+Europe,MalmÃ¶
+Europe,Messina
+Europe,TÅ¡ernivtsi
+Europe,Czestochowa
+Europe,Verona
+Europe,Augsburg
+Europe,Halle/Saale
+Europe,Gdynia
+Europe,Plymouth
+Europe,Stoke-on-Trent
+Europe,Ploiesti
+Europe,JoÅ¡kar-Ola
+Europe,LÂ´Hospitalet de Llobregat
+Europe,Braunschweig
+Europe,Rivne
+Europe,Granada
+Europe,Sosnowiec
+Europe,Aachen
+Europe,A CoruÃ±a (La CoruÃ±a)
+Europe,Wolverhampton
+Europe,KoÅ¡ice
+Europe,Krefeld
+Europe,Graz
+Europe,Rybinsk
+Europe,KrementÅ¡uk
+Europe,Prokopjevsk
+Europe,Ivano-Frankivsk
+Europe,Derby
+Europe,Ternopil
+Europe,Magdeburg
+Europe,Utrecht
+Europe,Niznevartovsk
+Europe,Kiel
+Europe,Braila
+Europe,NaltÅ¡ik
+Europe,Radom
+Europe,Bergen
+Europe,Swansea
+Europe,Syktyvkar
+Europe,Severodvinsk
+Europe,Montpellier
+Europe,Bijsk
+Europe,Gent
+Europe,Niznekamsk
+Europe,Oberhausen
+Europe,Oradea
+Europe,BlagoveÅ¡tÅ¡ensk
+Europe,Å ahty
+Europe,Bobruisk
+Europe,Vitoria-Gasteiz
+Europe,Lutsk
+Europe,Trieste
+Europe,Southampton
+Europe,Bordeaux
+Europe,Bila Tserkva
+Europe,Staryi Oskol
+Europe,LÃ¼beck
+Europe,Espoo
+Europe,Aberdeen
+Europe,Santa Cruz de Tenerife
+Europe,Kielce
+Europe,Gliwice
+Europe,Padova
+Europe,Badalona
+Europe,Bacau
+Europe,Taranto
+Europe,Zelenograd
+Europe,Rennes
+Europe,Torun
+Europe,Balakovo
+Europe,Bytom
+Europe,Hagen
+Europe,Debrecen
+Europe,Novorossijsk
+Europe,Rostock
+Europe,Freiburg im Breisgau
+Europe,Klaipeda
+Europe,Eindhoven
+Europe,Pihkova
+Europe,Erfurt
+Europe,Charleroi
+Europe,Oviedo
+Europe,Zabrze
+Europe,Zlatoust
+Europe,Kassel
+Europe,Northampton
+Europe,Tampere
+Europe,Jakutsk
+Europe,MÃ³stoles
+Europe,Burgas
+Europe,Tiraspol
+Europe,Podolsk
+Europe,Petropavlovsk-KamtÅ¡atski
+Europe,Tilburg
+Europe,Elche [Elx]
+Europe,Dudley
+Europe,Brescia
+Europe,Le Havre
+Europe,Kamensk-Uralski
+Europe,Portsmouth
+Europe,Uppsala
+Europe,Split
+Europe,Newcastle upon Tyne
+Europe,Engels
+Europe,Linz
+Europe,Reims
+Europe,Pitesti
+Europe,Syzran
+Europe,Kramatorsk
+Europe,Grozny
+Europe,LiÃ¨ge
+Europe,Sabadell
+Europe,Lille
+Europe,Arad
+Europe,NovotÅ¡erkassk
+Europe,Santander
+Europe,Odense
+Europe,SaarbrÃ¼cken
+Europe,Sunderland
+Europe,Mainz
+Europe,Luton
+Europe,Pireus
+Europe,Jerez de la Frontera
+Europe,Berezniki
+Europe,Hamm
+Europe,Pamplona [IruÃ±a]
+Europe,Bielsko-Biala
+Europe,St-Ã‰tienne
+Europe,Swindon
+Europe,Novi Sad
+Europe,Reggio di Calabria
+Europe,Donostia-San SebastiÃ¡n
+Europe,Juzno-Sahalinsk
+Europe,Vantaa
+Europe,Volgodonsk
+Europe,Cartagena
+Europe,Modena
+Europe,Southend-on-Sea
+Europe,Herne
+Europe,NiÅ¡
+Europe,Walsall
+Europe,MÃ¼lheim an der Ruhr
+Europe,Geneve
+Europe,LeganÃ©s
+Europe,Groningen
+Europe,Turku [Ã…bo]
+Europe,Prato
+Europe,Miskolc
+Europe,Fuenlabrada
+Europe,Olsztyn
+Europe,Sibiu
+Europe,Abakan
+Europe,AlmerÃ­a
+Europe,Melitopol
+Europe,Parma
+Europe,Terrassa
+Europe,Rijeka
+Europe,Maikop
+Europe,BaranovitÅ¡i
+Europe,Plzen
+Europe,Basel
+Europe,Ruse
+Europe,Miass
+Europe,Cagliari
+Europe,Solingen
+Europe,TÃ¢rgu Mures
+Europe,Armavir
+Europe,OsnabrÃ¼ck
+Europe,AlcalÃ¡ de Henares
+Europe,Ljubertsy
+Europe,Ludwigshafen am Rhein
+Europe,Burgos
+Europe,Rubtsovsk
+Europe,RzeszÃ³w
+Europe,Bournemouth
+Europe,KertÅ¡
+Europe,Livorno
+Europe,Aalborg
+Europe,Leverkusen
+Europe,Toulon
+Europe,Breda
+Europe,Kovrov
+Europe,Ruda Slaska
+Europe,Salamanca
+Europe,Szeged
+Europe,Nahodka
+Europe,PÃ©cs
+Europe,Ussurijsk
+Europe,Salavat
+Europe,Perugia
+Europe,Brighton
+Europe,Peterborough
+Europe,MytiÅ¡tÅ¡i
+Europe,PriÅ¡tina
+Europe,Foggia
+Europe,Oldenburg
+Europe,Apeldoorn
+Europe,Balti
+Europe,Patras
+Europe,Grenoble
+Europe,Nijmegen
+Europe,Angers
+Europe,Blackpool
+Europe,Borisov
+Europe,Kolomna
+Europe,Trondheim
+Europe,Dijon
+Europe,Neuss
+Europe,Baia Mare
+Europe,Brest
+Europe,Enschede
+Europe,Nikopol
+Europe,Haarlem
+Europe,Buzau
+Europe,Reading
+Europe,Stara Zagora
+Europe,Albacete
+Europe,Kragujevac
+Europe,Elektrostal
+Europe,Dundee
+Europe,Å iauliai
+Europe,West Bromwich
+Europe,Le Mans
+Europe,Oldbury/Smethwick (Warley)
+Europe,Getafe
+Europe,Middlesbrough
+Europe,Rybnik
+Europe,Salzburg
+Europe,Oxford
+Europe,Huddersfield
+Europe,Reggio nellÂ´ Emilia
+Europe,Banja Luka
+Europe,Almere
+Europe,CÃ¡diz
+Europe,Murom
+Europe,Salerno
+Europe,AlcorcÃ³n
+Europe,Kolpino
+Europe,Poole
+Europe,Norilsk
+Europe,Almetjevsk
+Europe,Huelva
+Europe,Blackburn
+Europe,LeÃ³n
+Europe,CastellÃ³n de la Plana [Castell
+Europe,Heidelberg
+Europe,Bolton
+Europe,Newport
+Europe,Ravenna
+Europe,Novomoskovsk
+Europe,Arnhem
+Europe,Darmstadt
+Europe,Paderborn
+Europe,Peristerion
+Europe,Clermont-Ferrand
+Europe,Dimitrovgrad
+Europe,Walbrzych
+Europe,Badajoz
+Europe,Pervouralsk
+Europe,Zaanstad
+Europe,Amiens
+Europe,Preston
+Europe,Podgorica
+Europe,Aix-en-Provence
+Europe,Limoges
+Europe,Bruxelles [Brussel]
+Europe,Himki
+Europe,Panevezys
+Europe,NÃ®mes
+Europe,Tychy
+Europe,LinkÃ¶ping
+Europe,BalaÅ¡iha
+Europe,Tours
+Europe,Stockport
+Europe,Nevinnomyssk
+Europe,Pjatigorsk
+Europe,Korolev
+Europe,Ferrara
+Europe,Serpuhov
+Europe,Rimini
+Europe,Dabrowa GÃ³rnicza
+Europe,Plock
+Europe,Satu Mare
+Europe,Berdjansk
+Europe,Pinsk
+Europe,Elblag
+Europe,Opole
+Europe,Â´s-Hertogenbosch
+Europe,Potsdam
+Europe,Botosani
+Europe,[San CristÃ³bal de] la Laguna
+Europe,Odintsovo
+Europe,WÃ¼rzburg
+Europe,Cork
+Europe,GyÃ¶r
+Europe,LogroÃ±o
+Europe,Pavlograd
+Europe,Sjeverodonetsk
+Europe,Slovjansk
+Europe,Uzgorod
+Europe,VÃ¤sterÃ¥s
+Europe,Syrakusa
+Europe,Amersfoort
+Europe,GorzÃ³w Wielkopolski
+Europe,Bender (TÃ®ghina)
+Europe,Regensburg
+Europe,Piatra Neamt
+Europe,Recklinghausen
+Europe,Orehovo-Zujevo
+Europe,GÃ¶ttingen
+Europe,KamyÅ¡in
+Europe,Villeurbanne
+Europe,Ã–rebro
+Europe,Norwich
+Europe,OrÅ¡a
+Europe,Metz
+Europe,NovotÅ¡eboksarsk
+Europe,Wloclawek
+Europe,Bremerhaven
+Europe,Bern
+Europe,NorrkÃ¶ping
+Europe,Amadora
+Europe,Maastricht
+Europe,Wolfsburg
+Europe,Pleven
+Europe,ChorzÃ³w
+Europe,TÅ¡erkessk
+Europe,AtÅ¡insk
+Europe,TarnÃ³w
+Europe,Rotherham
+Europe,Bottrop
+Europe,Cambridge
+Europe,Magadan
+Europe,Sassari
+Europe,Santa Coloma de Gramenet
+Europe,Oulu
+Europe,MitÅ¡urinsk
+Europe,Kislovodsk
+Europe,Remscheid
+Europe,Dordrecht
+Europe,RÃ¢mnicu VÃ¢lcea
+Europe,Heilbronn
+Europe,Monza
+Europe,Jelets
+Europe,AltÅ¡evsk
+Europe,Seversk
+Europe,Suceava
+Europe,Zielona GÃ³ra
+Europe,Drobeta-Turnu Severin
+Europe,Bergamo
+Europe,Helsingborg
+Europe,BesanÃ§on
+Europe,Pforzheim
+Europe,Noginsk
+Europe,Leiden
+Europe,JÃ¶nkÃ¶ping
+Europe,Offenbach am Main
+Europe,Velikije Luki
+Europe,Brugge
+Europe,NovokuibyÅ¡evsk
+Europe,Herakleion
+Europe,Ulm
+Europe,LysytÅ¡ansk
+Europe,Neftekamsk
+Europe,Pescara
+Europe,Maribor
+Europe,Daugavpils
+Europe,Ingolstadt
+Europe,Gera
+Europe,Lausanne
+Europe,Kallithea
+Europe,Latina
+Europe,Ipswich
+Europe,Caen
+Europe,Leninsk-Kuznetski
+Europe,OrlÃ©ans
+Europe,Larisa
+Europe,Watford
+Europe,Tarragona
+Europe,Salzgitter
+Europe,NyiregyhÃ¡za
+Europe,Koszalin
+Europe,Lleida (LÃ©rida)
+Europe,Slough
+Europe,Jevpatorija
+Europe,Innsbruck
+Europe,Oktjabrski
+Europe,Sergijev Posad
+Europe,Exeter
+Europe,Cottbus
+Europe,Haarlemmermeer
+Europe,Arzamas
+Europe,Mulhouse
+Europe,Reutlingen
+Europe,Zoetermeer
+Europe,Mozyr
+Europe,Kiseljovsk
+Europe,FÃ¼rth
+Europe,Vicenza
+Europe,Novotroitsk
+Europe,Legnica
+Europe,JaÃ©n
+Europe,Siegen
+Europe,ReykjavÃ­k
+Europe,Ourense (Orense)
+Europe,Kamjanets-Podilskyi
+Europe,Stavanger
+Europe,Obninsk
+Europe,Koblenz
+Europe,Terni
+Europe,ForlÃ¬
+Europe,Kansk
+Europe,Gloucester
+Europe,Moers
+Europe,Kalisz
+Europe,Rouen
+Europe,Boulogne-Billancourt
+Europe,Glazov
+Europe,Saint Helens
+Europe,Bergisch Gladbach
+Europe,Sutton Coldfield
+Europe,Cheltenham
+Europe,Novopolotsk
+Europe,Solikamsk
+Europe,Emmen
+Europe,Zwolle
+Europe,Sarapul
+Europe,Schaerbeek
+Europe,KecskemÃ©t
+Europe,Sliven
+Europe,Namur
+Europe,Ust-Ilimsk
+Europe,SzÃ©kesfehÃ©rvÃ¡r
+Europe,Perpignan
+Europe,Jenakijeve
+Europe,Trento
+Europe,Å tÅ¡olkovo
+Europe,Osijek
+Europe,UmeÃ¥
+Europe,York
+Europe,MezduretÅ¡ensk
+Europe,Zwickau
+Europe,MatarÃ³
+Europe,Hildesheim
+Europe,Oldham
+Europe,Nancy
+Europe,Usolje-Sibirskoje
+Europe,Witten
+Europe,Elista
+Europe,Algeciras
+Europe,Schwerin
+Europe,Olomouc
+Europe,Grudziadz
+Europe,Slupsk
+Europe,Jastrzebie-ZdrÃ³j
+Europe,Novara
+Europe,NovoÅ¡ahtinsk
+Europe,Votkinsk
+Europe,Ede
+Europe,BÃ¦rum
+Europe,Tartu
+Europe,Marbella
+Europe,Kyzyl
+Europe,Krasnyi LutÅ¡
+Europe,Stahanov
+Europe,Lida
+Europe,Soligorsk
+Europe,Basildon
+Europe,Erlangen
+Europe,Serov
+Europe,Dobric
+Europe,Subotica
+Europe,Zelenodolsk
+Europe,Zeleznodoroznyi
+Europe,Kaiserslautern
+Europe,Worthing
+Europe,KineÅ¡ma
+Europe,Trier
+Europe,Jena
+Europe,Iserlohn
+Europe,Liberec
+Europe,Oleksandrija
+Europe,TÃ¢rgoviste
+Europe,Focsani
+Europe,Lund
+Europe,TÃ¢rgu Jiu
+Europe,Piacenza
+Europe,Ancona
+Europe,Barakaldo
+Europe,Lecce
+Europe,Kuznetsk
+Europe,CeskÃ© Budejovice
+Europe,Hradec KrÃ¡lovÃ©
+Europe,Uhta
+Europe,Jaworzno
+Europe,Jessentuki
+Europe,Tobolsk
+Europe,Chelmsford
+Europe,Neftejugansk
+Europe,Bataisk
+Europe,Nojabrsk
+Europe,Bolzano
+Europe,BalaÅ¡ov
+Europe,Crawley
+Europe,MolodetÅ¡no
+Europe,Roubaix
+Europe,Lahti
+Europe,Zeleznogorsk
+Europe,BorÃ¥s
+Europe,Catanzaro
+Europe,Zukovski
+Europe,Tulcea
+Europe,CoÃ­mbra
+Europe,Anzero-Sudzensk
+Europe,Colchester
+Europe,Zenica
+Europe,Konotop
+Europe,La Spezia
+Europe,ÃšstÃ­ nad Labem
+Europe,Delft
+Europe,Heerlen
+Europe,GÃ¼tersloh
+Europe,Worcester
+Europe,Kostjantynivka
+Europe,Udine
+Europe,Å umen
+Europe,Dos Hermanas
+Europe,Solihull
+Europe,Torre del Greco
+Europe,Andria
+Europe,Rochdale
+Europe,Bugulma
+Europe,Zeleznogorsk
+Europe,PreÅ¡ov
+Europe,Resita
+Europe,Argenteuil
+Europe,Jelenia GÃ³ra
+Europe,Santiago de Compostela
+Europe,Marl
+Europe,Tourcoing
+Europe,Brindisi
+Europe,Novouralsk
+Europe,Giugliano in Campania
+Europe,Sundsvall
+Europe,Birkenhead
+Europe,PuÅ¡kin
+Europe,Alkmaar
+Europe,Vorkuta
+Europe,Pisa
+Europe,Prizren
+Europe,Derbent
+Europe,TorrejÃ³n de Ardoz
+Europe,LÃ¼nen
+Europe,Gillingham
+Europe,Hartlepool
+Europe,Woking/Byfleet
+Europe,Barletta
+Europe,Arezzo
+Europe,Kirovo-TÅ¡epetsk
+Europe,Pardubice
+Europe,Klagenfurt
+Europe,DÃ¼ren
+Europe,Halifax
+Europe,Krasnogorsk
+Europe,Southport
+Europe,Ratingen
+Europe,Mons
+Europe,Maidstone
+Europe,GÃ¤vle
+Europe,Montreuil
+Europe,Braga
+Europe,Frederiksberg
+Europe,Alessandria
+Europe,Eastbourne
+Europe,BerdytÅ¡iv
+Europe,Izmajil
+Europe,Å ostka
+Europe,Uman
+Europe,Klin
+Europe,TÅ¡aikovski
+Europe,Velbert
+Europe,Cesena
+Europe,Novyi Urengoi
+Europe,Esslingen am Neckar
+Europe,Liepaja
+Europe,Grimsby
+Europe,Brovary
+Europe,MukatÅ¡eve
+Europe,Pesaro
+Europe,Luxembourg [Luxemburg/LÃ«tzebuerg]
+Europe,Saint Helier
+Europe,Gibraltar
+Europe,Douglas
+Europe,Birkirkara
+Europe,Andorra la Vella
+Europe,TÃ³rshavn
+Europe,Monte-Carlo
+Europe,Valletta
+Europe,Schaan
+Europe,Vaduz
+Europe,Serravalle
+Europe,San Marino
+Europe,Longyearbyen
+Europe,Monaco-Ville
+Europe,CittÃ  del Vaticano

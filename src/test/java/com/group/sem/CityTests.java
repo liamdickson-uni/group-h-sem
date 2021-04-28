@@ -81,9 +81,8 @@ public class CityTests {
         ArrayList<City> cities = city.getDistrictByPop();
     }
 
-
     /**
-     * Tests that getDistrictByPop() runs with out errors
+     * Tests that getCitiesPopulatio() runs with out errors
      */
     @Test
     void getCitiesPopulationTest() {
@@ -122,6 +121,30 @@ public class CityTests {
     @Test
     void setNGetCitiesInDistrictByPopCanConnect() {
         ArrayList<City> cities = city.setNGetCitiesInDistrictByPop("Texas", 10);
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    /**
+     * Tests that getSetNCityInWorldByPop() runs with out errors
+     */
+    @Test
+    void getSetNCityInWorldByPopTest() {
+        city.getSetNCityInWorldByPop(10 );
+    }
+
+    @Test
+    void getSetNCityInWorldByPopNotNull() {
+        ArrayList<City> cities = city.getSetNCityInWorldByPop( 10);
+        for (City city : cities) {
+            assertNotNull(cities);
+        }
+    }
+
+    @Test
+    void getSetNCityInWorldByPopCanConnect() {
+        ArrayList<City> cities = city.getSetNCityInWorldByPop( 10);
         for (City city : cities) {
             assertNotNull(cities);
         }

@@ -1,18 +1,19 @@
-Name,Population
-Riyadh,3324000
-Ankara,3038159
-Baku,1787800
-Damascus,1347000
-Yerevan,1248700
-Tbilisi,1235200
-Beirut,1100000
-Amman,1000000
-Jerusalem,633700
-Sanaa,503600
-Abu Dhabi,398695
-Doha,355000
-Gaza,353632
-Nicosia,195000
-al-Manama,148000
-Masqat,51969
-Kuwait,28859
+Region,Name,Population
+Middle East,Baghdad,4336000
+Middle East,Riyadh,3324000
+Middle East,Ankara,3038159
+Middle East,Baku,1787800
+Middle East,Damascus,1347000
+Middle East,Yerevan,1248700
+Middle East,Tbilisi,1235200
+Middle East,Beirut,1100000
+Middle East,Amman,1000000
+Middle East,Jerusalem,633700
+Middle East,Sanaa,503600
+Middle East,Abu Dhabi,398695
+Middle East,Doha,355000
+Middle East,Gaza,353632
+Middle East,Nicosia,195000
+Middle East,al-Manama,148000
+Middle East,Masqat,51969
+Middle East,Kuwait,28859

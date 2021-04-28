@@ -88,6 +88,10 @@ public class CountryTests {
         ArrayList<Country> countries = country.getCountryByPopDesc();
     }
 
+    /**
+     * Tests that getWorldPopulation() runs with out errors
+     */
+
     @Test
     void getWorldPopulationTest() {
         country.getWorldPopulation();
@@ -128,6 +132,89 @@ public class CountryTests {
 
         }
 
+    /**
+     * Tests that getSetNCountryInRegionByPop() runs with out errors
+     */
+    @Test
+    void getSetNCountryInRegionByPopTest() { country.getSetNCountryInRegionByPop("Caribbean",5);
+    }
+
+    @Test
+    void getSetNCountryInRegionByPopNotNull() {
+        ArrayList<Country> countries = country.getSetNCountryInRegionByPop("Caribbean",5);
+        for (Country country : countries) {
+            assertNotNull(countries);
+        }
+    }
+
+    @Test
+    void getSetNCountryInRegionByPopCanConnect() {
+        ArrayList<Country> countries = country.getSetNCountryInRegionByPop("Caribbean", 5);
+
+    }
+
+    /**
+     * Tests that getPopOfRegion() runs with out errors
+     */
+    @Test
+    void getPopOfRegionTest() { country.getPopOfRegion("Central Africa");
+    }
+
+    @Test
+    void getPopOfRegionNotNull() {
+        ArrayList<Country> countries = country.getPopOfRegion("Central Africa");
+        for (Country country : countries) {
+            assertNotNull(countries);
+        }
+    }
+
+    @Test
+    void getPopOfRegionCanConnect() {
+        ArrayList<Country> countries = country.getPopOfRegion("Central Africa");
+
+    }
+
+    /**
+     * Tests that getPopOfContinent() runs with out errors
+     */
+    @Test
+    void getPopOfContinent() { country.getPopOfContinent("North America");
+    }
+
+    @Test
+    void getPopOfContinentNotNull() {
+        ArrayList<Country> countries = country.getPopOfContinent("North America");
+        for (Country country : countries) {
+            assertNotNull(countries);
+        }
+    }
+
+    @Test
+    void getPopOfContinentCanConnect() {
+        ArrayList<Country> countries = country.getPopOfContinent("North America");
+
+    }
+
+    /**
+     * Tests that getCountriesInRegionByPop() runs with out errors
+     */
+    @Test
+    void getCountriesInRegionByPop() { country.getCountriesInRegionByPop("North America");
+    }
+
+    @Test
+    void getCountriesInRegionByPopNotNull() {
+        ArrayList<Country> countries = country.getCountriesInRegionByPop("North America");
+        for (Country country : countries) {
+            assertNotNull(countries);
+        }
+    }
+
+    @Test
+    void getCountriesInRegionByPopCanConnect() {
+        ArrayList<Country> countries = country.getCountriesInRegionByPop("North America");
+
+    }
 
 }
 
